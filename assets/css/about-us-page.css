@@ -154,8 +154,8 @@
 @media(max-width: 1024px) {
     .about-us__banner {
         display: block;
-        height: 819px;
-        padding-top: 136px;
+        height: 80vw;
+        padding-top: 13.60vw;
     
         background-image: url('../i/about-us-banner_mobile.webp');
         background-repeat: no-repeat;
@@ -172,140 +172,20 @@
 
 @media(max-width: 1024px) {
     .about-us__banner-logo {
-        width: 317px;
-        height: 167px;
+        width: 30.93vw;
+        height: 16.27vw;
     }
 }
 
 @media(max-width: 1024px) {
     .about-us__banner-text {
-        width: 621px;
-        margin-top: 51px;
+        width: 74.13vw;
+        margin-top: 4.53vw;
     
-        font-size: 45px;
-    
-        > span {
-            font-size: 45px;
-        }
-    }
-}
-
-@media(max-width: 835px) {
-    .about-us__banner {
-        height: 669px;
-        padding-top: 111px;
-    }
-}
-
-@media(max-width: 835px) {
-    .about-us__banner-logo {
-        width: 259px;
-        height: 136px;
-    }
-}
-
-@media(max-width: 835px) {
-    .about-us__banner-text {
-        width: 507px;
-        margin-top: 42px;
-    
-        font-size: 36px;
+        font-size: 5.33vw;
     
         > span {
-            font-size: 36px;
-        }
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__banner {
-        height: 595px;
-        padding-top: 99px;
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__banner-content {
-        margin-left: 8.6%;
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__banner-logo {
-        width: 230px;
-        height: 121px;
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__banner-text {
-        width: 452px;
-        margin-top: 37px;
-    
-        font-size: 32px;
-    
-        > span {
-            font-size: 32px;
-        }
-    }
-}
-
-@media(max-width: 460px) {
-    .about-us__banner {
-        height: 352px;
-        padding-top: 59px;
-    }
-}
-
-@media(max-width: 460px) {
-    .about-us__banner-logo {
-        width: 136px;
-        height: 72px;
-    }
-}
-
-@media(max-width: 460px) {
-    .about-us__banner-text {
-        width: 343px;
-        margin-top: 15px;
-    
-        font-size: 25px;
-    
-        > span {
-            font-size: 25px;
-        }
-    }
-}
-
-@media(max-width: 375px) {
-    .about-us__banner {
-        height: 300px;
-        padding-top: 51px;
-    }
-}
-
-@media(max-width: 375px) {
-    .about-us__banner-content {
-        margin-left: 8.6%;
-    }
-}
-
-@media(max-width: 375px) {
-    .about-us__banner-logo {
-        width: 116px;
-        height: 61px;
-    }
-}
-
-@media(max-width: 375px) {
-    .about-us__banner-text {
-        width: 278px;
-        margin-top: 17px;
-    
-        font-size: 20px;
-    
-        > span {
-            font-size: 20px;
+            font-size: 5.33vw;
         }
     }
 }
@@ -313,9 +193,7 @@
 
 
 /* START О НАС ABOUT-US PAGE */
-.about-us__wr-about {
-margin-bottom: 400px;
-
+.about-us__about {
     display: flex;
     width: 100%;
     padding-top: 47px;
@@ -362,7 +240,9 @@ margin-bottom: 400px;
     margin-left: 2.1%;
     flex-direction: column;
     gap: 20px;
+}
 
+.about-us__about-text {
     font-family: 'Roboto';
     font-size: 18px;
     font-weight: 400;
@@ -376,7 +256,9 @@ margin-bottom: 400px;
     margin-top: 42px;
     margin-left: 2.1%;
     flex-direction: column;
+}
 
+.about-us__about-clients > span {
     font-family: 'Roboto';
     font-size: 18px;
     font-weight: 400;
@@ -393,7 +275,7 @@ margin-bottom: 400px;
 }
 
 @media(max-width: 1756px) {
-    .about-us__wr-about {
+    .about-us__about {
         background-size: 
             19% auto,
             19% auto
@@ -402,7 +284,7 @@ margin-bottom: 400px;
 }
 
 @media(max-width: 1537px) {
-    .about-us__wr-about {          
+    .about-us__about {          
         border-radius: 0px 0px 40px 40px;
     }
 }
@@ -419,7 +301,11 @@ margin-bottom: 400px;
         margin-top: 14px;
         margin-left: 1.68%;
         gap: 16px;
-    
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-text {   
         font-size: 14px;
     }
 }
@@ -428,8 +314,9 @@ margin-bottom: 400px;
     .about-us__about-clients {
         width: 770px;
         margin-top: 33px;
-        margin-left: 1.68%;
+    }
 
+    .about-us__about-clients > span {
         font-size: 14px;
     }
 }
@@ -441,7 +328,7 @@ margin-bottom: 400px;
 }
 
 @media(max-width: 1260px) {
-    .about-us__wr-about {          
+    .about-us__about {          
         background-size: 
             17.5% auto,
             17.5% auto
@@ -450,19 +337,17 @@ margin-bottom: 400px;
 }
 
 @media(max-width: 1198px) {
-    .about-us__wr-about {
+    .about-us__about {
         background-image: none;
     }
 }
-
+/* -------------------- */
 @media(max-width: 1024px) {
-    .about-us__wr-about {
-        margin-bottom: 1000px;
-
-        padding-top: 90px;
-        padding-bottom: 81px;
+    .about-us__about {
+        padding-top: 7.20vw;
+        padding-bottom: 8.53vw;
     
-        border-radius: 0px 0px 27px 27px;
+        border-radius: 0px 0px 2.67vw 2.67vw;
         background-image: 
             url('../i/cloud-alone-white.svg'),
             url('../i/cloud-alone-white.svg')
@@ -479,176 +364,371 @@ margin-bottom: 400px;
             right 16.8% bottom 2.2%,
             right 12% bottom 5.5%
         ;
-        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 0px 1.60vw 0px rgba(0, 0, 0, 0.25);
     }
 }
 
 @media(max-width: 1024px) {
     .about-us__about-title {
-        font-size: 50px;
+        font-size: 6.40vw;
     }
 }
 
 @media(max-width: 1024px) {
     .about-us__about-list {
         width: 88.77%;
-        margin-top: 34px;
+        margin-top: 2.93vw;
         margin-left: 0;
-        gap: 31px;
-    
-        font-size: 35px;
+        gap: 4vw;
+    }
+}
+@media(max-width: 1024px) {
+    .about-us__about-text {    
+        font-size: 3.73vw;
     }
 }
 
 @media(max-width: 1024px) {
-    .about-us__about-item:last-child {
-        width: 85%;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__about-clients {
-        display: none;
-    }
-}
-
-@media(max-width: 834px) {
-    .about-us__wr-about {       
-        padding-top: 74px;
-        padding-bottom: 66px;
-    }
-}
-
-@media(max-width: 834px) {
-    .about-us__about-title {
-        font-size: 40px;
-    }
-}
-
-@media(max-width: 834px) {
-    .about-us__about-list {
-        margin-top: 28px;
-        gap: 25px;
-    
-        font-size: 28px;
-    }
-}
-
-@media(max-width: 834px) {
-    .about-us__about-clients {
-        display: none;
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__wr-about {
-        padding-top: 65px;
-        padding-bottom: 59px;
-    
-        border-radius: 0px 0px 20px 20px;
-
-        background-size: 
-            8% auto,
-            6% auto
-        ;
-        background-position: 
-            right 12% bottom 1.6%,
-            right 7.8% bottom 4.5%
-        ;
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__about-title {
-        font-size: 36px;
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__about-list {
-        margin-top: 25px;
-        gap: 23px;
-    
-        font-size: 25px;
-    }
-}
-
-@media(max-width: 745px) {
-    .about-us__about-item:last-child {
-        width: 85%;
-    }
-}
-
-@media(max-width: 460px) {
-    .about-us__wr-about {
-        padding-top: 34px;
-        padding-bottom: 38px;
-    
-        border-radius: 0px 0px 12px 12px;
-        background-size: 
-            9.5% auto,
-            6.7% auto
-        ;
-        background-position: 
-            right 16.8% bottom 2.2%,
-            right 12% bottom 5.5%
-        ;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-    }
-}
-
-@media(max-width: 460px) {
-    .about-us__about-title {
-        font-size: 28px;
-    }
-}
-
-@media(max-width: 460px) {
-    .about-us__about-list {
-        margin-top: 13px;
-        gap: 21px;
-    
-        font-size: 16px;
-    }
-}
-
-@media(max-width: 375px) {
-    .about-us__wr-about {
-        padding-top: 27px;
-        padding-bottom: 32px;
-    
-        border-radius: 0px 0px 10px 10px;
-        background-size: 
-            9.5% auto,
-            6.7% auto
-        ;
-        background-position: 
-            right 17.6% bottom 2.2%,
-            right 12% bottom 5.5%
-        ;
-        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
-    }
-}
-
-@media(max-width: 375px) {
-    .about-us__about-title {
-        font-size: 24px;
-    }
-}
-
-@media(max-width: 375px) {
-    .about-us__about-list {
-        width: 88.77%;
-        margin-top: 11px;
-        gap: 15px;
-    
-        font-size: 14px;
-    }
-}
-
-@media(max-width: 745px) {
     .about-us__about-item:last-child {
         width: 87%;
     }
 }
+
+@media(max-width: 1024px) {
+    .about-us__about-clients {
+        display: none;
+    }
+}
 /* END О НАС ABOUT-US PAGE */
+
+
+/* START ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
+.about-us__values {
+    display: flex;
+    padding-top: 92px;
+    justify-content: center;
+}
+
+.about-us__values-content {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: repeat(10, min-content);
+    column-gap: 25px;
+}
+
+.about-us__values-header {
+    position: relative;
+
+    display: grid;
+    width: 289px;
+    height: 41px;
+    grid-row: 1;
+    grid-column: 1;
+    place-items: center;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 800;
+    
+    color: #FFF;
+    background-color: #FF732D;
+}
+
+.about-us__values-header::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+    background-color: #fff;
+
+    transform: translate(-50%, -50%);
+}
+
+.about-us__values-header::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+    background-color: #fff;
+
+    transform: translate(50%, -50%);
+}
+
+.about-us__values-list {
+    margin-top: 11px;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.about-us__values-item {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 500;
+
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us__values-item::before {
+    content: "";
+
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-right: 16px;
+    margin-bottom: 3px;
+
+    vertical-align: middle;
+
+    background-color: #FF6304;
+    border-radius: 50%;
+}
+
+.about-us__values-article {
+    width: 544px;
+    grid-row: 3 / 11;
+    grid-column: 1;
+    align-content: end;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #464646;
+}
+
+.about-us__values-img {
+    width: 716px;
+    height: 367px;
+    grid-row: 1/11;
+    grid-column: 2;
+
+    background: no-repeat url('../i/about-us-values.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 123px 104px 45px 0px rgba(0, 0, 0, 0.00), 79px 67px 41px 0px rgba(0, 0, 0, 0.01), 44px 38px 35px 0px rgba(0, 0, 0, 0.05), 20px 17px 26px 0px rgba(0, 0, 0, 0.09), 5px 4px 14px 0px rgba(0, 0, 0, 0.10);
+}
+
+@media(max-width: 1440px) {
+    .about-us__values {
+        padding-top: 65px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-content {
+        column-gap: 18px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-header {
+        width: 202px;
+        height: 29px;
+    
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-header::before {    
+        width: 11px;
+        height: 11px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-header::after {
+        width: 11px;
+        height: 11px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-list {
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-item {
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-item::before {
+        width: 4px;
+        height: 4px;
+        margin-right: 11px;
+        margin-bottom: 2px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-article {
+        width: 381px;
+        
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-img {
+        width: 501px;
+        height: 257px;
+    
+        border-radius: 6px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values {
+        display: block;
+        padding-top: 11.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-content {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-header {
+        width: 77.05%;
+        height: 10.93vw;
+        font-size: 6.40vw;
+    }
+
+    .about-us__values-header::before {
+        width: 4.27vw;
+        height: 4.27vw;
+    }
+    .about-us__values-header::after {
+        width: 4.27vw;
+        height: 4.27vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-list {
+        width: 89.15%;
+        margin-top: 5.60vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-item {
+        font-size: 5.33vw;
+    }
+
+    .about-us__values-item::before {
+        height: 1.07vw;
+        width: 1.07vw;
+        margin-right: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-article {
+        width: 89.15%;
+        margin-top: 3.73vw;
+
+        font-size: 4.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-img {
+        width: 100%;
+        height: 80vw;
+        margin-top: 8.80vw;
+
+        background-image: url('../i/about-us-values-mobile.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 2.13vw;
+        box-shadow: 123px 104px 45px 0px rgba(0, 0, 0, 0.00), 79px 67px 41px 0px rgba(0, 0, 0, 0.01), 44px 38px 35px 0px rgba(0, 0, 0, 0.05), 20px 17px 26px 0px rgba(0, 0, 0, 0.09), 5px 4px 14px 0px rgba(0, 0, 0, 0.10);
+    }
+}
+/* END ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
+
+
+/* START ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
+.about-us__offer {
+    margin-bottom: 700px;
+
+    display: flex;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us__offer-title {
+    font-family: 'Roboto';
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+
+    background: no-repeat linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us__offer-list {
+    margin-top: 26px;
+}
+
+.about-us__offer-list {
+    display: flex;
+    width: 77%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 97px;
+}
+
+.about-us__offer-item {
+    width: 211px;
+}
+
+.about-us__offer-circle {
+    width: 142px;
+    height: 142px;
+    margin: 0 auto;
+
+    border: 6px solid #E3E3E3;
+    border-radius: 50%;
+}
+
+.about-us__offer-text {
+    margin-top: 6px;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+
+    color: #5A5D62;
+}
+/* END ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
