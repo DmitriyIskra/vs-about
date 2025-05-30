@@ -1,0 +1,413 @@
+.about-us__content {
+    width: 100%;
+    min-width: 100%;
+}
+
+.about-us__content * {
+    width: initial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    
+    font-family: initial;
+    font-size: initial;
+    font-weight: initial;
+    text-align: initial;
+    line-height: initial !important;
+    white-space: initial;
+    
+    list-style-type: none;
+    border: initial;
+    border-radius: initial;
+    outline: initial;
+    color: initial;
+    background-color: initial;
+    box-shadow: initial;
+    
+    cursor: initial;
+    appearance: initial;
+}
+
+.page h2 {
+    margin: 0;
+    
+    font-size: initial;
+    font-weight: initial;
+}
+
+.about-us__content button {
+    display: inline-block;
+}
+
+.about-us__content button:hover {
+    background-color: initial;
+}
+
+.page .about-us__content ul {
+    padding: 0;
+}
+
+.page .about-us__content ul li {
+    position: initial;
+    
+    padding: 0;
+}
+
+.page .about-us__content ul li::before {
+    content: "";
+    
+    position: initial;
+    top: auto;
+    
+    display: inline;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    
+    font-weight: initial;
+    font-size: initial;
+    line-height: initial;
+
+    color: initial;
+}
+
+/* ==========*******************************========= */
+
+/* START БАННЕР ABOUT-US PAGE */
+.about-us__banner {
+    display: flex;
+    width: 100%;
+    height: 650px;
+    padding-top: 96px;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url('../i/about-us-banner.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-us__banner-logo {
+    width: 256px;
+    height: 135px;
+}
+
+.about-us__banner-logo-img {
+    height: 100%;
+    width: 100%;
+    
+    object-fit: contain;
+    object-position: center;
+}
+
+.about-us__banner-text {
+    width: 952px;
+    margin-top: 48px;
+
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #FFF;
+
+    > span {
+        font-family: 'Roboto Slab', serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        text-wrap: nowrap;
+
+        color: #FFEA60;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__banner {
+        width: 100%;
+        height: 520px;
+        padding-top: 76.8px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__banner-logo {
+        width: 205px;
+        height: 108px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__banner-text {
+        width: 762px;
+        margin-top: 38px;
+    
+        font-size: 32px;
+    
+        > span {
+            font-size: 32px;
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__banner {
+        display: block;
+        height: 819px;
+        padding-top: 136px;
+    
+        background-image: url('../i/about-us-banner_mobile.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__banner-content {
+        margin-left: 8.6%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__banner-logo {
+        width: 317px;
+        height: 167px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__banner-text {
+        width: 621px;
+        margin-top: 51px;
+    
+        font-size: 45px;
+    
+        > span {
+            font-size: 45px;
+            font-weight: 700;
+        }
+    }
+}
+/* END БАННЕР ABOUT-US PAGE */
+
+
+/* START О НАС ABOUT-US PAGE */
+.about-us__wr-about {
+margin-bottom: 400px;
+
+    display: flex;
+    width: 100%;
+    padding-top: 47px;
+    padding-bottom: 4.05%;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 0px 0px 50px 50px;
+    background-color: rgba(255, 115, 45, 0.30);
+    background-image: 
+    url('../i/baloon-skel-with-clouds.svg'),
+        url('../i/about-us-houses.svg')
+    ;
+    background-repeat: 
+        no-repeat,
+        no-repeat
+    ;
+    background-size: 
+        22.08% auto,
+        22.4% auto
+    ;
+    background-position: 
+        left bottom,
+        right 2.5% bottom
+    ;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.about-us__about-title {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+
+    background: no-repeat linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us__about-list {
+    display: flex;
+    width: 963px;
+    margin-top: 18px;
+    margin-left: 2.1%;
+    flex-direction: column;
+    gap: 20px;
+
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #464646;
+}
+
+.about-us__about-clients {
+    display: flex;
+    width: 963px;
+    margin-top: 42px;
+    margin-left: 2.1%;
+    flex-direction: column;
+
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #464646;
+}
+
+.about-us__about-clients_bold {
+    font-weight: 500;
+}
+
+.about-us__about-clients_text {
+    width: 93%;
+}
+
+@media(max-width: 1756px) {
+    .about-us__wr-about {
+        background-size: 
+            19% auto,
+            19% auto
+        ;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__wr-about {          
+        border-radius: 0px 0px 40px 40px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-title {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-list {
+        width: 770px;
+        margin-top: 14px;
+        margin-left: 1.68%;
+        gap: 16px;
+    
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-clients {
+        width: 770px;
+        margin-top: 33px;
+        margin-left: 1.68%;
+
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-clients_text {
+        width: 74.4%;
+    }
+}
+
+@media(max-width: 1260px) {
+    .about-us__wr-about {          
+        background-size: 
+            17.5% auto,
+            17.5% auto
+        ;   
+    }
+}
+
+@media(max-width: 1198px) {
+    .about-us__wr-about {
+        background-image: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__wr-about {
+        margin-bottom: 1000px;
+        
+        width: 100%;
+        padding-top: 90px;
+        padding-bottom: 81px;
+    
+        border-radius: 0px 0px 27px 27px;
+        background-color: rgba(255, 115, 45, 0.30);
+        background-image: 
+            url('../i/cloud-alone-white.svg'),
+            url('../i/cloud-alone-white.svg')
+        ;
+        background-repeat: 
+            no-repeat,
+            no-repeat
+        ;
+        background-size: 
+            9.5% auto,
+            6.7% auto
+        ;
+        background-position: 
+            right 16.8% bottom 2.2%,
+            right 12% bottom 5.5%
+        ;
+        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.25);
+    }
+    
+    .about-us__about-title {
+        font-size: 50px;
+    }
+    
+    .about-us__about-list {
+        width: 909px;
+        margin-top: 34px;
+        margin-left: 0;
+        gap: 31px;
+    
+        font-size: 35px;
+    }
+
+    .about-us__about-item:last-child {
+        width: 85%;
+    }
+    
+    .about-us__about-clients {
+        display: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+/* END О НАС ABOUT-US PAGE */
