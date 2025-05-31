@@ -1,3 +1,7 @@
+body {
+    padding-bottom: 1000px;
+}
+
 .about-us__content {
     width: 100%;
     min-width: 100%;
@@ -677,8 +681,6 @@
 
 /* START ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
 .about-us__offer {
-    margin-bottom: 700px;
-
     display: flex;
     padding-top: 60px;
     flex-direction: column;
@@ -705,7 +707,8 @@
     width: 77%;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 97px;
+    column-gap: 97px;
+    row-gap: 25px;
 }
 
 .about-us__offer-item {
@@ -713,12 +716,51 @@
 }
 
 .about-us__offer-circle {
+    display: grid;
     width: 142px;
     height: 142px;
     margin: 0 auto;
+    place-items: center;
 
     border: 6px solid #E3E3E3;
     border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.about-us__offer_bus {
+    background-image: url('../i/about-us-offer-bus.svg');
+    background-size: 74% auto;
+}
+
+.about-us__offer_kremlin {
+    background-image: url('../i/about-us-offer-kremlin.svg');
+    background-size: 70.5% auto;
+}
+
+.about-us__offer_map {
+    background-image: url('../i/about-us-offer-map.svg');
+    background-size: 87.5% auto;
+}
+
+.about-us__offer_flight {
+    background-image: url('../i/about-us-offer-flight.svg');
+    background-size: 68.1% auto;
+}
+
+.about-us__offer_ship {
+    background-image: url('../i/about-us-offer-ship.svg');
+    background-size: 61.5% auto;
+}
+
+.about-us__offer_mountain {
+    background-image: url('../i/about-us-offer-mountains.svg');
+    background-size: 68.5% auto;
+}
+
+.about-us__offer_beach {
+    background-image: url('../i/about-us-offer-beach.svg');
+    background-size: 58.5% auto;
 }
 
 .about-us__offer-text {
@@ -731,4 +773,284 @@
 
     color: #5A5D62;
 }
+
+@media(max-width: 1024px) {
+    .about-us__offer {
+        padding-top: 11.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-title {
+        font-size: 6.40vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-list {
+        margin-top: 5.87vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-list {
+        width: 100%;
+        column-gap: 3.5vw;
+        row-gap: 10.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-item {
+        width: 30%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-circle {
+        width: 21.87vw;
+        height: 21.87vw;
+    
+        border: 0.80vw solid #E3E3E3;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_bus {
+        background-size: 74% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_kremlin {
+        background-size: 70.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_map {
+        background-size: 87.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_flight {
+        background-size: 68.1% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_ship {
+        background-size: 61.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_mountain {
+        background-size: 68.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_beach {
+        background-size: 58.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-text {
+        margin-top: 1.87vw;
+    
+        font-size: 3.20vw;
+    } 
+}
+
 /* END ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
+
+/* START GRAY LINE ABOUT-US PAGE */
+.about-us__line {
+    width: 54.384%;
+    height: 2px;
+    margin: 50px auto 0;
+
+    border-radius: 8px;
+    background: #D9D9D9;
+}
+
+@media(max-width: 1600px) {
+    .about-us__line {
+        width: 63%;
+    }
+}
+
+@media(max-width: 1366px) {
+    .about-us__line {
+        width: 75%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__line {
+        width: 89.34%;
+        height: 2px;
+        margin: 7.73vw auto 0;
+    
+        border-radius: 8px;
+        background: #D9D9D9;
+    }
+}
+/* END GRAY LINE ABOUT-US PAGE */
+
+
+/* START STAMP ABOUT-US PAGE */
+.about-us__rut {
+    display: flex;
+    margin-top: 32px;
+    column-gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us__rut-stamp {
+    width: 167px;
+    height: 167px;
+}
+
+.about-us__rut-stamp-img {
+    height: 100%;
+    width: 100%;
+    
+    object-fit: contain;
+    object-position: center;
+}
+
+.about-us__rut-text {
+    border-left: 3px solid #FF732D;;
+}
+
+.about-us__rut-text > p {
+    width: 640px;
+    margin-left: 8px;
+
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #464646;
+}
+
+@media(max-width: 1024px) {
+    .about-us__rut {
+        margin-top: 3.20vw;
+        column-gap: 0;
+        row-gap: 2.9vw;
+        flex-direction: column;
+        justify-content: initial;
+    }
+    
+    .about-us__rut-stamp {
+        width: 30.93vw;
+        height: 30.93vw;
+    }
+    
+    .about-us__rut-text {
+        width: 89.33vw;
+    }
+
+    .about-us__rut-text > p {
+        width: 100%;
+        margin-left: 11px;
+    
+        font-size: 3.73vw;
+    }
+}
+/* END STAMP ABOUT-US PAGE */
+
+
+/* START BIG MAP ABOUT-US PAGE */
+.about-us__big-map {
+    width: 1133px;
+    height: 649px;
+    margin: 16px auto 0;
+    padding-top: 13px;
+    padding-left: 137px;
+
+    background-image: url('../i/about-us-big-map.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+}
+
+.about-us__big-map-title {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #464646;
+}
+
+.about-us__big-map-text {
+    width: 726px;
+    margin-top: 7px;
+
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #464646;
+}
+
+@media(max-width: 1366px) {
+    .about-us__big-map {
+        width: 963px;
+        height: 551px;
+        margin: 16px auto 0;
+        padding-top: 13px;
+        padding-left: 90px;
+    }
+}
+
+@media(max-width: 1366px) {
+    .about-us__big-map-title {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 1366px) {
+    .about-us__big-map-text {
+        width: 673px;
+
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__big-map {
+        width: 100%;
+        height: 100.63vw;
+        margin: 6.67vw auto 0;
+        padding-top: 0.5vw;
+        padding-left: 0;
+    
+        background-image: url('../i/about-us-big-map-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: auto 94.2%;
+        background-position: left bottom;
+    }
+    
+    .about-us__big-map-title {
+        width: 89.33vw;
+        margin: 0 auto;
+
+        font-size: 4.80vw;
+    }
+    
+    .about-us__big-map-text {
+        width: 89.33vw;
+        margin: 2.27vw auto 0;
+    
+        font-size: 4.27vw;
+    }
+}
+/* END BIG MAP ABOUT-US PAGE */
