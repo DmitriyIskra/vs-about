@@ -1038,14 +1038,18 @@ body {
         background-size: auto 94.2%;
         background-position: left bottom;
     }
-    
+}
+
+@media(max-width: 1024px) {
     .about-us__big-map-title {
         width: 89.33vw;
         margin: 0 auto;
 
         font-size: 4.80vw;
     }
-    
+}
+
+@media(max-width: 1024px) {
     .about-us__big-map-text {
         width: 89.33vw;
         margin: 2.27vw auto 0;
@@ -1054,3 +1058,138 @@ body {
     }
 }
 /* END BIG MAP ABOUT-US PAGE */
+
+/* START CONSOLIDATORS ABOUT-US PAGE */
+.about-us__cons {
+    display: flex;
+    margin: 101px auto 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us__cons-line {
+    display: flex;
+}
+
+.about-us__cons-line-top {
+    gap: 125px;
+}
+
+.about-us__cons-icon {
+    width: 160px;
+    height: 160px;
+}
+
+.about-us__cons-line-top > .about-us__cons-icon {
+    margin-top: 4px;
+}
+
+.about-us__cons-icon-road {
+    background-image: url('../i/about-us-offer-cons-road.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.about-us__cons-title {
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-weight: 500;
+    text-wrap: nowrap;
+    text-align: center;
+
+    color: #464646;
+}
+
+.about-us__cons-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us__cons-text > span {
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-weight: 400;
+    text-wrap: nowrap;
+    text-align: center;
+    
+    color: #464646;
+}
+
+.about-us__cons-icon-sibir {
+    background-image: url('../i/about-us-offer-cons-sibir.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.about-us__cons-line-bottom {
+    gap: 209px;
+}
+
+.about-us__cons-icon-belogorie {
+    background-image: url('../i/about-us-offer-cons-belogorie.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.about-us__cons-icon-tver {
+    background-image: url('../i/about-us-offer-cons-tver-area.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@media(max-width: 1366px) {
+    .about-us__cons-line-top {
+        gap: 69px;
+    }
+
+    .about-us__cons-line-bottom {
+        gap: 132px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons {
+        margin: 8vw auto 0;
+    }
+    
+    .about-us__cons-line-top {
+        gap: 0;
+    }
+    
+    .about-us__cons-icon {
+        width: 21.33vw;
+        height: 21.33vw;
+    }
+    
+    .about-us__cons-line-top > .about-us__cons-icon {
+        margin-top: 0;
+
+        translate: 0 11vw;
+    }
+
+    .about-us__cons-icon-road {
+        margin-right: -2.3vw;
+    }
+    
+    .about-us__cons-title {
+        font-size: 5.33vw;
+    }
+    
+    .about-us__cons-text > span {
+        font-size: 4.27vw;
+    }
+
+    .about-us__cons-icon-sibir {
+        margin-left: -2.3vw;
+    }
+    
+    .about-us__cons-line-bottom {
+        margin-top: 3vw;
+        gap: 2.13vw;
+    }
+}
+/* END CONSOLIDATORS ABOUT-US PAGE */
