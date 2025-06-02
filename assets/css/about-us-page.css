@@ -1195,6 +1195,7 @@ body {
 /* START SUBSCRIBTION ABOUT-US PAGE */
 .about-us__wr-subscr {
     display: flex;
+    margin-top: 96px;
     padding-top: 124px;
     padding-bottom: 45px;
     flex-direction: column;
@@ -1206,8 +1207,6 @@ body {
 }
 
 .about-us__thank {
-    position: relative;
-
     width: 701px;
     height: 284px;
     padding-top: 50px;
@@ -1216,23 +1215,10 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-}
-
-.about-us__thank::before {
-    content: url('../i/about-us-thank-back.svg');
-
-    position: absolute;
-    top: -2%;
-    left: -1.5%;
-
-    width: 100%;
-
-
+    filter: drop-shadow(8px 12px 14px rgba(0, 0, 0, 0.15));
 }
 
 .about-us__thank-title {
-    position: relative;
-    
     font-family: 'Roboto';
     font-size: 26px;
     font-weight: 500;
@@ -1244,8 +1230,6 @@ body {
 }
 
 .about-us__thank-text {
-    position: relative;
-
     display: flex;
     margin-top: 17px;
     flex-direction: column;
@@ -1270,14 +1254,32 @@ body {
 }
 
 .about-us__subscr-wr-content {
+    position: relative;
+
     display: flex;
-    width: 58.95%;
     gap: 8px;
 }
 
-.about-us__subscr-text {
-    padding-top: 96px;
+.about-us__subscr-wr-form-text {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-top: 75px;
     flex-grow: 1;
+
+    background: no-repeat url('../i/clouds-transparent-pair.svg');
+    background-size: 92px auto;
+    background-position: right 22px top 66px;
+}
+
+.about-us__subscr-wr-text {
+    display: flex;
+    width: 551px; /*81.152%*/
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-us__subscr-title {
@@ -1300,7 +1302,7 @@ body {
     display: none;
 }
 
-.about-us__subscr-text > p {
+.about-us__subscr-text {
     width: 358px;
     margin: 7px auto 0;
 
@@ -1318,13 +1320,23 @@ body {
     justify-content: end;
 }
 
+.about-us__subscr-image {
+    background: no-repeat url('../i/about-us-subscription.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-us__subscr-image_mobile {
+    display: none;
+}
+
 .about-us__subscr-form {
     display: grid;
+    width: 551px; /*81.152%*/
+    height: 60px;
     padding-left: 38px;
     padding-right: 3px;
     grid-template-columns: repeat(3, min-content) 1fr;
-    width: 551px; /*81.152%*/
-    height: 60px;
     align-items: center;
 
     border-radius: 50px;
@@ -1392,18 +1404,303 @@ body {
     background-color: #ed5f00 !important;
 }
 
-.about-us__subscr-image {
-    width: 436px; /*38.826%*/
+.about-us__subscr-cloud {
+    position: absolute;
+
+    background: no-repeat url('../i/cloud-alone-white.svg');
+    background-size: contain;
+    background-position:  center;
+}
+
+.about-us__subscr-cloud-l-t {
+    top: 20px;
+    left: -11.7%;
+
+    width: 77px;
+    height: 43px;
+}
+
+.about-us__subscr-cloud-l-b {
+    top: 80px;
+    left: 2%;
+
+    width: 44px;
+    height: 27px;
+}
+
+.about-us__subscr-cloud-r-t {
+    top: -9px;
+    right: -3%;
+
+    width: 57px;
+    height: 32px;
+}
+
+.about-us__subscr-cloud-r-b {
+    top: -3px;
+    right: 4.6%;
+
+    width: 73px;
+    height: 41px;
+}
+
+.about-us__subscr-image_desc {
+    width: 436px;
     height: 290px;
     flex-shrink: 0;
 
     border-radius: 8px;
     box-shadow: 0px 0px 7.3px 5px rgba(0, 0, 0, 0.25);
-    background-image: url('../i/about-us-subscription.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+
+.about-us__subscr-baloon {
+    position: absolute;
+    bottom: -16px;
+    right: -6.6%;
+
+    width: 93px;
+    height: 131px;
+
+    background: no-repeat url('../i/baloon-skel-think.svg');
+    background-size: contain;
     background-position: center;
 }
 
+@media(max-width: 1185px) {
+    .about-us__subscr-cloud-l-t {
+        left: -6.7%;
+    }
+}
 
+@media(max-width: 1185px) {
+    .about-us__subscr-cloud-l-b {
+        left: 6%;   
+    }
+}
+
+@media(max-width: 1185px) {
+    .about-us__subscr-baloon {
+        right: -8.2%;
+
+        width: 79px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__wr-subscr {
+        margin-top: 16.27vw;
+        padding-top: 13vw;
+        padding-bottom: 12vw;
+    
+        border-radius: 8.80vw;
+        box-shadow: none;
+    }
+    
+    .about-us__thank {
+        width: 94.15%;
+        height: 43.40vw;
+        padding-top: 4.2vw;
+
+        background-image: url('../i/about-us-thank-back.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        filter: drop-shadow(8px 12px 14px rgba(0, 0, 0, 0.15));
+    }
+    
+    .about-us__thank-title {       
+        font-size: 5.33vw;
+    }
+    
+    .about-us__thank-text {    
+        margin-top: 1.7vw;
+    }
+
+    .about-us__subscr-title_mobile {
+        display: block;
+    }
+    
+    .about-us__thank-text > span {
+        font-size: 3.73vw;
+        line-height: 1.6 !important;
+    }
+    
+    .about-us__subscr {
+        display: flex;
+        width: 89.15%;
+        margin-top: 3.6vw;
+        justify-content: center;
+    }
+    
+    .about-us__subscr-wr-content {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .about-us__subscr-wr-form-text {
+        display: block;
+        width: 100%;
+        padding-top: 0;
+    
+        background: none;
+    }
+    
+    .about-us__subscr-wr-text {
+        display: block;
+        width: 100%;
+    }
+    
+    .about-us__subscr-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-us__subscr-title > span {
+        font-size: 6.40vw;
+    }
+    
+    .about-us__subscr-title_mobile {
+        display: block;
+    }
+    
+    .about-us__subscr-text {
+        width: 100%;
+        margin: 0.6vw auto 0;
+    
+        font-size: 4.27vw;
+    }
+    
+    .about-us__subscr-wr-form {
+        display: block;
+        width: 100%;
+        margin-top: 12.5vw;
+    }
+    
+    .about-us__subscr-image_mobile {
+        display: block;
+        width: 100%;
+        height: 59.20vw;
+
+        box-shadow: 0px 0px 1.33vw 0.27vw rgba(0, 0, 0, 0.25);
+        border-radius: 2.13vw;
+    }
+    
+    .about-us__subscr-form {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-top: -16vw;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 4.53vw;
+        flex-direction: column;
+        align-items: center;
+    
+        border-radius: 8vw;
+        border: none;
+        background: rgba(255, 255, 255, 0.40);
+        box-shadow: 0px 0.27vw 0.27vw 0px #FFF inset, 0px 0px 1.60vw 0.27vw rgba(0, 0, 0, 0.40);
+    }
+    
+    .about-us__subscr-form-input {
+        padding-top: 5.33vw;
+        padding-bottom: 3.73vw;
+        padding-left: 4vw;
+
+        font-size: 3.73vw;
+    
+        border-bottom: 1px solid #5A5D62;
+        color: #303030;
+    }
+    
+    .about-us__subscr-form-input[name="name"],
+    .about-us__subscr-form-input[name="email"] {
+        width: 90.73%;
+    }
+
+    .about-us__subscr-form-input::placeholder {
+        font-size: 3.73vw;
+    
+        color: #303030;
+    }
+    
+    .about-us__subscr-form-input:focus::placeholder {
+        visibility: hidden;
+    }
+    
+    .about-us__subscr-form-line {
+        display: none;
+    }
+    
+    .about-us__subscr-form-button {
+        width: 46.40vw;
+        height: 10.67vw;
+        margin-top: 5.07vw;
+    
+        font-size: 4.27vw;
+
+        border-radius: 6.67vw;
+        box-shadow: 0px 1.07vw 1.07vw 0px rgba(0, 0, 0, 0.25), 0px 0px 1.87vw 0.53vw rgba(0, 0, 0, 0.25);
+    }
+    
+    .about-us__subscr-form-button:hover {
+        background-color: #ed5f00 !important;
+    }
+    
+    .about-us__subscr-cloud {
+        position: absolute;
+    
+        background: no-repeat url('../i/cloud-alone-white.svg');
+        background-size: contain;
+        background-position:  center;
+    }
+    
+    .about-us__subscr-cloud-l-t {
+        top: 7.3vw;
+        left: 9%;
+    
+        width: 8vw;
+        height: 4.6vw;
+    }
+    
+    .about-us__subscr-cloud-l-b {
+        top: 8.3vw;
+        left: -5%;
+    
+        width: 14.1vw;
+        height: 8vw;
+    }
+    
+    .about-us__subscr-cloud-r-t {
+        top: 28.8vw;
+        right: 0.4%;
+
+        width: 9.1vw;
+        height: 5.2vw;
+    }
+    
+    .about-us__subscr-cloud-r-b {
+        top: 29.2vw;
+        right: 8%;
+
+        width: 12.47vw;
+        height: 7.17vw;
+    }
+    
+    .about-us__subscr-image_desc {
+        display: none;
+    }
+    
+    .about-us__subscr-baloon {
+        position: absolute;
+        top: 32.1vw;
+        left: -5%;
+        z-index: 2;
+    
+        width: 14.67vw;
+        height: 20.53vw;
+    }
+}
 /* END SUBSCRIBTION ABOUT-US PAGE */
