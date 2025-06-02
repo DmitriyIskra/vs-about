@@ -1232,22 +1232,11 @@ body {
 
 .about-us__thank-title {
     position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    
     font-family: 'Roboto';
     font-size: 26px;
     font-weight: 500;
-
-    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.about-us__thank-title_mobile {
-    display: none;
+    text-align: center;
 
     background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
     background-clip: text;
@@ -1275,11 +1264,146 @@ body {
 
 .about-us__subscr {
     display: flex;
+    width: 100%;
+    margin-top: 71px;
     justify-content: center;
 }
 
 .about-us__subscr-wr-content {
-    width: 1920px;
-    margin-top: 71px;
+    display: flex;
+    width: 58.95%;
+    gap: 8px;
 }
+
+.about-us__subscr-text {
+    padding-top: 96px;
+    flex-grow: 1;
+}
+
+.about-us__subscr-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us__subscr-title > span {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 500;
+
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us__subscr-title_mobile {
+    display: none;
+}
+
+.about-us__subscr-text > p {
+    width: 358px;
+    margin: 7px auto 0;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+
+    color: #7B7B7B;
+}
+
+.about-us__subscr-wr-form {
+    display: flex;
+    margin-top: 35px;
+    justify-content: end;
+}
+
+.about-us__subscr-form {
+    display: grid;
+    padding-left: 38px;
+    padding-right: 3px;
+    grid-template-columns: repeat(3, min-content) 1fr;
+    width: 551px; /*81.152%*/
+    height: 60px;
+    align-items: center;
+
+    border-radius: 50px;
+    border: 1px solid #828282;
+    background: rgba(255, 255, 255, 0.30);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+.about-us__subscr-form-input {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #828282;
+}
+
+.about-us__subscr-form-input[name="name"] {
+    width: 129px;
+}
+.about-us__subscr-form-input[name="email"] {
+    width: 149px;
+}
+
+.about-us__subscr-form-input::placeholder {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #828282;
+}
+
+.about-us__subscr-form-input:focus::placeholder {
+    visibility: hidden;
+}
+
+.about-us__subscr-form-line {
+    width: 1px;
+    height: 34px;
+    margin-left: 6px;
+    margin-right: 26px;
+
+    background: #828282;
+}
+
+.about-us__subscr-form-button {
+    width: 179px;
+    height: 50px;
+    justify-self: end;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    
+    color: #FFF;
+    border-radius: 25px;
+    background-color: #FF732D !important;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+}
+
+.about-us__subscr-form-button:hover {
+    background-color: #ed5f00 !important;
+}
+
+.about-us__subscr-image {
+    width: 436px; /*38.826%*/
+    height: 290px;
+    flex-shrink: 0;
+
+    border-radius: 8px;
+    box-shadow: 0px 0px 7.3px 5px rgba(0, 0, 0, 0.25);
+    background-image: url('../i/about-us-subscription.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 /* END SUBSCRIBTION ABOUT-US PAGE */
