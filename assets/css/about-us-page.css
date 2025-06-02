@@ -699,15 +699,12 @@ body {
 }
 
 .about-us__offer-list {
-    margin-top: 26px;
-}
-
-.about-us__offer-list {
     display: flex;
-    width: 77%;
+    margin-top: 26px;
+    width: 69%;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 97px;
+    column-gap: 60px;
     row-gap: 25px;
 }
 
@@ -1193,3 +1190,96 @@ body {
     }
 }
 /* END CONSOLIDATORS ABOUT-US PAGE */
+
+
+/* START SUBSCRIBTION ABOUT-US PAGE */
+.about-us__wr-subscr {
+    display: flex;
+    padding-top: 124px;
+    padding-bottom: 45px;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 50px;
+    background: rgba(255, 115, 45, 0.30);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.about-us__thank {
+    position: relative;
+
+    width: 701px;
+    height: 284px;
+    padding-top: 50px;
+
+    background-image: url('../i/about-us-thank-back.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.about-us__thank::before {
+    content: url('../i/about-us-thank-back.svg');
+
+    position: absolute;
+    top: -2%;
+    left: -1.5%;
+
+    width: 100%;
+
+
+}
+
+.about-us__thank-title {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Roboto';
+    font-size: 26px;
+    font-weight: 500;
+
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us__thank-title_mobile {
+    display: none;
+
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-us__thank-text {
+    position: relative;
+
+    display: flex;
+    margin-top: 17px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us__thank-text > span {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.6 !important;
+
+    color: #464646;
+}
+
+.about-us__subscr {
+    display: flex;
+    justify-content: center;
+}
+
+.about-us__subscr-wr-content {
+    width: 1920px;
+    margin-top: 71px;
+}
+/* END SUBSCRIBTION ABOUT-US PAGE */
