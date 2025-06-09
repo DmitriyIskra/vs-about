@@ -17,7 +17,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="page-content about-us__content">
+    <div class="about-us__content">
         <div class="about-us__banner">
             <div class="about-us__banner-content">
                 <div class="about-us__banner-logo">
@@ -162,11 +162,13 @@
 
                         <div class="about-us__subscr-wr-form">
                             <div class="about-us__subscr-image about-us__subscr-image_mobile"></div>
-                            <form class="about-us__subscr-form" method="post" action="/ajax/podpiska/">
+                            <!-- <form class="about-us__subscr-form" method="post" action="/ajax/podpiska/"> -->
+                            <form class="about-us__subscr-form" name="subscr-form" tabindex="-1" novalidate>
                                 <input class="about-us__subscr-form-input" type="text" name="name" placeholder="Ваше имя">
                                 <div class="about-us__subscr-form-line"></div>
                                 <input class="about-us__subscr-form-input" type="text" name="email" placeholder="E-mail">
-                                <button class="about-us__subscr-form-button" type="button">Получить скидку</button>
+                                <button class="about-us__subscr-form-button" type="submit">Получить скидку</button>
+                                <span class="about-us__form_send-message"></span>
                             </form>
                         </div>
 
@@ -209,7 +211,7 @@
                         <li class="about-us__insur-item">ИНН 7708596369</li>
                         <li class="about-us__insur-item">ОГРН 1067746489843</li>
                         <li class="about-us__insur-item">Система налогообложения - УСН, является плательщиком НДС.</li>
-                        <li class="about-us__insur-item"><a class="about-us__insur-link" href="#" title="Согласие на обработку персональных данных" target="_blank">Согласие на обработку персональных данных</a></li>
+                        <li class="about-us__insur-item"><a class="about-us__insur-link" href="assets/docs/soglasie-na-obrabotku-pd.docx" title="Согласие на обработку персональных данных" target="_blank">Согласие на обработку персональных данных</a></li>
                     </ul>
                 </div>
                 <div class="about-us__insur-electro">
