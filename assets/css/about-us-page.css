@@ -4,12 +4,6 @@
     padding-bottom: 64px;
 }
 
-@media(max-width: 1024px) {
-    .about-us__content {
-        padding-bottom: 16.53vw;
-    }
-}
-
 .about-us__content * {
     width: initial;
     margin: 0;
@@ -129,73 +123,6 @@
         color: #FFEA60;
     }
 }
-
-@media(max-width: 1537px) {
-    .about-us__banner {
-        width: 100%;
-        height: 520px;
-        padding-top: 76.8px;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__banner-logo {
-        width: 205px;
-        height: 108px;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__banner-text {
-        width: 762px;
-        margin-top: 38px;
-    
-        font-size: 32px;
-    
-        > span {
-            font-size: 32px;
-        }
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__banner {
-        display: block;
-        height: 80vw;
-        padding-top: 13.60vw;
-    
-        background-image: url('../i/about-us-banner_mobile.webp');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: left center;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__banner-content {
-        margin-left: 8.6%;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__banner-logo {
-        width: 30.93vw;
-        height: 16.27vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__banner-text {
-        width: 74.13vw;
-        margin-top: 4.53vw;
-    
-        font-size: 5.33vw;
-    
-        > span {
-            font-size: 5.33vw;
-        }
-    }
-}
 /* END БАННЕР ABOUT-US PAGE */
 
 
@@ -279,132 +206,6 @@
 
 .about-us__about-clients_text {
     width: 93%;
-}
-
-@media(max-width: 1756px) {
-    .about-us__about {
-        background-size: 
-            19% auto,
-            19% auto
-        ;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__about {          
-        border-radius: 0px 0px 40px 40px;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__about-title {
-        font-size: 18px;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__about-list {
-        width: 770px;
-        margin-top: 14px;
-        margin-left: 1.68%;
-        gap: 16px;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__about-text {   
-        font-size: 14px;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__about-clients {
-        width: 770px;
-        margin-top: 33px;
-    }
-
-    .about-us__about-clients > span {
-        font-size: 14px;
-    }
-}
-
-@media(max-width: 1537px) {
-    .about-us__about-clients_text {
-        width: 74.4%;
-    }
-}
-
-@media(max-width: 1260px) {
-    .about-us__about {          
-        background-size: 
-            17.5% auto,
-            17.5% auto
-        ;   
-    }
-}
-
-@media(max-width: 1198px) {
-    .about-us__about {
-        background-image: none;
-    }
-}
-/* -------------------- */
-@media(max-width: 1024px) {
-    .about-us__about {
-        padding-top: 7.20vw;
-        padding-bottom: 8.53vw;
-    
-        border-radius: 0px 0px 2.67vw 2.67vw;
-        background-image: 
-            url('../i/cloud-alone-white.svg'),
-            url('../i/cloud-alone-white.svg')
-        ;
-        background-repeat: 
-            no-repeat,
-            no-repeat
-        ;
-        background-size: 
-            9.5% auto,
-            6.7% auto
-        ;
-        background-position: 
-            right 16.8% bottom 2.2%,
-            right 12% bottom 5.5%
-        ;
-        box-shadow: 0px 0px 1.60vw 0px rgba(0, 0, 0, 0.25);
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__about-title {
-        font-size: 6.40vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__about-list {
-        width: 88.77%;
-        margin-top: 2.93vw;
-        margin-left: 0;
-        gap: 4vw;
-    }
-}
-@media(max-width: 1024px) {
-    .about-us__about-text {    
-        font-size: 3.73vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__about-item:last-child {
-        width: 87%;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__about-clients {
-        display: none;
-    }
 }
 /* END О НАС ABOUT-US PAGE */
 
@@ -530,155 +331,6 @@
     border-radius: 8px;
     box-shadow: 123px 104px 45px 0px rgba(0, 0, 0, 0.00), 79px 67px 41px 0px rgba(0, 0, 0, 0.01), 44px 38px 35px 0px rgba(0, 0, 0, 0.05), 20px 17px 26px 0px rgba(0, 0, 0, 0.09), 5px 4px 14px 0px rgba(0, 0, 0, 0.10);
 }
-
-@media(max-width: 1440px) {
-    .about-us__values {
-        padding-top: 65px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-content {
-        column-gap: 18px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-header {
-        width: 202px;
-        height: 29px;
-    
-        font-size: 17px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-header::before {    
-        width: 11px;
-        height: 11px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-header::after {
-        width: 11px;
-        height: 11px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-list {
-        margin-top: 8px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-item {
-        font-size: 17px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-item::before {
-        width: 4px;
-        height: 4px;
-        margin-right: 11px;
-        margin-bottom: 2px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-article {
-        width: 381px;
-        
-        font-size: 17px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .about-us__values-img {
-        width: 501px;
-        height: 257px;
-    
-        border-radius: 6px;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__values {
-        display: block;
-        padding-top: 11.73vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__values-content {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__values-header {
-        width: 77.05%;
-        height: 10.93vw;
-        font-size: 6.40vw;
-    }
-
-    .about-us__values-header::before {
-        width: 4.27vw;
-        height: 4.27vw;
-    }
-    .about-us__values-header::after {
-        width: 4.27vw;
-        height: 4.27vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__values-list {
-        width: 89.15%;
-        margin-top: 5.60vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__values-item {
-        font-size: 5.33vw;
-    }
-
-    .about-us__values-item::before {
-        height: 1.07vw;
-        width: 1.07vw;
-        margin-right: 3.73vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__values-article {
-        width: 89.15%;
-        margin-top: 3.73vw;
-
-        font-size: 4.80vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__values-img {
-        width: 100%;
-        height: 80vw;
-        margin-top: 8.80vw;
-
-        background-image: url('../i/about-us-values-mobile.webp');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        border-radius: 2.13vw;
-        box-shadow: 123px 104px 45px 0px rgba(0, 0, 0, 0.00), 79px 67px 41px 0px rgba(0, 0, 0, 0.01), 44px 38px 35px 0px rgba(0, 0, 0, 0.05), 20px 17px 26px 0px rgba(0, 0, 0, 0.09), 5px 4px 14px 0px rgba(0, 0, 0, 0.10);
-    }
-}
 /* END ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
 
 
@@ -773,98 +425,6 @@
 
     color: #5A5D62;
 }
-
-@media(max-width: 1024px) {
-    .about-us__offer {
-        padding-top: 11.73vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer-title {
-        font-size: 6.40vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer-list {
-        margin-top: 5.87vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer-list {
-        width: 100%;
-        column-gap: 3.5vw;
-        row-gap: 10.67vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer-item {
-        width: 30%;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer-circle {
-        width: 21.87vw;
-        height: 21.87vw;
-    
-        border: 0.80vw solid #E3E3E3;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer_bus {
-        background-size: 74% auto;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer_kremlin {
-        background-size: 70.5% auto;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer_map {
-        background-size: 87.5% auto;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer_flight {
-        background-size: 68.1% auto;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer_ship {
-        background-size: 61.5% auto;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer_mountain {
-        background-size: 68.5% auto;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer_beach {
-        background-size: 58.5% auto;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__offer-text {
-        margin-top: 1.87vw;
-    
-        font-size: 3.20vw;
-    } 
-}
-
 /* END ЦЕННОСТИ КОМПАНИИ ABOUT-US PAGE */
 
 /* START GRAY LINE ABOUT-US PAGE */
@@ -875,29 +435,6 @@
 
     border-radius: 8px;
     background: #D9D9D9;
-}
-
-@media(max-width: 1600px) {
-    .about-us__line {
-        width: 63%;
-    }
-}
-
-@media(max-width: 1366px) {
-    .about-us__line {
-        width: 75%;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__line {
-        width: 89.34%;
-        height: 2px;
-        margin: 7.73vw auto 0;
-    
-        border-radius: 8px;
-        background: #D9D9D9;
-    }
 }
 /* END GRAY LINE ABOUT-US PAGE */
 
@@ -939,32 +476,6 @@
 
     color: #464646;
 }
-
-@media(max-width: 1024px) {
-    .about-us__rut {
-        margin-top: 3.20vw;
-        column-gap: 0;
-        row-gap: 2.9vw;
-        flex-direction: column;
-        justify-content: initial;
-    }
-    
-    .about-us__rut-stamp {
-        width: 30.93vw;
-        height: 30.93vw;
-    }
-    
-    .about-us__rut-text {
-        width: 89.33vw;
-    }
-
-    .about-us__rut-text > p {
-        width: 100%;
-        margin-left: 11px;
-    
-        font-size: 3.73vw;
-    }
-}
 /* END STAMP ABOUT-US PAGE */
 
 
@@ -976,7 +487,7 @@
     padding-top: 13px;
     padding-left: 137px;
 
-    background-image: url('../i/about-us-big-map2.svg');
+    background-image: url('../i/about-us-big-map.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center bottom;
@@ -999,63 +510,6 @@
     font-weight: 400;
 
     color: #464646;
-}
-
-@media(max-width: 1366px) {
-    .about-us__big-map {
-        width: 963px;
-        height: 551px;
-        margin: 16px auto 0;
-        padding-top: 13px;
-        padding-left: 90px;
-    }
-}
-
-@media(max-width: 1366px) {
-    .about-us__big-map-title {
-        font-size: 18px;
-    }
-}
-
-@media(max-width: 1366px) {
-    .about-us__big-map-text {
-        width: 673px;
-
-        font-size: 18px;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__big-map {
-        width: 100%;
-        height: 100.63vw;
-        margin: 6.67vw auto 0;
-        padding-top: 0.5vw;
-        padding-left: 0;
-    
-        background-image: url('../i/about-us-big-map-mobile.svg');
-        background-repeat: no-repeat;
-        background-size: auto 94.2%;
-        background-position: left bottom;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__big-map-title {
-        width: 89.33vw;
-        margin: 0 auto;
-
-        font-size: 4.80vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__big-map-text {
-        width: 89.33vw;
-        margin: 2.27vw auto 0;
-    
-        font-size: 4.27vw;
-    }
 }
 /* END BIG MAP ABOUT-US PAGE */
 
@@ -1139,58 +593,6 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-}
-
-@media(max-width: 1366px) {
-    .about-us__cons-line-top {
-        gap: 69px;
-    }
-
-    .about-us__cons-line-bottom {
-        gap: 132px;
-    }
-}
-
-@media(max-width: 1024px) {
-    .about-us__cons {
-        margin: 8vw auto 0;
-    }
-    
-    .about-us__cons-line-top {
-        gap: 0;
-    }
-    
-    .about-us__cons-icon {
-        width: 21.33vw;
-        height: 21.33vw;
-    }
-    
-    .about-us__cons-line-top > .about-us__cons-icon {
-        margin-top: 0;
-
-        translate: 0 11vw;
-    }
-
-    .about-us__cons-icon-road {
-        margin-right: -2.3vw;
-    }
-    
-    .about-us__cons-title {
-        font-size: 5.33vw;
-    }
-    
-    .about-us__cons-text > span {
-        font-size: 4.27vw;
-    }
-
-    .about-us__cons-icon-sibir {
-        margin-left: -2.3vw;
-    }
-    
-    .about-us__cons-line-bottom {
-        margin-top: 3vw;
-        gap: 2.13vw;
-    }
 }
 /* END CONSOLIDATORS ABOUT-US PAGE */
 
@@ -1468,7 +870,338 @@
     background-size: contain;
     background-position: center;
 }
+/* END SUBSCRIBTION ABOUT-US PAGE */
 
+
+/* START INSURANCE ABOUT-US PAGE */
+.about-us__insur {
+    display: flex;
+    margin-top: 98px;
+    justify-content: center;
+    gap: 105px;
+}
+
+.about-us__insur-logo {
+    width: 300px;
+    height: 65px;
+}
+
+.about-us__insur-logo-img {
+    height: 100%;
+    width: 100%;
+    
+    object-fit: contain;
+    object-position: center;
+}
+
+.about-us__insur-about {
+    margin-top: 26px;
+}
+
+.about-us__insur-title {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #464646;
+}
+
+.about-us__insur-list {
+    margin-top: 3px;
+}
+
+.about-us__insur-item {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.79 !important;
+
+    color: #464646;
+}
+
+.about-us__insur-link {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    
+    color: #464646;
+    text-decoration: underline;
+
+    cursor: pointer !important;
+}
+
+.about-us__insur-docs {
+    margin-top: 2px;
+}
+
+.about-us__insur-electro {
+    margin-top: 14px;
+}
+/* END INSURANCE ABOUT-US PAGE */
+
+
+/* START 1756 */
+@media(max-width: 1756px) {
+    .about-us__about {
+        background-size: 
+            19% auto,
+            19% auto
+        ;
+    }
+}
+/* END 1756 */
+
+
+/* START 1600 */
+@media(max-width: 1600px) {
+    .about-us__line {
+        width: 63%;
+    }
+}
+/* END 1600 */
+
+
+/* START 1537 */
+@media(max-width: 1537px) {
+    .about-us__banner {
+        width: 100%;
+        height: 520px;
+        padding-top: 76.8px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__banner-logo {
+        width: 205px;
+        height: 108px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__banner-text {
+        width: 762px;
+        margin-top: 38px;
+    
+        font-size: 32px;
+    
+        > span {
+            font-size: 32px;
+        }
+    }
+}
+
+/* ---- */
+
+@media(max-width: 1537px) {
+    .about-us__about {          
+        border-radius: 0px 0px 40px 40px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-list {
+        width: 770px;
+        margin-top: 14px;
+        margin-left: 1.68%;
+        gap: 16px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-text {   
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-clients {
+        width: 770px;
+        margin-top: 33px;
+    }
+
+    .about-us__about-clients > span {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 1537px) {
+    .about-us__about-clients_text {
+        width: 74.4%;
+    }
+}
+/* END 1537 */
+
+
+/* START 1440 */
+@media(max-width: 1440px) {
+    .about-us__values {
+        padding-top: 65px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-content {
+        column-gap: 18px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-header {
+        width: 202px;
+        height: 29px;
+    
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-header::before {    
+        width: 11px;
+        height: 11px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-header::after {
+        width: 11px;
+        height: 11px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-list {
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-item {
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-item::before {
+        width: 4px;
+        height: 4px;
+        margin-right: 11px;
+        margin-bottom: 2px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-article {
+        width: 381px;
+        
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 1440px) {
+    .about-us__values-img {
+        width: 501px;
+        height: 257px;
+    
+        border-radius: 6px;
+    }
+}
+/* END 1440 */
+
+
+/* START 1366 */
+@media(max-width: 1366px) {
+    .about-us__line {
+        width: 75%;
+    }
+}
+
+/* ---- */
+
+@media(max-width: 1366px) {
+    .about-us__big-map {
+        width: 963px;
+        height: 551px;
+        margin: 16px auto 0;
+        padding-top: 13px;
+        padding-left: 90px;
+    }
+}
+
+@media(max-width: 1366px) {
+    .about-us__big-map-title {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 1366px) {
+    .about-us__big-map-text {
+        width: 673px;
+
+        font-size: 18px;
+    }
+}
+
+/* ---- */
+
+@media(max-width: 1366px) {
+    .about-us__cons-line-top {
+        gap: 69px;
+    }
+
+    .about-us__cons-line-bottom {
+        gap: 132px;
+    }
+}
+
+/* ---- */
+
+@media(max-width: 1366px) {
+    .about-us__insur {
+        gap: 75px;
+    }
+}
+
+@media(max-width: 1366px) {
+    .about-us__insur-title {
+        font-size: 16px;
+    }
+}
+@media(max-width: 1366px) {
+    .about-us__insur-item {
+        font-size: 14px;
+    }
+}
+@media(max-width: 1366px) {
+    .about-us__insur-link {
+        font-size: 16px;
+    }
+}
+/* END 1366 */
+
+
+/* START 1260 */
+@media(max-width: 1260px) {
+    .about-us__about {          
+        background-size: 
+            17.5% auto,
+            17.5% auto
+        ;   
+    }
+}
+/* END 1266 */
+
+
+/* START 1198 */
+
+@media(max-width: 1198px) {
+    .about-us__about {
+        background-image: none;
+    }
+}
+/* END 1198 */
+
+
+/* START 1185 */
 @media(max-width: 1185px) {
     .about-us__subscr-cloud-l-t {
         left: -6.7%;
@@ -1488,6 +1221,429 @@
         width: 79px;
     }
 }
+/* END 1185 */
+
+
+/* START 1024 */
+@media(max-width: 1024px) {
+    .about-us__content {
+        padding-bottom: 16.53vw;
+    }
+}
+
+/* ---- */
+
+@media(max-width: 1024px) {
+    .about-us__banner {
+        display: block;
+        height: 80vw;
+        padding-top: 13.60vw;
+    
+        background-image: url('../i/about-us-banner_mobile.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__banner-content {
+        margin-left: 8.6%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__banner-logo {
+        width: 30.93vw;
+        height: 16.27vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__banner-text {
+        width: 74.13vw;
+        margin-top: 4.53vw;
+    
+        font-size: 5.33vw;
+    
+        > span {
+            font-size: 5.33vw;
+        }
+    }
+}
+
+/* ----- */
+
+@media(max-width: 1024px) {
+    .about-us__about {
+        padding-top: 7.20vw;
+        padding-bottom: 8.53vw;
+    
+        border-radius: 0px 0px 2.67vw 2.67vw;
+        background-image: 
+            url('../i/cloud-alone-white.svg'),
+            url('../i/cloud-alone-white.svg')
+        ;
+        background-repeat: 
+            no-repeat,
+            no-repeat
+        ;
+        background-size: 
+            9.5% auto,
+            6.7% auto
+        ;
+        background-position: 
+            right 16.8% bottom 2.2%,
+            right 12% bottom 5.5%
+        ;
+        box-shadow: 0px 0px 1.60vw 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__about-title {
+        font-size: 6.40vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__about-list {
+        width: 88.77%;
+        margin-top: 2.93vw;
+        margin-left: 0;
+        gap: 4vw;
+    }
+}
+@media(max-width: 1024px) {
+    .about-us__about-text {    
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__about-item:last-child {
+        width: 87%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__about-clients {
+        display: none;
+    }
+}
+
+/* ----- */
+
+@media(max-width: 1024px) {
+    .about-us__values {
+        display: block;
+        padding-top: 11.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-content {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-header {
+        width: 77.05%;
+        height: 10.93vw;
+        font-size: 6.40vw;
+    }
+
+    .about-us__values-header::before {
+        width: 4.27vw;
+        height: 4.27vw;
+    }
+    .about-us__values-header::after {
+        width: 4.27vw;
+        height: 4.27vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-list {
+        width: 89.15%;
+        margin-top: 5.60vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-item {
+        font-size: 5.33vw;
+    }
+
+    .about-us__values-item::before {
+        height: 1.07vw;
+        width: 1.07vw;
+        margin-right: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-article {
+        width: 89.15%;
+        margin-top: 3.73vw;
+
+        font-size: 4.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__values-img {
+        width: 100%;
+        height: 80vw;
+        margin-top: 8.80vw;
+
+        background-image: url('../i/about-us-values-mobile.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 2.13vw;
+        box-shadow: 123px 104px 45px 0px rgba(0, 0, 0, 0.00), 79px 67px 41px 0px rgba(0, 0, 0, 0.01), 44px 38px 35px 0px rgba(0, 0, 0, 0.05), 20px 17px 26px 0px rgba(0, 0, 0, 0.09), 5px 4px 14px 0px rgba(0, 0, 0, 0.10);
+    }
+}
+
+/* ----- */
+
+@media(max-width: 1024px) {
+    .about-us__offer {
+        padding-top: 11.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-title {
+        font-size: 6.40vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-list {
+        margin-top: 5.87vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-list {
+        width: 100%;
+        column-gap: 3.5vw;
+        row-gap: 10.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-item {
+        width: 30%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-circle {
+        width: 21.87vw;
+        height: 21.87vw;
+    
+        border: 0.80vw solid #E3E3E3;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_bus {
+        background-size: 74% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_kremlin {
+        background-size: 70.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_map {
+        background-size: 87.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_flight {
+        background-size: 68.1% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_ship {
+        background-size: 61.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_mountain {
+        background-size: 68.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer_beach {
+        background-size: 58.5% auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__offer-text {
+        margin-top: 1.87vw;
+    
+        font-size: 3.20vw;
+    } 
+}
+
+/* ----- */
+
+@media(max-width: 1024px) {
+    .about-us__line {
+        width: 89.34%;
+        height: 2px;
+        margin: 7.73vw auto 0;
+    
+        border-radius: 8px;
+        background: #D9D9D9;
+    }
+}
+
+/* ----- */
+
+@media(max-width: 1024px) {
+    .about-us__rut {
+        margin-top: 3.20vw;
+        column-gap: 0;
+        row-gap: 2.9vw;
+        flex-direction: column;
+        justify-content: initial;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__rut-stamp {
+        width: 30.93vw;
+        height: 30.93vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__rut-text {
+        width: 89.33vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__rut-text > p {
+        width: 100%;
+        margin-left: 11px;
+    
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__big-map {
+        width: 100%;
+        height: 100.63vw;
+        margin: 6.67vw auto 0;
+        padding-top: 0.5vw;
+        padding-left: 0;
+    
+        background-image: url('../i/about-us-big-map-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: auto 94.2%;
+        background-position: left bottom;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__big-map-title {
+        width: 89.33vw;
+        margin: 0 auto;
+
+        font-size: 4.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__big-map-text {
+        width: 89.33vw;
+        margin: 2.27vw auto 0;
+    
+        font-size: 4.27vw;
+    }
+}
+
+/* ----- */
+
+@media(max-width: 1024px) {
+    .about-us__cons {
+        margin: 8vw auto 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-line-top {
+        gap: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-icon {
+        width: 21.33vw;
+        height: 21.33vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-line-top > .about-us__cons-icon {
+        margin-top: 0;
+
+        translate: 0 11vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-icon-road {
+        margin-right: -2.3vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-title {
+        font-size: 5.33vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-text > span {
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-icon-sibir {
+        margin-left: -2.3vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__cons-line-bottom {
+        margin-top: 3vw;
+        gap: 2.13vw;
+    }
+}
+
+/* ----- */
 
 @media(max-width: 1024px) {
     .about-us__wr-subscr {
@@ -1766,95 +1922,8 @@
         height: 20.53vw;
     }
 }
-/* END SUBSCRIBTION ABOUT-US PAGE */
 
-
-/* START INSURANCE ABOUT-US PAGE */
-.about-us__insur {
-    display: flex;
-    margin-top: 98px;
-    justify-content: center;
-    gap: 105px;
-}
-
-.about-us__insur-logo {
-    width: 300px;
-    height: 65px;
-}
-
-.about-us__insur-logo-img {
-    height: 100%;
-    width: 100%;
-    
-    object-fit: contain;
-    object-position: center;
-}
-
-.about-us__insur-about {
-    margin-top: 26px;
-}
-
-.about-us__insur-title {
-    font-family: 'Roboto';
-    font-size: 20px;
-    font-weight: 500;
-
-    color: #464646;
-}
-
-.about-us__insur-list {
-    margin-top: 3px;
-}
-
-.about-us__insur-item {
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.79 !important;
-
-    color: #464646;
-}
-
-.about-us__insur-link {
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-weight: 400;
-    
-    color: #464646;
-    text-decoration: underline;
-
-    cursor: pointer !important;
-}
-
-.about-us__insur-docs {
-    margin-top: 2px;
-}
-
-.about-us__insur-electro {
-    margin-top: 14px;
-}
-
-@media(max-width: 1366px) {
-    .about-us__insur {
-        gap: 75px;
-    }
-}
-
-@media(max-width: 1366px) {
-    .about-us__insur-title {
-        font-size: 16px;
-    }
-}
-@media(max-width: 1366px) {
-    .about-us__insur-item {
-        font-size: 14px;
-    }
-}
-@media(max-width: 1366px) {
-    .about-us__insur-link {
-        font-size: 16px;
-    }
-}
+/* ------ */
 
 @media(max-width: 1024px) {
     .about-us__insur {
@@ -1865,16 +1934,20 @@
         align-items: center;
         gap: 0;
     }
-    
+}
+
+@media(max-width: 1024px) {
     .about-us__insur-side {
         width: 89.15%;
     }
-
+}
+@media(max-width: 1024px) {
     .about-us__insur-logo {
         width: 52vw;
         height: 11.3vw;
     }
-    
+}
+@media(max-width: 1024px) {
     .about-us__insur-logo-img {
         height: 100%;
         width: 100%;
@@ -1882,38 +1955,49 @@
         object-fit: contain;
         object-position: center;
     }
-    
+}
+@media(max-width: 1024px) {
     .about-us__insur-about {
         margin-top: 2.9vw;
     }
-    
+}
+@media(max-width: 1024px) {
     .about-us__insur-title {
         font-size: 4.27vw;
     }
-    
+}
+@media(max-width: 1024px) {
     .about-us__insur-list {
         margin-top: 0;
     }
-    
+}
+
+@media(max-width: 1024px) {
     .about-us__insur-item {
         font-size: 4.27vw;
         line-height: 1.29 !important;
     
         color: #464646;
     }
-    
+}
+
+@media(max-width: 1024px) {
     .about-us__insur-link {
         font-size: 4.27vw;
             
         cursor: pointer !important;
     }
-    
+}
+
+@media(max-width: 1024px) {
     .about-us__insur-docs {
         margin-top: 2.8vw;
     }
-    
+}
+
+@media(max-width: 1024px) {
     .about-us__insur-electro {
         margin-top: 2.8vw;
     }
 }
-/* END INSURANCE ABOUT-US PAGE */
+/* END 1024 */
