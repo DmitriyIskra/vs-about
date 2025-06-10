@@ -3,8 +3,19 @@ export default class RedrawAboutUs {
         this.el = el;
         this.form = this.el.querySelector('form');
         this.formMessage = this.form.querySelector('.about-us__form_send-message');
+
+        // таймауе id для setFormMessage
+        this.timeOutIdSM = null;
+        // таймауе id для removeInvalidForm
+        this.timeOutIdRI = null;
+        // маркер, проверялись ли поля формы на валидность при вводе (removeInvalidForm)
+        this.formCheckedInvalid = false;
     }
 
+    /**
+     * @description устанавливает невалидность на фоорму 
+     * @param inputs массив невалидных полей формы 
+     * */ 
     setInvalid(inputs) {
         inputs.forEach(item => {
             // заполненное поле может сюда прилететь только если это email
@@ -22,24 +33,89 @@ export default class RedrawAboutUs {
          * он либо не заполнен, либо это email и он некорректно заполнен, перем сообщение из 
          * поля
          * */ 
-        if(inputs.length === 2) this.setMessage('Все поля обязательны для заполнения');
-        if(inputs.length === 1) this.setMessage(inputs[0].validationMessage);
+        if(inputs.length === 2) this.setFormMessage('Все поля обязательны для заполнения');
+        if(inputs.length === 1) this.setFormMessage(inputs[0].validationMessage);
         
         this.form.setAttribute('invalid', '')
     }
+
+    // снимает невалидность с формы (убирает атрибут invalid)
+    removeInvalidForm(input) {
+        if (this.form.hasAttribute('invalid')) {
+            if (this.timeOutIdRI) {
+                clearTimeout(this.timeOutIdRI);
+                this.timeOutIdRI = null;
+            }
     
-    removeInvalid() {
-        console.log(this.form[item.name].validity.customError)
-        console.log(this.form[item.name].validationMessage)
+            // проверка происходит только через тротлинг
+            if(!this.formCheckedInvalid) {
+                console.log('check');
+                let checkOverInput = false;
+        
+                input.setCustomValidity('');
+    
+                // проверяем есть ли во втором поле сообщение об ошибке
+                if(input.name === 'name') checkOverInput = this.form.email.validity.customError;
+                if(input.name === 'email') checkOverInput = this.form.name.validity.customError;
+        
+                // когда во втором поле сообщение об ошибке не найдено
+                if(!checkOverInput) {
+                    this.form.removeAttribute('invalid')
+                    this.removeFormMessage();
+                };
+    
+                this.formCheckedInvalid = true;
+            }
+    
+            this.timeOutIdRI = setTimeout(() => {
+                this.formCheckedInvalid = false;
+                this.timeOutIdRI = null;
+            }, 500);
+        }
     }
 
-    setMessage(message) {
+    /**
+     * @description активирует и показывает переданное сообщение формы
+     * @description скрывает через 5 секунд
+     * 
+     * @param {*} message сообщение которое нужно показать
+     * @param {boolean} [isError=false] при отправке формы, если передано true значит нужно поменять
+     *  цвет вручную без класса css
+     * */ 
+    // 
+    setFormMessage(message, isError = false) {
+        if(this.timeOutIdSM) {
+            clearTimeout(this.timeOutIdSM);
+            this.timeOutIdSM = null;
+        }
+        
         this.formMessage.textContent = message;
         this.formMessage.classList.add('about-us__form_send-message_active');
 
-        setTimeout(() => {
+        if(isError) this.formMessage.style.color = "#f08686";
+
+        this.timeOutIdSM = setTimeout(() => {
             this.formMessage.textContent = '';
-            this.formMessage.classList.remove('about-us__form_send-message_active')
+            this.formMessage.classList.remove('about-us__form_send-message_active');
+            this.timeOutIdSM = null;
+
+            if (this.formMessage.hasAttribute('style')) {
+                this.formMessage.removeAttribute('style');
+                isError = false;
+            }
         }, 5000);
+    }
+
+    // Закрывает сообщение формы, если оно было открыто
+    removeFormMessage() {
+        if(this.timeOutIdSM) {
+            clearTimeout(this.timeOutIdSM);
+            this.timeOutIdSM = null;
+
+            this.formMessage.textContent = '';
+            this.formMessage.classList.remove('about-us__form_send-message_active');
+        }
+
+
     }
 }

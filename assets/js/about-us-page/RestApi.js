@@ -5,13 +5,14 @@ export default class Rest {
     }
 
     async create(data) {
+        return true
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : '',
+                    'Content-Type' : 'multipart/form-data',
                 },
-                body: JSON.stringify(data),
+                body: data,
             });
             const data = response.json();
             return data;

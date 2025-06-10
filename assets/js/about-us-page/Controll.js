@@ -5,7 +5,7 @@ export default class ControllAboutUs {
         
         this.click = this.click.bind(this);
         this.submit = this.submit.bind(this);
-        this.focus = this.focus.bind(this);
+        this.input = this.input.bind(this);
     }
 
     init() {
@@ -15,8 +15,8 @@ export default class ControllAboutUs {
     registerEvents() {
         this.redraw.el.addEventListener('click', this.click);
         this.redraw.form.addEventListener('submit', this.submit);
-        this.redraw.form.name.addEventListener('focus', this.focus);
-        this.redraw.form.email.addEventListener('focus', this.focus);
+        this.redraw.form.name.addEventListener('input', this.input);
+        this.redraw.form.email.addEventListener('input', this.input);
     }
 
     click(e) {
@@ -45,9 +45,16 @@ export default class ControllAboutUs {
             this.redraw.setInvalid([this.redraw.form.email]);
             return;
         }
+
+        const formData = new FormData(this.redraw.form);
+
+        const resultSendData = await this.rest.create(formData);
+
+        if(resultSendData) this.redraw.setFormMessage('Подписка успешно оформлена');
+        if(!resultSendData) this.redraw.setFormMessage('Что-то пошло не так, попробуйте еще раз', true);
     }
 
-    focus(e) {
-        
+    input(e) {
+        this.redraw.removeInvalidForm(e.target);
     }
 }
