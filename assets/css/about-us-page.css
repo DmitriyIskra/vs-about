@@ -72,6 +72,10 @@
     color: initial;
 }
 
+input:focus, textarea:focus {
+    outline: 0;
+}
+
 /* ==========*******************************========= */
 
 /* START БАННЕР ABOUT-US PAGE */
@@ -792,6 +796,7 @@
     font-family: 'Roboto';
     font-size: 14px;
     font-weight: 400;
+    font-style: normal;
 
     color: #828282;
 }
