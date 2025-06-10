@@ -1,3 +1,4 @@
+
 .about-us__content {
     width: 100%;
     min-width: 100%;
@@ -673,7 +674,7 @@ input:focus, textarea:focus {
     gap: 8px;
 }
 
-.subscr-i__wr-form-text {
+.about-us__subscr-wr-form-text {
     position: relative;
     z-index: 1;
 
@@ -688,20 +689,20 @@ input:focus, textarea:focus {
     background-position: right 22px top 66px;
 }
 
-.subscr-i__wr-text {
+.about-us__subscr-wr-text {
     display: flex;
     width: 551px; /*81.152%*/
     flex-direction: column;
     align-items: center;
 }
 
-.subscr-i__title {
+.about-us__subscr-title {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.subscr-i__title > span {
+.about-us__subscr-title > span {
     font-family: 'Roboto';
     font-size: 24px;
     font-weight: 500;
@@ -711,11 +712,11 @@ input:focus, textarea:focus {
     -webkit-text-fill-color: transparent;
 }
 
-.subscr-i__title_mobile {
+.about-us__subscr-title_mobile {
     display: none;
 }
 
-.subscr-i__text {
+.about-us__subscr-text {
     width: 358px;
     margin: 7px auto 0;
 
@@ -727,23 +728,23 @@ input:focus, textarea:focus {
     color: #7B7B7B;
 }
 
-.subscr-i__wr-form {
+.about-us__subscr-wr-form {
     display: flex;
     margin-top: 35px;
     justify-content: end;
 }
 
-.subscr-i__image {
+.about-us__subscr-image {
     background: no-repeat url('../i/subscription-form-i-image.webp');
     background-size: cover;
     background-position: center;
 }
 
-.subscr-i__image_mobile {
+.about-us__subscr-image_mobile {
     display: none;
 }
 
-.subscr-i__form {
+.about-us__subscr-form {
     position: relative;
 
     display: grid;
@@ -761,12 +762,12 @@ input:focus, textarea:focus {
     backdrop-filter: blur(4px);
 }
 
-.subscr-i__form[invalid] {
+.about-us__subscr-form[invalid] {
     border: 1px solid #f08686;
     box-shadow: 0px 0px 5px 1px rgba(240, 134, 134, 0.25);
 }
 
-.subscr-i__input {
+.about-us__subscr-form-input {
     font-family: 'Roboto';
     font-size: 14px;
     font-weight: 400;
@@ -775,28 +776,28 @@ input:focus, textarea:focus {
     background-color: transparent;
 }
 
-.subscr-i__input:-webkit-autofill,
-.subscr-i__input:-moz-autofill {
+.about-us__subscr-form-input:-webkit-autofill,
+.about-us__subscr-form-input:-moz-autofill {
     color: #828282;
     background-color: transparent;
 }
 
-.subscr-i__input::selection {
+.about-us__subscr-form-input::selection {
     background-color: #fff;
 }
 
-.subscr-i__input::-moz-selection {
+.about-us__subscr-form-input::-moz-selection {
     background-color: #fff;
 }
 
-.subscr-i__input[name="name"] {
+.about-us__subscr-form-input[name="name"] {
     width: 129px;
 }
-.subscr-i__input[name="email"] {
+.about-us__subscr-form-input[name="email"] {
     width: 149px;
 }
 
-.subscr-i__input::placeholder {
+.about-us__subscr-form-input::placeholder {
     font-family: 'Roboto';
     font-size: 14px;
     font-weight: 400;
@@ -805,11 +806,11 @@ input:focus, textarea:focus {
     color: #828282;
 }
 
-.subscr-i__input:focus::placeholder {
+.about-us__subscr-form-input:focus::placeholder {
     visibility: hidden;
 }
 
-.subscr-i__form-line {
+.about-us__subscr-form-line {
     width: 1px;
     height: 34px;
     margin-left: 6px;
@@ -818,7 +819,7 @@ input:focus, textarea:focus {
     background: #828282;
 }
 
-.subscr-i__button {
+.about-us__subscr-form-button {
     width: 179px;
     height: 50px;
     justify-self: end;
@@ -836,11 +837,11 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 
-.subscr-i__button:hover {
+.about-us__subscr-form-button:hover {
     background-color: #ed5f00 !important;
 }
 
-.subscr-i__send-message {
+.subscription-form-i__send-message {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -857,15 +858,15 @@ input:focus, textarea:focus {
     transform: translate(-50%, 116%);
 }
 
-.subscr-i__send-message_active {
+.subscription-form-i__send-message_active {
     display: block;
 }
 
-.subscr-i__form[invalid] .subscr-i__send-message {
+.about-us__subscr-form[invalid] .subscription-form-i__send-message {
     color: #f08686;
 }
 
-.subscr-i__cloud {
+.about-us__subscr-cloud {
     position: absolute;
 
     background: no-repeat url('../i/cloud-alone-white.svg');
@@ -873,7 +874,7 @@ input:focus, textarea:focus {
     background-position:  center;
 }
 
-.subscr-i__cloud-l-t {
+.about-us__subscr-cloud-l-t {
     top: 20px;
     left: -11.7%;
 
@@ -881,7 +882,7 @@ input:focus, textarea:focus {
     height: 43px;
 }
 
-.subscr-i__cloud-l-b {
+.about-us__subscr-cloud-l-b {
     top: 80px;
     left: 2%;
 
@@ -889,7 +890,7 @@ input:focus, textarea:focus {
     height: 27px;
 }
 
-.subscr-i__cloud-r-t {
+.about-us__subscr-cloud-r-t {
     top: -9px;
     right: -3%;
 
@@ -897,7 +898,7 @@ input:focus, textarea:focus {
     height: 32px;
 }
 
-.subscr-i__cloud-r-b {
+.about-us__subscr-cloud-r-b {
     top: -3px;
     right: 4.6%;
 
@@ -905,7 +906,7 @@ input:focus, textarea:focus {
     height: 41px;
 }
 
-.subscr-i__image_desc {
+.about-us__subscr-image_desc {
     width: 436px;
     height: 290px;
     flex-shrink: 0;
@@ -914,7 +915,7 @@ input:focus, textarea:focus {
     box-shadow: 0px 0px 7.3px 5px rgba(0, 0, 0, 0.25);
 }
 
-.subscr-i__baloon {
+.about-us__subscr-baloon {
     position: absolute;
     bottom: -16px;
     right: -6.6%;
@@ -1260,19 +1261,19 @@ input:focus, textarea:focus {
 
 /* START 1185 */
 @media(max-width: 1185px) {
-    .subscr-i__cloud-l-t {
+    .about-us__subscr-cloud-l-t {
         left: -6.7%;
     }
 }
 
 @media(max-width: 1185px) {
-    .subscr-i__cloud-l-b {
+    .about-us__subscr-cloud-l-b {
         left: 6%;   
     }
 }
 
 @media(max-width: 1185px) {
-    .subscr-i__baloon {
+    .about-us__subscr-baloon {
         right: -4.2%;
 
         width: 79px;
@@ -1283,7 +1284,7 @@ input:focus, textarea:focus {
 
 /* START 1102 */
 @media(max-width: 1102px) {
-    .subscr-i__baloon {
+    .about-us__subscr-baloon {
         right: -1.2%;
         bottom: -45px;
 
@@ -1752,7 +1753,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__title_mobile {
+    .about-us__subscr-title_mobile {
         display: block;
     }
 }
@@ -1782,7 +1783,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__wr-form-text {
+    .about-us__subscr-wr-form-text {
         display: block;
         width: 100%;
         padding-top: 0;
@@ -1792,14 +1793,14 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__wr-text {
+    .about-us__subscr-wr-text {
         display: block;
         width: 100%;
     }
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__title {
+    .about-us__subscr-title {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1807,19 +1808,19 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__title > span {
+    .about-us__subscr-title > span {
         font-size: 6.40vw;
     }
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__title_mobile {
+    .about-us__subscr-title_mobile {
         display: block;
     }
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__text {
+    .about-us__subscr-text {
         width: 100%;
         margin: 0.6vw auto 0;
     
@@ -1828,7 +1829,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__wr-form {
+    .about-us__subscr-wr-form {
         display: block;
         width: 100%;
         margin-top: 12.5vw;
@@ -1836,7 +1837,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__image_mobile {
+    .about-us__subscr-image_mobile {
         display: block;
         width: 100%;
         height: 59.20vw;
@@ -1847,7 +1848,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__form {
+    .about-us__subscr-form {
         display: flex;
         width: 100%;
         height: auto;
@@ -1866,7 +1867,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__input {
+    .about-us__subscr-form-input {
         padding-top: 5.33vw;
         padding-bottom: 3.73vw;
         padding-left: 4vw;
@@ -1879,14 +1880,14 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__input[name="name"],
-    .subscr-i__input[name="email"] {
+    .about-us__subscr-form-input[name="name"],
+    .about-us__subscr-form-input[name="email"] {
         width: 90.73%;
     }
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__input::placeholder {
+    .about-us__subscr-form-input::placeholder {
         font-size: 3.73vw;
     
         color: #303030;
@@ -1894,13 +1895,19 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__form-line {
+    .about-us__subscr-form-input:focus::placeholder {
+        visibility: hidden;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__subscr-form-line {
         display: none;
     }
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__button {
+    .about-us__subscr-form-button {
         width: 46.40vw;
         height: 10.67vw;
         margin-top: 5.07vw;
@@ -1910,14 +1917,10 @@ input:focus, textarea:focus {
         border-radius: 6.67vw;
         box-shadow: 0px 1.07vw 1.07vw 0px rgba(0, 0, 0, 0.25), 0px 0px 1.87vw 0.53vw rgba(0, 0, 0, 0.25);
     }
-
-    .subscr-i__button:hover {
-        background-color: #ed5f00 !important;
-    }
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__send-message {
+    .subscription-form-i__send-message {
         font-size: 3.5vw;
 
         transform: translate(-50%, 126%);
@@ -1925,7 +1928,13 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__cloud {
+    .about-us__subscr-form-button:hover {
+        background-color: #ed5f00 !important;
+    }
+}
+
+@media(max-width: 1024px) {
+    .about-us__subscr-cloud {
         position: absolute;
     
         background: no-repeat url('../i/cloud-alone-white.svg');
@@ -1935,7 +1944,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__cloud-l-t {
+    .about-us__subscr-cloud-l-t {
         top: 7.3vw;
         left: 9%;
     
@@ -1945,7 +1954,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__cloud-l-b {
+    .about-us__subscr-cloud-l-b {
         top: 8.3vw;
         left: -5%;
     
@@ -1955,7 +1964,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__cloud-r-t {
+    .about-us__subscr-cloud-r-t {
         top: 28.8vw;
         right: 0.4%;
     
@@ -1965,7 +1974,7 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__cloud-r-b {
+    .about-us__subscr-cloud-r-b {
         top: 29.2vw;
         right: 8%;
     
@@ -1975,13 +1984,13 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__image_desc {
+    .about-us__subscr-image_desc {
         display: none;
     }
 }
 
 @media(max-width: 1024px) {
-    .subscr-i__baloon {
+    .about-us__subscr-baloon {
         position: absolute;
         top: 32.1vw;
         left: -5%;

@@ -1,0 +1,79 @@
+.about-us__content {
+    width: 100%;
+    min-width: 100%;
+    padding-bottom: 64px;
+}
+
+.about-us__content * {
+    width: initial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    
+    font-family: initial;
+    font-size: initial;
+    font-weight: initial;
+    text-align: start;
+    line-height: initial !important;
+    white-space: initial;
+    
+    list-style-type: none;
+    border: initial;
+    border-radius: initial;
+    outline: initial;
+    color: initial;
+    background-color: initial;
+    box-shadow: initial;
+    
+    cursor: initial;
+    appearance: auto;
+}
+
+.page h2 {
+    margin: 0;
+    
+    font-size: initial;
+    font-weight: initial;
+}
+
+.about-us__content button {
+    display: inline-block;
+}
+
+.about-us__content button:hover {
+    background-color: initial;
+}
+
+.page .about-us__content ul {
+    padding: 0;
+}
+
+.page .about-us__content ul li {
+    position: initial;
+    
+    padding: 0;
+}
+
+.page .about-us__content ul li::before {
+    content: "";
+    
+    position: initial;
+    top: auto;
+    
+    display: inline;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    
+    font-weight: initial;
+    font-size: initial;
+    line-height: initial;
+
+    color: initial;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+}
+
+/* ==========*******************************========= */

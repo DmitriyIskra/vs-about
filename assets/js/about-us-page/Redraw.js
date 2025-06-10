@@ -1,8 +1,7 @@
 export default class RedrawAboutUs {
-    constructor(el) {
-        this.el = el;
-        this.form = this.el.querySelector('form');
-        this.formMessage = this.form.querySelector('.about-us__form_send-message');
+    constructor(form) {
+        this.form = form;
+        this.formMessage = this.form.querySelector('.subscr-i__send-message');
 
         // таймауе id для setFormMessage
         this.timeOutIdSM = null;
@@ -90,13 +89,13 @@ export default class RedrawAboutUs {
         }
         
         this.formMessage.textContent = message;
-        this.formMessage.classList.add('about-us__form_send-message_active');
+        this.formMessage.classList.add('subscr-i__send-message_active');
 
         if(isError) this.formMessage.style.color = "#f08686";
 
         this.timeOutIdSM = setTimeout(() => {
             this.formMessage.textContent = '';
-            this.formMessage.classList.remove('about-us__form_send-message_active');
+            this.formMessage.classList.remove('subscr-i__send-message_active');
             this.timeOutIdSM = null;
 
             if (this.formMessage.hasAttribute('style')) {
@@ -113,9 +112,7 @@ export default class RedrawAboutUs {
             this.timeOutIdSM = null;
 
             this.formMessage.textContent = '';
-            this.formMessage.classList.remove('about-us__form_send-message_active');
+            this.formMessage.classList.remove('subscr-i__send-message_active');
         }
-
-
     }
 }

@@ -13,7 +13,6 @@ export default class ControllAboutUs {
     }
 
     registerEvents() {
-        this.redraw.el.addEventListener('click', this.click);
         this.redraw.form.addEventListener('submit', this.submit);
         this.redraw.form.name.addEventListener('input', this.input);
         this.redraw.form.email.addEventListener('input', this.input);
@@ -50,7 +49,10 @@ export default class ControllAboutUs {
 
         const resultSendData = await this.rest.create(formData);
 
-        if(resultSendData) this.redraw.setFormMessage('Подписка успешно оформлена');
+        if(resultSendData) {
+            this.redraw.setFormMessage('Подписка успешно оформлена');
+            this.redraw.form.reset();
+        };
         if(!resultSendData) this.redraw.setFormMessage('Что-то пошло не так, попробуйте еще раз', true);
     }
 
