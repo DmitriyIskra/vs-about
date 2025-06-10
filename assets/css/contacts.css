@@ -77,3 +77,261 @@ input:focus, textarea:focus {
 }
 
 /* ==========*******************************========= */
+
+.contacts {
+    display: flex;
+    padding-top: 78px;
+    padding-right: 35px;
+    padding-bottom: 139px;
+    padding-left: 35px;
+    justify-content: center;
+}
+
+.contacts__wrapper {
+    width: 1210px;
+}
+
+/* MAIN TITLE */
+.contacts__title {
+    font-family: 'Roboto';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+
+    color: #F60;
+}
+/* END MAIN TITLE */
+
+/* START CONTACTS DATA TOP */
+.contacts__list_moskow {
+    margin-top: 21px;
+}
+
+.contacts__list {
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr min-content 1fr;
+}
+
+.contacts__item {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.contacts__list-title {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #F60;
+}
+
+.contacts__data-item-address {
+    display: flex;
+}
+
+.contacts__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.contacts__icon-geo {
+    background: no-repeat url('../i/icon-geo-point.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.contacts__address {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts__address > span {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #646464;
+}
+
+.contacts__data-phones_moskow {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    row-gap: 9px;
+    margin-top: 47px;
+}
+
+.contacts__icon-phone {
+    background: no-repeat url('../i/icon-phone.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.contacts__phone {
+    align-self: center;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-wrap: nowrap;
+    
+    color: #646464;
+    text-decoration: none;
+}
+
+.contacts__phone-description {
+    margin-left: 7px;
+    align-self: end;
+
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    text-wrap: nowrap;
+
+    color: #646464;
+}
+
+.contacts__delimeter {
+    width: 2px;
+    align-self: center;
+    
+    background: #D9D9D9;
+}
+
+.contacts__delimeter_top {
+    height: 80.48%;
+}
+
+.contacts__item-schedule_mos {
+    padding-left: 40px;
+}
+
+.contacts__schedule-item {
+    display: flex;
+    gap: 9px;
+}
+
+.contacts__schedule-day {
+    width: 63px;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #646464;
+}
+
+.contacts__schedule-time {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #646464;
+}
+
+.contacts__data-item-info {
+    margin-top: 19px;
+}
+
+.contacts__data-info {
+    width: 232px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #646464;
+}
+
+.contacts__data-schedule-bottom_mos {
+    margin-top: 6px;
+}
+
+.contacts__data-item-attention {
+    width: 293px;
+    margin-top: 12px;
+}
+
+.contacts__data-attention-title {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #646464;
+}
+
+.contacts__data-attention-text {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #646464;
+}
+
+.contacts__item-emails {
+    padding-left: 28px;
+}
+
+.contacts__wrapper-emails {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+}
+
+.contacts__icon-email {
+    grid-column: 1;
+
+    background: no-repeat url('../i/icon-email.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.contacts__data-emails {
+    display: grid;
+    grid-template-columns: min-content min-content 1fr;
+    column-gap: 7px;
+    row-gap: 11px;
+}
+
+.contacts__data-item-email {
+    grid-column: 2;
+}
+
+.contacts__email {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-wrap: nowrap;
+
+    color: #646464;
+    text-decoration: none;
+}
+
+.contacts__data-item-description {
+    grid-column: 3;
+    align-self: end;
+}
+
+.contacts__email-description {
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    text-wrap: nowrap;
+
+    color: #646464;
+}
+/* END CONTACTS DATA TOP */
