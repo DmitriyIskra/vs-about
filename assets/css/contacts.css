@@ -103,7 +103,7 @@ input:focus, textarea:focus {
 }
 /* END MAIN TITLE */
 
-/* START CONTACTS DATA TOP */
+/* START CONTACTS DATA MOSKOW */
 .contacts__list_moskow {
     margin-top: 21px;
 }
@@ -130,12 +130,12 @@ input:focus, textarea:focus {
 
 .contacts__data-item-address {
     display: flex;
+    gap: 8px;
 }
 
 .contacts__icon {
     width: 20px;
     height: 20px;
-    margin-right: 8px;
 }
 
 .contacts__icon-geo {
@@ -160,7 +160,8 @@ input:focus, textarea:focus {
 
 .contacts__data-phones_moskow {
     display: grid;
-    grid-template-columns: repeat(3, min-content);
+    grid-template-columns: repeat(2, min-content) 1fr;
+    column-gap: 8px;
     row-gap: 9px;
     margin-top: 47px;
 }
@@ -185,7 +186,6 @@ input:focus, textarea:focus {
 }
 
 .contacts__phone-description {
-    margin-left: 7px;
     align-self: end;
 
     font-family: 'Roboto';
@@ -205,8 +205,8 @@ input:focus, textarea:focus {
     background: #D9D9D9;
 }
 
-.contacts__delimeter_top {
-    height: 80.48%;
+.contacts__delimeter_mos {
+    height: 83.78%;
 }
 
 .contacts__item-schedule_mos {
@@ -238,11 +238,11 @@ input:focus, textarea:focus {
     color: #646464;
 }
 
-.contacts__data-item-info {
+.contacts__data-item-sunday-info {
     margin-top: 19px;
 }
 
-.contacts__data-info {
+.contacts__sunday-info {
     width: 232px;
 
     font-family: 'Roboto';
@@ -301,7 +301,7 @@ input:focus, textarea:focus {
     display: grid;
     grid-template-columns: min-content min-content 1fr;
     column-gap: 7px;
-    row-gap: 11px;
+    row-gap: 6px;
 }
 
 .contacts__data-item-email {
@@ -334,4 +334,263 @@ input:focus, textarea:focus {
 
     color: #646464;
 }
-/* END CONTACTS DATA TOP */
+/* END CONTACTS DATA MOSKOW */
+
+
+.contacts__map {
+    height: 328px;
+} 
+/* START MAP MOSKOW */
+.contacts__map_moskow {
+    margin-top: 27px;
+}
+/* END MAP MOSKOW */
+
+
+/* START SUBSCRIPTION */
+.contacts__subscription {
+    display: flex;
+    margin-top: 65px;
+    justify-content: center;
+}
+/* END SUBSCRIPTION */
+
+
+/* START CONTACTS DATA РАМЕНСКОЕ */
+.contacts__list_ram {
+    margin-top: 93px;
+}
+
+.contacts__data-phones_ram {
+    display: flex;
+    margin-top: 22px;
+    gap: 8px;
+    align-items: center;
+}
+
+.contacts__delimeter_ram {
+    height: 100%;
+}
+
+.contacts__item-schedule_ram {
+    padding-left: 75px;
+}
+
+.contacts__schedule-item-sunday-ra {
+    margin-top: 2px;
+}
+/* END CONTACTS DATA РАМЕНСКОЕ */
+
+
+/* START MAP MOSKOW */
+.contacts__map_ramenskoe {
+    margin-top: 38px;
+}
+/* END MAP MOSKOW */
+
+@media(max-width: 1280px) {
+    .contacts {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .contacts__wrapper {
+        width: 1084px;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__address > span {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__phone {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__phone-description {
+        text-wrap: wrap;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__schedule-day {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__schedule-time {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__sunday-info {
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__data-attention-title {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__data-attention-text {
+        width: 90%;
+    }
+}
+
+@media(max-width: 1148px) {
+    .contacts__email {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts {
+        padding-top: 13.33vw;
+        padding-right: 0;
+        padding-bottom: 18.13vw;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__wrapper {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__title {
+        font-size: 6.40vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__list {
+        display: block;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__list_moskow {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__item {
+        gap: 2.93vw;
+        align-items: center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__list-title {
+        font-size: 4.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__data-item-address {
+        gap: 1.33vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__icon {
+        height: 4.80vw;
+        width: 4.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__address > span {
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__data-phones_moskow {
+        margin-top: 6.93vw;
+        column-gap: 0;
+        row-gap: 4.53vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__phone {
+        margin-left: 2.13vw;
+
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__phone-description {
+        margin-left: 4.27vw;
+
+        font-size: 2.93vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__delimeter {
+        display: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__item-schedule_mos {
+        margin-top: 4.53vw;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__schedule-item {
+        gap: 2.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__data-item-sunday-info {
+        margin-top: 5.33vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__sunday-info {
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}

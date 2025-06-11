@@ -11,8 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/contacts.css">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/contacts.css">
+    <link rel="stylesheet" href="assets/css/form-subscription-i.css">
+
+    <script type="module" src="assets/js/app-modules.js" deffer></script>
     <title>Document</title>
 </head>
 <body>
@@ -42,20 +45,20 @@
 
                             <div class="contacts__icon contacts__icon-phone contacts__icon-phone_agency"></div>
                             <a class="contacts__phone contacts__phone_agency" href="tel:+74954191709" title="Телефон для турагентств и юр. лиц">+7 (495) 419-17-09</a>
-                            <div class="contacts__phone-description">Для турагентств и юр. лиц</div>
+                            <div class="contacts__phone-description contacts__phone-description_agency">Для турагентств и юр. лиц</div>
 
                         </li>
                     </ul>
 
                 </li>
 
-                <li class="contacts__delimeter contacts__delimeter_top"></li>
+                <li class="contacts__delimeter contacts__delimeter_mos"></li>
 
                 <li class="contacts__item contacts__item-schedule_mos">
 
                     <h3 class="contacts__list-title">График работы</h3>
                     <ul class="contacts__data-list">
-                        <li class="contacts__data-item contacts__data-schedule-top_mos">
+                        <li class="contacts__data-item contacts__data-item-schedule contacts__data-schedule-top_mos">
                             <div class="contacts__schedule-item">
                                 <div class="contacts__schedule-day">Пн – пт</div>
                                 <div class="contacts__schedule-time">10:00 – 20:00</div>
@@ -65,10 +68,10 @@
                                 <div class="contacts__schedule-time">10:00 – 17:00</div>
                             </div>
                         </li>
-                        <li class="contacts__data-item contacts__data-item-info">
-                            <p class="contacts__data-info">Обрабатываем заявки, отвечаем на звонки, без приёма в офисе</p>
+                        <li class="contacts__data-item contacts__data-item-sunday-info">
+                            <p class="contacts__sunday-info">Обрабатываем заявки, отвечаем на звонки, без приёма в офисе</p>
                         </li>
-                        <li class="contacts__data-item contacts__data-schedule-bottom_mos">
+                        <li class="contacts__data-item  contacts__data-item-schedule contacts__data-schedule-bottom_mos">
                             <div class="contacts__schedule-item">
                                 <div class="contacts__schedule-day">Вс</div>
                                 <div class="contacts__schedule-time">10:00 – 17:00</div>
@@ -82,7 +85,7 @@
 
                 </li>
 
-                <li class="contacts__delimeter contacts__delimeter_top"></li>
+                <li class="contacts__delimeter contacts__delimeter_mos"></li>
 
                 <li class="contacts__item contacts__item-emails">
                     <h3 class="contacts__list-title">Напишите нам</h3>
@@ -142,73 +145,93 @@
                 </li>
             </ul>
 
-            <div class="contacts__map contacts__map_moskow">
-
+            <!-- <div class="contacts__map contacts__map_moskow">
+                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1258823506" width="100%" height="100%" frameborder="0"></iframe>
             </div>
 
-            <ul class="contacts__list contacts__list_moskow">
+            <div class="contacts__subscription">
+                <div class="subscr-i__wr-content">
+
+                    <div class="subscr-i__wr-form-text">
+
+                        <div class="subscr-i__wr-text">
+                            <h2 class="subscr-i__title">
+                                <span>Планируете путешествие?</span>
+                                <span class="subscr-i__title_mobile">Напишите нам</span>
+                            </h2>
+                            <p class="subscr-i__text">Подпишитесь на рассылку и получите скидку на путешествие по России</p>
+                        </div>
+
+                        <div class="subscr-i__wr-form">
+                            <div class="subscr-i__image subscr-i__image_mobile"></div>
+                            <form class="subscr-i__form" name="subscr-form" tabindex="-1" novalidate>
+                                <input class="subscr-i__input" type="text" name="name" placeholder="Ваше имя">
+                                <div class="subscr-i__form-line"></div>
+                                <input class="subscr-i__input" type="text" name="email" placeholder="E-mail">
+                                <button class="subscr-i__button" type="submit">Получить скидку</button>
+                                <span class="subscr-i__send-message"></span>
+                            </form>
+                        </div>
+
+                        <div class="subscr-i__cloud subscr-i__cloud-l-t"></div>
+                        <div class="subscr-i__cloud subscr-i__cloud-l-b"></div>
+                        
+                        <div class="subscr-i__cloud subscr-i__cloud-r-t"></div>
+                        <div class="subscr-i__cloud subscr-i__cloud-r-b"></div>
+                    
+                    </div>
+
+                    <div class="about-us__subscr-image_desc subscr-i__image subscr-i__image_desc"></div>
+                </div>
+            </div>
+
+            <ul class="contacts__list contacts__list_ram">
                 <li class="contacts__item">
 
-                    <h3 class="contacts__list-title">Главный офис</h3>
-                    <ul class="contacts__data-list contacts__data-list-office_mos">
+                    <h3 class="contacts__list-title">Офис в городе Раменское</h3>
+                    <ul class="contacts__data-list contacts__data-list-office_ram">
                         <li class="contacts__data-item contacts__data-item-address">
                             <div class="contacts__icon contacts__icon-geo"></div>
                             <p class="contacts__address">
-                                <span>Москва, Деловой Дом  «Лефортово»</span>
-                                <span>111024 г. Москва, ул. Авиамоторная,</span>
-                                <span>д. 12, офис 515 (5 этаж)</span>
-                                <span>м. Авиамоторная (выход 3 или 1)</span>
+                                <span>МО, г. Раменское, ТЦ «Юбилейный»</span>
+                                <span>140100 ул. Советская, д.14, офис 403</span>
+                                <span>(4 этаж)</span>
                             </p>
                         </li>
-                        <li class="contacts__data-item contacts__data-phones_moskow">
-
-                            <div class="contacts__icon contacts__icon-phone contacts__icon-phone_tourist"></div>
-                            <a class="contacts__phone contacts__phone_tourist" href="tel:+74957414941" title="Телефон для туристов">+7 (495) 741-49-41</a>
-                            <div class="contacts__phone-description contacts__phone-description_tourist">Для туристов</div>
-
-                            <div class="contacts__icon contacts__icon-phone contacts__icon-phone_agency"></div>
-                            <a class="contacts__phone contacts__phone_agency" href="tel:+74954191709" title="Телефон для турагентств и юр. лиц">+7 (495) 419-17-09</a>
-                            <div class="contacts__phone-description">Для турагентств и юр. лиц</div>
-
+                        <li class="contacts__data-item contacts__data-phones_ram">
+                            <div class="contacts__icon contacts__icon-phone contacts__icon-phone_ram"></div>
+                            <a class="contacts__phone contacts__phone_tourist" href="tel:+74964616767" title="Телефон для туристов">+7 (496) 461-67-67,</a>
+                            <a class="contacts__phone contacts__phone_agency" href="tel:+74964616777" title="Телефон для турагентств и юр. лиц">+7 (496) 461-67-77</a>
                         </li>
                     </ul>
 
                 </li>
 
-                <li class="contacts__delimeter contacts__delimeter_top"></li>
+                <li class="contacts__delimeter contacts__delimeter_ram"></li>
 
-                <li class="contacts__item contacts__item-schedule_mos">
+                <li class="contacts__item contacts__item-schedule_ram">
 
                     <h3 class="contacts__list-title">График работы</h3>
                     <ul class="contacts__data-list">
-                        <li class="contacts__data-item contacts__data-schedule-top_mos">
+                        <li class="contacts__data-item contacts__data-item-schedule contacts__data-schedule_ram">
                             <div class="contacts__schedule-item">
                                 <div class="contacts__schedule-day">Пн – пт</div>
-                                <div class="contacts__schedule-time">10:00 – 20:00</div>
+                                <div class="contacts__schedule-time">10:00 – 19:00</div>
                             </div>
                             <div class="contacts__schedule-item">
                                 <div class="contacts__schedule-day">Сб</div>
                                 <div class="contacts__schedule-time">10:00 – 17:00</div>
                             </div>
-                        </li>
-                        <li class="contacts__data-item contacts__data-item-info">
-                            <p class="contacts__data-info">Обрабатываем заявки, отвечаем на звонки, без приёма в офисе</p>
-                        </li>
-                        <li class="contacts__data-item contacts__data-schedule-bottom_mos">
-                            <div class="contacts__schedule-item">
+                            <div class="contacts__schedule-item contacts__schedule-item-sunday-ram">
                                 <div class="contacts__schedule-day">Вс</div>
-                                <div class="contacts__schedule-time">10:00 – 17:00</div>
+                                <div class="contacts__schedule-time">выходной</div>
                             </div>
-                        </li>
-                        <li class="contacts__data-item contacts__data-item-attention">
-                            <h4 class="contacts__data-attention-title">Внимание!</h4>
-                            <p class="contacts__data-attention-text">В ДД «Лефортово» действует пропускная система, для прохода необходимо иметь при себе паспорт или документ, удостоверяющий личность.</p>
                         </li>
                     </ul>
 
                 </li>
 
-                <li class="contacts__delimeter contacts__delimeter_top"></li>
+                <li class="contacts__delimeter contacts__delimeter_ram"></li>
 
                 <li class="contacts__item contacts__item-emails">
                     <h3 class="contacts__list-title">Напишите нам</h3>
@@ -216,49 +239,28 @@
                         <div class="contacts__icon contacts__icon-email"></div>
                         <ul class="contacts__data-list contacts__data-emails">
                             <li class="contacts__data-item contacts__data-item-email">
-                                <a class="contacts__email" href="mailto:tour@vs-travel.ru">tour@vs-travel.ru</a>
+                                <a class="contacts__email" href="mailto:tour@vs-travel.ru">bron@vs-travel.ru</a>
                             </li>
                             <li class="contacts__data-item contacts__data-item-description">
-                                <p class="contacts__email-description">общие вопросы</p>
+                                <p class="contacts__email-description">отдел продаж </p>
                             </li>
 
                             <li class="contacts__data-item contacts__data-item-email">
-                                <a class="contacts__email" href="mailto:zayavka@vs-travel.ru">zayavka@vs-travel.ru</a>
-                            </li>
-                            <li class="contacts__data-item contacts__data-item-description">
-                                <p class="contacts__email-description">отдел продаж</p>
-                            </li>
-
-                            <li class="contacts__data-item contacts__data-item-email">
-                                <a class="contacts__email" href="mailto:agent@vs-travel.ru">agent@vs-travel.ru</a>
-                            </li>
-                            <li class="contacts__data-item contacts__data-item-description">
-                                <p class="contacts__email-description">отдел по работе с турагентствами </p>
-                            </li>
-
-                            <li class="contacts__data-item contacts__data-item-email">
-                                <a class="contacts__email" href="mailto:otpusk@vs-travel.ru">otpusk@vs-travel.ru</a>
-                            </li>
-                            <li class="contacts__data-item contacts__data-item-description">
-                                <p class="contacts__email-description">отдел зарубежного туризма</p>
-                            </li>
-
-                            <li class="contacts__data-item contacts__data-item-email">
-                                <a class="contacts__email" href="mailto:cruise@vs-travel.ru">cruise@vs-travel.ru</a>
+                                <a class="contacts__email" href="mailto:zayavka@vs-travel.ru">cruise@vs-travel.ru</a>
                             </li>
                             <li class="contacts__data-item contacts__data-item-description">
                                 <p class="contacts__email-description">круизы</p>
                             </li>
 
                             <li class="contacts__data-item contacts__data-item-email">
-                                <a class="contacts__email" href="mailto:dogovor@vs-travel.ru">dogovor@vs-travel.ru</a>
+                                <a class="contacts__email" href="mailto:agent@vs-travel.ru">dogovor@vs-travel.ru</a>
                             </li>
                             <li class="contacts__data-item contacts__data-item-description">
                                 <p class="contacts__email-description">юридеский отдел</p>
                             </li>
 
                             <li class="contacts__data-item contacts__data-item-email">
-                                <a class="contacts__email" href="mailto:buchg@vs-travel.ru">buchg@vs-travel.ru</a>
+                                <a class="contacts__email" href="mailto:otpusk@vs-travel.ru">buchg@vs-travel.ru</a>
                             </li>
                             <li class="contacts__data-item contacts__data-item-description">
                                 <p class="contacts__email-description">бухгалтерия</p>
@@ -269,8 +271,8 @@
             </ul>
 
             <div class="contacts__map contacts__map_ramenskoe">
-                
-            </div>
+                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1258823506" width="100%" height="100%" frameborder="0"></iframe>
+            </div> -->
         </div>
     </div>
 </body>
