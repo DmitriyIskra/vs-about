@@ -167,6 +167,7 @@ input:focus, textarea:focus {
     text-align: center;
 
     background: no-repeat linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -291,6 +292,7 @@ input:focus, textarea:focus {
     font-weight: 500;
 
     background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -353,6 +355,7 @@ input:focus, textarea:focus {
     text-align: center;
 
     background: no-repeat linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -634,6 +637,7 @@ input:focus, textarea:focus {
     text-align: center;
 
     background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }

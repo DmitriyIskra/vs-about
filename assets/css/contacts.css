@@ -1,4 +1,4 @@
-.contacts__wrapper * {
+.for-agency * {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
@@ -20,49 +20,6 @@
     
     cursor: initial;
     appearance: auto;
-}
-
-.page h2 {
-    margin: 0;
-    
-    font-size: initial;
-    font-weight: initial;
-}
-
-.about-us__content button {
-    display: inline-block;
-}
-
-.about-us__content button:hover {
-    background-color: initial;
-}
-
-.page .about-us__content ul {
-    padding: 0;
-}
-
-.page .about-us__content ul li {
-    position: initial;
-    
-    padding: 0;
-}
-
-.page .about-us__content ul li::before {
-    content: "";
-    
-    position: initial;
-    top: auto;
-    
-    display: inline;
-    width: auto;
-    height: auto;
-    margin-left: auto;
-    
-    font-weight: initial;
-    font-size: initial;
-    line-height: initial;
-
-    color: initial;
 }
 
 input:focus, textarea:focus {

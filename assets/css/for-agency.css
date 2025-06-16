@@ -1,0 +1,164 @@
+.for-agency * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    
+    font-family: initial;
+    font-size: initial;
+    font-weight: initial;
+    text-align: start;
+    line-height: initial !important;
+    white-space: initial;
+    
+    list-style-type: none;
+    border: initial;
+    border-radius: initial;
+    outline: initial;
+    color: initial;
+    background-color: initial;
+    box-shadow: initial;
+    text-decoration: none;
+    
+    cursor: initial;
+    appearance: auto;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+}
+
+/* ==========*******************************========= */
+
+
+/* START BANNER */
+.for-agency__banner {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 495px;
+
+    border-radius: 0px 0px 50px 50px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    background: no-repeat url('../i/for-agency-banner.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.for-agency__banner-content {
+    width: 1257px;
+    margin-top: 39px;
+    padding: 25px 26px 36px;
+
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 50px;
+    box-shadow: 0px 1px 1px 0px #FFF inset, 0px -2px 2px 1px rgba(0, 0, 0, 0.25) inset, 0px 0px 4px 0px rgba(0, 0, 0, 0.40);
+    backdrop-filter: blur(7.5px);
+}
+
+.for-agency__banner-wr-link {
+    display: flex;
+    justify-content: end;
+}
+
+.for-agency__banner-link {
+    display: grid;
+    place-items: center;
+    width: 210px;
+    height: 50px;
+    
+    
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    
+    color: #FFF;
+    border-radius: 25px;
+    background: #FF732D;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+    
+    cursor: pointer;
+}
+
+.for-agency__banner-link:hover {
+    background: #ed5f00;
+}
+
+.for-agency__banner-list {
+    display: flex;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    justify-content: end;
+    row-gap: 22px;
+}
+
+.for-agency__banner-item {
+    display: flex;
+    min-width: fit-content;
+    align-items: center;
+    gap: 15px;
+}
+
+.for-agency__banner-item_years {
+    width: 25.6%;
+}
+
+.for-agency__banner-item_start {
+    width: 38%;
+}
+
+.for-agency__banner-item_oneday {
+    width: 32.2%;
+}
+
+.for-agency__banner-item_several {
+    width: 41.8%;
+}
+
+.for-agency__banner-item_clients {
+    width: 50.4%;
+}
+
+.for-agency__banner-amount {
+    font-family: 'Roboto';
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 800;
+    text-wrap: nowrap;
+}
+
+.for-agency__banner-amount_years {
+    color: #B3DAFC;
+}
+
+.for-agency__banner-amount_start {
+    color: #FCD4B3;
+}
+
+.for-agency__banner-amount_oneday {
+    color: #FFFFBC;
+}
+
+.for-agency__banner-amount_several {
+    color: #C7B3FC;
+}
+
+.for-agency__banner-amount_clients {
+    color: #B3FCC7;
+}
+
+.for-agency__banner-descr > span {
+    display: block;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    text-wrap: nowrap;
+
+    color: #FFF;
+}
+/* END BANNER */
+
+/* баннер для ноутов с 1366 уменьшаем шрифты */
