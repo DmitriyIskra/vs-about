@@ -21,6 +21,9 @@
 <body>
     <div class="contacts">
         <div class="contacts__wrapper">
+
+
+
             <h2 class="contacts__title">Контакты</h2>
 
             <ul class="contacts__list contacts__list_moskow">
@@ -58,23 +61,25 @@
 
                     <h3 class="contacts__list-title">График работы</h3>
                     <ul class="contacts__data-list contacts__data-list-schedule">
-                        <li class="contacts__data-item contacts__data-item-schedule contacts__data-schedule-top_mos">
-                            <div class="contacts__schedule-item">
-                                <div class="contacts__schedule-day">Пн – пт</div>
-                                <div class="contacts__schedule-time">10:00 – 20:00</div>
+                        <li class="contacts__data-item contacts__schedule-wrapper">
+                            <div class="contacts__data-schedule contacts__data-schedule-top_mos">
+                                <div class="contacts__schedule">
+                                    <div class="contacts__schedule-day">Пн – пт</div>
+                                    <div class="contacts__schedule-time">10:00 – 20:00</div>
+                                </div>
+                                <div class="contacts__schedule">
+                                    <div class="contacts__schedule-day">Сб</div>
+                                    <div class="contacts__schedule-time">10:00 – 17:00</div>
+                                </div>
                             </div>
-                            <div class="contacts__schedule-item">
-                                <div class="contacts__schedule-day">Сб</div>
-                                <div class="contacts__schedule-time">10:00 – 17:00</div>
+                            <div class="contacts__data-item-sunday-info">
+                                <p class="contacts__sunday-info">Обрабатываем заявки, отвечаем на звонки, без приёма в офисе</p>
                             </div>
-                        </li>
-                        <li class="contacts__data-item contacts__data-item-sunday-info">
-                            <p class="contacts__sunday-info">Обрабатываем заявки, отвечаем на звонки, без приёма в офисе</p>
-                        </li>
-                        <li class="contacts__data-item  contacts__data-item-schedule contacts__data-schedule-bottom_mos">
-                            <div class="contacts__schedule-item">
-                                <div class="contacts__schedule-day">Вс</div>
-                                <div class="contacts__schedule-time">10:00 – 17:00</div>
+                            <div class="contacts__data-schedule contacts__data-schedule-bottom_mos">
+                                <div class="contacts__schedule">
+                                    <div class="contacts__schedule-day">Вс</div>
+                                    <div class="contacts__schedule-time">10:00 – 17:00</div>
+                                </div>
                             </div>
                         </li>
                         <li class="contacts__data-item contacts__data-item-attention">
@@ -89,7 +94,7 @@
 
                 <li class="contacts__item contacts__item-emails">
                     <h3 class="contacts__list-title">Напишите нам</h3>
-                    <div class="contacts__wrapper-emails">
+                    <div class="contacts__wrapper-emails contacts__wrapper-emails_mos">
                         <div class="contacts__icon contacts__icon-email"></div>
                         <ul class="contacts__data-list contacts__data-emails">
                             <li class="contacts__data-item contacts__data-item-email">
@@ -215,18 +220,20 @@
 
                     <h3 class="contacts__list-title">График работы</h3>
                     <ul class="contacts__data-list contacts__data-list-schedule">
-                        <li class="contacts__data-item contacts__data-item-schedule contacts__data-schedule_ram">
-                            <div class="contacts__schedule-item">
-                                <div class="contacts__schedule-day">Пн – пт</div>
-                                <div class="contacts__schedule-time">10:00 – 19:00</div>
-                            </div>
-                            <div class="contacts__schedule-item">
-                                <div class="contacts__schedule-day">Сб</div>
-                                <div class="contacts__schedule-time">10:00 – 17:00</div>
-                            </div>
-                            <div class="contacts__schedule-item contacts__schedule-item-sunday-ram">
-                                <div class="contacts__schedule-day">Вс</div>
-                                <div class="contacts__schedule-time">выходной</div>
+                        <li class="contacts__data-item contacts__schedule-wrapper contacts__schedule-wrapper_ram">
+                            <div class=" contacts__data-schedule contacts__data-schedule_ram">
+                                <div class="contacts__schedule">
+                                    <div class="contacts__schedule-day">Пн – пт</div>
+                                    <div class="contacts__schedule-time">10:00 – 19:00</div>
+                                </div>
+                                <div class="contacts__schedule">
+                                    <div class="contacts__schedule-day">Сб</div>
+                                    <div class="contacts__schedule-time">10:00 – 17:00</div>
+                                </div>
+                                <div class="contacts__schedule contacts__schedule-sunday-ram">
+                                    <div class="contacts__schedule-day">Вс</div>
+                                    <div class="contacts__schedule-time">выходной</div>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -237,7 +244,7 @@
 
                 <li class="contacts__item contacts__item-emails contacts__item-emails_ram">
                     <h3 class="contacts__list-title">Напишите нам</h3>
-                    <div class="contacts__wrapper-emails">
+                    <div class="contacts__wrapper-emails contacts__wrapper-emails_ram">
                         <div class="contacts__icon contacts__icon-email"></div>
                         <ul class="contacts__data-list contacts__data-emails">
                             <li class="contacts__data-item contacts__data-item-email">
@@ -273,8 +280,11 @@
             </ul>
 
             <div class="contacts__map contacts__map_ramenskoe">
-                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1258823506" width="100%" height="100%" frameborder="0"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A99c91cb0a555d6a8f23cebe14a495db4cff7ca17630fce6523974f70f367acd8&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
             </div>
+
+
+
         </div>
     </div>
 </body>

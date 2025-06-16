@@ -1,11 +1,4 @@
-.about-us__content {
-    width: 100%;
-    min-width: 100%;
-    padding-bottom: 64px;
-}
-
-.about-us__content * {
-    width: initial;
+.contacts__wrapper * {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
@@ -200,7 +193,7 @@ input:focus, textarea:focus {
 
 .contacts__delimeter {
     width: 2px;
-    align-self: center;
+    align-self: end;
     
     background: #D9D9D9;
 }
@@ -213,7 +206,9 @@ input:focus, textarea:focus {
     padding-left: 40px;
 }
 
-.contacts__schedule-item {
+
+
+.contacts__schedule{
     display: flex;
     gap: 9px;
 }
@@ -317,6 +312,8 @@ input:focus, textarea:focus {
 
     color: #646464;
     text-decoration: none;
+
+    cursor: pointer;
 }
 
 .contacts__data-item-description {
@@ -391,7 +388,7 @@ input:focus, textarea:focus {
     padding-left: 75px;
 }
 
-.contacts__schedule-item-sunday-ram {
+.contacts__schedule-sunday-ram {
     margin-top: 2px;
 }
 /* END CONTACTS DATA РАМЕНСКОЕ */
@@ -555,7 +552,7 @@ input:focus, textarea:focus {
 
 @media(max-width: 1024px) {
     .contacts__data-phones_moskow {
-        width: 65.6%;
+        width: 75.5%;
         margin-top: 6.93vw;
         column-gap: 0;
         row-gap: 4.53vw;
@@ -607,13 +604,17 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .contacts__data-item-schedule {
-        width: 65.6%;
+    .contacts__schedule-wrapper {
+        width: 64.27%;
+        padding: 2.40vw;
+
+        border-radius: 2.13vw;
+        border: 1px solid #7B7B7B;
     }
 }
 
 @media(max-width: 1024px) {
-    .contacts__schedule-item {
+    .contacts__schedule{
         gap: 2.73vw;
     }
 }
@@ -632,7 +633,6 @@ input:focus, textarea:focus {
 
 @media(max-width: 1024px) {
     .contacts__data-item-sunday-info {
-        width: 65.6%;
         margin-top: 5.33vw;
     }
 }
@@ -661,6 +661,7 @@ input:focus, textarea:focus {
 @media(max-width: 1024px) {
     .contacts__data-attention-title {
         font-size: 3.73vw;
+        text-align: center;
     }
 }
 
@@ -669,6 +670,7 @@ input:focus, textarea:focus {
         width: 100%;
 
         font-size: 3.73vw;
+        text-align: center;
     }
 }
 
@@ -682,10 +684,15 @@ input:focus, textarea:focus {
 
 @media(max-width: 1024px) {
     .contacts__wrapper-emails {
-        width: 91.1%;
         margin-top: 4.53vw;
         gap: 1vw;
     }
+}
+
+@media(max-width: 1024px) {
+    .contacts__wrapper-emails_mos {
+        width: 91.1%;
+    }   
 }
 
 @media(max-width: 1024px) {
@@ -734,13 +741,6 @@ input:focus, textarea:focus {
     }
 }
 
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
 
 
 
@@ -768,14 +768,15 @@ input:focus, textarea:focus {
 @media(max-width: 1024px) {
     .contacts__data-phones_ram {
         display: grid;
+        width: 42%;
         grid-template-columns: min-content 1fr;
         margin-top: 7.73vw;
-        column-gap: 2.13vw;
+        column-gap: 0;
         row-gap: 2.67vw;
     }
 
     .contacts__data-phones_ram::before {
-        content: url('../i/icon-phone.svg');
+        content: "";
 
         display: inline-block;
         grid-row: 2;
@@ -783,6 +784,10 @@ input:focus, textarea:focus {
         height: 4.80vw;
         width: 4.80vw;
         align-self: center;
+
+        background: no-repeat url('../i/icon-phone.svg');
+        background-size: contain;
+        background-position: center;
     }
 }
 
@@ -807,14 +812,20 @@ input:focus, textarea:focus {
 }
 
 @media(max-width: 1024px) {
-    .contacts__data-schedule_ram {
+    .contacts__schedule-wrapper_ram {
         width: 47.8%
     }
 }
 
 @media(max-width: 1024px) {
-    .contacts__schedule-item-sunday-ram {
+    .contacts__schedule-sunday-ram {
         margin-top: 2.13vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .contacts__wrapper-emails_ram {
+        width: 71%;
     }
 }
 
@@ -831,42 +842,4 @@ input:focus, textarea:focus {
     }
 }
 
-@media(max-width: 1024px) {
-    
-}
 
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}

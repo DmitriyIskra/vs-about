@@ -173,7 +173,7 @@
     outline: 0;
     border-radius: 25px;
     background-color: #FF732D !important;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.57));
 
     cursor: pointer;
 }
@@ -443,6 +443,7 @@
         font-size: 4.27vw;
     
         border-radius: 6.67vw;
+        filter: none;
         box-shadow: 0px 1.07vw 1.07vw 0px rgba(0, 0, 0, 0.25), 0px 0px 1.87vw 0.53vw rgba(0, 0, 0, 0.25);
     }
 
