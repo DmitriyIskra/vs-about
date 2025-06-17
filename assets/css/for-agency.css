@@ -331,7 +331,11 @@ input:focus, textarea:focus {
 .for-agency__acc-content {
     display: grid;
     grid-template-columns: min-content 1fr;
-    width: 1148px;
+    width: 1137px;
+}
+
+.for-agency__acc-wr-title {
+    padding-top: 14px;
 }
 
 .for-agency__acc-title {
@@ -426,3 +430,224 @@ input:focus, textarea:focus {
     color: #7B7B7B;
 }
 /* END ЛИЧНЫЙ КАБИНЕТ АГЕНТА */
+
+/* START ВОЗНАГРАЖДЕНИЕ */
+.for-agency__award {
+    display: flex;
+    width: 100%;
+    margin-top: 120px;
+    padding: 0 30px;
+    justify-content: center;
+}
+
+.for-agency__award-content {
+    display: flex;
+    width: 1137px;
+    justify-content: space-between;
+}
+
+.for-agency__award-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.for-agency__award-title > span {
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.for-agency__award-list {
+    display: flex;
+    margin-top: 33px;
+    padding-left: 7px;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.for-agency__award-item {
+    display: flex;
+    align-items: center;
+    gap: 67px;
+}
+
+.for-agency__award-item-icon {
+    width: 84px;
+    height: 84px;
+
+    filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.for-agency__award-item-icon_percent {
+    background: no-repeat url('../i/for-agency-award-percent.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.for-agency__award-item-icon_graph {
+    background: no-repeat url('../i/for-agency-award-graph.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.for-agency__award-item-icon_invoice {
+    background: no-repeat url('../i/for-agency-award-invoice.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.for-agency__award-item-text {
+    display: flex;
+    width: 357px;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.for-agency__award-item-text > span {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #5A5D62;
+}
+
+span.for-agency__award-item-text_bold {
+    font-weight: 600;
+}
+
+.for-agency__award-img {
+    width: 579px;
+    height: 474px;
+
+    background: no-repeat url('../i/for-agency-award.svg');
+    background-size: contain;
+    background-position: center bottom;
+}
+/* END ВОЗНАГРАЖДЕНИЕ */
+
+
+/* START В ЛИЧНОМ КАБИНЕТЕ РАЗМЕЩЕНЫ */
+.for-agency__in-acc {
+    display: flex;
+    width: 100%;
+    margin-top: 79px;
+    padding: 28px 30px 120px;
+    justify-content: center;
+
+    border-radius: 0px 0px 50px 50px;
+    background: rgba(255, 115, 45, 0.50);
+}
+
+.for-agency__in-acc-content {
+    width: 1209px;
+}
+
+.for-agency__in-acc-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.for-agency__in-acc-title > span {
+    font-family: 'Roboto';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+
+    color: #727272;
+}
+
+.for-agency__in-acc-list {
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    row-gap: 39px;
+}
+
+.for-agency__in-acc-item {
+    width: 25%;
+    min-width: 302px;
+    min-height: 65px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 18px;
+
+    border-left: 4px solid #FF732D;
+}
+
+.for-agency__in-acc-item-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.for-agency__in-acc-item-text > span {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+
+    color: #FFF;
+}
+/* END В ЛИЧНОМ КАБИНЕТЕ РАЗМЕЩЕНЫ */
+
+
+/* START ФОРМА ПОДПИСКИ */
+.for-agency__subscr {
+    display: flex;
+    width: 100%;
+    margin-top: 79px;
+    padding: 28px 30px 120px;
+    justify-content: center;
+}
+
+div.for-agency__subscr-wr-content {
+    gap: 25px;
+}
+
+div.for-agency__subscr-wr-form-text {
+    padding-top: 47px;
+
+    background-position: right -1px top 137px;
+}
+
+h2.for-agency__subscr-title > span {
+    text-align: center;
+
+    color: #F60;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.for-agency__subscr-text {
+    visibility: hidden;
+}
+
+div.for-agency__subscr-cloud-l-t {
+    top: 36.9px;
+    left: -12.9%;
+}
+div.for-agency__subscr-cloud-l-b {
+    top: 103px;
+    left: 0.8%;
+}
+
+div.for-agency__subscr-cloud-r-t {
+    right: 1.1%;
+}
+div.for-agency__subscr-cloud-r-b {
+    right: 8.7%;
+}
+
+div.for-agency__subscr-img {
+    background: no-repeat url('../i/for-agency-subscripbtion.webp');
+    background-size: cover;
+    background-position: center;
+}
+/* END ФОРМА ПОДПИСКИ */

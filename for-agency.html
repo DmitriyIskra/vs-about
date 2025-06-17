@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/for-agency.css">
     <link rel="stylesheet" href="assets/css/form-subscription-i.css">
 
-    <script type="module" src="assets/js/app-modules.js" deffer></script>
+    <script type="module" src="assets/js/app-modules.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -135,8 +135,134 @@
             </div>
         </div>
 
+        <div class="for-agency__award">
+            <div class="for-agency__award-content">
+                <div class="for-agency__award-data">
+                    <h2 class="for-agency__award-title"><span>Агентское вознаграждение. </span><span>Способ оплаты</span></h2>
+                
+                    <ul class="for-agency__award-list">
+                        <li class="for-agency__award-item">
+                            <div class="for-agency__award-item-icon for-agency__award-item-icon_percent"></div>
+                            <p class="for-agency__award-item-text">
+                                <span class="for-agency__award-item-text_bold">Стартовый размер вознаграждения с Заказа.</span>
+                            </p>
+                        </li>
+                        <li class="for-agency__award-item">
+                            <div class="for-agency__award-item-icon for-agency__award-item-icon_graph"></div>
+                            <p class="for-agency__award-item-text">
+                                <span class="for-agency__award-item-text_bold">Увеличение % вознаграждения зависит от объёма и активности ваших продаж.</span>
+                                <span>Информация об размере агентского вознаграждения указывается в ЛК Агентства.</span>
+                            </p>
+                        </li>
+                        <li class="for-agency__award-item">
+                            <div class="for-agency__award-item-icon for-agency__award-item-icon_invoice"></div>
+                            <p class="for-agency__award-item-text">
+                                <span class="for-agency__award-item-text_bold">Оплата по счёту безналичным платежом.</span>
+                                <span>Счёт на оплату вы сможете скачать в ЛК Агентства или запросить у менеджера.</span>
+                                <span></span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="for-agency__award-img"></div>
+            </div>
+        </div>
 
+        <div class="for-agency__in-acc">
+            <div class="for-agency__in-acc-content">
+                <h2 class="for-agency__in-acc-title">
+                    <span>Для вашего удобства</span>
+                    <span>в Личном кабинете размещены:</span>
+                </h2>
+
+                <ul class="for-agency__in-acc-list">
+                    <li class="for-agency__in-acc-item">
+                        <p class="for-agency__in-acc-item-text">
+                            <span>Оферта Агентского</span>
+                            <span>договора</span>
+                        </p>
+                    </li>
+                    <li class="for-agency__in-acc-item">
+                        <p class="for-agency__in-acc-item-text">
+                            <span>Правила аннуляции</span>
+                            <span>и работы с претензиями</span>
+                        </p>
+                    </li>
+                    <li class="for-agency__in-acc-item">
+                        <p class="for-agency__in-acc-item-text">
+                            <span>Информационный лист</span>
+                            <span>по аннуляции</span>
+                        </p>
+                    </li>
+                    <li class="for-agency__in-acc-item">
+                        <p class="for-agency__in-acc-item-text">
+                            <span>Форма Отчёта Агента</span>
+                        </p>
+                    </li>
+                    <li class="for-agency__in-acc-item">
+                        <p class="for-agency__in-acc-item-text">
+                            <span>Письменное согласие</span>
+                            <span>на обработку</span>
+                            <span>персональных данных</span>
+                        </p>
+                    </li>
+                    <li class="for-agency__in-acc-item">
+                        <p class="for-agency__in-acc-item-text">
+                            <span>Электронная путёвка. </span>
+                            <span>Всё, что нужно знать</span>
+                            <span>Агентству</span>
+                        </p>
+                    </li>
+                    <li class="for-agency__in-acc-item">
+                        <p class="for-agency__in-acc-item-text">
+                            <span>Информация о финансовом</span>
+                            <span>обеспечении туроператора</span>
+                            <span>«Вокруг света»</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="for-agency__subscr">
+            <div class="subscr-i__wr-content for-agency__subscr-wr-content">
+
+                <div class="subscr-i__wr-form-text for-agency__subscr-wr-form-text">
+
+                    <div class="subscr-i__wr-text">
+                        <h2 class="subscr-i__title for-agency__subscr-title">
+                            <span>Узнавайте первыми о новостях <br>и выгодных предложениях «Вокруг света»</span>
+                            <span class="subscr-i__title_mobile">Напишите нам</span>
+                        </h2>
+                        <p class="subscr-i__text for-agency__subscr-text">Подпишитесь на рассылку и получите скидку на путешествие по России</p>
+                    </div>
+
+                    <div class="subscr-i__wr-form">
+                        <div class="subscr-i__image subscr-i__image_mobile for-agency__subscr-img"></div>
+                        <!-- <form class="about-us__subscr-form" method="post" action="/ajax/podpiska/"> -->
+                        <form class="subscr-i__form" name="subscr-form" tabindex="-1" novalidate>
+                            <input class="subscr-i__input" type="text" name="name" placeholder="Ваше имя">
+                            <div class="subscr-i__form-line"></div>
+                            <input class="subscr-i__input" type="text" name="email" placeholder="E-mail">
+                            <button class="subscr-i__button" type="submit">Получить скидку</button>
+                            <span class="subscr-i__send-message"></span>
+                        </form>
+                    </div>
+
+                    <div class="subscr-i__cloud subscr-i__cloud-l-t for-agency__subscr-cloud-l-t"></div>
+                    <div class="subscr-i__cloud subscr-i__cloud-l-b for-agency__subscr-cloud-l-b"></div>
+                    
+                    <div class="subscr-i__cloud subscr-i__cloud-r-t for-agency__subscr-cloud-r-t"></div>
+                    <div class="subscr-i__cloud subscr-i__cloud-r-b for-agency__subscr-cloud-r-b"></div>
+                
+                </div>
+
+                <div class="subscr-i__image subscr-i__image_desc for-agency__subscr-img"></div>
+                <!-- <div class="subscr-i__baloon"></div> -->
+                
+            </div>
+        </div>
     </div>
 </body>
 </html>
