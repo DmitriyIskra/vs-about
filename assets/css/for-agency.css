@@ -28,11 +28,16 @@ input:focus, textarea:focus {
 }
 
 /* ==========*******************************========= */
-
+.for-agency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* START BANNER */
 .for-agency__banner {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: start;
     height: 495px;
@@ -126,6 +131,7 @@ input:focus, textarea:focus {
     font-style: normal;
     font-weight: 800;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .for-agency__banner-amount_years {
@@ -156,9 +162,267 @@ input:focus, textarea:focus {
     font-style: normal;
     font-weight: 400;
     text-wrap: nowrap;
+    white-space: nowrap;
 
     color: #FFF;
 }
 /* END BANNER */
 
 /* баннер для ноутов с 1366 уменьшаем шрифты */
+
+.for-agency__title {
+    margin-top: 50px;
+
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #F60;
+}
+
+/* START 3 ШАГА ДЛЯ ПАРТНЕРСТВА */
+.for-agency__steps {
+    display: flex;
+    width: 100%;
+    margin-top: 37px;
+    padding: 0 30px;
+    justify-content: center;
+}
+.for-agency__steps-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    width: 1209px;
+    padding: 55px 31px 21px;
+
+    border-radius: 50px;
+    border: 3px solid #7B7B7B;
+}
+
+.for-agency__steps-title {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 1;
+
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.for-agency__steps-title > span {
+    font-family: 'Roboto';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    text-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.for-agency__steps-link {
+    display: grid;
+    width: 97.677%;
+    height: 75px;
+    place-items: center;
+    grid-row: 1;
+    grid-column: 2/4;
+    justify-self: end;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 30px;
+    background: #FF732D;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+}
+
+.for-agency__steps-list {
+    display: grid;
+    margin-top: 52px;
+    grid-row: 2;
+    grid-column: 1/4;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10%;
+}
+
+.for-agency__steps-num {
+    font-family: 'Roboto';
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 800;
+
+    color: #8A8D9B;
+}
+
+.for-agency__steps-text {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.for-agency__steps-text > span {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #5A5D62;
+}
+
+.for-agency__steps-text > .for-agency__steps-text_bold {
+    font-weight: 600;
+}
+
+.for-agency__steps-delimeter {
+    width: 601px;
+    height: 2px;
+    margin: 65px auto 0;
+    grid-row: 3;
+    grid-column: 1/4;
+
+    background: #D9D9D9;
+}
+
+.for-agency__steps-dop-info {
+    grid-row: 4;
+    grid-column: 1/4;
+}
+
+.for-agency__steps-dop-info {
+    width: 91.5%;
+    margin: 9px auto 0;
+}
+
+.for-agency__steps-dop-info > p {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    text-align: center;
+    
+    color: #464646;
+}
+
+.for-agency__steps-login {
+    font-weight: 400;
+}
+
+.for-agency__steps-frta {
+    margin-top: 18px;
+
+    font-weight: 500;
+}
+/* END 3 ШАГА ДЛЯ ПАРТНЕРСТВА */
+
+/* START ЛИЧНЫЙ КАБИНЕТ АГЕНТА */
+.for-agency__acc {
+    display: flex;
+    width: 100%;
+    margin-top: 87px;
+    padding: 0 30px;
+    justify-content: center;
+}
+
+.for-agency__acc-content {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    width: 1148px;
+}
+
+.for-agency__acc-title {
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.for-agency__acc-title > span {
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    text-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.for-agency__acc-sub-title {
+    display: flex;
+    margin-top: 12px;
+    flex-direction: column;
+}
+
+.for-agency__acc-sub-title > span {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    text-wrap: nowrap;
+    white-space: nowrap;
+
+    color: #464646;
+}
+
+.for-agency__acc-list {
+    display: flex;
+    justify-content: end;
+    gap: 11.7%;
+}
+
+.for-agency__acc-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.for-agency__acc-item-wr-img {
+    position: relative;
+    width: 100%;
+    height: 168px;
+}
+
+.for-agency__acc-item-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    height: 168px;
+}
+
+.for-agency__acc-item-img_plain {
+    transform: translate(-15%, 0);
+}
+
+.for-agency__acc-item-img_bus {
+    transform: translate(-27%, 0);
+}
+
+.for-agency__acc-item-img_kremlin {
+    transform: translate(-30%, 0);
+}
+
+.for-agency__acc-item-text {
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+}
+
+.for-agency__acc-item-text > span {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    text-wrap: nowrap;
+    white-space: nowrap;
+
+    color: #7B7B7B;
+}
+/* END ЛИЧНЫЙ КАБИНЕТ АГЕНТА */

@@ -130,6 +130,7 @@ input:focus, textarea:focus {
     font-style: normal;
     font-weight: 400;
     text-wrap: nowrap;
+    white-space: nowrap;
     
     color: #646464;
     text-decoration: none;
@@ -144,6 +145,7 @@ input:focus, textarea:focus {
     font-weight: 400;
     line-height: 1.4;
     text-wrap: nowrap;
+    white-space: nowrap;
 
     color: #646464;
 }
@@ -266,6 +268,7 @@ input:focus, textarea:focus {
     font-style: normal;
     font-weight: 400;
     text-wrap: nowrap;
+    white-space: nowrap;
 
     color: #646464;
     text-decoration: none;
@@ -285,6 +288,7 @@ input:focus, textarea:focus {
     font-weight: 400;
     line-height: 1.4;
     text-wrap: nowrap;
+    white-space: nowrap;
 
     color: #646464;
 }
@@ -334,6 +338,8 @@ input:focus, textarea:focus {
     font-style: normal;
     font-weight: 400;
     text-wrap: nowrap;
+    white-space: nowrap;
+
     color: #646464;
 }
 
@@ -384,7 +390,8 @@ input:focus, textarea:focus {
 
 @media(max-width: 1148px) {
     .contacts__phone-description {
-        text-wrap: wrap;
+        text-wrap: nowrap;
+        white-space: nowrap;
     }
 }
 
