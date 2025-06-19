@@ -1,0 +1,68 @@
+.for-agency * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    
+    font-family: initial;
+    font-size: initial;
+    font-weight: initial;
+    text-align: start;
+    line-height: initial !important;
+    white-space: initial;
+    
+    list-style-type: none;
+    border: initial;
+    border-radius: initial;
+    outline: initial;
+    color: initial;
+    background-color: initial;
+    box-shadow: initial;
+    
+    cursor: initial;
+    appearance: auto;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+}
+
+/* =========================== */
+.main__agency-registration {
+    display: flex;
+    height: 120vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agen-reg__main-title {
+    height: 200px;
+
+    outline: 1px solid red;
+}
+.stiky {
+    position: sticky;
+    top: 10%;
+
+    height: 30px;
+    width: 30px;
+    align-self: end;
+
+    background-color: bisque;
+}
+
+input[type="radio"] {
+    appearance: none;
+ 
+    border-radius: 50%;
+
+    padding: 3px 3px;
+    outline: 1px solid light-dark( rgba(255, 102, 0, 1), rgba(255, 21, 114, 1));
+    border: 2px solid light-dark(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+}
+

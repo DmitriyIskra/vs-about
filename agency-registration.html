@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/agency-registration.css">
+
+    <script type="module" src="assets/js/app-modules.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- поменять href и проверить работу ссылки назад -->
+    <main class="main__agency-registration">
+
+        <div class="stiky"></div>
+
+        <div class="agent-reg__head">
+            <a class="agent-reg__head-back" href="./for-agency.html" target="_blank" title="перейти на страницу турагентствам"></a>
+            <h1 class="agent-reg__main-title">Регистрационная форма для агентств</h1>
+        </div> 
+
+        <div class="agent-reg__appeal">
+            <div class="agent-reg__appeal-content">
+                <h2 class="agent-reg__appeal-title">Уважаемые коллеги!</h2>
+
+                <div class="agent-reg__appeal-wr-text">
+                    <p class="agent-reg__appeal-text">Мы рады видеть Вашу компанию в наших рядах. <br> Будем признательны за внимательное <br> и правильное заполнение регистрационной формы.</p>
+                    <p class="agent-reg__appeal-text">
+                        Туристическая фирма «Вокруг света» подключена к ЭДО Контур Диадок <br> идентификатор в системе: <br> 2BM-7708596369-770801001-201409240456003456398
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Юра, привет. Я тут страницу регистрации агента делаю, тут форма большая. Там потом менеджер будет модерировать и подключать агента. куда она будет отправляться видимо позже решится, а вот имена полей, я задаю, потом посмотришь для бека, ну или могу потом какой нибудь список дать? -->
+        <form class="agent-reg__form" name="registration-agency">
+
+            <h2 class="agent-reg__form-title">Реквизиты организации</h2>
+            <ul class="agent-reg__requisites-list">
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="agent-reg__taxation">
+                <h3 class="agent-reg__taxation-title">Система налогообложения</h3>
+
+                <div class="agent-reg__taxation-wr-radio">
+                    <div class="agent-reg__wr-radio-button">
+                        <input class="agent-reg__radio-box" type="radio" name="taxation" value="Общая" id="general-taxation">
+                        <label class="agent-reg__radio-label" for="general-taxation">Общая</label>
+                    </div>
+
+                    <div class="agent-reg__wr-radio-button">
+                        <input class="agent-reg__radio-box" type="radio" name="taxation" value="Упрощенная" id="simplified-taxation">
+                        <label class="agent-reg__radio-label" for="simplified-taxation">Упрощенная</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2 class="agent-reg__form-title">Контактные данные менеджера Агентства</h2>
+            <ul class="agent-reg__requisites-list">
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+            </ul>
+
+
+
+
+            <h2 class="agent-reg__form-title">Где купить?</h2>
+            <p class="agent-reg__form-description">Для того, чтобы мы могли разместить информацию о вашей компании на нашем сайте. <br> Адрес отдела продаж:</p>
+            <ul class="agent-reg__requisites-list">
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+                <li class="agent-reg__input-text-item">
+                    <label class="agent-reg__input-text-label">
+                        <span class="agent-reg__input-text-title"></span>
+                        <input class="agent-reg__input-text" type="text" name="">
+                    </label>
+                </li>
+            </ul>
+
+
+        </form>
+
+    </main>
+</body>
+</html>
