@@ -551,6 +551,10 @@ input[type="checkbox"]:checked {
 /* END ATTENTION */
 
 /* START STIKY */
+#stiky-checkbox {
+    display: none;
+}
+
 .stiky {
     position: fixed;
     top: 32%;
@@ -565,15 +569,13 @@ input[type="checkbox"]:checked {
     transition: right 0.3s linear;
 }
 
-.stiky[open] {
-    right: 0;
-}
-
-.stiky:target {
+#stiky-checkbox:checked + .stiky {
     right: 0;
 }
 
 .stiky__label {
+    display: flex;
+    flex-direction: column;
     padding: 11px 12px 0 25px;
 
     cursor: pointer;
@@ -596,7 +598,7 @@ input[type="checkbox"]:checked {
 }
 
 .stiky__label-text {
-    margin-top: 4px;
+    margin-top: 5px;
     
     font-family: 'Roboto';
     font-size: 16px;
@@ -713,7 +715,7 @@ input[type="checkbox"]:checked {
 
 @media(max-width: 1024px) {
     .agent-reg__head {
-        grid-template-columns: 10.2% 1fr 10.2%;
+        grid-template-columns: 8.6% 1fr 8.6%;
         align-items: initial;
     }
 }
@@ -1237,38 +1239,6 @@ input[type="checkbox"]:checked {
 
         font-size: 4.27vw;
     }
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
 }
 
 @media(max-width: 1024px) {
