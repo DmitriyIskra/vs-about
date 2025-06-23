@@ -23,11 +23,9 @@
     <!-- поменять href и проверить работу ссылки назад -->
     <main class="main__agency-registration">
 
-        <div class="stiky"></div>
-
         <div class="agent-reg__head">
             <a class="agent-reg__head-back" href="./for-agency.html" target="_blank" title="перейти на страницу турагентствам">
-                <svg width="19" height="34" viewBox="0 0 19 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 19 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 16.2857L16.2857 2" stroke="#5A5D62" stroke-width="4" stroke-linecap="round"/>
                     <path d="M2 16.2858L17 31.2858" stroke="#5A5D62" stroke-width="4" stroke-linecap="round"/>
                 </svg>
@@ -44,6 +42,24 @@
                     <p class="agent-reg__appeal-text">
                         <span>Туристическая фирма «Вокруг света» подключена к ЭДО Контур Диадок</span> <br> идентификатор в системе: <br> 2BM-7708596369-770801001-201409240456003456398
                     </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-reg__contacts">
+            <input type="checkbox" id="agent-reg__contacts-title">
+            <label class="agent-reg__contacts-title" for="agent-reg__contacts-title">Контакты</label>
+
+            <div class="agent-reg__contacts-wrapper">
+                <div class="agent-reg__contacts-data">
+                    <div class="agent-reg__contacts-name">Антонинова Евгения</div>
+                    <div class="agent-reg__contacts-position">Руководитель отдела по работе <br> с агентствами</div>
+                    <div class="agent-reg__contacts-phone">
+                        <a class="agent-reg__contacts-link agent-reg__contacts-link_phone" href="tel:+74954191709" target="_blank" title="Телефон руководителя отдела по работе с агентствами">+7(495) 419-17-09 (доб. 208)</a>
+                    </div>
+                    <div class="agent-reg__contacts-email">
+                        <a class="agent-reg__contacts-link agent-reg__contacts-link_email" href="mailto:agent@vs-travel.ru" target="_blank" title="email руководителя отдела по работе с агентствами">agent@vs-travel.ru</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,14 +137,14 @@
                 <div class="agent-reg__taxation-wr-radio agent-reg__wr-radio">
                     <div class="agent-reg__wr-radio-button">
                         <label class="agent-reg__radio-label">
-                            <input class="agent-reg__radio-box" type="radio" name="taxation" value="Общая">
+                            <input type="radio" name="taxation" value="Общая">
                             <span>Общая</span>
                         </label>
                     </div>
 
                     <div class="agent-reg__wr-radio-button">
                         <label class="agent-reg__radio-label">
-                            <input class="agent-reg__radio-box" type="radio" name="taxation" value="Упрощенная">
+                            <input type="radio" name="taxation" value="Упрощенная">
                             <span>Упрощенная</span> 
                         </label>
                     </div>
@@ -141,28 +157,28 @@
                 <div class="agent-reg__nds-wr-radio agent-reg__wr-radio">
                     <div class="agent-reg__wr-radio-button">
                         <label class="agent-reg__radio-label">
-                            <input class="agent-reg__radio-box" type="radio" name="nds" value="Нет">
+                            <input type="radio" name="nds" value="Нет">
                             <span>Нет</span>
                         </label>
                     </div>
 
                     <div class="agent-reg__wr-radio-button">
                         <label class="agent-reg__radio-label">
-                            <input class="agent-reg__radio-box" type="radio" name="nds" value="5%">
+                            <input type="radio" name="nds" value="5%">
                             <span>5%</span>
                         </label>
                     </div>
 
                     <div class="agent-reg__wr-radio-button">
                         <label class="agent-reg__radio-label">
-                            <input class="agent-reg__radio-box" type="radio" name="nds" value="7%">
+                            <input type="radio" name="nds" value="7%">
                             <span>7%</span>
                         </label>
                     </div>
 
                     <div class="agent-reg__wr-radio-button">
                         <label class="agent-reg__radio-label">
-                            <input class="agent-reg__radio-box" type="radio" name="nds" value="20%">
+                            <input type="radio" name="nds" value="20%">
                             <span>20%</span>
                         </label>
                     </div>
@@ -240,8 +256,66 @@
                     <textarea class="agent-reg__comment-area" name="comments" maxlength="491"></textarea>
                 </label>
             </div>
+
+            <div class="agent-reg__agree">
+                <div class="agent-reg__agree-person">
+                    <label class="agent-reg__agree-label">
+                        <input class="agent-reg__agree-box" type="checkbox" name="person-data" value="agree">
+                        <span class="agent-reg__agree-title agent-reg__agree-person-title">Подтверждаю своё согласие на передачу в электронном виде регистрационной формы, <br> а так же на обработку и хранение информации (в том числе персональных данных).</span>
+                    </label>
+                </div>
+                <div class="agent-reg__agree-subscribtion">
+                    <label class="agent-reg__agree-label">
+                        <input class="agent-reg__agree-box" type="checkbox" name="subscribtion" value="agree">
+                        <span class="agent-reg__agree-title agent-reg__agree-subscribtion-title">Согласен на получение рассылки по e-mail</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="agent-reg__send">
+                <button class="agent-reg__send-button" type="submit">Отправить анкету</button>
+            </div>
         </form>
 
+        <!-- <div class="agent-reg__attention">
+            <div class="agent-reg__attention-content">
+                <div class="agent-reg__attention-icon"></div>
+                <h3 class="agent-reg__attention-title">Обращаем внимание</h3>
+    
+                <ul class="agent-reg__attention-list">
+                    <li class="agent-reg__attention-item">При смене контактных данных организации, юридического названия организации, юридического и фактического адреса и т.д. (без изменения ОГРН и ИНН) необходимо предоставить по адресу <a href="mailto:agent@vsoperator.ru" target="_blank" title="email для предоставления обновленных данных агентом">agent@vsoperator.ru</a> информационное письмо об изменениях на фирменном бланке организации, заверенное в установленном порядке печатью и подписью руководителя организации.</li>
+                    <li class="agent-reg__attention-item">Обязанность уведомления при смене реквизитов в рамках заключенного договора предусмотрена ГК РФ. В случае изменения ОГРН и ИНН агентство обязано заполнить новую регистрационную форму и заявление о присоединении к Агентскому договору-оферты в соответствии с установленной процедурой.</li>
+                </ul>
+            </div>
+        </div> -->
+
+        <div class="stiky">
+            <a class="stiky__label">
+                <div class="stiky__label-icon"></div>
+                <p class="stiky__label-text">
+                    Связаться <br> с менеджером
+                </p>
+            </a>
+            <ul class="stiky__delimeter-list">
+                <li class="stiky__delimeter-item"></li>
+                <li class="stiky__delimeter-item"></li>
+                <li class="stiky__delimeter-item"></li>
+                <li class="stiky__delimeter-item"></li>
+                <li class="stiky__delimeter-item"></li>
+                <li class="stiky__delimeter-item"></li>
+            </ul>
+            <div class="stiky__contacts">
+                <div class="stiky__name">Антонинова Евгения</div>
+                <div class="stiky__position">Руководитель отдела по работе <br> с агентствами</div>
+                <div class="stiky__phone">
+                    <a class="stiky__link stiky__link_phone" href="tel:+74954191709" target="_blank" title="Телефон руководителя отдела по работе с агентствами">+7(495) 419-17-09 (доб. 208)</a>
+                </div>
+                <div class="stiky__email">
+                    <a class="stiky__link stiky__link_email" href="mailto:agent@vs-travel.ru" target="_blank" title="email руководителя отдела по работе с агентствами">agent@vs-travel.ru</a>
+                </div>
+            </div>
+        </div>
     </main>
+
 </body>
 </html>
