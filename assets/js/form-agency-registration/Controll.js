@@ -6,10 +6,15 @@ export default class Controll {
        
         this.click = this.click.bind(this);
         this.submit = this.submit.bind(this);
+        this.registerPhoneMask = this.registerPhoneMask.bind(this)
     }
 
     init() {
+        this.redraw.openDialog()
+
         this.registerEvents();
+
+        this.redraw.phones.forEach(input => this.registerPhoneMask(input));
     }
 
     registerEvents() {
@@ -17,15 +22,44 @@ export default class Controll {
         this.redraw.form.addEventListener('submit', this.submit);
     }
 
+    registerPhoneMask(input) {
+        const maskOptions = {
+            mask: '+7 (000) 000-00-00',
+            // lazy: false,
+            // placeholderChar: '0',
+        };
+
+        IMask(input, maskOptions);
+    }
+
     click(e) {
         let target;
+        // снять invalid c выбранного текстового поля
         if(e.target.matches('input[type="text"]')) {
             target = e.target.closest('input[type="text"]');
             if(target.hasAttribute('invalid')) this.redraw.removeInvalid(target);
         }
+        // снять invalid c выбранного радио поля
+        if(e.target.matches('input[type="radio"]')) {
+            target = e.target.closest('input[type="radio"]');
+            
+            if(this.redraw.titlesRadio[target.name].hasAttribute('invalid')) 
+                this.redraw.removeInvalid(this.redraw.titlesRadio[target.name]);
+        }
+        // снять invalid c согласия на обработку персональных данных
+        if(e.target.matches('input[type="checkbox"]') && e.target.name === 'person-data') {           
+            if(this.redraw.titlePersonData.hasAttribute('invalid'))
+                this.redraw.removeInvalid(this.redraw.titlePersonData);
+        }
+
+
+        // Добавить еще адрес к "Где купить"
+        if(e.target.closest('.agent-reg__add-address-button')) {
+            this.redraw.addAddress(this.registerPhoneMask);
+        }
     }
 
-    submit(e) {
+    async submit(e) {
         e.preventDefault();
 
         // Все ли ОБЯЗАТЕЛЬНЫЕ ТЕКСТОВЫЕ ПОЛЯ заполнены  
@@ -86,5 +120,13 @@ export default class Controll {
         }
 
         const formData = new FormData(this.redraw.form);
+    
+        const responseData = await this.submitApi.create(formData);
+
+        if(responseData) {
+            // модалка успех 
+        } else {
+            // модалка провал
+        };
     }
 }

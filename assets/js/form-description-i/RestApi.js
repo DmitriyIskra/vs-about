@@ -14,8 +14,8 @@ export default class RestFormDescriptionI {
                 },
                 body: data,
             });
-            const data = response.json();
-            return data;
+            const result = response.json();
+            return result;
         } catch (error) {
             throw new Error('');
         }
@@ -57,3 +57,4 @@ export default class RestFormDescriptionI {
         }
     }
 }
+

@@ -5,25 +5,31 @@ export default class SubmitApi {
     }
 
     async create(data) {
+        return new Promise( resolve => {
+                setTimeout(() => {
+                    return resolve(true)
+                }, 3500);
+        } );
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : '',
+                    'Content-Type' : 'multipart/form-data',
                 },
-                body: JSON.stringify(data),
+                body: data,
             });
-            const data = response.json();
-               return data;
+            
+            const data = await response.json();
+            return data;
         } catch (error) {
-            throw new Error('');
+            throw new Error('Данные не переданы: ----', error);
         }
     }
 
     async read() {
         try {
             const response = await fetch(`${this.paths.read}`);
-            const data = response.json();
+            const data = await response.json();
                return data;
         } catch (error) {
             throw new Error('');
@@ -39,8 +45,8 @@ export default class SubmitApi {
                 },
                 body: JSON.stringify(data),
             });
-            const data = response.json();
-               return data;
+            const data = await response.json();
+            return data;
         } catch (error) {
             throw new Error('');
         }
@@ -49,8 +55,8 @@ export default class SubmitApi {
     async delete() {
         try {
             const response = await fetch(`${this.path.delete}`);
-            const data = response.json();
-               return data;
+            const data = await response.json();
+            return data;
         } catch (error) {
             throw new Error('');
         }

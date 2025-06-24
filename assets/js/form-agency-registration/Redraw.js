@@ -1,6 +1,8 @@
 export default class Redraw {
-    constructor(form) {
+    constructor(form, dialog) {
         this.form = form;
+        this.dialog = dialog;
+
         // Обязательные текстовые инпуты
         this.requiredInputs = [...this.form.querySelectorAll('input[type="text"]')];
 
@@ -21,11 +23,16 @@ export default class Redraw {
         // Заголовок и чекбокс персональных данных
         this.titlePersonData = this.form.querySelector('.agent-reg__agree-person-title');
         this.boxPersonData = this.form['person-data'];
+
+        // Блок для написания адреса "Где купить"
+        this.listAddress = this.form.querySelectorAll('.agent-reg__list_where-buy');
     }
 
-    // При добавлении еще одного адреса "Где купить" обновить массив телефонов
-    updateInputsPhone() {
+    // При добавлении еще одного адреса "Где купить" обновить данные формы
+    updateData() {
+        this.requiredInputs = [...this.form.querySelectorAll('input[type="text"]')];
         this.phones = [...this.form.querySelectorAll('[data-type="phone"]')];
+        this.listAddress = this.form.querySelectorAll('.agent-reg__list_where-buy');
     }
 
     /**
@@ -39,5 +46,44 @@ export default class Redraw {
     // снимает невалидность с формы (убирает атрибут invalid)
     removeInvalid(element) {
         element.removeAttribute('invalid');
+    }
+
+    
+    /**
+     * @description Добавляем еще один адрес "Где купить"
+     * @param callback регистрация маски для поля телефон
+     * */ 
+    addAddress(callback) {
+        // получаем клон элемента
+        const clone = this.listAddress[0].cloneNode(true);
+        clone.style.paddingTop = '1vw';
+        // очищаем инпуты клона, на случай если у оригинала они были заполненны
+        // и задаем им новые имена (добавляем номер по порядкеу)
+        const inputsClone = [...clone.querySelectorAll('input[type="text"]')];
+        inputsClone.forEach(input => {
+            input.value = '';
+
+            const newName = `${input.name}-${this.listAddress.length + 1}`;
+            input.name = newName;
+
+            if(input?.dataset?.type === 'phone') callback(input);
+        });
+
+        const lastList = this.listAddress[this.listAddress.length - 1];
+
+        lastList.after(clone);
+        this.updateData();
+    }
+
+    openDialog() {
+        this.dialog.showModal();
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeDialog() {
+        this.dialog.closeModal();
+
+        document.body.style.overflow = '';
     }
 }

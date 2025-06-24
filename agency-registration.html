@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/agency-registration.css">
 
     <script type="module" src="assets/js/app-modules.js"></script>
-
+    
     <title>Document</title>
 </head>
 <body>
@@ -120,7 +120,7 @@
                 <li class="agent-reg__input-text-item">
                     <label class="agent-reg__input-text-label">
                         <span class="agent-reg__input-text-title">Телефон организации</span>
-                        <input class="agent-reg__input-text" type="text" data-type="phone" name="organization-phone">
+                        <input class="agent-reg__input-text" type="text" data-type="phone" name="organization-phone" placeholder="+7 (000) 000-00-00">
                     </label>
                 </li>
                 <li class="agent-reg__input-text-item">
@@ -191,25 +191,25 @@
                 <li class="agent-reg__input-text-item">
                     <label class="agent-reg__input-text-label">
                         <span class="agent-reg__input-text-title">Фамилия</span>
-                        <input class="agent-reg__input-text" type="text" name="second-name">
+                        <input class="agent-reg__input-text" type="text" name="menedger-second-name">
                     </label>
                 </li>
                 <li class="agent-reg__input-text-item">
                     <label class="agent-reg__input-text-label">
                         <span class="agent-reg__input-text-title">Имя</span>
-                        <input class="agent-reg__input-text" type="text" name="name">
+                        <input class="agent-reg__input-text" type="text" name="menedger-name">
                     </label>
                 </li>
                 <li class="agent-reg__input-text-item">
                     <label class="agent-reg__input-text-label">
                         <span class="agent-reg__input-text-title">Отчество</span>
-                        <input class="agent-reg__input-text" type="text" name="patronymic">
+                        <input class="agent-reg__input-text" type="text" name="menedger-patronymic">
                     </label>
                 </li>
                 <li class="agent-reg__input-text-item">
                     <label class="agent-reg__input-text-label">
                         <span class="agent-reg__input-text-title">Телефон</span>
-                        <input class="agent-reg__input-text" type="text" data-type="phone" name="menedger-phone">
+                        <input class="agent-reg__input-text" type="text" data-type="phone" name="menedger-phone" placeholder="+7 (000) 000-00-00">
                     </label>
                 </li>
                 <li class="agent-reg__input-text-item">
@@ -221,15 +221,13 @@
             </ul>
 
 
-
-
             <h2 class="agent-reg__form-title agent-reg__form-where-title">Где купить?</h2>
             <p class="agent-reg__form-where-description"><span>Для того, чтобы мы могли разместить</span> <span>информацию о вашей компании на нашем сайте.</span> <span>Адрес отдела продаж:</span></p>
-            <ul class="agent-reg__input-text-list">
+            <ul class="agent-reg__input-text-list agent-reg__list_where-buy">
                 <li class="agent-reg__input-text-item">
                     <label class="agent-reg__input-text-label">
                         <span class="agent-reg__input-text-title">Город</span>
-                        <input class="agent-reg__input-text" type="text" name="city">
+                        <input class="agent-reg__input-text" type="text" name="city-where-buy">
                     </label>
                 </li>
                 <li class="agent-reg__input-text-item">
@@ -241,7 +239,7 @@
                 <li class="agent-reg__input-text-item">
                     <label class="agent-reg__input-text-label">
                         <span class="agent-reg__input-text-title">Контактный телефон для размещения на сайте</span>
-                        <input class="agent-reg__input-text" type="text" data-type="phone" name="phone-for-site">
+                        <input class="agent-reg__input-text" type="text" data-type="phone" name="phone-for-site" placeholder="+7 (000) 000-00-00">
                     </label>
                 </li>
             </ul>
@@ -260,7 +258,7 @@
             <div class="agent-reg__agree">
                 <div class="agent-reg__agree-person">
                     <label class="agent-reg__agree-label">
-                        <input class="agent-reg__agree-box agent-reg__agree-box_person" type="checkbox" name="person-data" value="agree">
+                        <input class="agent-reg__agree-box agent-reg__agree-box_person" type="checkbox" name="person-data" value="1">
                         <span class="agent-reg__agree-title agent-reg__agree-person-title">Подтверждаю своё согласие на передачу в электронном виде регистрационной формы, <br> а так же на обработку и хранение информации (в том числе персональных данных).</span>
                     </label>
                 </div>
@@ -317,6 +315,16 @@
             </div>
         </div>
     </main>
+    <!-- attribute success или fail от этого показываем нужное окно -->
+    <dialog class="dialog">
+        <!-- !!!! LOADER И СЮДА И В ПОДПИСКУ -->
+        <!-- <div class="dialog__success">
 
+        </div>
+        <div class="dialog__fail">
+
+        </div> -->
+    </dialog>
+    <script src="https://unpkg.com/imask"></script>
 </body>
 </html>
