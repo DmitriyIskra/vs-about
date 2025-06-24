@@ -1,4 +1,4 @@
-export default class ControllAboutUs {
+export default class ControllFormDescriptionI {
     constructor(redraw, rest) {
         this.redraw = redraw;
         this.rest = rest;

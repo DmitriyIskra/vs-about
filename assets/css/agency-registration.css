@@ -209,6 +209,11 @@ input:focus, textarea:focus {
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
 }
 
+.agent-reg__input-text[invalid] {
+    border: 1px solid #f08686;
+    box-shadow: 0px 0px 5px 1px rgba(240, 134, 134, 0.25);
+}
+
 .agent-reg__taxation {
     width: 600px;
     margin-top: 40px;
@@ -221,6 +226,17 @@ input:focus, textarea:focus {
     font-weight: 500;
 
     color: #5A5D62;
+}
+
+.agent-reg__radio-title[invalid] {
+    color: #f08686;
+}
+
+.agent-reg__radio-title::after {
+    content: "*";
+    display: inline-block;
+    color: #F00;
+    transform: translate(1px, -15%);
 }
 
 .agent-reg__taxation-wr-radio {
@@ -437,6 +453,10 @@ input[type="checkbox"]:checked {
     margin-top: 1px;
 
     line-height: 0.7;
+}
+
+.agent-reg__agree-person-title[invalid] {
+    color: #f08686;
 }
 
 .agent-reg__agree-person-title::after {
@@ -1002,7 +1022,7 @@ input[type="checkbox"]:checked {
 
 @media(max-width: 1024px) {
     .agent-reg__radio-title {
-        font-size: 3.95vw;
+        font-size: 3.85vw;
     }
 }
 

@@ -1,4 +1,4 @@
-export default class RedrawAboutUs {
+export default class RedrawFormDescriptionI {
     constructor(form) {
         this.form = form;
         this.formMessage = this.form.querySelector('.subscr-i__send-message');

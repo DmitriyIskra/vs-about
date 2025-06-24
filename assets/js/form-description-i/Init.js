@@ -1,4 +1,4 @@
-export default class InitAboutUs {
+export default class Init {
 
     static async init(form) {
         const Controll = (await import('./Controll.js')).default;

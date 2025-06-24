@@ -1,21 +1,20 @@
-export default class Rest {
+export default class SubmitApi {
     constructor(paths) {
         this.paths = paths;
         
     }
 
     async create(data) {
-        return true
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : 'multipart/form-data',
+                    'Content-Type' : '',
                 },
-                body: data,
+                body: JSON.stringify(data),
             });
             const data = response.json();
-            return data;
+               return data;
         } catch (error) {
             throw new Error('');
         }
@@ -25,7 +24,7 @@ export default class Rest {
         try {
             const response = await fetch(`${this.paths.read}`);
             const data = response.json();
-            return data;
+               return data;
         } catch (error) {
             throw new Error('');
         }
@@ -41,7 +40,7 @@ export default class Rest {
                 body: JSON.stringify(data),
             });
             const data = response.json();
-            return data;
+               return data;
         } catch (error) {
             throw new Error('');
         }
@@ -51,7 +50,7 @@ export default class Rest {
         try {
             const response = await fetch(`${this.path.delete}`);
             const data = response.json();
-            return data;
+               return data;
         } catch (error) {
             throw new Error('');
         }
