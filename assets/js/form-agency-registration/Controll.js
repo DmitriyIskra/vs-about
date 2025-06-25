@@ -1,8 +1,9 @@
 export default class Controll {
-    constructor(redraw, validation, submitApi) {
+    constructor(redraw, validation, submitApi, loaderApi,) {
         this.redraw = redraw;
         this.validation = validation;
         this.submitApi = submitApi;
+        this.loaderApi = loaderApi;
        
         this.click = this.click.bind(this);
         this.submit = this.submit.bind(this);
@@ -10,10 +11,8 @@ export default class Controll {
     }
 
     init() {
-        this.redraw.openDialog()
-
         this.registerEvents();
-
+        this.loaderApi.init();
         this.redraw.phones.forEach(input => this.registerPhoneMask(input));
     }
 
@@ -120,8 +119,12 @@ export default class Controll {
         }
 
         const formData = new FormData(this.redraw.form);
-    
+
+        this.loaderApi.show();
+
         const responseData = await this.submitApi.create(formData);
+
+        this.loaderApi.hide();
 
         if(responseData) {
             // модалка успех 

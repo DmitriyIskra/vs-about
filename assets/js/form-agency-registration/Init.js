@@ -8,7 +8,14 @@ export default class InitFormAgencyRegistration {
         const SubmitApi = (await import('./SubmitApi.js')).default;
         const Validation = (await import('../validation-places-form/ValidationPlacesForm.js')).default;
 
-        const controll = new Controll(new Redraw(form, dialog), new Validation(), new SubmitApi());
+        const Loader = (await import('../loader/Controll.js')).default;
+
+        const controll = new Controll(
+            new Redraw(form, dialog), 
+            new Validation(), 
+            new SubmitApi(null),
+            new Loader()
+        );
         controll.init();
     }
 

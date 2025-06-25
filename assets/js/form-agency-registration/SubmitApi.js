@@ -1,7 +1,7 @@
 export default class SubmitApi {
-    constructor(paths) {
+    constructor(paths, loader) {
         this.paths = paths;
-        
+        this.loader = loader;
     }
 
     async create(data) {
@@ -11,6 +11,7 @@ export default class SubmitApi {
                 }, 3500);
         } );
         try {
+            this.loader.show();
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
                 headers: {
@@ -20,8 +21,10 @@ export default class SubmitApi {
             });
             
             const data = await response.json();
+            this.loader.hide();
             return data;
         } catch (error) {
+            this.loader.hide();
             throw new Error('Данные не переданы: ----', error);
         }
     }

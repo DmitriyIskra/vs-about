@@ -730,19 +730,7 @@ input[type="checkbox"]:checked {
 }
 /* END STIKY */
 
-/* START DIALOG */
-.dialog {
-    min-height: 100%;
-    min-width: 100%;
 
-    border: none;
-    background-color: transparent;
-}
-
-.dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.25);
-}
-/* END DIALOG */
 
 @media(max-width: 1024px) {
     .main__agency-registration {

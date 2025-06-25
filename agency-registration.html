@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/agency-registration.css">
+    <link rel="stylesheet" href="assets/css/loader-i.css">
+    <link rel="stylesheet" href="assets/css/modals-i.css">
 
     <script type="module" src="assets/js/app-modules.js"></script>
     
@@ -315,15 +317,40 @@
             </div>
         </div>
     </main>
+    <div class="loader">
+        <span class="loader-body"></span>
+    </div>
     <!-- attribute success или fail от этого показываем нужное окно -->
-    <dialog class="dialog">
-        <!-- !!!! LOADER И СЮДА И В ПОДПИСКУ -->
-        <!-- <div class="dialog__success">
 
+    <dialog class="dialog" fail>
+        
+        <!-- success request -->
+        <div class="dialog__window dialog__req-res dialog__success">
+            <div class="dialog__wr-close dialog__wr-close-req-res">
+                <div class="dialog__close"></div>
+            </div>
+            <div class="dialog__content dialog__content-req-res dialog__content-success">
+                <div class="dialog__content-icon dialog__icon-req-res dialog__icon-success"></div>
+                <div class="dialog__text dialog__text-req-res">
+                    <p>Ваша зявка успешно отправленна</p>
+                </div>
+            </div>
         </div>
-        <div class="dialog__fail">
 
-        </div> -->
+        <!-- fail request -->
+        <div class="dialog__window dialog__req-res dialog__fail">
+            <div class="dialog__wr-close dialog__wr-close-req-res">
+                <div class="dialog__close"></div>
+            </div>
+            <div class="dialog__content dialog__content-req-res dialog__content-fail">
+                <div class="dialog__content-icon dialog__icon-req-res dialog__icon-fail"></div>
+                <div class="dialog__text dialog__text-req-res">
+                    <p>Что-то пошло не так.</p>
+                    <p>Пожалуйста, попробуйте еще раз.</p>
+                </div>
+            </div>
+        </div>
+
     </dialog>
     <script src="https://unpkg.com/imask"></script>
 </body>

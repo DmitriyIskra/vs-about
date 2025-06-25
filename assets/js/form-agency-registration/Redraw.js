@@ -74,16 +74,4 @@ export default class Redraw {
         lastList.after(clone);
         this.updateData();
     }
-
-    openDialog() {
-        this.dialog.showModal();
-
-        document.body.style.overflow = 'hidden';
-    }
-
-    closeDialog() {
-        this.dialog.closeModal();
-
-        document.body.style.overflow = '';
-    }
 }
