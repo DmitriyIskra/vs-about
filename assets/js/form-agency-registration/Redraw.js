@@ -1,7 +1,6 @@
 export default class Redraw {
-    constructor(form, dialog) {
+    constructor(form) {
         this.form = form;
-        this.dialog = dialog;
 
         // Обязательные текстовые инпуты
         this.requiredInputs = [...this.form.querySelectorAll('input[type="text"]')];

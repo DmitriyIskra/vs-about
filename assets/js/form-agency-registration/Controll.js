@@ -1,9 +1,10 @@
 export default class Controll {
-    constructor(redraw, validation, submitApi, loaderApi,) {
+    constructor(redraw, validation, submitApi, loaderApi, dialogApi) {
         this.redraw = redraw;
         this.validation = validation;
         this.submitApi = submitApi;
         this.loaderApi = loaderApi;
+        this.dialogApi = dialogApi;
        
         this.click = this.click.bind(this);
         this.submit = this.submit.bind(this);
@@ -12,7 +13,10 @@ export default class Controll {
 
     init() {
         this.registerEvents();
+
         this.loaderApi.init();
+        this.dialogApi.init();
+        // вешаем маски на поля для ввода телефона
         this.redraw.phones.forEach(input => this.registerPhoneMask(input));
     }
 
@@ -127,9 +131,9 @@ export default class Controll {
         this.loaderApi.hide();
 
         if(responseData) {
-            // модалка успех 
+            this.dialogApi.openDialog('success');
         } else {
-            // модалка провал
+            this.dialogApi.openDialog('fail');
         };
     }
 }

@@ -1,24 +1,21 @@
 export default class Dialog {
-    constructor() {
-        this.redraw = null;
+    constructor(redraw) {
+        this.redraw = redraw;
         
         this.click = this.click.bind(this);
+
+        // при открытии dialog по необходимости (если есть форма), передается колбек с привязанным контекстом куда передавать данные
+        // из формы для отправки, а на формы через цикл или по параметру вешать слушатель, с условиями и фильтрацией по e.target
+        // и соответствующей для каждой формы логикой. 
+        this.callbackSubmitApi = null;
     }
 
-    async init() {
-        await this.registerRedraw();
-
+    init() {
         this.registerEvents();
     }
 
-    async registerRedraw() {
-        const dialog = document.querySelector('dialog');
-        const Redraw = (await (import('./Redraw.js'))).default;
-        this.redraw = new Redraw(dialog);
-    }
-
     registerEvents() {
-        this.redraw.dialog.addEventListener('click', this.click);
+        this.redraw.close.addEventListener('click', this.click);
     }
 
     registerContentEvents(event) {
@@ -26,10 +23,16 @@ export default class Dialog {
     }
 
     click(e) {
-        e.preventDefault();
-
-        if(e.target.closest('')) {
-
+        if(e.target.closest('.dialog__close')) {
+            this.closeDialog();
         }
+    }
+
+    openDialog(param) {
+        this.redraw.openDialog(param);
+    }
+    
+    closeDialog() {
+        this.redraw.closeDialog();
     }
 }
