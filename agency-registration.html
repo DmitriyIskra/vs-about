@@ -323,31 +323,24 @@
     <!-- attribute success или fail от этого показываем нужное окно -->
 
     <dialog class="dialog" fail>
-        
+        <div class="dialog__wr-close">
+            <div class="dialog__close"></div>
+        </div>
+
         <!-- success request -->
-        <div class="dialog__window dialog__req-res dialog__success">
-            <div class="dialog__wr-close dialog__wr-close-req-res">
-                <div class="dialog__close"></div>
-            </div>
-            <div class="dialog__content dialog__content-req-res dialog__content-success">
-                <div class="dialog__content-icon dialog__icon-req-res dialog__icon-success"></div>
-                <div class="dialog__text dialog__text-req-res">
-                    <p>Ваша зявка успешно отправленна</p>
-                </div>
+        <div class="dialog__content dialog__content-req-res dialog__content-success">
+            <div class="dialog__content-icon dialog__icon-req-res dialog__icon-success"></div>
+            <div class="dialog__text dialog__text-req-res">
+                <p>Ваша зявка успешно отправленна</p>
             </div>
         </div>
 
         <!-- fail request -->
-        <div class="dialog__window dialog__req-res dialog__fail">
-            <div class="dialog__wr-close dialog__wr-close-req-res">
-                <div class="dialog__close"></div>
-            </div>
-            <div class="dialog__content dialog__content-req-res dialog__content-fail">
-                <div class="dialog__content-icon dialog__icon-req-res dialog__icon-fail"></div>
-                <div class="dialog__text dialog__text-req-res">
-                    <p>Что-то пошло не так.</p>
-                    <p>Пожалуйста, попробуйте еще раз.</p>
-                </div>
+        <div class="dialog__content dialog__content-req-res dialog__content-fail">
+            <div class="dialog__content-icon dialog__icon-req-res dialog__icon-fail"></div>
+            <div class="dialog__text dialog__text-req-res">
+                <p>Что-то пошло не так.</p>
+                <p>Пожалуйста, попробуйте еще раз.</p>
             </div>
         </div>
 

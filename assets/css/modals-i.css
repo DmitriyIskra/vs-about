@@ -31,39 +31,21 @@ input:focus, textarea:focus {
 /* success, fail - конкретный экземпляр модалки */
 
 /* START DIALOG */
-.dialog {
+.dialog::backdrop {
     display: grid;
     place-items: center;
-    min-height: 100%;
-    min-width: 100%;
 
-    border: none;
-    background-color: transparent;
-}
-
-.dialog__window {
-    display: none;
-}
-
-.dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-dialog[success] > .dialog__success {
-    display: block;
-}
-
-dialog[fail] > .dialog__fail {
-    display: block;
-}
-/* END DIALOG */
-
-.dialog__window {
+.dialog {
+    border: none;
     border-radius: 10px;
     background: #FFF;
 }
 
-.dialog__req-res {
+dialog[success],
+dialog[fail] {
     width: 350px;
     min-height: 351px;
     padding-top: 30px;
@@ -74,7 +56,8 @@ dialog[fail] > .dialog__fail {
     justify-content: flex-end;
 }
 
-.dialog__wr-close-req-res {
+dialog[success] .dialog__wr-close,
+dialog[fail] .dialog__wr-close {
     padding-right: 30px;
 }
 
@@ -103,6 +86,25 @@ dialog[fail] > .dialog__fail {
     mask-repeat: no-repeat;
 }
 
+.dialog__content {
+    display: none;
+}
+
+dialog[success] > .dialog__content-success {
+    display: block;
+}
+
+dialog[fail] > .dialog__content-fail {
+    display: block;
+}
+
+.dialog__text_bold {
+    font-weight: 600; /*когда будут модалки значение подправить, если будет отличаться*/
+}
+/* END DIALOG */
+
+
+/* START REQUEST RESULT (req-res) */
 .dialog__content-req-res {
     margin-top: 21px;
 }
@@ -124,7 +126,12 @@ dialog[fail] > .dialog__fail {
     background-position: center;
 }
 
-.dialog__text > p {
+
+.dialog__text-req-res {
+    margin-top: 36px;
+}
+
+.dialog__text-req-res > p {
     font-family: 'Roboto';
     font-size: 15px;
     font-style: normal;
@@ -133,12 +140,5 @@ dialog[fail] > .dialog__fail {
 
     color: #5A5D62;
 }
-
-.dialog__text-req-res {
-    margin-top: 36px;
-}
-
-.dialog__text_bold {
-    font-weight: 600; /*когда будут модалки значение подправить, если будет отличаться*/
-}
+/* END REQUEST RESULT (req-res) */
 
