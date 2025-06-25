@@ -127,7 +127,7 @@ dialog[fail] > .dialog__content-fail {
     background-position: center;
 }
 .dialog__icon-fail {
-    background: no-repeat url('../i/attention-icon.svg');
+    background: no-repeat url('../i/icon-attention.svg');
     background-size: contain;
     background-position: center;
 }
