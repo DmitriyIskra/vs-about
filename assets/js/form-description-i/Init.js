@@ -5,9 +5,13 @@ export default class Init {
         const Redraw = (await import('./Redraw.js')).default;
         const RestApi = (await import('./RestApi.js')).default;
 
-        const redraw = new Redraw(form);
-        const restApi = new RestApi('');
-        const controll = new Controll(redraw, restApi);
+        const Loader = (await import('../loader/Controll.js')).default;
+
+        const controll = new Controll(
+            new Redraw(form), 
+            new RestApi(''),
+            new Loader(),
+        );
 
         controll.init();
     }

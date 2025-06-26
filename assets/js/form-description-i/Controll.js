@@ -1,7 +1,8 @@
 export default class ControllFormDescriptionI {
-    constructor(redraw, rest) {
+    constructor(redraw, rest, loaderApi) {
         this.redraw = redraw;
         this.rest = rest;
+        this.loaderApi = loaderApi;
         
         this.click = this.click.bind(this);
         this.submit = this.submit.bind(this);
@@ -10,6 +11,8 @@ export default class ControllFormDescriptionI {
 
     init() {
         this.registerEvents();
+
+        this.loaderApi.init();
     }
 
     registerEvents() {
@@ -47,7 +50,11 @@ export default class ControllFormDescriptionI {
 
         const formData = new FormData(this.redraw.form);
 
+        this.loaderApi.show();
+
         const resultSendData = await this.rest.create(formData);
+
+        this.loaderApi.hide();
 
         if(resultSendData) {
             this.redraw.setFormMessage('Подписка успешно оформлена');

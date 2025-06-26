@@ -5,7 +5,11 @@ export default class RestFormDescriptionI {
     }
 
     async create(data) {
-        return true
+        return new Promise( resolve => {
+            setTimeout(() => {
+                return resolve(false)
+            }, 3500);
+        } );
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
