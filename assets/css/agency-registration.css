@@ -26,6 +26,27 @@ input:focus, textarea:focus {
     outline: 0;
 }
 
+
+[type=checkbox]:checked + label, [type=checkbox]:not(:checked) + label {
+    position: initial;
+    padding-left: initial;
+    cursor: initial;
+    line-height: initial;
+    display: initial;
+}
+
+[type=checkbox]:checked + label:before, [type=checkbox]:not(:checked) + label:before {
+    display: inline;
+    position: static;
+    left: initial;
+    top: initial;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    background: none;
+}
+
 /* =========================== */
 .main__agency-registration {
     display: flex;
@@ -429,7 +450,7 @@ input[type="radio"]:checked {
     gap: 14px;
 }
 
-label.agent-reg__agree-label > input[type="checkbox"] {
+label.agent-reg__agree-label > .agent-reg__agree-box {
     position: static;
     
     height: fit-content;
@@ -445,10 +466,10 @@ label.agent-reg__agree-label > input[type="checkbox"] {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked {
+.agent-reg__agree-box:checked {
     outline: 1px solid #F60 !important;
     background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
-}
+} 
 
 .agent-reg__agree-title {    
     font-family: 'Roboto';
@@ -845,7 +866,7 @@ input[type="checkbox"]:checked {
 }
 
 @media(max-width: 1024px) {
-    .agent-reg__contacts-title {
+    .agent-reg__contacts > label.agent-reg__contacts-title {
         display: flex;
         gap: 4vw;
         grid-row: 1;
@@ -859,7 +880,7 @@ input[type="checkbox"]:checked {
         color: #5A5D62;
     }
 
-    .agent-reg__contacts-title::before {
+    .agent-reg__contacts > label.agent-reg__contacts-title::before {
         content: "";
 
         height: 2.13vw;
@@ -873,8 +894,16 @@ input[type="checkbox"]:checked {
         transition: transform 0.3s linear;
     }
 
-    #agent-reg__contacts-title:checked ~ .agent-reg__contacts-title::before {
+    #agent-reg__contacts-title:checked ~ label.agent-reg__contacts-title::before {
         transform: rotate(-180deg);
+    }
+    
+    
+    #agent-reg__contacts-title[type=checkbox]:checked + label:after, 
+    #agent-reg__contacts-title[type=checkbox]:not(:checked) + label:after {
+        display: none;
+        outline: none;
+        background: none;
     }
 }
 
