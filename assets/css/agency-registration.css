@@ -226,7 +226,7 @@ button:hover:not(:disabled), .button:hover, input[type=submit]:hover {
     width: 600px;
     height: 50px;
     padding-left: 30px;
-    padding-right: 20px;
+    padding-right: 30px;
 
     font-family: 'Roboto';
     font-size: 14px;
@@ -315,7 +315,7 @@ label.agent-reg__radio-label > input[type="radio"] {
     cursor: pointer;
 }
 
-input[type="radio"]:checked {
+label.agent-reg__radio-label > input[type="radio"]:checked {
     outline: 1px solid #F60 !important;
     background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
 }
@@ -437,7 +437,7 @@ input[type="radio"]:checked {
     width: 600px;
     height: 180px;
     padding-top: 29px;
-    padding-right: 20px;
+    padding-right: 30px;
     padding-bottom: 29px;
     padding-left: 30px;
     resize: none;

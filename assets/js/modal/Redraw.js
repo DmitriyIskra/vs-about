@@ -8,15 +8,22 @@ export default class Redraw {
 
     // открытие модалки с аттрибутом соответствующего контента
     /**
-     * success - передача данных успешна
-     * fail - передача данных не успешна
+     * @param - параметр который указывает контент какой формы показывать
+     * @example success - передача данных успешна
+     * @example fail - передача данных не успешна
      * */ 
     openDialog(param) {
+        // высота скрола
+        const scrollData = scrollY;
+
         this.currentParam = param;
         this.dialog.setAttribute(this.currentParam, '')
         this.dialog.showModal();
 
+        // установка страницы на месте, без скроллинга вверх при установке overflow = 'hidden'
         document.body.style.overflow = 'hidden';
+        
+        scrollTo(0, scrollData);
     }
 
     closeDialog() {
@@ -24,5 +31,6 @@ export default class Redraw {
         this.dialog.removeAttribute(this.currentParam)
 
         document.body.style.overflow = '';
+        this.dialog.style.top = '';
     }
 }

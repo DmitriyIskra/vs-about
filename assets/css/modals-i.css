@@ -38,26 +38,35 @@ input:focus, textarea:focus {
 
 /* START DIALOG */
 .dialog::backdrop {
-    display: grid;
-    place-items: center;
-
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .dialog {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    place-items: center;
+    height: 100%;
+    width: 100%;
 
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.dialog:open {
+    display: grid;
+}
+
+.dialog__window {
     border: none;
     border-radius: 10px;
     background: #FFF;
-
-    transform: translate(-50%, -50%);
 }
 
-dialog[success],
-dialog[fail] {
+dialog[success] > .dialog__window,
+dialog[fail] > .dialog__window {
     width: 350px;
     min-height: 351px;
     padding-top: 30px;
@@ -102,11 +111,11 @@ dialog[fail] .dialog__wr-close {
     display: none;
 }
 
-dialog[success] > .dialog__content-success {
+dialog[success] .dialog__content-success {
     display: block;
 }
 
-dialog[fail] > .dialog__content-fail {
+dialog[fail] .dialog__content-fail {
     display: block;
 }
 
