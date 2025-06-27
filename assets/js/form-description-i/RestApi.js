@@ -7,7 +7,7 @@ export default class RestFormDescriptionI {
     async create(data) {
         return new Promise( resolve => {
             setTimeout(() => {
-                return resolve(false)
+                return resolve(true)
             }, 3500);
         } );
         try {
