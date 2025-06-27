@@ -668,8 +668,6 @@ button.agent-reg__send-button:active {
     mask-repeat: no-repeat;
     -webkit-mask-size: contain;
     mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
 
     pointer-events: none;
 }

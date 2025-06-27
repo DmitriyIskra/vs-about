@@ -135,7 +135,7 @@ p.corp-cl__banner-text > span {
 .corp-cl__about-content {
     display: flex;
     justify-content: space-between;
-    width: 100%; /*67.612%*/
+    width: 100%;
     margin-top: 20px;
     padding-top: 41px;
     padding-right: 105px;
@@ -304,3 +304,183 @@ p.corp-cl__banner-text > span {
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 /* END КОРПОРАТИВНЫМ КЛИЕНТАМ */
+
+/* START ЧТО МЫ ПРЕДЛАГАЕМ */
+.corp-cl__offer {
+    margin-top: 62px;
+}
+
+.corp-cl__offer-title {
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #F60;
+}
+
+.corp-cl__offer-sub-title {
+    width: 805px;
+    margin: 11px auto 0;
+
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+
+    color: #464646;
+}
+
+.corp-cl__offer-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 37px;
+    
+    border-radius: 50px;
+    background-color: rgba(255, 115, 45, 0.30);
+    background-image: 
+        url('../i/cloud-white-transparent-no-border.svg'),
+        url('../i/cloud-white-transparent-no-border.svg'),
+        url('../i/cloud-white-transparent-no-border.svg'),
+        url('../i/cloud-white-transparent-no-border.svg'),
+        url('../i/cloud-white-transparent-no-border.svg'),
+        url('../i/cloud-white-transparent-no-border.svg');
+    background-repeat: 
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-size: 
+        235px 125px,
+        243px 130px,
+        340px 182px,
+        235px 125px,
+        372px 198px,
+        235px 125px;
+    background-position: 
+        11.8% 318px,
+        14.8% 79%,
+        1% 91.5%,
+        98.4% 78px,
+        89.3% 180px,
+        93.5% 90.5%;
+}
+
+.corp-cl__offer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1489px;
+    
+    padding-top: 59px;
+    padding-bottom: 59px;
+    column-gap: 59px;
+    row-gap: 40px;
+}
+
+.corp-cl__offer-item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 390px;
+    min-height: 470px;
+    padding: 0 19px 20px;
+
+    border-radius: 30px;
+    background: linear-gradient(204deg, rgba(206, 63, 228, 0.50) 20.69%, rgba(113, 57, 190, 0.50) 81.11%);
+    box-shadow: 0px 1px 1px 0px #FFF inset, 0px -2px 2px 1px rgba(0, 0, 0, 0.25) inset, 0px 0px 4px 0px rgba(0, 0, 0, 0.40);
+    backdrop-filter: blur(7.5px);
+}
+
+.corp-cl__offer-item-wr-title {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    height: 90px;
+}
+
+.corp-cl__offer-item-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.corp-cl__offer-item-title > span {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FFF;
+}
+
+.corp-cl__offer-item-wr-text {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.corp-cl__offer-item-text,
+.corp-cl__offer-item-text > span {
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #FFF;
+}
+
+.corp-cl__offer-item-text_small {
+    margin-top: -7px;
+
+    font-size: 13px;
+}
+
+.corp-cl__offer-item-text_small > span {
+    font-size: 13px;
+}
+
+span.corp-cl__offer-item-text_bold {
+    font-weight: 500;
+}
+
+.corp-cl__offer-item-wr-anchor {
+    display: flex;
+    align-items: end;
+    flex-grow: 1;
+}
+
+.corp-cl__offer-item-anchor {
+    display: grid;
+    place-items: center;
+    width: 191px;
+    height: 38px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #FFF;
+    border-radius: 25px;
+    background: #FF732D;
+    box-shadow: 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.corp-cl__offer-item-anchor:hover {
+    background-color: #ed5f00;
+}
+.corp-cl__offer-item-anchor:active {
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+}
+/* END ЧТО МЫ ПРЕДЛАГАЕМ */
