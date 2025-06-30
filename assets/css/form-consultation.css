@@ -1,0 +1,436 @@
+.consultation {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.consultation__wr-content {
+    position: relative;
+
+    display: flex;
+    gap: 26px;
+}
+
+.consultation__wr-form-text {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 48px;
+    flex-grow: 1;
+
+    background: no-repeat url('../i/clouds-transparent-pair.svg');
+    background-size: 92px auto;
+    background-position: right top 137px;
+}
+
+.consultation__wr-title {
+    display: flex;
+    width: 100%; /*81.152%*/
+    flex-direction: column;
+    align-items: center;
+}
+
+.consultation__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.consultation__title > span {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 500;
+
+    color: #F60;
+}
+
+.consultation__wr-form {
+    display: flex;
+    width: 100%;
+    margin-top: 79px;
+    justify-content: end;
+}
+
+.consultation__image {
+    background: no-repeat url('../i/for-agency-subscripbtion.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.consultation__image_mobile {
+    display: none;
+}
+
+.consultation__form {
+    position: relative;
+
+    display: grid;
+    width: 100%;
+    height: 60px;
+    padding-left: 38px;
+    padding-right: 3px;
+    grid-template-columns: repeat(5, min-content) 1fr; /*20.734% 1px 24.7% 1px 22.714% 1fr | repeat(5, min-content) 1fr*/
+    align-items: center;
+
+    border-radius: 50px;
+    border: 1px solid #828282;
+    background: rgba(255, 255, 255, 0.30);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+.consultation__form[invalid] {
+    border: 1px solid #f08686;
+    box-shadow: 0px 0px 5px 1px rgba(240, 134, 134, 0.25);
+}
+
+.consultation__input {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #828282;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.consultation__input:-webkit-autofill,
+.consultation__input:-moz-autofill {
+    color: #828282;
+    background-color: transparent;
+}
+
+.consultation__input::selection {
+    background-color: #fff;
+}
+
+.consultation__input::-moz-selection {
+    background-color: #fff;
+}
+
+.consultation__input[name="name"] {
+    width: 136px;
+}
+.consultation__input[name="phone"] {
+    width: 162px;
+}
+.consultation__input[name="email"] {
+    width: 149px;
+}
+
+.consultation__input::placeholder {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #828282;
+}
+
+.consultation__input:focus::placeholder {
+    visibility: hidden;
+}
+
+.consultation__form-line {
+    width: 1px;
+    height: 34px;
+    margin-left: 6px;
+    margin-right: 26px;
+
+    background: #828282;
+}
+
+.consultation__button {
+    width: 179px;
+    height: 50px;
+    justify-self: end;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    border-radius: 25px;
+    background-color: #FF732D !important;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.57));
+
+    cursor: pointer;
+}
+
+.consultation__button:hover {
+    background-color: #ed5f00 !important;
+}
+
+.consultation__send-message {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    display: none;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+    text-wrap: nowrap;
+    white-space: nowrap;
+
+    color: #828282;
+
+    transform: translate(-50%, 116%);
+}
+
+.consultation__send-message_active {
+    display: block;
+}
+
+.consultation__form[invalid] .consultation__send-message {
+    color: #f08686;
+}
+
+.consultation__cloud {
+    position: absolute;
+
+    background: no-repeat url('../i/cloud-alone-white.svg');
+    background-size: contain;
+    background-position:  center;
+}
+
+.consultation__cloud-l-t {
+    top: 36px;
+    left: 1%;
+
+    width: 77px;
+    height: 43px;
+}
+
+.consultation__cloud-l-b {
+    top: 103px;
+    left: 10.8%;
+
+    width: 44px;
+    height: 27px;
+}
+
+.consultation__cloud-r-t {
+    top: -11px;
+    right: 0.7%;
+
+    width: 57px;
+    height: 32px;
+}
+
+.consultation__cloud-r-b {
+    top: -7px;
+    right: 6.5%;
+
+    width: 73px;
+    height: 41px;
+}
+
+.consultation__image_desc {
+    width: 436px;
+    height: 290px;
+    flex-shrink: 0;
+
+    border-radius: 8px;
+    box-shadow: 0px 0px 7.3px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+@media(max-width: 1024px) {
+    .consultation__title_mobile {
+        display: block;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__wr-content{
+        display: flex;
+        justify-content: center;
+        gap: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__wr-form-text {
+        display: block;
+        width: 100%;
+        padding-top: 0;
+    
+        background: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__wr-title {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__title > span {
+        font-size: 6.40vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__wr-form {
+        display: block;
+        width: 100%;
+        margin-top: 12.5vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__image_mobile {
+        display: block;
+        width: 100%;
+        height: 59.20vw;
+    
+        box-shadow: 0px 0px 1.33vw 0.27vw rgba(0, 0, 0, 0.25);
+        border-radius: 2.13vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__form {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-top: -16vw;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 4.53vw;
+        flex-direction: column;
+        align-items: center;
+    
+        border-radius: 8vw;
+        border: none;
+        background: rgba(255, 255, 255, 0.40);
+        box-shadow: 0px 0.27vw 0.27vw 0px #FFF inset, 0px 0px 1.60vw 0.27vw rgba(0, 0, 0, 0.40);
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__input {
+        padding-top: 5.33vw;
+        padding-bottom: 3.73vw;
+        padding-left: 4vw;
+    
+        font-size: 3.73vw;
+    
+        border-bottom: 1px solid #5A5D62;
+        color: #303030;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__input[name="name"],
+    .consultation__input[name="email"] {
+        width: 90.73%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__input::placeholder {
+        font-size: 3.73vw;
+    
+        color: #303030;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__form-line {
+        display: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__button {
+        width: 46.40vw;
+        height: 10.67vw;
+        margin-top: 5.07vw;
+    
+        font-size: 4.27vw;
+    
+        border-radius: 6.67vw;
+        filter: none;
+        box-shadow: 0px 1.07vw 1.07vw 0px rgba(0, 0, 0, 0.25), 0px 0px 1.87vw 0.53vw rgba(0, 0, 0, 0.25);
+    }
+
+    .consultation__button:hover {
+        background-color: #ed5f00 !important;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__send-message {
+        font-size: 3.5vw;
+
+        transform: translate(-50%, 126%);
+    }   
+}
+
+@media(max-width: 1024px) {
+    .consultation__cloud {
+        position: absolute;
+    
+        background: no-repeat url('../i/cloud-alone-white.svg');
+        background-size: contain;
+        background-position:  center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__cloud-l-t {
+        top: 7.3vw;
+        left: 9%;
+    
+        width: 8vw;
+        height: 4.6vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__cloud-l-b {
+        top: 8.3vw;
+        left: -5%;
+    
+        width: 14.1vw;
+        height: 8vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__cloud-r-t {
+        top: 28.8vw;
+        right: 0.4%;
+    
+        width: 9.1vw;
+        height: 5.2vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__cloud-r-b {
+        top: 29.2vw;
+        right: 8%;
+    
+        width: 12.47vw;
+        height: 7.17vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .consultation__image_desc {
+        display: none;
+    }
+}

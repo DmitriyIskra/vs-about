@@ -33,6 +33,10 @@ input:focus, textarea:focus {
 /* =========================== */
 
 /* START BANNER */
+.corp-cl__main {
+    padding-bottom: 139px;
+}
+
 .corp-cl__banner {
     display: grid;
     place-items: center;
@@ -484,3 +488,238 @@ span.corp-cl__offer-item-text_bold {
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 /* END ЧТО МЫ ПРЕДЛАГАЕМ */
+
+/* START ПРЕИМУЩЕСТВА */
+.corp-cl__advant {
+    display: flex;
+    justify-content: space-between;
+    width: 1287px;
+    margin-top: 56px;
+}
+
+.corp-cl__advant-info {
+    padding-top: 45px;
+}
+
+.corp-cl__advant-ribbon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 605px;
+    padding-left: 21px;
+
+    background: #FF732D;
+}
+
+.corp-cl__advant-ribbon::before,
+.corp-cl__advant-ribbon::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.corp-cl__advant-ribbon::before {
+    left: 0;
+
+    transform: translate(-50%, -50%);
+}
+.corp-cl__advant-ribbon::after {
+    right: 0;
+
+    transform: translate(50%, -50%);
+}
+
+.corp-cl__advant-ribbon > h2 {
+    font-family: 'Roboto';
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FFF;
+}
+
+.corp-cl__advant-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 41px;
+    padding-left: 7px;
+    gap: 9px;
+}
+
+.corp-cl__advant-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    font-family: 'Roboto';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #464646;
+}
+
+.corp-cl__advant-item::before {
+    content: "";
+
+    height: 5px;
+    width: 5px;
+
+    background-color: #464646;
+    border-radius: 50%;
+}
+
+
+.corp-cl__advant-img {
+    width: 558px;
+    height: 418px;
+
+    background: no-repeat url('../i/corp-client-advantages-image.svg');
+    background-size: contain;
+    background-position: center;
+}
+/* END ПРЕИМУЩЕСТВА */
+
+
+/* START ПЛЮСЫ КОРПОРАТИВНОГО КЛИЕНТА */
+.corp-cl__pluses {
+    width: 1307px;
+    margin-top: 49px;
+}
+
+.corp-cl__pluses-title {
+    font-family: 'Roboto';
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+
+    color: #F60;
+}
+
+.corp-cl__pluses-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    column-gap: 23px;
+    row-gap: 28px;
+}
+
+.corp-cl__pluses-item {
+    flex-shrink: 0;
+}
+
+.corp-cl__pluses-item-icon {
+    height: 208px;
+    width: 259px;
+}
+
+.corp-cl__pluses-icon-first {
+    margin-left: -7px;
+
+    background: no-repeat url('../i/team-spirit.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.corp-cl__pluses-icon_second {
+    margin-left: 13px;
+
+    background: no-repeat url('../i/team-trust.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.corp-cl__pluses-icon_third {
+    margin-left: -13px;
+
+    background: no-repeat url('../i/team-like.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.corp-cl__pluses-icon_fourth {
+    margin-left: -12px;
+
+    background: no-repeat url('../i/team-lamp.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.corp-cl__pluses-item-title {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+
+    color: #464646;
+}
+
+.corp-cl__pluses-item-text {
+    margin-top: 9px;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    text-wrap: nowrap;
+    white-space: nowrap;
+
+    color: #464646;
+}
+/* END ПЛЮСЫ КОРПОРАТИВНОГО КЛИЕНТА */
+
+/* START ФОРМА КОНСУЛЬТАЦИИ */
+.corp-cl__support {
+    width: 1224px;
+    margin-top: 125px;
+}
+/* END ФОРМА КОНСУЛЬТАЦИИ */
+
+
+/* START */
+.corp-cl__reviews {
+    margin-top: 75px;
+}
+
+.corp-cl__reviews-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 19px;
+    padding-bottom: 44px;
+
+    border-radius: 50px;
+    background: rgba(255, 115, 45, 0.30);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.corp-cl__reviews-title {
+    font-family: 'Roboto';
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    color: #F60;
+}
+
+.corp-cl__swiper {
+    margin-top: 43px;
+}
+
+.corp-cl__swiper-wrapper {
+    display: flex;
+    gap: 19px;
+}
+/* END */
