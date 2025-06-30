@@ -12,3 +12,16 @@ if(AgencyRegistrationForm) {
     Init.init(AgencyRegistrationForm);
 }
 
+const swiper = new Swiper('.corp-cl__sw', {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 18,
+    grabCursor: true,
+    
+
+    navigation: {
+      nextEl: '.corp-cl__button-prev',
+      prevEl: '.corp-cl__button-next',
+    },
+  });
