@@ -41,7 +41,6 @@ input:focus, textarea:focus {
     display: grid;
     place-items: center;
     height: 650px;
-    margin-left: -3px;
 
     background: no-repeat url('../i/corporativnym-clientam-banner.webp');
     background-size: cover;
@@ -52,6 +51,7 @@ input:focus, textarea:focus {
     display: flex;
     flex-direction: column;
     row-gap: 50px;
+    margin-left: -3px;
 }
 
 .corp-cl__banner-logo {
@@ -1371,7 +1371,6 @@ span.corp-cl__offer-item-text_bold {
         width: 28px;
         height: 14px;
     }
-
 }
 
 @media(max-width: 1360px) {
@@ -1387,16 +1386,488 @@ span.corp-cl__offer-item-text_bold {
     }
 }
 
-@media(max-width: 1360px) {
-    
-}
-
-@media(max-width: 1360px) {
-    
-}
-
-@media(max-width: 1360px) {
-    
-}
-
 /* END 1360 */
+
+/* START 1024 */
+@media(max-width: 1024px) {
+    .corp-cl__banner {
+        height: 80vw;
+
+        background: no-repeat url('../i/corporativnym-clientam-banner-mobile.webp');
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__banner-content {
+        margin-top: 7.7vw;
+        margin-left: 5.3vw;
+        row-gap: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__banner-logo {
+        width: 30.93vw;
+        height: 16.27vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__banner-wr-text {
+        margin-top: 4vw;
+    }  
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__banner-text-static {
+        font-size: 4.27vw;
+    }
+    
+    p.corp-cl__banner-text > span {
+        font-size: 4.27vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__banner-anchor {
+        margin-top: 6.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__banner-anchor > a {
+        width: 50.13vw;
+        height: 10.67vw;
+    }
+
+    .corp-cl__banner-anchor > a:hover {
+        background-color: #FF732D;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__section-wrapper {
+        padding: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__about {
+        
+    }
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+/* END 1024 */
