@@ -391,6 +391,7 @@
     .consultation__wr-content{
         display: flex;
         justify-content: center;
+        padding-top: 8.3vw;
         gap: 0;
     }
 }
@@ -414,15 +415,15 @@
 
 @media(max-width: 1024px) {
     .consultation__title > span {
-        font-size: 6.40vw;
+        font-size: 5.33vw;
     }
 }
 
 @media(max-width: 1024px) {
     .consultation__wr-form {
         display: block;
-        width: 100%;
-        margin-top: 12.5vw;
+        width: 89.33vw;
+        margin: 10.8vw auto 0;
     }
 }
 
@@ -471,8 +472,19 @@
 
 @media(max-width: 1024px) {
     .consultation__input[name="name"],
+    .consultation__input[name="phone"],
     .consultation__input[name="email"] {
         width: 90.73%;
+    }
+
+    .consultation__input[name="name"] {
+        order: 1;
+    }
+    .consultation__input[name="phone"] {
+        order: 3;
+    }
+    .consultation__input[name="email"] {
+        order: 2;
     }
 }
 
@@ -495,6 +507,7 @@
         width: 46.40vw;
         height: 10.67vw;
         margin-top: 5.07vw;
+        order: 4;
     
         font-size: 4.27vw;
     
