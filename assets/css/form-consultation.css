@@ -105,11 +105,13 @@
 }
 
 .consultation__input::selection {
-    background-color: #fff;
+    background-color: #f87e41;
+    color: #fff;
 }
 
 .consultation__input::-moz-selection {
-    background-color: #fff;
+    background-color: #f87e41;
+    color: #fff;
 }
 
 .consultation__input[name="name"] {
@@ -242,6 +244,141 @@
     border-radius: 8px;
     box-shadow: 0px 0px 7.3px 5px rgba(0, 0, 0, 0.25);
 }
+
+
+@media(max-width: 1360px) {
+    .consultation__title > span {
+        font-size: 22px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__wr-form-text {
+        padding-top: 38px;
+
+        background-position: right top 114px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__wr-form {
+        margin-top: 72px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__form {
+        height: 54px;
+        padding-left: 31px;
+        padding-right: 3px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__input {
+        font-size: 12px;
+    }
+    .consultation__input::placeholder {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__input[name="name"] {
+        width: 126px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__form-line {
+        height: 31px;
+        margin-left: 4px;
+        margin-right: 21px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__input[name="phone"] {
+        width: 149px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__input[name="email"] {
+        width: 142px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__button {
+        width: 175px;
+        height: 44px;
+
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__cloud-l-t {
+        top: 29px;
+        left: 4%;
+    }
+}
+
+@media(max-width: 1360px) {
+    .consultation__cloud-l-b {
+        top: 103px;
+        left: 14.8%;
+    }
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    .consultation__image_desc {
+        width: 386px;
+        height: 257px;
+    }
+}
+
 
 
 @media(max-width: 1024px) {
