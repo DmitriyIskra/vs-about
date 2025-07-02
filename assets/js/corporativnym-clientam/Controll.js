@@ -5,10 +5,11 @@ export default class Controll {
         this.click = this.click.bind(this);
     }
 
-    init() {
+    init(fadeTimeOut) {
         this.registerEvents();
 
         this.startSwiper();
+        this.redraw.startFade(fadeTimeOut);
     }
 
     startSwiper() {
@@ -36,6 +37,8 @@ export default class Controll {
             }
         });
     }
+
+    
 
     registerEvents() {
         this.redraw.el.addEventListener('click', this.click);

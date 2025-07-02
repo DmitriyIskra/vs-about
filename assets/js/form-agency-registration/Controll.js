@@ -26,13 +26,15 @@ export default class Controll {
     }
 
     registerPhoneMask(input) {
-        const maskOptions = {
-            mask: '+7 (000) 000-00-00',
-            // lazy: false,
-            // placeholderChar: '0',
-        };
-
-        IMask(input, maskOptions);
+        if(IMask) {
+            const maskOptions = {
+                mask: '+7 (000) 000-00-00',
+                // lazy: false,
+                // placeholderChar: '0',
+            };
+    
+            IMask(input, maskOptions);
+        }
     }
 
     click(e) {

@@ -167,6 +167,7 @@
 }
 
 .consultation__button:hover {
+    background: none !important;
     background-color: #ed5f00 !important;
 }
 
