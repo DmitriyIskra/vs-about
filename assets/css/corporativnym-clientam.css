@@ -39,7 +39,8 @@ input:focus, textarea:focus {
 
 .corp-cl__banner {
     display: grid;
-    place-items: center;
+    grid-template-columns: 24% 1fr;
+    align-items: center;
     height: 650px;
 
     background: no-repeat url('../i/corporativnym-clientam-banner.webp');
@@ -50,6 +51,7 @@ input:focus, textarea:focus {
 .corp-cl__banner-content {
     display: flex;
     flex-direction: column;
+    grid-column: 2;
     row-gap: 50px;
     margin-left: -3px;
 }
@@ -75,14 +77,31 @@ input:focus, textarea:focus {
     color: #FFF;
 }
 
-p.corp-cl__banner-text > span {
+.corp-cl__banner-text-dinamic {
+    position: relative;
+}
+
+.corp-cl__banner-dinamic-item {
+    position: absolute;
+    left: 0;
+
     font-family: "Roboto Slab";
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: 1.1 !important;
+    white-space: nowrap;
+    text-wrap: nowrap;
 
     color: #FFEA60;
+
+    opacity: 0;
+}
+
+.corp-cl__banner-dinamic-item[data-active="true"] {
+    position: static;
+
+    opacity: 1;
 }
 
 .corp-cl__banner-anchor > a {
@@ -795,7 +814,10 @@ span.corp-cl__offer-item-text_bold {
     margin: 43px auto 0;
 }
 
-.corp-cl__sw-slide {
+.swiper-slide.corp-cl__sw-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-height: 340px;
     padding-right: 20px;
     padding-left: 20px;
@@ -805,10 +827,13 @@ span.corp-cl__offer-item-text_bold {
     background: #FFF;
 }
 
+.corp-cl__sw-slide-content {
+    margin-top: 20px;
+}
+
 .corp-cl__sw-slide-head {
     display: grid;
     grid-template-columns: min-content 1fr min-content;
-    margin-top: 20px;
 }
 
 .corp-cl__sw-slide-avatar {
@@ -850,7 +875,6 @@ span.corp-cl__offer-item-text_bold {
 
 .corp-cl__stars-list {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     align-self: start;
     gap: 5px;
@@ -951,7 +975,48 @@ span.corp-cl__offer-item-text_bold {
 }
 /* END ОТЗЫВЫ */
 
+/* START 1600 */
+@media(max-width: 1600px) {
+    .corp-cl__banner {
+        grid-template-columns: 18% 1fr;
+    }
+}
+
+@media(max-width: 1600px) {
+    .corp-cl__banner-text-static {
+        font-size: 46px;
+    }
+    .corp-cl__banner-dinamic-item {
+        font-size: 46px;
+    }
+}
+/* START 1600 */
+
+
 /* START 1360 */
+
+@media(max-width: 1360px) {
+    .corp-cl__banner {
+        grid-template-columns: 14% 1fr;
+    }
+}
+
+@media(max-width: 1360px) {
+    .corp-cl__banner-text-static {
+        font-size: 44px;
+    }
+    .corp-cl__banner-dinamic-item {
+        font-size: 44px;
+    }
+}
+
+@media(max-width: 1360px) {
+    
+}
+
+@media(max-width: 1360px) {
+    
+}
 
 @media(max-width: 1360px) {
     .corp-cl__about {
@@ -1303,8 +1368,7 @@ span.corp-cl__offer-item-text_bold {
 }
 
 @media(max-width: 1360px) {
-    .corp-cl__sw-slide {
-        min-height: 300px;
+    .swiper-slide.corp-cl__sw-slide {
         padding-right: 16px;
         padding-left: 16px;
         padding-bottom: 10px;
@@ -1312,7 +1376,7 @@ span.corp-cl__offer-item-text_bold {
 }
 
 @media(max-width: 1360px) {
-    .corp-cl__sw-slide-head {
+    .corp-cl__sw-slide-content {
         margin-top: 16px;
     }
 }
@@ -1388,7 +1452,53 @@ span.corp-cl__offer-item-text_bold {
 
 /* END 1360 */
 
+
+/* START 1230 */
+@media(max-width: 1230px) {
+    .corp-cl__banner {
+        height: 545px;
+    }
+}
+
+@media(max-width: 1230px) {
+    .corp-cl__banner-content {
+        row-gap: 40px;
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 1230px) {
+    .corp-cl__banner-logo {
+        width: 230px;
+        height: 121px;
+    }
+}
+
+@media(max-width: 1230px) {
+    .corp-cl__banner-text-static {
+        font-size: 40px;
+    }
+    .corp-cl__banner-dinamic-item {
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 1230px) {
+    .corp-cl__banner-anchor > a {
+        width: 226px;
+        height: 45px;
+    }
+}
+/* END 1230 */
+
+
 /* START 1024 */
+@media(max-width: 1024px) {
+    .corp-cl__main {
+        padding-bottom: 0;
+    }
+}
+
 @media(max-width: 1024px) {
     .corp-cl__banner {
         height: 80vw;
@@ -1416,6 +1526,7 @@ span.corp-cl__offer-item-text_bold {
 
 @media(max-width: 1024px) {
     .corp-cl__banner-wr-text {
+        height: 18vw;
         margin-top: 4vw;
     }  
 }
@@ -1425,14 +1536,10 @@ span.corp-cl__offer-item-text_bold {
         font-size: 4.27vw;
     }
     
-    p.corp-cl__banner-text > span {
+    .corp-cl__banner-dinamic-item {
         font-size: 4.27vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .corp-cl__banner-anchor {
-        margin-top: 6.67vw;
+        white-space: initial;
+        text-wrap: initial;
     }
 }
 
@@ -1440,6 +1547,10 @@ span.corp-cl__offer-item-text_bold {
     .corp-cl__banner-anchor > a {
         width: 50.13vw;
         height: 10.67vw;
+
+        font-size: 3.73vw;
+
+        border-radius: 6.67vw;
     }
 
     .corp-cl__banner-anchor > a:hover {
@@ -1972,10 +2083,6 @@ span.corp-cl__offer-item-text_bold {
         
         border-radius: 0;
         box-shadow: none;
-        /* background-image: url('../i/decor-reviews-corporat-clients.svg');
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-position: center top; */
 
         overflow: hidden;
     }
@@ -1987,7 +2094,7 @@ span.corp-cl__offer-item-text_bold {
         top: 0;
         left: 50%;
 
-        height: 135px;
+        height: 36vw;
         width: 106%;
 
         background-color: #fff;
@@ -1998,43 +2105,119 @@ span.corp-cl__offer-item-text_bold {
 }
 
 @media(max-width: 1024px) {
-    
+    .corp-cl__reviews-title {
+        font-size: 5.33vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .swiper.corp-cl__sw {
+        width: auto;
+        margin: auto;
+        margin-top: 5.33vw;
+        margin-left: -16.77vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .swiper-wrapper.corp-cl__sw-wrapper {
+        gap: 5.33vw;
+    } 
 }
 
 @media(max-width: 1024px) {
-    
+    .swiper-slide.corp-cl__sw-slide {
+        min-height: 97.33vw;
+        padding-right: 5.33vw;
+        padding-left: 5.33vw;
+        padding-bottom: 2.93vw;
+        border-radius: 5.33vw;
+        background: #FFF;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .corp-cl__sw-slide-content {
+        margin-top: 5.33vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .corp-cl__sw-slide-head {
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+    }   
 }
 
 @media(max-width: 1024px) {
-    
+    .corp-cl__sw-slide-avatar {
+        width: 12.27vw;
+        height: 12.27vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .corp-cl__sw-slide-name-date {
+        padding-left: 2.67vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .corp-cl__sw-slide-name {
+        max-width: initial;
+        font-size: 4.27vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .corp-cl__sw-slide-date {
+        font-size: 2.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__stars-list {
+        margin-top: 4vw;
+        grid-column: 1 / 3;
+        gap: 0.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__stars-item {
+        height: 6.13vw;
+        width: 6.13vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__sw-slide-text {
+        margin-top: 3.20vw;
+
+        font-size: 3.73vw;
+
+        -webkit-line-clamp: 12;
+        line-clamp: 12;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__sw-slide-arrow {
+        margin-top: 2.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__sw-slide-arrow > a {
+        width: 8.27vw;
+        height: 4vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__reviews-arrows {
+        display: none;
+    }
 }
 
 @media(max-width: 1024px) {
