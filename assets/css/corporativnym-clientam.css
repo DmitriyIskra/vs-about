@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 .corp-cl__main * {
     margin: 0;
     padding: 0;
@@ -79,6 +75,8 @@ input:focus, textarea:focus {
 
 .corp-cl__banner-text-dinamic {
     position: relative;
+
+    min-height: 52px;
 }
 
 .corp-cl__banner-dinamic-item {
@@ -983,6 +981,12 @@ span.corp-cl__offer-item-text_bold {
 }
 
 @media(max-width: 1600px) {
+    .corp-cl__banner-text-dinamic {
+        min-height: 50px;
+    }
+}
+
+@media(max-width: 1600px) {
     .corp-cl__banner-text-static {
         font-size: 46px;
     }
@@ -998,6 +1002,13 @@ span.corp-cl__offer-item-text_bold {
 @media(max-width: 1360px) {
     .corp-cl__banner {
         grid-template-columns: 14% 1fr;
+    }
+}
+
+
+@media(max-width: 1360px) {
+    .corp-cl__banner-text-dinamic {
+        min-height: 48px;
     }
 }
 
@@ -1475,6 +1486,12 @@ span.corp-cl__offer-item-text_bold {
 }
 
 @media(max-width: 1230px) {
+    .corp-cl__banner-text-dinamic {
+        min-height: 44px;
+    }
+}
+
+@media(max-width: 1230px) {
     .corp-cl__banner-text-static {
         font-size: 40px;
     }
@@ -1529,6 +1546,12 @@ span.corp-cl__offer-item-text_bold {
         height: 18vw;
         margin-top: 4vw;
     }  
+}
+
+@media(max-width: 1024px) {
+    .corp-cl__banner-text-dinamic {
+        min-height: initial;
+    } 
 }
 
 @media(max-width: 1024px) {

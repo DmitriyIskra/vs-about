@@ -7,6 +7,34 @@ export default class Controll {
 
     init() {
         this.registerEvents();
+
+        this.startSwiper();
+    }
+
+    startSwiper() {
+        this.redraw.swInstance = new Swiper(this.redraw.swEl, {
+            direction: 'horizontal',
+            loop: true,
+            grabCursor: true,
+            
+
+            navigation: {
+              nextEl: '.corp-cl__button-prev',
+              prevEl: '.corp-cl__button-next',
+            },
+            breakpoints: {
+                320: {
+                    cssMode: true,
+                    slidesPerView: 1.56,
+                    spaceBetween: 0, 
+                    centeredSlides: true,
+                },
+                1025: {
+                    slidesPerView: 3,
+                    spaceBetween: 18,
+                },
+            }
+        });
     }
 
     registerEvents() {
@@ -14,10 +42,10 @@ export default class Controll {
     }
 
     click(e) {
-        e.preventDefault();
+        if(e.target.closest('.corp-cl__anchor')) {
+            e.preventDefault();
 
-        if(e.target.closest('')) {
-
+            this.redraw.support.scrollIntoView({ behavior: 'smooth', block: 'center'});
         }
     }
 }
