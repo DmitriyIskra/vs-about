@@ -2,7 +2,7 @@
 const subscriptionForm = document.querySelector('.subscr-i__form');
 if(subscriptionForm) (await import('./form-subscription-i/Init.js')).default.init(subscriptionForm);
 
-// ФОРМА ЗАЯВКИ НА КОНСУЛЬТАЦИЮ
+// ФОРМА ЗАЯВКИ НА КОНСУЛЬТАЦИЮ (support)
 const consultationForm = document.querySelector('.consultation__form');
 if(consultationForm) (await import('./form-consultation-i/Init.js')).default.init(consultationForm);
 
