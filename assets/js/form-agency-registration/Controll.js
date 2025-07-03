@@ -7,6 +7,7 @@ export default class Controll {
         this.dialogApi = dialogApi;
        
         this.click = this.click.bind(this);
+        this.change = this.change.bind(this);
         this.submit = this.submit.bind(this);
         this.registerPhoneMask = this.registerPhoneMask.bind(this)
     }
@@ -23,6 +24,7 @@ export default class Controll {
     registerEvents() {
         this.redraw.form.addEventListener('click', this.click);
         this.redraw.form.addEventListener('submit', this.submit);
+        this.redraw.boxPersonData.addEventListener('change', this.change);
     }
 
     registerPhoneMask(input) {
@@ -62,6 +64,12 @@ export default class Controll {
         if(e.target.closest('.agent-reg__add-address-button')) {
             this.redraw.addAddress(this.registerPhoneMask);
         }
+    }
+
+    // Для кнопки согласия с обработкой персональных данных
+    // Включает - выключает кнопку submit
+    change(e) {
+        this.redraw.stateSubmitButton();
     }
 
     async submit(e) {

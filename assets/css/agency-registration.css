@@ -111,6 +111,9 @@ button:hover:not(:disabled), .button:hover, input[type=submit]:hover {
 }
 
 .agent-reg__appeal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 701px;
     height: 376px;
 
@@ -121,7 +124,7 @@ button:hover:not(:disabled), .button:hover, input[type=submit]:hover {
 }
 
 .agent-reg__appeal-title {
-    margin-top: 35px;
+    margin-top: -10px;
 
     font-family: 'Roboto';
     font-size: 26px;
@@ -541,8 +544,15 @@ label.agent-reg__agree-label > .agent-reg__agree-box {
     border-radius: 25px;
     background: #FF732D;
     box-shadow: 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+    opacity: 0.5;
 
+    pointer-events: none;
     cursor: pointer;
+}
+
+.agent-reg__send-button_active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 button.agent-reg__send-button:hover {
@@ -651,7 +661,8 @@ button.agent-reg__send-button:active {
 .stiky__label {
     display: flex;
     flex-direction: column;
-    padding: 11px 12px 0 25px;
+    justify-content: center;
+    padding: 0 12px 0 25px;
 
     cursor: pointer;
 }
@@ -704,7 +715,9 @@ button.agent-reg__send-button:active {
 }
 
 .stiky__contacts {
-    padding-top: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-right: 45px;
     padding-left: 27px;
 }
@@ -714,17 +727,6 @@ button.agent-reg__send-button:active {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-
-    color: #FFF;
-}
-
-.stiky__position {
-    margin-top: 3px;
-
-    font-family: 'Roboto';
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
 
     color: #FFF;
 }
@@ -843,7 +845,7 @@ button.agent-reg__send-button:active {
 
 @media(max-width: 1024px) {
     .agent-reg__appeal-title {
-        margin-top: 3.5vw;
+        margin-top: 1.5vw;
 
         font-size: 5.33vw;
     }

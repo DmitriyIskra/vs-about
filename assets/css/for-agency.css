@@ -793,18 +793,21 @@ div.for-agency__subscr-img {
     background-position: center;
 }
 
+.for-agency__contacts-person:not(:first-child) {
+    margin-top: 2px;
+}
+
 .for-agency__contacts-name {
     font-family: 'Roboto';
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
+    line-height: 0.9;
 
     color: #5A5D62;
 }
 
 .for-agency__contacts-position {
-    margin-top: 9px;
-
     font-family: 'Roboto';
     font-size: 14px;
     font-style: normal;
@@ -1830,6 +1833,12 @@ div.for-agency__subscr-img {
 }
 
 @media(max-width: 1024px) {
+    .for-agency__contacts-person:not(:first-child) {
+        margin-top: 0.53vw;
+    }   
+}
+
+@media(max-width: 1024px) {
     .for-agency__contacts-name {
         font-size: 4.27vw;
     }
@@ -1837,8 +1846,6 @@ div.for-agency__subscr-img {
 
 @media(max-width: 1024px) {
     .for-agency__contacts-position {
-        margin-top: 2.40vw;
-
         font-size: 3.73vw;
     }
 }

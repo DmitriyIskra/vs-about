@@ -25,6 +25,9 @@ export default class Redraw {
 
         // Блок для написания адреса "Где купить"
         this.listAddress = this.form.querySelectorAll('.agent-reg__list_where-buy');
+
+        // Кнопка submit
+        this.submitButton = this.form.querySelector('.agent-reg__send-button');
     }
 
     // При добавлении еще одного адреса "Где купить" обновить данные формы
@@ -72,5 +75,10 @@ export default class Redraw {
 
         lastList.after(clone);
         this.updateData();
+    }
+
+    // Включает - выключает кнопку submit
+    stateSubmitButton() {
+        this.submitButton.classList.toggle('agent-reg__send-button_active');
     }
 }
