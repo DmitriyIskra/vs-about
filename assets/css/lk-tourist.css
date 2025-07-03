@@ -1,0 +1,169 @@
+.lkt__main * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    
+    font-family: initial;
+    font-size: initial;
+    font-weight: initial;
+    text-align: start;
+    line-height: initial !important;
+    white-space: initial;
+    
+    list-style-type: none;
+    border: initial;
+    border-radius: initial;
+    outline: initial;
+    color: initial;
+    background-color: initial;
+    box-shadow: initial;
+    
+    cursor: initial;
+    appearance: auto;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+}
+
+/* ========================= */
+
+.lkt__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lkt__main-title {
+    margin-top: 78px;
+
+    font-family: 'Roboto';
+    font-size: 26px;
+    font-style: normal;
+
+    color: #F60;
+}
+
+.lkt__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* START ASIDE */
+
+.lkt__aside {
+    width: 331px;
+}
+
+.lkt-docs {
+    border-radius: 10px;
+	background-color: #F2F2F2;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+.lkt-docs::before {
+    content: "";
+
+    display: block;
+    height: 20px;
+
+    background: #FF732D;
+
+    transform: translate(0, -50%);
+}
+
+.lkt-docs__content {
+    padding-left: 16px;
+}
+
+.lkt-docs__title {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 9px;
+    padding-left: 15px;
+
+	font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+	color: #FF732D; 
+    border-bottom: 1px solid #979797;
+}
+
+.lkt-docs__item {
+    height: 40px;
+    padding-left: 15px;
+
+	border-bottom: 1px solid #979797;
+}
+
+.lkt-docs__item_disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.lkt-docs__link {
+	display: flex;
+	align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.lkt-docs__link:hover {
+    text-decoration: underline;
+}
+
+.lkt-docs__text {
+	font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+	color: #5A5D62;
+
+    pointer-events: none;
+}
+
+/* Иконка pdf */
+.lkt-docs__icon_pdf {
+    height: 25px;
+    width: 25px;
+
+	background: no-repeat url('');
+    background-size: contain;
+    background-position: center;
+}
+
+/* Иконка формы / запрос */
+.lkt-docs__icon_folder {
+    width: 22px;
+    height: 22px;
+
+	background: no-repeat url('');
+    background-size: contain;
+    background-position: center;
+}
+
+/* Иконка отмены / аннуляции */
+.lkt-docs__icon_cancel {
+    width: 22px;
+    height: 22px;
+
+	background: no-repeat url('');
+    background-size: contain;
+    background-position: center;
+}
+
+
+/* END ASIDE */

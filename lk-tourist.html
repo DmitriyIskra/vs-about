@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/lk-tourist.css">
+    <link rel="stylesheet" href="assets/css/form-subscription-i.css">
+    <link rel="stylesheet" href="assets/css/loader-i.css">
+    <link rel="stylesheet" href="assets/css/modals-i.css">
+
+    <script type="module" src="assets/js/app-modules.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <main class="lkt__main">
+
+        <h1 class="lkt__main-title">Личный кабинет</h1>
+
+        <div class="lkt__wrapper">
+
+            <!-- START ASIDE -->
+            <div class="lkt__aside">
+
+                <!-- START Ваши данные -->
+                <div class="lkt-profile">
+                    <div class="lkt-profile__header">
+                        <h3 class="lkt-profile__title">Ваши данные:</h3>
+                    </div>
+                
+                    <div class="lkt-profile__content">
+                        <div class="lkt-profile__field">
+                            <span class="lkt-profile__label">Елесин</span>
+                        </div>
+                        <div class="lkt-profile__field">
+                            <span class="lkt-profile__label">Максим</span>
+                        </div>
+                        <div class="lkt-profile__field">
+                            <span class="lkt-profile__label">Александрович</span>
+                        </div>
+                        <div class="lkt-profile__field">
+                            <span class="lkt-profile__label">+7 (925) 562-56-59</span>
+                        </div>
+                        <div class="lkt-profile__field lkt-profile__field_confirmed">
+                            <span class="lkt-profile__label">melesin@vs-travel.ru</span>
+                        </div>
+                
+                        <form class="lkt-profile__field lkt-profile__field_email lkt-profile__field_not-confirmed" name="tourist-profile-email">
+                            <input type="email" class="lkt-profile__input" placeholder="Ваша почта" />
+                            <button type="submit" class="lkt-profile__button">Сохранить</button>
+                            <button type="button" class="lkt-profile__edit" aria-label="Редактировать email"></button>
+                        </form>
+                    </div>
+                
+                    <div class="lkt-profile__footer">
+                        <button class="lkt-profile__logout">
+                            <span class="lkt-profile__logout-icon"></span>
+                            <span class="lkt-profile__logout-text">Выход</span>
+                        </button>
+                    </div>
+                </div>   
+                <!-- START Ваши данные -->
+
+                <!-- START ASIDE Задать вопрос -->
+                <div class="lkt-question">
+                    <button type="button" class="lkt-question__button">
+                        <span class="lkt-question__icon"></span>
+                        <span class="lkt-question__text">Задать вопрос</span>
+                    </button>
+                </div>
+                <!-- END ASIDE Задать вопрос -->
+
+                <!-- START ASIDE DOCS -->
+                <div class="lkt-docs">
+
+                    <div class="lkt-docs__content">
+                        <h3 class="lkt-docs__title">Документы</h3>
+                    
+                        <ul class="lkt-docs__list">
+                            <li class="lkt-docs__item lkt-docs__item_disabled">
+                                <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
+                                <span class="lkt-docs__text">Путевка</span>
+                            </li>                
+                            <li class="lkt-docs__item">
+                                <a href="#0" class="lkt-docs__link">
+                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
+                                    <span class="lkt-docs__text">Программа тура</span>
+                                </a>
+                            </li>                
+                            <li class="lkt-docs__item">
+                                <a href="#0" class="lkt-docs__link">
+                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
+                                    <span class="lkt-docs__text">Фин. обеспечение тур. оператора</span>
+                                </a>
+                            </li>                
+                            <li class="lkt-docs__item">
+                                <a href="#0" class="lkt-docs__link">
+                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
+                                    <span class="lkt-docs__text">Памятка</span>
+                                </a>
+                            </li>                
+                            <li class="lkt-docs__item">
+                                <a href="#0" class="lkt-docs__link">
+                                    <span class="lkt-docs__icon lkt-docs__icon_folder"></span>
+                                    <span class="lkt-docs__text">Запрос на изменение по заказу</span>
+                                </a>
+                            </li>                
+                            <li class="lkt-docs__item">
+                                <a href="#0" class="lkt-docs__link">
+                                    <span class="lkt-docs__icon lkt-docs__icon_cancel"></span>
+                                    <span class="lkt-docs__text">Запрос на аннуляцию</span>
+                                </a>
+                            </li>                
+                            <li class="lkt-docs__item">
+                                <a href="#0" class="lkt-docs__link">
+                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
+                                    <span class="lkt-docs__text">Условия изменения и расторжения договора</span>
+                                </a>
+                            </li>                
+                            <li class="lkt-docs__item">
+                                <a href="#0" class="lkt-docs__link">
+                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
+                                    <span class="lkt-docs__text">Договор оферты на оказание туристических услуг</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <!-- END ASIDE DOCS -->
+
+            </div>
+            <!-- END ASIDE -->
+
+
+
+            <div class="lkt__content"></div>
+        </div>
+
+    </main>
+    <div class="loader">
+        <span class="loader-body"></span>
+    </div>
+</body>
+</html>
