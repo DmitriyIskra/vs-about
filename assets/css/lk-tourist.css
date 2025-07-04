@@ -574,15 +574,43 @@ input:focus, textarea:focus {
 }
 
 .lkt__journeys-number {
+    align-self: center;
     grid-column: 1;
+    
+    white-space: nowrap;
+    text-wrap: nowrap;
 }
 
 .lkt__journeys-warning {
+    display: flex;
+    align-items: center;
+    margin-left: 9px;
     grid-column: 2;
+    gap: 5px;
+}
+
+.lkt__journeys-warning::before {
+    content: "";
+
+    width: 21px;
+    height: 21px;
+
+    background: no-repeat url('../i/icon-attention.svg');
+    background-size: contain;
+    background-position: center;
 }
 
 .lkt__journeys-price {
+    align-self: center;
     grid-column: 3;
+
+    white-space: nowrap;
+    text-wrap: nowrap;
+
+    > span {
+        white-space: nowrap;
+        text-wrap: nowrap;
+    }
 }
 
 .lkt__journeys-name {
@@ -604,14 +632,14 @@ input:focus, textarea:focus {
 
 .lkt__journeys-date {
     display: flex;
-    gap: 9px;
+    gap: 10px;
 }
 
 .lkt__journeys-date::before {
     content: "";
 
     width: 17px;
-    height: 16px;
+    height: 17px;
     flex-shrink: 0;
 
     background: no-repeat url('../i/icon-calendar-lkt.svg');
@@ -620,8 +648,8 @@ input:focus, textarea:focus {
 }
 
 .lkt__journeys-doc {
-    height: 18px;
-    width: 16px;
+    height: 20px;
+    width: 17px;
 
     background: no-repeat url('../i/pdf_icon.svg');
     background-size: contain;
