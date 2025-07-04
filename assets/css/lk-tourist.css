@@ -47,6 +47,7 @@ input:focus, textarea:focus {
 .lkt__wrapper {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
     gap: 30px;
 }
 
@@ -56,7 +57,273 @@ input:focus, textarea:focus {
     width: 331px;
 }
 
+/* Проофайл */
+.lkt-profile {
+    position: relative;
+    
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.lkt-profile__header {
+    display: flex;
+    align-items: center;
+    height: 58px;
+    padding-left: 16px;
+
+    background: #FF732D;
+}
+
+.lkt-profile__title {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #FFF;
+}
+
+
+.lkt-profile__content {
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 21px;
+
+    background-color: #F2F2F2;
+}
+
+.lkt-profile__list {
+    display: flex;
+    flex-direction: column;
+    width: 242px;
+    gap: 7px;
+}
+
+.lkt-profile__item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-left: 15px;
+    
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #5A5D62;
+    border-bottom: 1px solid #979797;
+}
+
+.lkt-profile__confirmed {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lkt-profile__not-confirmed_orange {
+    border-bottom: 1px solid #F60;
+}
+
+.lkt-profile__confirmed::after {
+    content: "";
+
+    width: 15px;
+    height: 12px;
+
+    background: no-repeat url('../i/check-mark-green.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.lkt-profile__form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lkt-profile__input {
+    width: 59%;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #5A5D62;
+}
+
+.lkt-profile__input::placeholder {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+
+    color: #5A5D62;
+}
+
+.lkt-profile__input:focus::placeholder {
+    visibility: hidden;
+}
+
+.lkt-profile__wr-buttons {
+    display: flex;
+    margin-right: -15px;
+    gap: 7px;
+}
+
+.lkt-profile__button {
+    display: none;
+    place-items: center;
+    width: 73px;
+    height: 20px;
+
+    font-family: 'Roboto';
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 2px;
+    background: #F60;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+}
+
+.lkt-profile__button:hover {
+    background-color: #ed5f00;
+}
+
+.lkt-profile__button:active {
+    box-shadow: none;
+}
+
+.lkt-profile__button_active {
+    display: grid;
+}
+
+.lkt-profile__edit {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 2px;
+    background-color: #FFF;
+    background-image: url('../i/icon-pencil.svg');
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center;
+    box-shadow: 2px 2px 4.3px -1px rgba(0, 0, 0, 0.25);
+    
+    cursor: pointer;
+}
+
+.lkt-profile__edit:hover {
+    box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.25);
+
+}
+
+.lkt-profile__edit:active {
+    box-shadow: none;
+}
+
+
+
+.lkt-profile__email {
+    display: none;
+}
+.lkt-profile__email_active {
+    display: flex;
+}
+
+.lkt-profile__footer {
+    margin-top: 22px;
+}
+
+.lkt-profile__logout {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+    cursor: pointer;
+}
+
+.lkt-profile__logout::before {
+    content: "";
+    
+    width: 13px;
+    height: 16px;
+    
+    background: no-repeat url('../i/icon-logout.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.lkt-profile__logout > span {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    
+    color: #464646;
+    line-height: 0.8 !important;
+    margin-top: 3px;
+
+    cursor: pointer;
+}
+
+/* Задать вопрос */
+.lkt-question {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    margin-top: 17px;
+    padding-left: 16px;
+
+    border-radius: 10px;
+	background-color: #F2F2F2;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.lkt-question__button {
+    display: flex;
+    align-items: center;
+    width: 271px;
+    height: 40px;
+    padding-left: 15px;
+    gap: 10px;
+
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+
+    color: #5A5D62;
+    border-bottom: 1px solid #979797;
+
+    cursor: pointer;
+}
+
+.lkt-question__button:hover {
+    text-decoration: underline;
+}
+
+.lkt-question__button::before {
+    content: "";
+
+    width: 22px;
+    height: 22px;
+
+    background: no-repeat url('../i/icon-ask-question.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+/* Документы */
 .lkt-docs {
+    margin-top: 20px;
+    padding-bottom: 24px;
+
     border-radius: 10px;
 	background-color: #F2F2F2;
 	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
@@ -82,6 +349,7 @@ input:focus, textarea:focus {
 .lkt-docs__title {
     display: flex;
     align-items: center;
+    width: 271px;
     height: 40px;
     margin-top: 9px;
     padding-left: 15px;
@@ -96,16 +364,11 @@ input:focus, textarea:focus {
 }
 
 .lkt-docs__item {
+    width: 271px;
     height: 40px;
     padding-left: 15px;
 
 	border-bottom: 1px solid #979797;
-}
-
-.lkt-docs__item_disabled {
-	opacity: 0.5;
-	cursor: not-allowed;
-	pointer-events: none;
 }
 
 .lkt-docs__link {
@@ -115,55 +378,255 @@ input:focus, textarea:focus {
     width: 100%;
     gap: 10px;
 
-    text-decoration: none;
-
-    cursor: pointer;
-}
-
-.lkt-docs__link:hover {
-    text-decoration: underline;
-}
-
-.lkt-docs__text {
-	font-family: 'Roboto';
+    font-family: 'Roboto';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
 
 	color: #5A5D62;
 
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.lkt-docs__link_disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+
+.lkt-docs__link:hover {
+    text-decoration: underline;
+}
+
+.lkt-docs__link_package::before,
+.lkt-docs__link_programm::before,
+.lkt-docs__link_financial::before,
+.lkt-docs__link_memo::before,
+.lkt-docs__link_conditions::before,
+.lkt-docs__link_offer::before {
+    content: "";
+
+    width: 22px;
+    height: 25px;
+    flex-shrink: 0;
+
+    background: no-repeat url('../i/pdf_icon.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.lkt-docs__link_change::before {
+    content: "";
+
+    height: 22px;
+    width: 22px;
+    flex-shrink: 0;
+
+    background: no-repeat url('../i/icon-folder-sheet.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.lkt-docs__link_cancel::before {
+    content: "";
+
+    height: 23px;
+    width: 18px;
+    flex-shrink: 0;
+
+    background: no-repeat url('../i/icon-cracked-shield.svg');
+    background-size: contain;
+    background-position: center;
+}
+/* END ASIDE */
+
+/* START CONTENT */
+.lkt-main {
+    width: 801px;
+}
+
+/* табы */
+.lkt__header-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lkt__header-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 253px;
+    height: 56px;
+    gap: 3px;
+    
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 10px 10px 0px 0px;
+    background: #FF732D;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    
+    cursor: pointer;
+}
+
+.lkt__header-item:hover {
+    background: #ed5f00;
+}
+
+.lkt__header_journeys::before {
+    content: "";
+
+    height: 26px;
+    width: 27px;
+
+    background: no-repeat url('../i/icon-lkt-tourist.svg');
+    background-size: contain;
+    background-position: center;
+}
+.lkt__header_history::before {
+    content: "";
+
+    height: 26px;
+    width: 27px;
+
+    background: no-repeat url('../i/icon-lkt-history-book.svg');
+    background-size: contain;
+    background-position: center;
+}
+.lkt__header_favorites::before {
+    content: "";
+
+    height: 26px;
+    width: 27px;
+
+    background: no-repeat url('../i/icon-heart-transparent-white-border.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.lkt__header_active {
+    background: linear-gradient(90deg, #FF732D 0%, #F32F2F 100%);
+
     pointer-events: none;
 }
 
-/* Иконка pdf */
-.lkt-docs__icon_pdf {
-    height: 25px;
-    width: 25px;
+/* Экземпляр контента */
+.lkt-main__content-item {
+    display: none;
+}
 
-	background: no-repeat url('');
+.lkt-main__content-item_active {
+    display: block;
+}
+
+/* Список мои путешествия */
+
+.lkt__journeys-list {
+    display: flex;
+    margin-top: 18px;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.lkt__journeys-item {
+    display: flex;
+    height: 222px;
+
+    border-radius: 10px;
+    background: #F2F2F2;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+.lkt__journeys-img {
+    width: 371px;
+    height: 222px;
+    flex-shrink: 0;
+}
+
+.lkt__journeys-img > img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.lkt__journeys-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 16px 17px 14px;
+}
+
+.lkt__journeys-content-top {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: repeat(4, min-content);
+}
+
+.lkt__journeys-number {
+    grid-column: 1;
+}
+
+.lkt__journeys-warning {
+    grid-column: 2;
+}
+
+.lkt__journeys-price {
+    grid-column: 3;
+}
+
+.lkt__journeys-name {
+    grid-row: 2;
+    grid-column: 1 / 3;
+}
+
+.lkt__journeys-route {
+    grid-row: 3;
+    grid-column: 1 / 3;
+}
+
+.lkt__journeys-data {
+    display: flex;
+    grid-row: 4;
+    grid-column: 1 / 3;
+    gap: 23px;
+}
+
+.lkt__journeys-date {
+    display: flex;
+    gap: 9px;
+}
+
+.lkt__journeys-date::before {
+    content: "";
+
+    width: 17px;
+    height: 16px;
+    flex-shrink: 0;
+
+    background: no-repeat url('../i/icon-calendar-lkt.svg');
     background-size: contain;
     background-position: center;
 }
 
-/* Иконка формы / запрос */
-.lkt-docs__icon_folder {
-    width: 22px;
-    height: 22px;
+.lkt__journeys-doc {
+    height: 18px;
+    width: 16px;
 
-	background: no-repeat url('');
+    background: no-repeat url('../i/pdf_icon.svg');
     background-size: contain;
     background-position: center;
+
+    cursor: pointer;
 }
-
-/* Иконка отмены / аннуляции */
-.lkt-docs__icon_cancel {
-    width: 22px;
-    height: 22px;
-
-	background: no-repeat url('');
-    background-size: contain;
-    background-position: center;
-}
-
-
-/* END ASIDE */
+/* END CONTENT */

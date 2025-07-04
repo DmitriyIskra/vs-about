@@ -23,131 +23,166 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="lkt__main">
+    <div class="lkt__main">
 
         <h1 class="lkt__main-title">Личный кабинет</h1>
 
         <div class="lkt__wrapper">
 
             <!-- START ASIDE -->
-            <div class="lkt__aside">
+            <aside class="lkt__aside">
 
-                <!-- START Ваши данные -->
+                <!-- Ваши данные -->
                 <div class="lkt-profile">
                     <div class="lkt-profile__header">
                         <h3 class="lkt-profile__title">Ваши данные:</h3>
                     </div>
                 
                     <div class="lkt-profile__content">
-                        <div class="lkt-profile__field">
-                            <span class="lkt-profile__label">Елесин</span>
+                        <ul class="lkt-profile__list">
+                            <li class="lkt-profile__item">Елесин</li>
+                            <li class="lkt-profile__item">Максим</li>
+                            <li class="lkt-profile__item">Александрович</li>
+                            <li class="lkt-profile__item">+7 (925) 562-56-59</li>
+                            <li class="lkt-profile__item lkt-profile__email lkt-profile__confirmed">melesin@vs-travel.ru</li>                
+                            <li class="lkt-profile__item lkt-profile__email lkt-profile__email_active lkt-profile__not-confirmed lkt-profile__not-confirmed_orange">
+                                <form class="lkt-profile__form" name="tourist-profile-email">
+                                    <input class="lkt-profile__input" type="email" placeholder="Ваша почта" />
+                                    <div class="lkt-profile__wr-buttons">
+                                        <button class="lkt-profile__button lkt-profile__button_save" type="button">Сохранить</button>
+                                        <button class="lkt-profile__button lkt-profile__button_confirm lkt-profile__button_active" type="button">Подтвердить</button>
+                                        <button class="lkt-profile__edit" type="button"></button>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    
+                        <div class="lkt-profile__footer">
+                            <button class="lkt-profile__logout"><span>Выход</span></button>
                         </div>
-                        <div class="lkt-profile__field">
-                            <span class="lkt-profile__label">Максим</span>
-                        </div>
-                        <div class="lkt-profile__field">
-                            <span class="lkt-profile__label">Александрович</span>
-                        </div>
-                        <div class="lkt-profile__field">
-                            <span class="lkt-profile__label">+7 (925) 562-56-59</span>
-                        </div>
-                        <div class="lkt-profile__field lkt-profile__field_confirmed">
-                            <span class="lkt-profile__label">melesin@vs-travel.ru</span>
-                        </div>
-                
-                        <form class="lkt-profile__field lkt-profile__field_email lkt-profile__field_not-confirmed" name="tourist-profile-email">
-                            <input type="email" class="lkt-profile__input" placeholder="Ваша почта" />
-                            <button type="submit" class="lkt-profile__button">Сохранить</button>
-                            <button type="button" class="lkt-profile__edit" aria-label="Редактировать email"></button>
-                        </form>
-                    </div>
-                
-                    <div class="lkt-profile__footer">
-                        <button class="lkt-profile__logout">
-                            <span class="lkt-profile__logout-icon"></span>
-                            <span class="lkt-profile__logout-text">Выход</span>
-                        </button>
                     </div>
                 </div>   
-                <!-- START Ваши данные -->
+                <!-- Ваши данные -->
 
-                <!-- START ASIDE Задать вопрос -->
+                <!-- Задать вопрос -->
                 <div class="lkt-question">
-                    <button type="button" class="lkt-question__button">
-                        <span class="lkt-question__icon"></span>
-                        <span class="lkt-question__text">Задать вопрос</span>
-                    </button>
+                    <a class="lkt-question__button" href="#0" title="Задать вопрос">
+                        Задать вопрос
+                    </a>
                 </div>
-                <!-- END ASIDE Задать вопрос -->
+                <!-- Задать вопрос -->
 
-                <!-- START ASIDE DOCS -->
+                <!-- docs -->
                 <div class="lkt-docs">
 
                     <div class="lkt-docs__content">
                         <h3 class="lkt-docs__title">Документы</h3>
                     
                         <ul class="lkt-docs__list">
-                            <li class="lkt-docs__item lkt-docs__item_disabled">
-                                <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
-                                <span class="lkt-docs__text">Путевка</span>
+                            <li class="lkt-docs__item">                                
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_package lkt-docs__link_disabled" title="Путевка">Путевка</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link">
-                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
-                                    <span class="lkt-docs__text">Программа тура</span>
-                                </a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_programm" title="Программа тура">Программа тура</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link">
-                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
-                                    <span class="lkt-docs__text">Фин. обеспечение тур. оператора</span>
-                                </a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_financial" title="Фин. обеспечение тур. оператора">Фин. обеспечение тур. оператора</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link">
-                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
-                                    <span class="lkt-docs__text">Памятка</span>
-                                </a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_memo" title="">Памятка</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link">
-                                    <span class="lkt-docs__icon lkt-docs__icon_folder"></span>
-                                    <span class="lkt-docs__text">Запрос на изменение по заказу</span>
-                                </a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_change" title="Запрос на изменение по заказу">Запрос на изменение по заказу</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link">
-                                    <span class="lkt-docs__icon lkt-docs__icon_cancel"></span>
-                                    <span class="lkt-docs__text">Запрос на аннуляцию</span>
-                                </a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_cancel" title="Запрос на аннуляцию">Запрос на аннуляцию</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link">
-                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
-                                    <span class="lkt-docs__text">Условия изменения и расторжения договора</span>
-                                </a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_conditions" title="Условия изменения и расторжения договора">Условия изменения и расторжения договора</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link">
-                                    <span class="lkt-docs__icon lkt-docs__icon_pdf"></span>
-                                    <span class="lkt-docs__text">Договор оферты на оказание туристических услуг</span>
-                                </a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_offer" title="Договор оферты на оказание туристических услуг">Договор оферты на оказание туристических услуг</a>
                             </li>
                         </ul>
                     </div>
                     
                 </div>
-                <!-- END ASIDE DOCS -->
+                <!-- docs -->
 
-            </div>
+            </aside>
             <!-- END ASIDE -->
 
 
+            <!-- START CONTENT -->
+            <main class="lkt-main">
+                <ul class="lkt__header-list">
+                    <li class="lkt__header-item lkt__header_journeys lkt__header_active" data-item="journeys">Мои путешествия</li>
+                    <li class="lkt__header-item lkt__header_history" data-item="history">История</li>
+                    <li class="lkt__header-item lkt__header_favorites" data-item="favorites">Избранное</li>
+                </ul>
 
-            <div class="lkt__content"></div>
+                <div class="lkt-main__content">
+
+                    <div class="lkt-main__content-item lkt-main__content-item_active">
+                        <ul class="lkt__journeys-list" data-item="journeys">
+                            <li class="lkt__journeys-item">
+                                <div class="lkt__journeys-img">
+                                    <img src="./assets/i/lkt-journeys-exemple-content.png" alt="">
+                                </div>
+                                <div class="lkt__journeys-content">
+                                    <div class="lkt__journeys-content-top">
+                                        <div class="lkt__journeys-number">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-warning">Внесите данные туристов</div>
+                                        <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
+                                        <div class="lkt__journeys-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
+                                        <div class="lkt__journeys-data">
+                                            <div class="lkt__journeys-date">06/12 - 08/12</div>
+                                            <div class="lkt__journeys-wr-doc">
+                                                <a class="lkt__journeys-doc" href="#0" title="Программа тура"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lkt__journeys-content-bottom">
+                                        <div class="lkt__journeys-wr-state" data-state=""> <!--booking, paid, cancelled, annulation, annulated -->
+                                            <div data-state="booking">
+                                                <div class="lkt__journeys-state">Бронь</div>
+                                                <div>Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
+                                            </div>
+                                            <div data-state="paid">
+                                                <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
+                                                <div></div>
+                                            </div>
+                                            <div data-state="cancelled">
+                                                <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
+                                                <div></div>
+                                            </div>
+                                            <div data-state="annulation">
+                                                <div class="lkt__journeys-state">Аннуляция</div>
+                                                <div></div>
+                                            </div>
+                                            <div data-state="annulated">
+                                                <div class="lkt__journeys-state">Аннулирован</div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="lkt__journeys-pay">
+                                        <div class="lkt__journeys-before">Оплатить до:<span>12.01.25</span></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </main>
+            <!-- END CONTENT -->
         </div>
 
-    </main>
+    </div>
     <div class="loader">
         <span class="loader-body"></span>
     </div>
