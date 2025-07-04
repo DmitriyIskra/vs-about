@@ -143,35 +143,42 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- ??? ОТМЕНЕН И АННУЛИРОВАН ЭТО НЕ ОДНО И ТО ЖЕ? и там и там к возврату!!!!!! -->
+                                    <!-- если и то и то нужно дата атрибут annulated сделать 2шт с префиксами и прописать показ нужного comment в css  -->
                                     <div class="lkt__journeys-content-bottom">
-                                        <div class="lkt__journeys-wr-state" data-state=""> <!--booking, paid, cancelled, annulation, annulated -->
+                                        <div class="lkt__journeys-wr-state" data-state="booking"> <!--booking, paid, cancelled, annulation, annulated -->
                                             <div data-state="booking">
                                                 <div class="lkt__journeys-state">Бронь</div>
-                                                <div>Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
+                                                <div class="lkt__journeys-comment">Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
                                             </div>
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
-                                                <div></div>
                                             </div>
                                             <div data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                                <div></div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: <span>30 000</span> ₽ </div>
                                             </div>
                                             <div data-state="annulation">
                                                 <div class="lkt__journeys-state">Аннуляция</div>
-                                                <div></div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">Запрос в работе</div>
                                             </div>
                                             <div data-state="annulated">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
-                                                <div></div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату <span>25 000</span> ₽</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">Расчет завершен</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lkt__journeys-pay">
+                                            <div class="lkt__journeys-before">Оплатить до:<span>12.01.25</span></div>
+                                            <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
+                                            <div class="lkt__journeys-wr-button">
+                                                <a class="lkt__journeys-button" href="#0" type="button" title="Оплата тура">Оплатить</a>
                                             </div>
                                         </div>
                                     </div>
                                     
 
-                                    <div class="lkt__journeys-pay">
-                                        <div class="lkt__journeys-before">Оплатить до:<span>12.01.25</span></div>
-                                    </div>
                                 </div>
                             </li>
                         </ul>
