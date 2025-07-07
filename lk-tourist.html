@@ -61,6 +61,33 @@
                             <button class="lkt-profile__logout"><span>Выход</span></button>
                         </div>
                     </div>
+
+                    <ul class="lkt-profile__dots-list">
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                        <li class="lkt-profile__dots-item"></li>
+                    </ul>
                 </div>   
                 <!-- Ваши данные -->
 
@@ -133,10 +160,10 @@
                                 </div>
                                 <div class="lkt__journeys-content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number lkt__journeys-link" data-order="1825">Заказ № <span>1825</span></div>
                                         <div class="lkt__journeys-warning">Внесите данные туристов</div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name lkt__journeys-link" data-order="1825">В Тверсую область по велению души</div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -194,10 +221,10 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-order__data-head-content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number lkt-order__data-number">Заказ № <span>1825</span></div>
                                         <!-- <div class="lkt__journeys-warning">Внесите данные туристов</div> -->
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name lkt-order__data-name">В Тверсую область по велению души</div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12/2025 - 08/12/2025</div>
@@ -245,7 +272,145 @@
                             </div>
 
                             <div class="lkt-order__data-body">
+                                <!-- lkt-order__data-opener_active -->
+                                <div class="lkt-order__data-opener lkt-order__data-opener_active"> 
+                                    <div class="lkt-order__data-opener-text">Ваш выбор:</div>
+                                    <div class="lkt-order__data-opener-icon"></div>
+                                </div>
 
+                                <div class="lkt-order__data-content">
+                                    <!-- Количество людей -->
+                                    <div class="lkt-order__data-people">
+                                        <ul class="lkt-order__data-people-list">
+                                            <li class="lkt-order__data-people-item lkt-order__data-people_adult">Взрослых: <span>1</span></li>
+                                            <li class="lkt-order__data-people-item lkt-order__data-people_children">Детей: <span>10</span></li>
+                                            <li class="lkt-order__data-people-item lkt-order__data-people_pensioners">Пенсионеров: <span>0</span></li>
+                                        </ul>
+    
+                                        <div class="lkt-order__data-people-total">Всего: <span>11</span></div>
+                                    </div>
+    
+                                    <!-- Гостиницы перечень -->
+                                    <ul class="lkt-order__data-hotels-list">
+                                        <li class="lkt-order__data-hotels-item"> <!-- ГОСТИНИЦА -->
+                                            <h3 class="lkt-order__data-hotels-title">Гостинница 1</h3>
+                                            <ul class="lkt-order__hotel-rooms-list">
+                                                <li class="lkt-order__hotel-rooms-item"> <!-- НОМЕР -->
+                                                    <h4 class="lkt-order__hotel-room-title">2-х стандарт (2 кровати)</h4>
+                                                    <ul class="lkt-order__room-places-list">
+                                                        <li class="lkt-order__room-places-item"> <!-- МЕСТО В НОМЕРЕ -->
+                                                            <div class="lkt-order__room-place-name">Взрослый на основном месте</div>
+                                                            <div class="lkt-order__place-price">
+                                                                <div class="lkt-order__place-price-calc">
+                                                                    <span class="lkt-order__place-price-amount">1</span> 
+                                                                    <span class="lkt-order__place-price-math">+</span> 
+                                                                    <span class="lkt-order__place-price-summ">25000</span> ₽
+                                                                </div>
+                                                                <div class="lkt-order__place-price-total"><span>25000</span> ₽</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="lkt-order__room-places-item">
+                                                            <div class="lkt-order__room-place-name">Ребенок на доп. месте</div>
+                                                            <div class="lkt-order__place-price">
+                                                                <div class="lkt-order__place-price-calc">
+                                                                    <span class="lkt-order__place-price-amount">1</span> 
+                                                                    <span class="lkt-order__place-price-math">+</span> 
+                                                                    <span class="lkt-order__place-price-summ">20000</span> ₽
+                                                                </div>
+                                                                <div class="lkt-order__place-price-total"><span>20000</span> ₽</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+    
+                                                <li class="lkt-order__hotel-rooms-item">
+                                                    <h4 class="lkt-order__hotel-room-title">1-но стандарт + доп. место</h4>
+                                                    <ul class="lkt-order__room-places-list">
+                                                        <li class="lkt-order__room-places-item">
+                                                            <div class="lkt-order__room-place-name">Взрослый на основном месте</div>
+                                                            <div class="lkt-order__place-price">
+                                                                <div class="lkt-order__place-price-calc">
+                                                                    <span class="lkt-order__place-price-amount">1</span> 
+                                                                    <span class="lkt-order__place-price-math">+</span> 
+                                                                    <span class="lkt-order__place-price-summ">25000</span> ₽
+                                                                </div>
+                                                                <div class="lkt-order__place-price-total"><span>25000</span> ₽</div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="lkt-order__room-places-item">
+                                                            <div class="lkt-order__room-place-name">Ребенок на доп. месте</div>                                                            
+                                                            <div class="lkt-order__place-price">
+                                                                <div class="lkt-order__place-price-calc">
+                                                                    <span class="lkt-order__place-price-amount">1</span> 
+                                                                    <span class="lkt-order__place-price-math">+</span> 
+                                                                    <span class="lkt-order__place-price-summ">20000</span> ₽
+                                                                </div>
+                                                                <div class="lkt-order__place-price-total"><span>20000</span> ₽</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+    
+                                    <div class="lkt-order__data-services">
+                                        <h3 class="lkt-order__data-services-title">Дополнительне услуги</h3>
+                                        <ul class="lkt-order__data-services-list">
+                                            <li class="lkt-order__data-services-item">
+                                                <div class="lkt-order__data-services-name">
+                                                    <span>3 обеда</span>
+                                                </div>
+                                                <div class="lkt-order__data-services-calc">
+                                                    <span class="lkt-order__data-services-amount">3</span> 
+                                                    <span class="lkt-order__data-services-math">+</span> 
+                                                    <span class="lkt-order__data-services-summ">500</span> = 
+                                                    <span class="lkt-order__data-services-total">1500</span> ₽
+                                                </div>
+                                            </li>
+                                            <li class="lkt-order__data-services-item">
+                                                <div class="lkt-order__data-services-name">
+                                                    <span>3 билета в музей</span>
+                                                </div>
+                                                <div class="lkt-order__data-services-calc">
+                                                    <span class="lkt-order__data-services-amount">3</span> 
+                                                    <span class="lkt-order__data-services-math">+</span> 
+                                                    <span class="lkt-order__data-services-summ">500</span> = 
+                                                    <span class="lkt-order__data-services-total">1500</span> ₽
+                                                </div>
+                                            </li>
+                                            <li class="lkt-order__data-services-item">
+                                                <div class="lkt-order__data-services-name">
+                                                    <span>индивидуальный трансфер до 3х мест</span>
+                                                    <span class="lkt-order__data-services-comment">жд. вокзал/аэропорт-гостинница</span>
+                                                </div>
+                                                <div class="lkt-order__data-services-calc">
+                                                    <span class="lkt-order__data-services-amount">3</span> 
+                                                    <span class="lkt-order__data-services-math">+</span> 
+                                                    <span class="lkt-order__data-services-summ">500</span> = 
+                                                    <span class="lkt-order__data-services-total">1500</span> ₽
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lkt-order__orderer">
+                            <h2 class="lkt-order__orderer-title">Заказчик</h2>
+                            <div class="lkt-order__orderer-text">
+                                <p class="lkt-order__orderer-question">Зачем нам персональные данные туристов?</p>
+                                <ul class="lkt-order__orderer-list">
+                                    <li class="lkt-order__orderer-item">Для бронирования мест в гостинице</li>
+                                    <li class="lkt-order__orderer-item">Для автобусной поездки за пределы Московской области, в соответствии с требованиями законодательства, приказ <a href="#0" title="приказ Минтранс РФ №243 от 19/07/2012г">Минтранс РФ №243 от 19/07/2012г</a>.</li>
+                                    <li class="lkt-order__orderer-item">Для оформления электронной путёвки в соответствии с <a href="#0" title="Постановление правительства РФ от 18.03.2023 №417">Постановлением правительства РФ от 18.03.2023 №417</a></li>
+                                </ul>
+                            </div>
+                            <div class="lkt-order__orderer-form-wrapper">
+                                <form class="lkt-order__orderer-form" name="lkt-orderer-form">
+                                    
+                                </form>
                             </div>
                         </div>
                     </div>

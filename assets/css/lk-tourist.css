@@ -270,6 +270,27 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 
+.lkt-profile__dots-list {
+    position: absolute;
+    top: 0;
+    right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    gap: 9px;
+}
+
+.lkt-profile__dots-item {
+    height: 10px;
+    width: 10px;
+
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
 /* Задать вопрос */
 .lkt-question {
     display: flex;
@@ -592,6 +613,8 @@ div[data-content="order"] > div[data-item="order"] {
 
     color: #F60;
 
+    cursor: pointer;
+
     > span {
         font-family: 'Roboto';
         font-size: 16px;
@@ -601,7 +624,14 @@ div[data-content="order"] > div[data-item="order"] {
         text-wrap: nowrap;
     
         color: #F60;
+
+        pointer-events: none;
     }
+}
+
+.lkt__journeys-number:hover {
+    color: #ed5f00;
+    text-decoration: underline;
 }
 
 .lkt__journeys-warning {
@@ -667,6 +697,12 @@ div[data-content="order"] > div[data-item="order"] {
     font-weight: 500;
 
     color: #464646;
+
+    cursor: pointer;
+}
+
+.lkt__journeys-name:hover {
+    text-decoration: underline;
 }
 
 .lkt__journeys-route {
@@ -892,7 +928,9 @@ div[data-content="order"] > div[data-item="order"] {
 .lkt-order__data {
     padding-bottom: 19px;
 
+    border-radius: 10px;
     background: #F2F2F2;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
 }
 .lkt-order__data-head {
     box-shadow: none;
@@ -916,10 +954,285 @@ div[data-content="order"] > div[data-item="order"] {
     border-image-slice: 10 0 0 0;
     border-image-repeat: stretch;
 }
+
+.lkt-order__data-number {
+    cursor: default;
+}
+.lkt-order__data-number:hover {
+    text-decoration: none;
+    color: #F60;
+}
+
+.lkt-order__data-name {
+    cursor: default;
+}
+.lkt-order__data-name:hover {
+    text-decoration: none;
+}
+
+.lkt-order__data-opener {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    padding-left: 34px;
+    padding-right: 34px;
+
+    border-bottom: 2px solid #D9D9D9;
+
+    cursor: pointer;
+}
+
+.lkt-order__data-opener-text {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+
+    color: #FF732D;
+}
+
+.lkt-order__data-opener-icon {
+    width: 19px;
+    height: 12px;
+    flex-shrink: 0;
+
+    background: no-repeat url('../i/arrow-vertical-opener.svg');
+    background-size: contain;
+    background-position: center;
+
+    transition: transform 0.3s linear;
+}
+
+.lkt-order__data-opener_active > .lkt-order__data-opener-icon {
+    transform: rotate(180deg);
+}
+
+.lkt-order__data-content {
+    opacity: 0;
+
+    overflow: hidden;
+
+    transition: height 0.3s linear, opacity 0.2s linear;
+}
+
+.lkt-order__data-opener_active + .lkt-order__data-content {
+    opacity: 1;
+}
+
+.lkt-order__data-people {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+    padding-left: 34px;
+    padding-right: 34px;
+
+    border-bottom: 2px solid #D9D9D9;
+}
+
+.lkt-order__data-people-list {
+    display: flex;
+    gap: 25px;
+}
+
+.lkt-order__data-people-item {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #242424;
+}
+
+.lkt-order__data-people-item > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #242424;
+}
+
+.lkt-order__data-people-total {
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FF732D;
+}
+.lkt-order__data-people-total > span {
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FF732D;
+}
+
+.lkt-order__data-hotels-list {
+    padding-left: 34px;
+    padding-right: 34px;
+    padding-bottom: 13px;
+
+    border-bottom: 2px solid #D9D9D9;
+}
+
+.lkt-order__data-hotels-item {
+    margin-top: 14px;
+}
+
+.lkt-order__data-hotels-title {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+
+    color: #242424;
+}
+
+.lkt-order__hotel-rooms-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 23px;
+    gap: 20px;
+}
+
+.lkt-order__hotel-room-title {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #242424;
+}
+
+.lkt-order__room-places-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 4px;
+}
+
+.lkt-order__room-places-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lkt-order__room-place-name {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #828282;
+}
+
+.lkt-order__place-price {
+    display: flex;
+    gap: 25px;
+}
+
+.lkt-order__place-price-calc {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #5A5D62;
+}
+.lkt-order__place-price-calc > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #5A5D62;
+}
+
+.lkt-order__place-price-total {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #5A5D62;
+}
+.lkt-order__place-price-total > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #5A5D62;
+}
+
+.lkt-order__data-services {
+    margin-top: 14px;
+    padding-left: 34px;
+    padding-right: 34px;
+}
+
+.lkt-order__data-services-title {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #242424;
+}
+
+.lkt-order__data-services-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.lkt-order__data-services-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lkt-order__data-services-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.lkt-order__data-services-name > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #242424;
+}
+
+.lkt-order__data-services-name > .lkt-order__data-services-comment {
+    font-weight: 400;
+}
+
+.lkt-order__data-services-calc {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #242424;
+}
+.lkt-order__data-services-calc > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #242424;
+}
 /* END CONTENT */
 
 
-/* надпись заполниет данные */
+
 
 /* ПРОСТО УМЕНЬШАЕМ ШИРИНЫ */
 @media(max-width: 1280px) {
