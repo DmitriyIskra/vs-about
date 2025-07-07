@@ -403,7 +403,9 @@ input:focus, textarea:focus {
     left: 0;
     bottom: 0;
 
-    height: 168px;
+    min-width: 215px;
+    width: 215px;
+    max-height: 168px;
 }
 
 .for-agency__acc-item-img_plain {
@@ -411,10 +413,14 @@ input:focus, textarea:focus {
 }
 
 .for-agency__acc-item-img_bus {
+    min-width: 221px;
+
     transform: translate(-27%, 0);
 }
 
 .for-agency__acc-item-img_kremlin {
+    min-width: 217px;
+
     transform: translate(-30%, 0);
 }
 
@@ -992,7 +998,17 @@ div.for-agency__subscr-img {
 
 @media(max-width: 1366px) {
     .for-agency__acc-item-img {
-        height: 161px;
+        min-width: 205px;
+        width: 205px;
+        max-height: 161px;
+    }
+
+    .for-agency__acc-item-img_bus {
+        min-width: 212px;
+    }
+    
+    .for-agency__acc-item-img_kremlin {
+        min-width: 210px;
     }
 }
 
@@ -1506,6 +1522,8 @@ div.for-agency__subscr-img {
 
         height: 100%;
         width: 100%;
+        min-width: auto;
+        max-height: initial;
         
         object-fit: contain;
         object-position: center;

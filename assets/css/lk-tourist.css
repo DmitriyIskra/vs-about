@@ -521,15 +521,20 @@ input:focus, textarea:focus {
     display: none;
 }
 
-.lkt-main__content-item_active {
+div[data-content="journeys"] > div[data-item="journeys"] {
+    display: block;
+}
+div[data-content="order"] > div[data-item="order"] {
     display: block;
 }
 
 /* Список мои путешествия */
+.lkt__journeys {
+    margin-top: 18px;
+}
 
 .lkt__journeys-list {
     display: flex;
-    margin-top: 18px;
     flex-direction: column;
     gap: 25px;
 }
@@ -745,7 +750,8 @@ input:focus, textarea:focus {
 .lkt__journeys-wr-state[data-state="annulation"] > div[data-state="annulation"] {
     display: block;
 }
-.lkt__journeys-wr-state[data-state="annulated"] > div[data-state="annulated"] {
+.lkt__journeys-wr-state[data-state="annulated-refund"] > div[data-state="annulated"], 
+.lkt__journeys-wr-state[data-state="annulated-end"] > div[data-state="annulated"] {
     display: block;
 }
 
@@ -758,11 +764,20 @@ input:focus, textarea:focus {
     color: #464646;
 }
 
+.lkt__journeys-state > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #464646;
+}
+
 .lkt__journeys-state_orange {
     color: #FF732D;
 }
 
-.lkt__journeys-comment {
+.lkt__journeys-comment {   
     font-family: 'Roboto';
     font-size: 14px;
     font-style: normal;
@@ -780,12 +795,21 @@ input:focus, textarea:focus {
     }
 }
 
+.lkt__journeys-comment_canceled {
+    display: none;
+}
+
 .lkt__journeys-comment_bold {
     font-weight: 500;
     
     > span {
         font-weight: 500;
     }
+}
+
+.lkt__journeys-wr-state[data-state="annulated-refund"] .lkt__journeys-comment_canceled[data-state="refund"], 
+.lkt__journeys-wr-state[data-state="annulated-end"] .lkt__journeys-comment_canceled[data-state="end"] {
+    display: block;
 }
 
 .lkt__journeys-pay {
@@ -858,11 +882,167 @@ input:focus, textarea:focus {
 .lkt__journeys-button:hover {
     background: #ed5f00;
 }
+
+
+/* Заказ */
+.lkt-order {
+    margin-top: 18px;
+}
+
+.lkt-order__data {
+    padding-bottom: 19px;
+
+    background: #F2F2F2;
+}
+.lkt-order__data-head {
+    box-shadow: none;
+}
+
+.lkt-order__data-head-content {
+    padding-bottom: 0;
+}
+
+.lkt-order__data-head-pay {
+    margin-bottom: 0;
+}
+
+.lkt-order__data-body {
+    width: 734px;
+    margin: 29px auto 0;
+
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    border-image-source: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+    border-image-slice: 10 0 0 0;
+    border-image-repeat: stretch;
+}
 /* END CONTENT */
 
 
+/* надпись заполниет данные */
 
 /* ПРОСТО УМЕНЬШАЕМ ШИРИНЫ */
+@media(max-width: 1280px) {
+    .lkt__main-title {
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt__wrapper {
+        margin-top: 38px;
+        gap: 27px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt__aside {
+        width: 302px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt-profile__list {
+        width: 234px;
+    }   
+}
+
+@media(max-width: 1280px) {
+    .lkt-question__button {
+        width: 253px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt-docs__title {
+        width: 253px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt-docs__item {
+        width: 253px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt-main {
+        width: 756px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt__header-item {
+        width: 242px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .lkt__journeys-img {
+        width: 335px;
+    }
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
+@media(max-width: 1280px) {
+    
+}
+
 @media(max-width: 1280px) {
     
 }

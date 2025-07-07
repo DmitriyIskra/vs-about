@@ -121,10 +121,12 @@
                     <li class="lkt__header-item lkt__header_favorites" data-item="favorites">Избранное</li>
                 </ul>
 
-                <div class="lkt-main__content">
+                <!-- journeys, order-->
+                <div class="lkt-main__content" data-content="order">
 
-                    <div class="lkt-main__content-item lkt-main__content-item_active">
-                        <ul class="lkt__journeys-list" data-item="journeys">
+                    <!-- мои путешествия -->
+                    <div class="lkt-main__content-item lkt__journeys" data-item="journeys">
+                        <ul class="lkt__journeys-list">
                             <li class="lkt__journeys-item">
                                 <div class="lkt__journeys-img">
                                     <img src="./assets/i/lkt-journeys-exemple-content.png" alt="">
@@ -143,10 +145,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- ??? ОТМЕНЕН И АННУЛИРОВАН ЭТО НЕ ОДНО И ТО ЖЕ? и там и там к возврату!!!!!! -->
-                                    <!-- если и то и то нужно дата атрибут annulated сделать 2шт с префиксами и прописать показ нужного comment в css  -->
+                                    
                                     <div class="lkt__journeys-content-bottom">
-                                        <div class="lkt__journeys-wr-state" data-state="booking"> <!--booking, paid, cancelled, annulation, annulated -->
+                                        <div class="lkt__journeys-wr-state" data-state="booking"> <!--booking, paid, cancelled, annulation, annulated-refund, annulated-end -->
                                             <div data-state="booking">
                                                 <div class="lkt__journeys-state">Бронь</div>
                                                 <div class="lkt__journeys-comment">Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
@@ -164,8 +165,8 @@
                                             </div>
                                             <div data-state="annulated">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату <span>25 000</span> ₽</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">Расчет завершен</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_canceled lkt__journeys-comment_bold" data-state="refund">К возврату <span>25 000</span> ₽</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_canceled lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
                                             </div>
                                         </div>
 
@@ -184,6 +185,70 @@
                         </ul>
                     </div>
                     
+                    <!-- заказ -->
+                    <div class="lkt-main__content-item lkt-order" data-item="order">
+                        <div class="lkt-order__data">
+                            <div class="lkt__journeys-item lkt-order__data-head">
+                                <div class="lkt__journeys-img">
+                                    <img src="./assets/i/lkt-journeys-exemple-content.png" alt="">
+                                </div>
+                                <div class="lkt__journeys-content lkt-order__data-head-content">
+                                    <div class="lkt__journeys-content-top">
+                                        <div class="lkt__journeys-number">Заказ № <span>1825</span></div>
+                                        <!-- <div class="lkt__journeys-warning">Внесите данные туристов</div> -->
+                                        <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
+                                        <div class="lkt__journeys-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
+                                        <div class="lkt__journeys-data">
+                                            <div class="lkt__journeys-date">06/12/2025 - 08/12/2025</div>
+                                            <!-- <div class="lkt__journeys-wr-doc">
+                                                <a class="lkt__journeys-doc" href="#0" title="Программа тура"></a>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="lkt__journeys-content-bottom">
+                                        <div class="lkt__journeys-wr-state" data-state="booking"> <!--booking, paid, cancelled, annulation, annulated-refund, annulated-end -->
+                                            <div data-state="booking">
+                                                <div class="lkt__journeys-state">Бронь до <span>18.06.25</span></div>
+                                                <div class="lkt__journeys-comment">Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
+                                            </div>
+                                            <div data-state="paid">
+                                                <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
+                                            </div>
+                                            <div data-state="cancelled">
+                                                <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: <span>30 000</span> ₽ </div>
+                                            </div>
+                                            <div data-state="annulation">
+                                                <div class="lkt__journeys-state">Аннуляция</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">Запрос в работе</div>
+                                            </div>
+                                            <div data-state="annulated">
+                                                <div class="lkt__journeys-state">Аннулирован</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold" data-state="refund">К возврату <span>25 000</span> ₽</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="lkt__journeys-pay lkt-order__data-head-pay">
+                                            <div class="lkt__journeys-before">Оплатить до:<span>12.01.25</span></div>
+                                            <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
+                                            <div class="lkt__journeys-wr-button">
+                                                <a class="lkt__journeys-button" href="#0" type="button" title="Оплата тура">Оплатить</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+    
+                                </div>
+                            </div>
+
+                            <div class="lkt-order__data-body">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
             <!-- END CONTENT -->
