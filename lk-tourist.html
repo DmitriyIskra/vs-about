@@ -92,8 +92,8 @@
                 <!-- Ваши данные -->
 
                 <!-- Задать вопрос -->
-                <div class="lkt-question">
-                    <a class="lkt-question__button" href="#0" title="Задать вопрос">
+                <div class="lkt-question-aside">
+                    <a class="lkt-question-aside__button" href="#0" title="Задать вопрос">
                         Задать вопрос
                     </a>
                 </div>
@@ -148,8 +148,8 @@
                     <li class="lkt__header-item lkt__header_favorites" data-item="favorites">Избранное</li>
                 </ul>
 
-                <!-- journeys, order, history, favorites -->
-                <div class="lkt-main__content" data-content="favorites">
+                <!-- journeys, order, history, favorites, question -->
+                <div class="lkt-main__content" data-content="question">
 
                     <!-- мои путешествия -->
                     <div class="lkt-main__content-item lkt__journeys" data-item="journeys">
@@ -674,6 +674,27 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+
+                    <!-- Задать вопрос -->
+                    <div class="lkt-main__content-item lkt-question" data-item="question">
+                        <h3 class="lkt-question-title">Задать вопрос</h3>
+
+                        <form class="lkt-question__form" name="ask-question-form">
+                            <label class="lkt__textarea-label">
+                                <span class="lkt__textarea-title">Напишите Ваш вопрос и мы обязательно на него ответим</span>
+                                <div class="lkt__wr-textarea">
+                                    <textarea class="lkt__textarea" name="question" maxlength="250"></textarea>
+                                    <span class="lkt__textarea-counter">
+                                        <span class="lkt__textarea-amount">0</span>/250
+                                    </span>
+                                </div>
+                            </label>
+
+                            <div class="lkt-question__wr-button">
+                                <button class="lkt-question__button" type="button">Отправить</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </main>
