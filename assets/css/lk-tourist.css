@@ -477,6 +477,8 @@ input:focus, textarea:focus {
 .lkt__header-list {
     display: flex;
     justify-content: space-between;
+
+    perspective: 700px;
 }
 
 .lkt__header-item {
@@ -495,25 +497,32 @@ input:focus, textarea:focus {
     
     color: #FFF;
     border-radius: 10px 10px 0px 0px;
-    background: #FF732D;
+    background-color: #FF732D;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     
+    transition: transform 0.2s linear, background-color 0.2s linear;
+    
+    transform-style: preserve-3d;
+    
     cursor: pointer;
+    user-select: none;
 }
 
 .lkt__header-item:hover {
-    background: #ed5f00;
+    background-color: #ed5f00;
+    transform: translate(0, -5%) scale(1.03);
 }
 
 .lkt__header_journeys::before {
     content: "";
-
     height: 26px;
     width: 27px;
-
+    transform: initial;
     background: no-repeat url('../i/icon-lkt-tourist.svg');
     background-size: contain;
     background-position: center;
+
+    transform-style: preserve-3d;
 }
 .lkt__header_history::before {
     content: "";
@@ -524,6 +533,8 @@ input:focus, textarea:focus {
     background: no-repeat url('../i/icon-lkt-history-book.svg');
     background-size: contain;
     background-position: center;
+
+    transform-style: preserve-3d;
 }
 .lkt__header_favorites::before {
     content: "";
@@ -534,6 +545,8 @@ input:focus, textarea:focus {
     background: no-repeat url('../i/icon-heart-transparent-white-border.svg');
     background-size: contain;
     background-position: center;
+
+    transform-style: preserve-3d;
 }
 
 .lkt__header_active {
@@ -1524,7 +1537,15 @@ div[data-content="favorites"] > div[data-item="favorites"] {
 
     border-radius: 8px;
 
+    transition: transform 0.2s linear, box-shadow 0.2s linear;
+
     overflow: hidden;
+}
+
+.lkt-favorites__item:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+    transform: scale(1.012);
 }
 
 .lkt-favorites__item-img {
@@ -1544,9 +1565,111 @@ div[data-content="favorites"] > div[data-item="favorites"] {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
+.lkt-favorites__item-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+
+    cursor: pointer;
+}
+
+.lkt-favorites__item-heart {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 4;
+
+    width: 26px;
+    height: 24px;
+
+    background: no-repeat url('../i/lkt-favorites-heart.svg');
+    background-size: contain;
+    background-position: center;
+    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+
+    transition: transform 0.2s linear;
+
+    cursor: pointer;
+}
+
+.lkt-favorites__item-heart:hover {
+    transform: scale(1.1);
+}
+
+.lkt-favorites__item-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 121px;
+    width: 100%;
+    padding: 14px 10px 15px;
+
+    background: linear-gradient(180deg, rgba(208, 208, 208, 0.60) 0%, rgba(70, 70, 70, 0.60) 100%);
+    box-shadow: -4px -4px 5.4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+}
+
+.lkt-favorites__item-title {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    
+    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lkt-favorites__item-text {
+    display: -webkit-box;
+    height: 34px;
+    width: 78%;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #FFF;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+.lkt-favorites__item-button-link {
+    position: absolute;
+    right: 10px;
+    bottom: 11px;
+    z-index: 10;
+
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    background-color: rgb(255, 115, 45);
+    background-image: url('../i/arrow-to-right-white.svg');
+    background-repeat: no-repeat;
+    background-size: 30px 14px;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5.5px 2px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.2s linear, background-color 0.2s linear;
+
+    cursor: pointer;
+}
+
+.lkt-favorites__item-button-link:hover {
+    background-color: rgb(237, 95, 0);
+    transform: scale(1.03);
+}
 /* END CONTENT */
 
 
