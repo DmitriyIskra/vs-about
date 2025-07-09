@@ -93,7 +93,7 @@
 
                 <!-- Задать вопрос -->
                 <div class="lkt-question-aside">
-                    <a class="lkt-question-aside__button" href="#0" title="Задать вопрос">
+                    <a class="lkt-question-aside__button" href="#0" data-item="question" title="Задать вопрос">
                         Задать вопрос
                     </a>
                 </div>
@@ -119,10 +119,10 @@
                                 <a href="#0" class="lkt-docs__link lkt-docs__link_memo" title="">Памятка</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link lkt-docs__link_change" title="Запрос на изменение по заказу">Запрос на изменение по заказу</a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_change" data-item="change" title="Запрос на изменение по заказу">Запрос на изменение по заказу</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link lkt-docs__link_cancel" title="Запрос на аннуляцию">Запрос на аннуляцию</a>
+                                <a href="#0" class="lkt-docs__link lkt-docs__link_cancel" data-item="annulation" title="Запрос на аннуляцию">Запрос на аннуляцию</a>
                             </li>                
                             <li class="lkt-docs__item">
                                 <a href="#0" class="lkt-docs__link lkt-docs__link_conditions" title="Условия изменения и расторжения договора">Условия изменения и расторжения договора</a>
@@ -148,8 +148,8 @@
                     <li class="lkt__header-item lkt__header_favorites" data-item="favorites">Избранное</li>
                 </ul>
 
-                <!-- journeys, order, history, favorites, question -->
-                <div class="lkt-main__content" data-content="question">
+                <!-- journeys, order, history, favorites, question, change, annulation -->
+                <div class="lkt-main__content" data-content="history">
 
                     <!-- мои путешествия -->
                     <div class="lkt-main__content-item lkt__journeys" data-item="journeys">
@@ -160,10 +160,10 @@
                                 </div>
                                 <div class="lkt__journeys-content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number lkt__journeys-link" data-order="1825">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-warning">Внесите данные туристов</div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name lkt__journeys-link" data-order="1825">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -175,17 +175,17 @@
                                     
                                     <div class="lkt__journeys-content-bottom">
                                         <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
-                                        <div class="lkt__journeys-wr-state" data-state="booking"> 
+                                        <div class="lkt__journeys-wr-state" data-state="annulated"> 
                                             <div data-state="booking">
                                                 <div class="lkt__journeys-state">Бронь</div>
-                                                <div class="lkt__journeys-comment">Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">Оплачено: <span>0 из 30 000 ₽</span> </div>
                                             </div>
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
                                             </div>
                                             <div data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: <span>30 000</span> ₽ </div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: 30 000 ₽ </div>
                                             </div>
                                             <div data-state="annulation">
                                                 <div class="lkt__journeys-state">Аннуляция</div>
@@ -193,13 +193,13 @@
                                             </div>
                                             <div data-state="annulated">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_canceled lkt__journeys-comment_bold" data-state="refund">К возврату <span>25 000</span> ₽</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_canceled lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="refund">К возврату 25 000 ₽</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
                                             </div>
                                         </div>
 
                                         <div class="lkt__journeys-pay">
-                                            <div class="lkt__journeys-before">Оплатить до:<span>12.01.25</span></div>
+                                            <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
                                             <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
                                             <div class="lkt__journeys-wr-button">
                                                 <a class="lkt__journeys-button" href="#0" title="Оплата тура">Оплатить</a>
@@ -216,10 +216,10 @@
                                 </div>
                                 <div class="lkt__journeys-content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number lkt__journeys-link" data-order="1825">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-warning">Внесите данные туристов</div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name lkt__journeys-link" data-order="1825">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -231,17 +231,17 @@
                                     
                                     <div class="lkt__journeys-content-bottom">
                                         <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
-                                        <div class="lkt__journeys-wr-state" data-state="annulation"> 
+                                        <div class="lkt__journeys-wr-state" data-state="annulated"> 
                                             <div data-state="booking">
                                                 <div class="lkt__journeys-state">Бронь</div>
-                                                <div class="lkt__journeys-comment">Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">Оплачено: <span>0 из 30 000 ₽</span> </div>
                                             </div>
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
                                             </div>
                                             <div data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: <span>30 000</span> ₽ </div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: 30 000 ₽</div>
                                             </div>
                                             <div data-state="annulation">
                                                 <div class="lkt__journeys-state">Аннуляция</div>
@@ -249,13 +249,13 @@
                                             </div>
                                             <div data-state="annulated">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_canceled lkt__journeys-comment_bold" data-state="refund">К возврату <span>25 000</span> ₽</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_canceled lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="refund">К возврату 25 000 ₽</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
                                             </div>
                                         </div>
 
                                         <div class="lkt__journeys-pay">
-                                            <div class="lkt__journeys-before">Оплатить до:<span>12.01.25</span></div>
+                                            <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
                                             <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
                                             <div class="lkt__journeys-wr-button">
                                                 <a class="lkt__journeys-button" href="#0" title="Оплата тура">Оплатить</a>
@@ -278,10 +278,10 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-order__data-head-content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number lkt-order__data-number">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number lkt-order__data-number">Заказ № 1825</div>
                                         <!-- <div class="lkt__journeys-warning">Внесите данные туристов</div> -->
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name lkt-order__data-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name" data-order="1825">В Тверсую область по велению души</div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12/2025 - 08/12/2025</div>
@@ -293,17 +293,17 @@
                                     
                                     <div class="lkt__journeys-content-bottom">
                                         <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
-                                        <div class="lkt__journeys-wr-state" data-state="booking"> 
+                                        <div class="lkt__journeys-wr-state" data-state="annulated-refund"> 
                                             <div data-state="booking">
                                                 <div class="lkt__journeys-state">Бронь до <span>18.06.25</span></div>
-                                                <div class="lkt__journeys-comment">Оплачено: <span>0</span> из <span>30 000</span> ₽ </div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">Оплачено: <span>0 из 30 000 ₽</span> </div>
                                             </div>
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
                                             </div>
                                             <div data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: <span>30 000</span> ₽ </div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: 30 000 ₽ </div>
                                             </div>
                                             <div data-state="annulation">
                                                 <div class="lkt__journeys-state">Аннуляция</div>
@@ -311,13 +311,13 @@
                                             </div>
                                             <div data-state="annulated">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold" data-state="refund">К возврату <span>25 000</span> ₽</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="refund">К возврату 25 000 ₽</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
                                             </div>
                                         </div>
     
                                         <div class="lkt__journeys-pay lkt-order__data-head-pay">
-                                            <div class="lkt__journeys-before">Оплатить до:<span>12.01.25</span></div>
+                                            <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
                                             <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
                                             <div class="lkt__journeys-wr-button">
                                                 <a class="lkt__journeys-button" href="#0" title="Оплата тура">Оплатить</a>
@@ -503,9 +503,9 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-history__content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -514,7 +514,7 @@
                                     
                                     <div class="lkt__journeys-content-bottom">
                                         <!-- paid, annulated, cancelled,  completed, in-progress -->
-                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="completed"> 
+                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="in-progress"> 
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state">Оплачено</div>
                                             </div>
@@ -541,9 +541,9 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-history__content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -578,9 +578,9 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-history__content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number">Заказ № <span>1825</span></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name">В Тверсую область по велению души</div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -678,15 +678,15 @@
 
                     <!-- Задать вопрос -->
                     <div class="lkt-main__content-item lkt-question" data-item="question">
-                        <h3 class="lkt-question-title">Задать вопрос</h3>
+                        <h3 class="lkt-question__title">Задать вопрос</h3>
 
                         <form class="lkt-question__form" name="ask-question-form">
                             <label class="lkt__textarea-label">
                                 <span class="lkt__textarea-title">Напишите Ваш вопрос и мы обязательно на него ответим</span>
                                 <div class="lkt__wr-textarea">
-                                    <textarea class="lkt__textarea" name="question" maxlength="250"></textarea>
+                                    <textarea class="lkt__textarea" name="question" maxlength="500"></textarea>
                                     <span class="lkt__textarea-counter">
-                                        <span class="lkt__textarea-amount">0</span>/250
+                                        <span class="lkt__textarea-amount">0</span>/500
                                     </span>
                                 </div>
                             </label>
@@ -695,6 +695,41 @@
                                 <button class="lkt-question__button" type="button">Отправить</button>
                             </div>
                         </form>
+                    </div>
+
+                    <!-- Запрос на изменение по заказу -->
+                    <div class="lkt-main__content-item lkt-change" data-item="change">
+                        <h3 class="lkt-change__title">Запрос на изменения по заказу</h3>
+
+                        <form class="lkt-change__form" name="order-change-form">
+                            <div class="lkt-change__wr-input">
+                                <label class="lkt__label">
+                                    <span class="lkt__input-title">Номер заказа</span>
+                                    <input class="lkt__input-text" type="text" name="secondname">
+                                </label>
+                            </div>
+                            <div class="lkt-change__wr-textarea">
+                                <label class="lkt__textarea-label">
+                                    <span class="lkt__textarea-title">Укажите изменения в заказе</span>
+                                    <div class="lkt__wr-textarea">
+                                        <textarea class="lkt__textarea" name="question" maxlength="500"></textarea>
+                                        <span class="lkt__textarea-counter">
+                                            <span class="lkt__textarea-amount">0</span>/500
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+
+                            <div class="lkt-change__wr-button">
+                                <button class="lkt-change__button" type="button">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Запрос на аннуляцию -->
+                    <div class="lkt-main__content-item lkt-change" data-item="annulation">
+
                     </div>
                 </div>
             </main>

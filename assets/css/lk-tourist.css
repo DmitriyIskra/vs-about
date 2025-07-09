@@ -342,6 +342,7 @@ input:focus, textarea:focus {
 
 /* Документы */
 .lkt-docs {
+    display: none;
     margin-top: 20px;
     padding-bottom: 24px;
 
@@ -350,6 +351,10 @@ input:focus, textarea:focus {
 	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
 
     overflow: hidden;
+}
+
+.lkt-docs_active {
+    display: block;
 }
 
 .lkt-docs::before {
@@ -576,6 +581,12 @@ div[data-content="favorites"] > div[data-item="favorites"] {
 div[data-content="question"] > div[data-item="question"] {
     display: block;
 }
+div[data-content="change"] > div[data-item="change"] {
+    display: block;
+}
+div[data-content="annulation"] > div[data-item="annulation"] {
+    display: block;
+}
 
 /* Список мои путешествия */
 .lkt__journeys {
@@ -631,7 +642,6 @@ div[data-content="question"] > div[data-item="question"] {
     align-self: center;
     grid-column: 1;
 
-
     font-family: 'Roboto';
     font-size: 16px;
     font-style: normal;
@@ -640,24 +650,22 @@ div[data-content="question"] > div[data-item="question"] {
     text-wrap: nowrap;
 
     color: #F60;
-
-    cursor: pointer;
-
-    > span {
-        font-family: 'Roboto';
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        white-space: nowrap;
-        text-wrap: nowrap;
-    
-        color: #F60;
-
-        pointer-events: none;
-    }
 }
 
-.lkt__journeys-number:hover {
+.lkt__journeys-number-link {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    white-space: nowrap;
+    text-wrap: nowrap;
+
+    color: #F60;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+.lkt__journeys-number-link:hover {
     color: #ed5f00;
     text-decoration: underline;
 }
@@ -701,17 +709,17 @@ div[data-content="question"] > div[data-item="question"] {
     text-wrap: nowrap;
     
     color: #FF732D;
+}
 
-    > span {
-        font-family: 'Roboto';
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        white-space: nowrap;
-        text-wrap: nowrap;
-        
-        color: #FF732D;
-    }
+.lkt__journeys-price > span {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    white-space: nowrap;
+    text-wrap: nowrap;
+    
+    color: #FF732D;
 }
 
 .lkt__journeys-name {
@@ -725,11 +733,21 @@ div[data-content="question"] > div[data-item="question"] {
     font-weight: 500;
 
     color: #464646;
+}
+
+.lkt__journeys-name-link {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #464646;
+    text-decoration: none;
 
     cursor: pointer;
 }
 
-.lkt__journeys-name:hover {
+.lkt__journeys-name-link:hover {
     text-decoration: underline;
 }
 
@@ -848,31 +866,27 @@ div[data-content="question"] > div[data-item="question"] {
     font-weight: 400;
 
     color: #464646;
-
-    > span {
-        font-family: 'Roboto';
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-
-        color: #464646;
-    }
 }
 
-.lkt__journeys-comment_canceled {
+.lkt__journeys-comment > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #464646;
+}
+
+.lkt__journeys-comment_annulated {
     display: none;
 }
 
 .lkt__journeys-comment_bold {
     font-weight: 500;
-    
-    > span {
-        font-weight: 500;
-    }
 }
 
-.lkt__journeys-wr-state[data-state="annulated-refund"] .lkt__journeys-comment_canceled[data-state="refund"], 
-.lkt__journeys-wr-state[data-state="annulated"] .lkt__journeys-comment_canceled[data-state="end"] {
+.lkt__journeys-wr-state[data-state="annulated-refund"] .lkt__journeys-comment_annulated[data-state="refund"], 
+.lkt__journeys-wr-state[data-state="annulated"] .lkt__journeys-comment_annulated[data-state="end"] {
     display: block;
 }
 
@@ -889,16 +903,16 @@ div[data-content="question"] > div[data-item="question"] {
     font-style: normal;
     font-weight: 400;
 
+    color: #000; 
+}
+
+.lkt__journeys-pay-summ > span {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+
     color: #000;
-
-    > span {
-        font-family: 'Roboto';
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-
-        color: #000;
-    }
 }
 
 .lkt__journeys-before {
@@ -908,15 +922,6 @@ div[data-content="question"] > div[data-item="question"] {
     font-weight: 400;
 
     color: #464646;
-
-    > span {
-        font-family: 'Roboto';
-        font-size: 8px;
-        font-style: normal;
-        font-weight: 400;
-
-        color: #464646;
-    }
 }
 
 .lkt__journeys-wr-button {
@@ -985,10 +990,6 @@ div[data-content="question"] > div[data-item="question"] {
 
 .lkt-order__data-number {
     cursor: default;
-}
-.lkt-order__data-number:hover {
-    text-decoration: none;
-    color: #F60;
 }
 
 .lkt-order__data-name {
@@ -1529,7 +1530,7 @@ div[data-content="question"] > div[data-item="question"] {
 .lkt-favorites__list {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 21px;
+    column-gap: 2.62%;
     row-gap: 25px;
 }
 
@@ -1680,7 +1681,7 @@ div[data-content="question"] > div[data-item="question"] {
     margin-top: 38px;
 }
 
-.lkt-question-title {
+.lkt-question__title {
     font-family: 'Roboto';
     font-size: 16px;
     font-style: normal;
@@ -1788,11 +1789,73 @@ div[data-content="question"] > div[data-item="question"] {
 .lkt-question__button:active {
     box-shadow: none;
 }
+
+/* Изменения по заказу */
+.lkt-change {
+    margin-top: 38px;
+}
+
+.lkt-change__title {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #F60;
+}
+
+.lkt-change__form {
+    margin-top: 20px;
+}
+
+.lkt-change__wr-input {
+    width: 351px;
+    margin-top: 26px;
+}
+
+.lkt-change__wr-textarea {
+    margin-top: 22px;
+}
+
+.lkt-change__wr-button {
+    display: flex;
+    margin-top: 70px;
+    justify-content: end;
+}
+
+.lkt-change__button {
+    display: grid;
+    place-items: center;
+    width: 213px;
+    height: 40px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 25px;
+    background: #FF732D;
+    box-shadow: 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+}
+
+.lkt-change__button:hover {
+    background-color: #ed5f00;
+}
+
+.lkt-change__button:active {
+    box-shadow: none;
+}
+
+/* Запрос на аннуляцию */
+
 /* END CONTENT */
 
 
 
-/* ПРОСТО УМЕНЬШАЕМ ШИРИНЫ */
 @media(max-width: 1280px) {
     .lkt__main-title {
         font-size: 25px;
@@ -1848,15 +1911,14 @@ div[data-content="question"] > div[data-item="question"] {
     }
 }
 
+
+/* start journeys */
 @media(max-width: 1280px) {
     .lkt__journeys-img {
         width: 335px;
     }
 }
-
-@media(max-width: 1280px) {
-    
-}
+/* end journeys */
 
 @media(max-width: 1280px) {
     
