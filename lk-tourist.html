@@ -744,14 +744,14 @@
                                 <div class="lkt-annulation__num-order">
                                     <label class="lkt-annulation__label lkt-annulation__label-num-order">
                                         <span class="lkt-annulation__text">№ заказа:</span>
-                                        <input class="lkt-annulation__input" type="text" name="Номер заказа" readonly>
+                                        <span class="lkt-annulation__text lkt-annulation__text-num-order">1845</span>
                                     </label>
                                 </div>
 
-                                <div class="lkt-annulation__wr-route-name">
+                                <div class="lkt-annulation__wr-route-title">
                                     <span class="lkt-annulation__text">Название, маршрут:</span>
-                                    <span class="lkt-annulation__text lkt-annulation__name"></span>
-                                    <span class="lkt-annulation__text lkt-annulation__route"></span>
+                                    <span class="lkt-annulation__text lkt-annulation__route-name">Обратно в горы</span>
+                                    <span class="lkt-annulation__text lkt-annulation__route">Москва-Калининград</span>
                                 </div>
 
                                 <div class="lkt-annulation__wr-route-date">
@@ -761,64 +761,68 @@
 
                                 <div class="lkt-annulation__wr-user-name">
                                     <span class="lkt-annulation__text">Я,</span> 
-                                    <span class="lkt-annulation__text lkt-annulation__user-name"></span>
+                                    <span class="lkt-annulation__text lkt-annulation__user-name">Петров Максимилиан Арнольдович</span>
                                 </div>
 
                                 <div class="lkt-annulation__wr-doc">
                                     <p class="lkt-annulation__text">Паспорт РФ</p>
-                                    <label class="lkt-annulation__label">
+                                    <div class="lkt-annulation__wr-doc-row">
                                         <span class="lkt-annulation__text">номер</span>
-                                        <input class="lkt-annulation__input" type="text" name="">
-                                    </label>
-                                    <label class="lkt-annulation__label">
+                                        <span class="lkt-annulation__text lkt-annulation__doc-number">4545 454545</span>,
+                                    </div>
+                                    <div class="lkt-annulation__wr-doc-row lkt-annulation__wr-doc-date">
                                         <span class="lkt-annulation__text">дата выдачи</span>
-                                        <span class="lkt-annulation__marks-left"></span><input class="lkt-annulation__input lkt-annulation__doc-day" type="text" name=""><span class="lkt-annulation__marks-right"></span>
-                                        <input class="lkt-annulation__input" type="text" name=""> 20 
-                                        <input class="lkt-annulation__input" type="text" name=""> г.,
-                                    </label>
+                                        <span class="lkt-annulation__marks-left">«</span><span class="lkt-annulation__text lkt-annulation__doc-day">22</span><span class="lkt-annulation__marks-right">»</span>
+                                        <span class="lkt-annulation__text lkt-annulation__doc-month">сентября</span>20<span class="lkt-annulation__text lkt-annulation__doc-year">66</span> г.,
+                                    </div>
                                 </div>
 
                                 <div class="lkt-annulation__wr-reason">
                                     <label class="lkt-annulation__label">
-                                        <span class="lkt-annulation__text">Отказываюсь в одностороннем порядке от исполнения Договора по следующей причине:</span>
-                                        <input class="lkt-annulation__input" type="text" name="">
+                                        <span class="lkt-annulation__text lkt-annulation__reason-text">Отказываюсь в одностороннем порядке от исполнения Договора по следующей</span>
+                                        <span class="lkt-annulation__text lkt-annulation__reason-text lkt-annulation__reason-wr-input"> <span>причине:</span> <input class="lkt-annulation__input lkt-annulation__reason-input" type="text" name="reason" maxlength="250"></span>
+
                                     </label>
-                                    <p class="lkt-annulation__text">(указать причину)</p>
+                                    <p class="lkt-annulation__text lkt-annulation__reason-annotation">(указать причину)</p>
                                 </div>
 
                                 <div class="lkt-annulation__wr-request">
-                                    <p>Прошу вернуть мне оплаченные денежные средства в соответствии с условиями аннуляции Договора публичной оферты.</p>
+                                    <p class="lkt-annulation__text lkt-annulation__request-text">Прошу вернуть мне оплаченные денежные средства в соответствии с условиями аннуляции Договора публичной оферты.</p>
                                 </div>
 
                                 <div class="lkt-annulation__wr-email">
-                                    <label class="lkt-annulation__label">
-                                        <span class="lkt-annulation__text">Результат рассмотрения заявления прошу предоставить мне <br> на адрес электронной почты:</span>
-                                        <input class="lkt-annulation__input" type="text" name="">
+                                    <label class="lkt-annulation__label lkt-annulation__email-label">
+                                        <span class="lkt-annulation__text">Результат рассмотрения заявления прошу предоставить мне  </span><br>
+                                        <span class="lkt-annulation__text lkt-annulation__wr-email-text"><span class="lkt-annulation__text">адрес электронной почты:</span> <span class="lkt-annulation__text lkt-annulation__email">aCaccascc@mail.ru</span></span>
                                     </label>
                                 </div>
 
                                 <div class="lkt-annulation__wr-phone">
                                     <label class="lkt-annulation__label">
-                                        <span class="lkt-annulation__text">по телефону:</span>
-                                        <input class="lkt-annulation__input" type="text" name="" placeholder="+7 (000) 000-00-00">
+                                        <span class="lkt-annulation__text">по телефону:</span> 
+                                        <span class="lkt-annulation__text lkt-annulation__phone">+7 (000) 000-00-00</span>
                                     </label>
                                 </div>
 
                                 <div class="lkt-annulation__wr-date-request">
                                     <label class="lkt-annulation__label">
                                         <span class="lkt-annulation__text">Дата заявления:</span>
-                                        <input class="lkt-annulation__input" type="text" name="" placeholder="дд.мм.гггг">
+                                        <span class="lkt-annulation__text lkt-annulation__date">18.07.2165</span>
                                     </label>
                                 </div>
 
                                 <div class="lkt-annulation__wr-registered">
-                                    <p class="lkt-annulation__registered-title">Заявление принято к рассмотрению</p>
-                                    <label class="lkt-annulation__label">
+                                    <p class="lkt-annulation__text lkt-annulation__registered-title">Заявление принято к рассмотрению</p>
+                                    <label class="lkt-annulation__label lkt-annulation__registered-label">
                                         <span class="lkt-annulation__text">Дата</span>
-                                        <span class="lkt-annulation__text lkt-annulation__marks-left"></span><input class="lkt-annulation__input lkt-annulation__registered-day" type="text" name=""><span class="lkt-annulation__text lkt-annulation__marks-right"></span>
-                                        <input class="lkt-annulation__input" type="text" name=""> 202
-                                        <input class="lkt-annulation__input" type="text" name=""> г.,
+                                        <span class="lkt-annulation__text lkt-annulation__marks-left">«</span><span class="lkt-annulation__text lkt-annulation__registered-day">25</span><span class="lkt-annulation__text lkt-annulation__marks-right">»</span>
+                                        <span class="lkt-annulation__text lkt-annulation__registered-month">сентября</span>
+                                        20<span class="lkt-annulation__text lkt-annulation__registered-year">65</span> г.,
                                     </label>
+                                </div>
+
+                                <div class="lkt-annulation__wr-button">
+                                    <button class="lkt-annulation__button" type="button">Отправить</button>
                                 </div>
                             </form>
                         </div>

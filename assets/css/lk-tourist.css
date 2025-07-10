@@ -1866,6 +1866,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 .lkt-annulation__content {
     width: 608px;
+    margin-top: 8px;
     padding: 15px 20px 50px;
 
     border: 1px solid #D4D4D4;
@@ -1936,18 +1937,22 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     text-wrap: nowrap;
 }
 
+.lkt-annulation__text-num-order {
+    padding-left: 4px;
+
+    border-bottom: 1px solid #000;
+}
+
 .lkt-annulation__input {
     font-family: 'Roboto';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    white-space: nowrap;
-    text-wrap: nowrap;
 
     border-bottom: 1px solid #000;
 }
 
-.lkt-annulation__wr-route-name {
+.lkt-annulation__wr-route-title {
     display: grid;
     grid-template-columns: min-content 1fr;
     grid-template-rows: min-content min-content;
@@ -1955,14 +1960,17 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     margin-top: 3px;
 }
 
-.lkt-annulation__name,
+.lkt-annulation__route-name,
 .lkt-annulation__route {
     height: 19px;
+    padding-left: 4px;
+
+    line-height: 1.7 !important;
 
     border-bottom: 1px solid #000;
 }
 
-.lkt-annulation__name {
+.lkt-annulation__route-name {
     grid-column: 2;
     grid-row: 1;
 
@@ -1981,12 +1989,180 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 .lkt-annulation__wr-user-name {
     display: grid;
     grid-template-columns: min-content 1fr;
+    align-items: end;
     height: 19px;
     margin-top: 25px;
 }
 
 .lkt-annulation__user-name {
+    padding-left: 4px;
+
     border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__wr-doc {
+    margin-top: 9px;
+}
+
+.lkt-annulation__wr-doc-row {
+    margin-top: 7px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1 !important;
+}
+
+.lkt-annulation__doc-number {
+    width: 104px;
+    padding-left: 4px;
+
+    border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__marks-left,
+.lkt-annulation__marks-right {
+    display: inline-block;
+    width: min-content;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.lkt-annulation__doc-day {
+    width: 21px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__doc-month {
+    width: 76px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__doc-year {
+    width: 17px;
+    
+    border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__wr-reason {
+    margin-top: 24px;
+}
+
+.lkt-annulation__reason-text {
+    white-space: initial;
+    text-wrap: wrap;
+}
+
+.lkt-annulation__reason-input {
+    width: 100%;
+    padding-left: 4px;
+}
+
+.lkt-annulation__reason-wr-input {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    width: 100%;
+}
+
+.lkt-annulation__reason-wr-input > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.lkt-annulation__reason-annotation {
+    margin-top: 5px;
+}
+
+.lkt-annulation__wr-request {
+    margin-top: 28px;
+}
+
+.lkt-annulation__request-text {
+    white-space: wrap;
+    text-wrap: wrap;
+}
+
+.lkt-annulation__wr-email {
+    margin-top: 28px;
+}
+
+.lkt-annulation__email-label {
+    width: 100%;
+}
+
+.lkt-annulation__wr-email-text {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    margin-top: 6px;
+}
+
+.lkt-annulation__email {
+    padding-left: 4px;
+
+    border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__wr-phone {
+    margin-top: 3px;
+}
+
+.lkt-annulation__wr-date-request {
+    margin-top: 45px;
+}
+
+.lkt-annulation__date {
+    width: 89px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__wr-registered {
+    margin-top: 70px;
+}
+
+.lkt-annulation__registered-label {
+    margin-top: 25px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.lkt-annulation__registered-day,
+.lkt-annulation__registered-month,
+.lkt-annulation__registered-year {
+    border-bottom: 1px solid #000;
+}
+
+.lkt-annulation__registered-day {
+    width: 32px;
+
+    text-align: center;
+}
+
+.lkt-annulation__registered-month {
+    width: 144px;
+
+    text-align: center;
+}
+
+.lkt-annulation__registered-year {
+
 }
 /* END CONTENT */
 
