@@ -93,7 +93,7 @@ input:focus, textarea:focus {
 
     color: #FFEA60;
 
-    transition: opacity 1.5s linear;
+    transition: opacity 0.3s linear;
 
     opacity: 0;
 }
