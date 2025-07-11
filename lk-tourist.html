@@ -25,7 +25,11 @@
 <body>
     <div class="lkt">
 
-        <h1 class="lkt__main-title">Личный кабинет</h1>
+        <div class="lkt__wr-main-title">
+            <!-- lkt__main-title-back_active -->
+            <a class="lkt__head-arrow-back lkt__main-title-back lkt__main-title-back_active" href="#0" data-item="order" title="Заказ № 1825"></a>
+            <h1 class="lkt__main-title">Личный кабинет</h1>
+        </div>
 
         <div class="lkt__wrapper">
 
@@ -159,7 +163,7 @@
                 </ul>
 
                 <!-- journeys, order, history, favorites, question, change, annulation -->
-                <div class="lkt-main__content" data-content="journeys">
+                <div class="lkt-main__content" data-content="order">
 
                     <!-- мои путешествия -->
                     <div class="lkt-main__content-item lkt__journeys" data-item="journeys">
@@ -171,7 +175,8 @@
                                 <div class="lkt__journeys-content">
                                     <div class="lkt__journeys-content-top">
                                         <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
-                                        <div class="lkt__journeys-warning">Внесите данные туристов</div>
+                                        <!-- lkt__journeys-warning_active -->
+                                        <div class="lkt__journeys-warning lkt__journeys-warning_active">Внесите данные туристов</div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
                                         <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
@@ -185,7 +190,7 @@
                                     
                                     <div class="lkt__journeys-content-bottom">
                                         <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
-                                        <div class="lkt__journeys-wr-state" data-state="annulated"> 
+                                        <div class="lkt__journeys-wr-state" data-state="booking"> 
                                             <div data-state="booking">
                                                 <div class="lkt__journeys-state">Бронь</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">Оплачено: <span>0 из 30 000 ₽</span> </div>
@@ -289,15 +294,11 @@
                                 <div class="lkt__journeys-content lkt-order__data-head-content">
                                     <div class="lkt__journeys-content-top">
                                         <div class="lkt__journeys-number lkt-order__data-number">Заказ № 1825</div>
-                                        <!-- <div class="lkt__journeys-warning">Внесите данные туристов</div> -->
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
                                         <div class="lkt__journeys-name" data-order="1825">В Тверсую область по велению души</div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12/2025 - 08/12/2025</div>
-                                            <!-- <div class="lkt__journeys-wr-doc">
-                                                <a class="lkt__journeys-doc" href="#0" title="Программа тура"></a>
-                                            </div> -->
                                         </div>
                                     </div>
                                     
@@ -522,7 +523,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="lkt__journeys-content-bottom">
+                                    <div class="lkt__journeys-content-bottom lkt-history__content-bottom">
                                         <!-- paid, annulated, cancelled,  completed, in-progress -->
                                         <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="in-progress"> 
                                             <div data-state="paid">

@@ -34,9 +34,33 @@ input:focus, textarea:focus {
     align-items: center;
 }
 
-.lkt__main-title {
+.lkt__wr-main-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 78px;
+    gap: 20px;
+}
 
+.lkt__head-arrow-back {
+    width: 16px;
+    height: 26px;
+
+    background: no-repeat url('../i/arrow-mark-grey.svg');
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+.lkt__main-title-back {
+    display: none;
+}
+.lkt__main-title-back_active {
+    display: block;
+}
+
+.lkt__main-title {
     font-family: 'Roboto';
     font-size: 26px;
     font-style: normal;
@@ -712,7 +736,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 .lkt__journeys-warning {
-    display: flex;
+    display: none;
     align-items: center;
     margin-left: 9px;
     grid-column: 2;
@@ -735,6 +759,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     background: no-repeat url('../i/icon-attention.svg');
     background-size: contain;
     background-position: center;
+}
+
+.lkt__journeys-warning_active {
+    display: flex;
 }
 
 .lkt__journeys-price {
@@ -1919,17 +1947,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     gap: 17px;
 }
 
-.lkt__head-arrow-back {
-    width: 16px;
-    height: 26px;
-
-    background: no-repeat url('../i/arrow-mark-grey.svg');
-    background-size: contain;
-    background-position: center;
-
-    cursor: pointer;
-}
-
 .lkt-annulation__main-title {
     font-family: 'Roboto';
     font-size: 16px;
@@ -2375,12 +2392,22 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 /* end journeys */
 
+@media(max-width: 1024px) {
+    .lkt__wr-main-title {
+        margin-top: 9.33vw;
+        margin-bottom: 7.73vw;
+    }   
+}
+
+@media(max-width: 1024px) {
+    .lkt__head-arrow-back {
+        width: 4.27vw;
+        height: 6.93vw;
+    }
+}
 
 @media(max-width: 1024px) {
     .lkt__main-title {
-        margin-top: 9.33vw;
-        margin-bottom: 7.73vw;
-
         font-size: 6.40vw;
     }
 }
@@ -2598,107 +2625,251 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__header-list {
+        perspective: 0;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__header-item {
+        width: 32vw;
+        height: 12.53vw;
+        gap: 0.80vw;
+
+        font-size: 2.93vw;
+
+        border-radius: 2.67vw 2.67vw 0px 0px;
+
+        transition: none;
+    }
+
+    .lkt__header-item:hover {
+        background-color: #FF732D;
+        transform: none;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__header_journeys::before {
+        height: 5.07vw;
+        width: 4.27vw;
+    }
+
+    .lkt__header_history::before {
+        height: 5.33vw;
+        width: 5.33vw;
+    }
+
+    .lkt__header_favorites::before {
+        width: 7.07vw;
+        height: 5.33vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys {
+        margin-top: 9.33vw;
+        padding-bottom: 19.73vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-list {
+        align-items: center;
+        gap: 6.67vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-item {
+        display: block;
+        height: auto;
+        width: 94.4%;
+
+        box-shadow: none;
+        border-radius: 0 0 2.13vw 2.13vw;
+        overflow: visible;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-img {
+        width: 100%;
+        height: 66.67vw;
+
+        border-radius: 2.13vw;
+        overflow: hidden;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-content {
+        padding: 3.73vw 3.20vw 5.07vw;
+
+        border-radius: 0 0 2.13vw 2.13vw;
+        box-shadow: 0px -0.80vw 4.73vw 1.60vw rgba(0, 0, 0, 0.2);
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-content-top {
+        grid-template-columns: min-content 1fr min-content;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-number {
+        font-size: 4vw;
+    }
+
+    .lkt__journeys-number-link {
+        font-size: 4vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-warning {
+        margin-left: 2vw;
+        padding-right: 2vw;
+        gap: 1.33vw;
+
+        font-size: 2.63vw;
+    }
+
+    .lkt__journeys-warning::before {
+        width: 5.07vw;
+        height: 5.07vw;
+    }
 }
 
 @media(max-width: 1024px) {
+    .lkt__journeys-price {
+        font-size: 4vw;
+    }
     
+    .lkt__journeys-price > span {
+        font-size: 4vw;
+    }
 }
 
 @media(max-width: 1024px) {
+    .lkt__journeys-name {
+        margin-top: 3.20vw;
+
+        font-size: 3.73vw;
+    }
     
+    .lkt__journeys-name-link {
+        font-size: 3.73vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-route {
+        margin-top: 2.13vw;
+
+        font-size: 3.20vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-data {
+        display: block;
+        margin-top: 4.80vw;
+        gap: 23px;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-date {
+        align-items: center;
+        gap: 1.60vw;
+
+        font-size: 3.73vw;
+    }
+
+    .lkt__journeys-date::before {
+        width: 5.33vw;
+        height: 5.33vw;
+    }   
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-wr-doc {
+        margin-top: 4vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-doc {
+        height: 6.13vw;
+        width: 5.07vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-content-bottom {
+        margin-top: -3.9vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-state {
+        font-size: 3.47vw;
+    }
 }
 
 @media(max-width: 1024px) {
+    .lkt__journeys-comment {
+        margin-top: 1.07vw;
+
+        font-size: 3.47vw;
+    }
     
+    .lkt__journeys-comment > span {
+        font-size: 3.47vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-pay {
+        margin-bottom: 0;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-before {
+        font-size: 2.13vw;
+    }
 }
 
 @media(max-width: 1024px) {
+    .lkt__journeys-pay-summ {
+        font-size: 4.27vw;
+    }
     
+    .lkt__journeys-pay-summ > span {
+        font-size: 4.27vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-wr-button {
+        margin-top: 1.60vw;
+    }
 }
 
 @media(max-width: 1024px) {
-    
+    .lkt__journeys-button {
+        width: 33.33vw;
+        height: 9.07vw;
+
+        font-size: 3.73vw;
+
+        border-radius: 6.67vw;
+        box-shadow: 0px 0px 1.87vw 0.53vw rgba(0, 0, 0, 0.25);
+    }
 }
 
 @media(max-width: 1024px) {
