@@ -1,4 +1,4 @@
-.lkt__main * {
+.lkt * {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
@@ -28,7 +28,7 @@ input:focus, textarea:focus {
 
 /* ========================= */
 
-.lkt__main {
+.lkt {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,6 +55,11 @@ input:focus, textarea:focus {
 
 .lkt__aside {
     width: 331px;
+    padding-bottom: 55px;
+}
+
+.lkt__avatar {
+    display: none;
 }
 
 /* Проофайл */
@@ -353,7 +358,7 @@ input:focus, textarea:focus {
     overflow: hidden;
 }
 
-.lkt-docs_active {
+.lkt-docs__active {
     display: block;
 }
 
@@ -591,6 +596,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Список мои путешествия */
 .lkt__journeys {
     margin-top: 18px;
+    padding-bottom: 68px;
 }
 
 .lkt__journeys-list {
@@ -956,6 +962,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Заказ */
 .lkt-order {
     margin-top: 18px;
+    padding-bottom: 68px;
 }
 
 .lkt-order__data {
@@ -1472,6 +1479,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 .lkt-history {
     margin-top: 18px;
+    padding-bottom: 68px;
 }
 
 .lkt-history__content {
@@ -1525,6 +1533,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Избранное */
 .lkt-favorites {
     margin-top: 18px;
+    padding-bottom: 68px;
 }
 
 .lkt-favorites__list {
@@ -1536,7 +1545,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 .lkt-favorites__item {
     position: relative;
-
     width: 31.57%;
     height: 307px;
 
@@ -1551,6 +1559,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
     transform: scale(1.012);
+}
+
+.lkt-favorites__item_disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
 }
 
 .lkt-favorites__item-img {
@@ -1570,28 +1584,15 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-}
-
-.lkt-favorites__item-link {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-
-    cursor: pointer;
+    justify-content: space-between;
 }
 
 .lkt-favorites__item-heart {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 4;
-
     width: 26px;
     height: 24px;
+    margin-top: 15px;
+    margin-right: 15px;
+    align-self: end;
 
     background: no-repeat url('../i/lkt-favorites-heart.svg');
     background-size: contain;
@@ -1608,9 +1609,11 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 .lkt-favorites__item-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: min-content 1fr;
+
+
     height: 121px;
     width: 100%;
     padding: 14px 10px 15px;
@@ -1618,9 +1621,21 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     background: linear-gradient(180deg, rgba(208, 208, 208, 0.60) 0%, rgba(70, 70, 70, 0.60) 100%);
     box-shadow: -4px -4px 5.4px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3px);
+
+    transition: height 0.2s linear, padding-bottom 0.2s linear;
+
+    cursor: pointer;
+}
+
+.lkt-favorites__item-description:hover {
+    height: 124px;
+    padding-bottom: 18px;
 }
 
 .lkt-favorites__item-title {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
     font-family: 'Roboto';
     font-size: 16px;
     font-style: normal;
@@ -1629,12 +1644,15 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     
     color: #FFF;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+    pointer-events: none;
 }
 
 .lkt-favorites__item-text {
     display: -webkit-box;
     height: 34px;
-    width: 78%;
+    width: 90%;
+    align-self: end;
 
     font-family: 'Roboto';
     font-size: 14px;
@@ -1646,17 +1664,14 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     -webkit-box-orient: vertical;
 
     overflow: hidden;
+    pointer-events: none;
 }
 
 .lkt-favorites__item-button-link {
-    position: absolute;
-    right: 10px;
-    bottom: 11px;
-    z-index: 10;
-
     width: 40px;
     height: 40px;
     flex-shrink: 0;
+    align-self: end;
 
     background-color: rgb(255, 115, 45);
     background-image: url('../i/arrow-to-right-white.svg');
@@ -1679,6 +1694,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Задать вопрос */
 .lkt-question {
     margin-top: 38px;
+    padding-bottom: 164px;
 }
 
 .lkt-question__title {
@@ -1795,6 +1811,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     margin-top: 38px;
 }
 
+.lkt-change__wr-title {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
 .lkt-change__title {
     font-family: 'Roboto';
     font-size: 16px;
@@ -1853,6 +1875,24 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Запрос на аннуляцию */
 .lkt-annulation {
     margin-top: 38px;
+    padding-bottom: 145px;
+}
+
+.lkt-annulation__wr-main-title {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.lkt__head-arrow-back {
+    width: 16px;
+    height: 26px;
+
+    background: no-repeat url('../i/arrow-mark-grey.svg');
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
 }
 
 .lkt-annulation__main-title {
@@ -1864,9 +1904,18 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     color: #F60;
 }
 
-.lkt-annulation__content {
-    width: 608px;
+.lkt-annulation__wr-form {
+    display: none;
+
     margin-top: 8px;
+    width: 608px;
+}
+
+.lkt-annulation__wr-form_active {
+    display: block;
+}
+
+.lkt-annulation__form-content {
     padding: 15px 20px 50px;
 
     border: 1px solid #D4D4D4;
@@ -2161,8 +2210,67 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     text-align: center;
 }
 
-.lkt-annulation__registered-year {
+.lkt-annulation__wr-button {
+    display: flex;
+    margin-top: 50px;
+    padding-right: 12px;
+    justify-content: end;
+}
 
+.lkt-annulation__button {
+    display: grid;
+    place-items: center;
+    width: 213px;
+    height: 40px;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    
+    color: #FFF;
+    border-radius: 25px;
+    background: #FF732D;
+    box-shadow: 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+}
+.lkt-annulation__button:hover {
+    background-color: #ed5f00;
+}
+.lkt-annulation__button:active {
+    box-shadow: none;
+}
+
+.lkt-annulation__send-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 511px;
+    height: 206px;
+    margin: 51px auto 0;
+
+    border-radius: 8px;
+    background: no-repeat url('../i/lkt-send-result-back.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.lkt-annulation__send-result[data-result="success"] > .lkt-annulation__success {
+    display: flex;
+}
+.lkt-annulation__send-result[data-result="fail"] > .lkt-annulation__fail {
+    display: flex;
+}
+
+.lkt-annulation__send-text {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: #FFF;
 }
 /* END CONTENT */
 
@@ -2232,62 +2340,732 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 /* end journeys */
 
-@media(max-width: 1280px) {
+
+@media(max-width: 1024px) {
+    .lkt__main-title {
+        margin-top: 9.33vw;
+        margin-bottom: 7.73vw;
+
+        font-size: 6.40vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt__wrapper {
+        flex-direction: column;
+        justify-content: initial;
+        align-items: center;
+        margin-top: 0;
+        gap: 18.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt__aside {
+        width: 89.34%;
+        padding-bottom: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt__avatar {
+        display: block;
+        width: 29.33vw;
+        height: 29.33vw;
+        margin: 0 auto;
+    }
+
+    .lkt__avatar > img {
+        height: 100%;
+        width: 100%;
+
+        height: 100%;
+        width: 100%;
+        
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+
+@media(max-width: 1024px) {
+    .lkt-profile {
+        margin-top: 5.87vw;
+
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-profile__header {
+        display: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-profile__content {
+        padding: 0;
+
+        background-color: transparent;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-profile__list {
+        width: 100%;
+        gap: 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-profile__item {
+        height: 10.67vw;
+        padding-left: 2.40vw;
+        padding-bottom: 1.87vw;
+        align-items: end;
+
+        font-size: 4.27vw;
+    }
+}
+/* !!!!! ДЛЯ ВЫХОДА ЕСЛИ НУЖНО ДЕЛАЕМ МОБИЛЬНУЮ ВЕРСИЮ РЯДОС С ТЕЛЕФОНОМ ОСТАЛЬНОЕ ПРОСТОЛ ПЕРЕСТРАИВАЕМ */
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
+    .lkt-profile__dots-list {
+        display: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-question-aside {
+        height: auto;
+        margin-top: 12vw;
+        padding-left: 0;
+
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-question-aside__button {
+        width: 100%;
+        height: 10.67vw;
+        padding-left: 2.93vw;
+        gap: 2.67vw;
+
+        font-size: 3.73vw;
+    }
+
+    .lkt-question-aside__button::before {
+        width: 5.87vw;
+        height: 5.87vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-docs {
+        margin-top: 4.80vw;
+        padding-bottom: 6.40vw;
+        border-radius: 2.67vw;
+
+        box-shadow: 0px 0px 1.60vw 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
+    .lkt-main {
+        width: 375px;
+    }
+}
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
     
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
+    
+}
+
+@media(max-width: 1024px) {
     
 }
