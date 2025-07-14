@@ -162,8 +162,8 @@
                     <li class="lkt__header-item lkt__header_favorites" data-item="favorites">Избранное</li>
                 </ul>
 
-                <!-- journeys, order, history, favorites, question, change, annulation -->
-                <div class="lkt-main__content" data-content="order">
+                <!-- journeys, order, history, favorites, question,   change, annulation -->
+                <div class="lkt-main__content" data-content="question">
 
                     <!-- мои путешествия -->
                     <div class="lkt-main__content-item lkt__journeys" data-item="journeys">
@@ -525,7 +525,7 @@
                                     
                                     <div class="lkt__journeys-content-bottom lkt-history__content-bottom">
                                         <!-- paid, annulated, cancelled,  completed, in-progress -->
-                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="in-progress"> 
+                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="completed"> 
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state">Оплачено</div>
                                             </div>
@@ -561,7 +561,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="lkt__journeys-content-bottom">
+                                    <div class="lkt__journeys-content-bottom lkt-history__content-bottom">
                                         <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="cancelled"> <!-- paid, annulated, cancelled,  completed, in-progress -->
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state">Оплачено</div>
@@ -598,8 +598,9 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="lkt__journeys-content-bottom">
-                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="cancelled"> <!-- paid, annulated, cancelled,  completed, in-progress -->
+                                    <div class="lkt__journeys-content-bottom lkt-history__content-bottom">
+                                        <!-- paid, annulated, cancelled,  completed, in-progress -->
+                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="annulated"> 
                                             <div data-state="paid">
                                                 <div class="lkt__journeys-state">Оплачено</div>
                                             </div>
