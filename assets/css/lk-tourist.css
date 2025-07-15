@@ -683,30 +683,34 @@ input:focus, textarea:focus {
 
 
 /* Экземпляр контента */
-.lkt-main__content-item {
-    display: none;
+.lkt-main__content {
+    position: relative;
 }
 
-div[data-content="journeys"] > div[data-item="journeys"] {
-    display: block;
+.lkt-main__content-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 0;
+
+    visibility: hidden;
+    overflow: hidden;
 }
-div[data-content="order"] > div[data-item="order"] {
-    display: block;
-}
-div[data-content="history"] > div[data-item="history"] {
-    display: block;
-}
-div[data-content="favorites"] > div[data-item="favorites"] {
-    display: block;
-}
-div[data-content="question"] > div[data-item="question"] {
-    display: block;
-}
-div[data-content="change"] > div[data-item="change"] {
-    display: block;
-}
+
+div[data-content="journeys"] > div[data-item="journeys"],
+div[data-content="order"] > div[data-item="order"],
+div[data-content="history"] > div[data-item="history"],
+div[data-content="favorites"] > div[data-item="favorites"],
+div[data-content="question"] > div[data-item="question"],
+div[data-content="change"] > div[data-item="change"],
 div[data-content="annulation"] > div[data-item="annulation"] {
-    display: block;
+    position: static;
+
+    height: auto;
+
+    overflow: visible;
+    visibility: visible;
 }
 
 /* Список мои путешествия */
@@ -1086,8 +1090,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 .lkt-order__data {
-    padding-bottom: 19px;
-
     border-radius: 10px;
     background: #F2F2F2;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
@@ -1146,9 +1148,11 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     font-weight: 600;
 
     color: #FF732D;
+
+    pointer-events: none;
 }
 
-.lkt-order__data-opener-icon {
+.lkt__down-opener-icon {
     width: 19px;
     height: 12px;
     flex-shrink: 0;
@@ -1158,21 +1162,25 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     background-position: center;
 
     transition: transform 0.3s linear;
+
+    cursor: pointer;
 }
 
-.lkt-order__data-opener_active > .lkt-order__data-opener-icon {
+.lkt__down-opener_active > .lkt__down-opener-icon {
     transform: rotate(180deg);
 }
 
 .lkt-order__data-content {
+    height: 0;
+    
     opacity: 0;
 
-    overflow: hidden;
-
     transition: height 0.3s linear, opacity 0.2s linear;
+
+    overflow: hidden;
 }
 
-.lkt-order__data-opener_active + .lkt-order__data-content {
+.lkt__down-opener_active + .lkt-order__data-content {
     opacity: 1;
 }
 
@@ -1323,8 +1331,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 .lkt-order__data-services {
     padding-top: 14px;
-    padding-left: 34px;
     padding-right: 34px;
+    padding-bottom: 19px;
+    padding-left: 34px;
 }
 
 .lkt-order__data-services-title {
@@ -1411,64 +1420,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     -webkit-text-fill-color: transparent;
 }
 
-.lkt-order__orderer-info {
-    margin-top: 23px;
-}
-
-.lkt-order__orderer-question {
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-
-    color: #7B7B7B;
-}
-
-.lkt-order__orderer-list {
-    margin-top: 10px;
-}
-
-.lkt-order__orderer-item {
-    display: flex;
-    padding-left: 7px;
-    gap: 8px;
-}
-
-.lkt-order__orderer-item::before {
-    content: "";
-
-    display: inline-block;
-    height: 3px;
-    width: 3px;
-    margin-top: 7px;
-    flex-shrink: 0;
-
-    background-color: #828282;
-    border-radius: 50%;
-}
-
-.lkt-order__orderer-text {
-    font-family: 'Roboto';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-
-    color: #828282;
-}
-
-.lkt-order__orderer-link {
-    font-family: 'Roboto';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-
-    color: #828282;
-
-    cursor: pointer;
-}
-
 .lkt-order__orderer-form-wrapper {
-    margin-top: 45px;
+    margin-top: 35px;
 }
 
 
@@ -3046,7 +2999,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt-order__data {
         width: 94.4%;
         margin: 0 auto;
-        padding-bottom: 5.33vw;
 
         border-radius: 2.67vw;
         box-shadow: none;
@@ -3189,8 +3141,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt-order__data-services {
         padding-top: 5.07vw;
-        padding-left: 0;
         padding-right: 0;
+        padding-bottom: 5.33vw;
+        padding-left: 0;
     }
 }
 
@@ -3251,53 +3204,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt-order__orderer-info {
-        width: 94.4%;
-        margin: 4.80vw auto 0;
-    }
-}
-
-@media(max-width: 1024px) {
-    .lkt-order__orderer-question {
-        padding-left: 4vw;
-
-        font-size: 3.73vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .lkt-order__orderer-list {
-        margin-top: 3.47vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .lkt-order__orderer-item {
-        padding-left: 0;
-        gap: 1.87vw;
-    }
-
-    .lkt-order__orderer-item::before {
-        height: 0.80vw;
-        width: 0.80vw;
-        margin-top: 1.47vw;
-    }
-}
-
-@media(max-width: 1024px) {
-    .lkt-order__orderer-text {
-        font-size: 3.20vw;
-    }
-    
-    .lkt-order__orderer-link {
-        font-size: 3.20vw;
-    }
-}
-
-@media(max-width: 1024px) {
     .lkt-order__orderer-form-wrapper {
         width: 94.4%;
-        margin: 7.20vw auto 0;
+        margin: 5.87vw auto 0;
     }
 }
 

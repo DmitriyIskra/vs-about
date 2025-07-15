@@ -7,6 +7,8 @@ export default class Controll {
 
     init() {
         this.registerEvents();
+
+        this.redraw.startPage();
     }
 
     registerEvents() {
@@ -16,6 +18,7 @@ export default class Controll {
     click(e) {
         e.preventDefault();
 
+        // Переключение контента
         if(e.target.closest('.lkt__cont-switcher')) {
             const target = e.target.closest('.lkt__cont-switcher');
             const param = target.dataset.item;
@@ -29,6 +32,14 @@ export default class Controll {
             
             // показываем документы при открытии заказа
             if(param === 'order') this.redraw.showAsideDocs();
+        }
+
+
+        // ORDER
+        // Открытие закрытие аккордиона (down opener)
+        if(e.target.closest('.lkt__down-opener')) {
+            const target = e.target.closest('.lkt__down-opener');
+            this.redraw.controllOpener(target);
         }
     }
 }
