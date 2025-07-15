@@ -149,7 +149,7 @@ input:focus, textarea:focus {
     justify-content: space-between;
 }
 
-.lkt-profile__not-confirmed_orange {
+.lkt-profile__not-confirmed_error {
     border-bottom: 1px solid #F60;
 }
 
@@ -199,10 +199,10 @@ input:focus, textarea:focus {
     gap: 7px;
 }
 
-.lkt-profile__button {
-    display: none;
+.lkt-profile__confirm {
+    display: grid;
     place-items: center;
-    width: 73px;
+    width: 57px;
     height: 20px;
 
     font-family: 'Roboto';
@@ -211,23 +211,19 @@ input:focus, textarea:focus {
     font-weight: 400;
     
     color: #FFF;
-    border-radius: 2px;
+    border-radius: 6px;
     background: #F60;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
     cursor: pointer;
 }
 
-.lkt-profile__button:hover {
+.lkt-profile__confirm:hover {
     background-color: #ed5f00;
 }
 
-.lkt-profile__button:active {
+.lkt-profile__confirm:active {
     box-shadow: none;
-}
-
-.lkt-profile__button_active {
-    display: grid;
 }
 
 .lkt-profile__edit {
@@ -253,8 +249,6 @@ input:focus, textarea:focus {
 .lkt-profile__edit:active {
     box-shadow: none;
 }
-
-
 
 .lkt-profile__email {
     display: none;
@@ -2554,12 +2548,30 @@ div[data-content="annulation"] > div[data-item="annulation"] {
         height: 10.67vw;
         padding-left: 2.40vw;
         padding-bottom: 1.87vw;
+        padding-right: 2.4vw;
         align-items: end;
 
         font-size: 4.27vw;
     }
 }
-/* !!!!! ДЛЯ ВЫХОДА ЕСЛИ НУЖНО ДЕЛАЕМ МОБИЛЬНУЮ ВЕРСИЮ РЯДОС С ТЕЛЕФОНОМ ОСТАЛЬНОЕ ПРОСТОЛ ПЕРЕСТРАИВАЕМ */
+
+@media(max-width: 1024px) {
+    .lkt-profile__confirmed::after {
+        width: 5vw;
+        height: 4vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-profile__form {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1024px) {
+    
+}
+
 @media(max-width: 1024px) {
     
 }
