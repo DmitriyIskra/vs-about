@@ -27,7 +27,7 @@
 
         <div class="lkt__wr-main-title">
             <!-- lkt__main-title-back_active -->
-            <a class="lkt__head-arrow-back lkt__main-title-back lkt__main-title-back_active" href="#0" data-item="order" title="Заказ № 1825"></a>
+            <a class="lkt__head-arrow-back lkt__main-title-back" href="#0" data-item="order" title="Заказ № 1825"></a>
             <h1 class="lkt__main-title">Личный кабинет</h1>
         </div>
 
@@ -100,7 +100,8 @@
 
                 <!-- Задать вопрос -->
                 <div class="lkt-question-aside">
-                    <a class="lkt-question-aside__button" href="#0" data-item="question" title="Задать вопрос">
+                    <!-- lkt__cont-switcher_active -->
+                    <a class="lkt-question-aside__button lkt__cont-switcher" href="#0" data-item="question" title="Задать вопрос">
                         Задать вопрос
                     </a>
                 </div>
@@ -133,10 +134,12 @@
                                 <a href="#0" class="lkt-docs__link lkt-docs__link_memo" title="">Памятка</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link lkt-docs__link_change" data-item="change" title="Запрос на изменение по заказу">Запрос на изменение по заказу</a>
+                                <!-- lkt__cont-switcher_active -->
+                                <a href="#0" class="lkt-docs__link lkt__cont-switcher lkt-docs__link_change" data-item="change" title="Запрос на изменение по заказу">Запрос на изменение по заказу</a>
                             </li>                
                             <li class="lkt-docs__item">
-                                <a href="#0" class="lkt-docs__link lkt-docs__link_cancel" data-item="annulation" title="Запрос на аннуляцию">Запрос на аннуляцию</a>
+                                <!-- lkt__cont-switcher_active -->
+                                <a href="#0" class="lkt-docs__link lkt__cont-switcher lkt-docs__link_cancel" data-item="annulation" title="Запрос на аннуляцию">Запрос на аннуляцию</a>
                             </li>                
                             <li class="lkt-docs__item">
                                 <a href="#0" class="lkt-docs__link lkt-docs__link_conditions" title="Условия изменения и расторжения договора">Условия изменения и расторжения договора</a>
@@ -157,13 +160,13 @@
             <!-- START CONTENT -->
             <main class="lkt-main">
                 <ul class="lkt__header-list">
-                    <li class="lkt__header-item lkt__header_journeys lkt__header_active" data-item="journeys">Мои путешествия</li>
-                    <li class="lkt__header-item lkt__header_history" data-item="history">История</li>
-                    <li class="lkt__header-item lkt__header_favorites" data-item="favorites">Избранное</li>
+                    <li class="lkt__header-item lkt__cont-switcher lkt__header_journeys lkt__cont-switcher_active" data-item="journeys">Мои путешествия</li>
+                    <li class="lkt__header-item lkt__cont-switcher lkt__header_history" data-item="history">История</li>
+                    <li class="lkt__header-item lkt__cont-switcher lkt__header_favorites" data-item="favorites">Избранное</li>
                 </ul>
 
                 <!-- journeys, order, history, favorites, question,   change, annulation -->
-                <div class="lkt-main__content" data-content="annulation">
+                <div class="lkt-main__content" data-content="journeys">
 
                     <!-- мои путешествия -->
                     <div class="lkt-main__content-item lkt__journeys" data-item="journeys">
@@ -174,11 +177,11 @@
                                 </div>
                                 <div class="lkt__journeys-content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <!-- lkt__journeys-warning_active -->
                                         <div class="lkt__journeys-warning lkt__journeys-warning_active">Внесите данные туристов</div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -231,10 +234,10 @@
                                 </div>
                                 <div class="lkt__journeys-content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-warning">Внесите данные туристов</div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -514,9 +517,9 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-history__content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -552,9 +555,9 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-history__content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>
@@ -589,9 +592,9 @@
                                 </div>
                                 <div class="lkt__journeys-content lkt-history__content">
                                     <div class="lkt__journeys-content-top">
-                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
+                                        <div class="lkt__journeys-number"><a class="lkt__journeys-number-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
-                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
+                                        <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
                                         <div class="lkt__journeys-data">
                                             <div class="lkt__journeys-date">06/12 - 08/12</div>

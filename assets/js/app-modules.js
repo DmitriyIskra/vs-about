@@ -19,3 +19,8 @@ const corporatClientPage = document.querySelector('.corp-cl__main');
 if(corporatClientPage) (await import('./corporativnym-clientam/Init.js'))
     .default.init(corporatClientPage, 5000);
 
+
+// ЛИЧНЫЙ КАБИНЕТ ТУРИСТА
+const accountTourist = document.querySelector('.lkt');
+if(accountTourist) (await import('./account-tourist/Init.js')).default.init(accountTourist);
+

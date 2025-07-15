@@ -369,6 +369,22 @@ input:focus, textarea:focus {
     background-position: center;
 }
 
+.lkt-question-aside__button.lkt__cont-switcher_active {
+    color: #FF732D;
+}
+
+.lkt-question-aside__button.lkt__cont-switcher_active::before {
+    background: #FF732D;
+    -webkit-mask-image: url('../i/icon-ask-question.svg');
+    mask-image: url('../i/icon-ask-question.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
 /* Документы */
 .lkt-docs {
     display: none;
@@ -480,6 +496,10 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 
+.lkt-docs__link.lkt__cont-switcher_active {
+    color: #FF732D;
+}
+
 .lkt-docs__link_disabled {
 	opacity: 0.5;
 	pointer-events: none;
@@ -507,6 +527,23 @@ input:focus, textarea:focus {
     background-position: center;
 }
 
+.lkt-docs__link_package.lkt__cont-switcher_active::before,
+.lkt-docs__link_programm.lkt__cont-switcher_active::before,
+.lkt-docs__link_financial.lkt__cont-switcher_active::before,
+.lkt-docs__link_memo.lkt__cont-switcher_active::before,
+.lkt-docs__link_conditions.lkt__cont-switcher_active::before,
+.lkt-docs__link_offer.lkt__cont-switcher_active::before {
+    background: #FF732D;
+    -webkit-mask-image: url('../i/pdf_icon.svg');
+    mask-image: url('../i/pdf_icon.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
 .lkt-docs__link_change::before {
     content: "";
 
@@ -519,6 +556,18 @@ input:focus, textarea:focus {
     background-position: center;
 }
 
+.lkt-docs__link_change.lkt__cont-switcher_active::before {
+    background: #FF732D;
+    -webkit-mask-image: url('../i/pdf_icon.svg');
+    mask-image: url('../i/pdf_icon.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
 .lkt-docs__link_cancel::before {
     content: "";
 
@@ -529,6 +578,18 @@ input:focus, textarea:focus {
     background: no-repeat url('../i/icon-cracked-shield.svg');
     background-size: contain;
     background-position: center;
+}
+
+.lkt-docs__link_cancel.lkt__cont-switcher_active::before {
+    background: #FF732D;
+    -webkit-mask-image: url('../i/pdf_icon.svg');
+    mask-image: url('../i/pdf_icon.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
 }
 
 .lkt-docs__item_hidden {
@@ -566,7 +627,7 @@ input:focus, textarea:focus {
     
     color: #FFF;
     border-radius: 10px 10px 0px 0px;
-    background-color: #FF732D;
+    background: linear-gradient(90deg, #FF732D 0%, #FF732D 100%);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     
     transition: transform 0.2s linear, background-color 0.2s linear, box-shadow 0.2s linear;
@@ -575,6 +636,13 @@ input:focus, textarea:focus {
     
     cursor: pointer;
     user-select: none;
+}
+
+
+.lkt__header-item.lkt__cont-switcher_active {
+    background: linear-gradient(90deg, #FF732D 0%, #F32F2F 100%);
+
+    pointer-events: none;
 }
 
 .lkt__header-item:hover {
@@ -619,11 +687,6 @@ input:focus, textarea:focus {
     transform-style: preserve-3d;
 }
 
-.lkt__header_active {
-    background: linear-gradient(90deg, #FF732D 0%, #F32F2F 100%);
-
-    pointer-events: none;
-}
 
 /* Экземпляр контента */
 .lkt-main__content-item {
