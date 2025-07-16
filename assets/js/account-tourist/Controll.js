@@ -23,6 +23,8 @@ export default class Controll {
         this.redraw.el.addEventListener('click', this.click);
 
         this.redraw.profileEmail.addEventListener('input', this.input);
+        this.redraw.questionArea.addEventListener('input', this.input);
+        this.redraw.changeOrderTextArea.addEventListener('input', this.input)
     }
 
     click(e) {
@@ -53,7 +55,7 @@ export default class Controll {
         }
 
 
-        // Подтверждение почты
+        // Отправка подтверждение почты 
         if(e.target.closest('.lkt-profile__confirm')) {
             const formData = new FormData(this.redraw.profileEmailForm);
             if(!formData.get('profile_email').length) {
@@ -68,11 +70,49 @@ export default class Controll {
 
             
         }
+
+        // Отправка задать вопрос 
+        if(e.target.closest('.lkt-question__button')) {
+            const formData = new FormData(this.redraw.questionForm);
+
+            if(!formData.get('question').length) {
+                this.redraw.setInvalidPlace(this.redraw.questionArea, 'Задайте Ваш вопрос');
+                return;
+            }
+
+
+        }
+
+        // При открытии запроса на изменение по заказу, авто заполнение номера
+        if(e.target.closest('.lkt-docs__link_change')) this.redraw.fillNumberOrderChange();
+
+        // Отправка запроса на изменение заказа
+        if(e.target.closest('.lkt-change__button')) {
+            const isTextFromArea = this.redraw.changeOrderTextArea.value.length;
+            if(!isTextFromArea) {
+                this.redraw.setInvalidPlace(
+                    this.redraw.changeOrderTextArea, 'Поле обязательно для заполнения'
+                );
+            }
+        }
     }
 
     input(e) {
-        if(e.target.matches('.lkt-profile__input')) {
-            this.redraw.removeInvalidProfileEmail();
+        // email в profile
+        if(e.target.matches('.lkt-profile__input')) this.redraw.removeInvalidProfileEmail();
+
+        // Задать вопрос
+        if(e.target.matches('.lkt-question__textarea')) {
+            this.redraw.removeInvalidPlace(e.target);
+
+
+        }
+        
+        // Запрос на изменения по заказу
+        if(e.target.matches('.lkt-change__textarea')) {
+            this.redraw.removeInvalidPlace(e.target);
+
+            
         }
     }
 }
