@@ -1,8 +1,17 @@
 export default class Redraw {
     constructor(el) {
         this.el = el;
-        this.contentWrapper = this.el.querySelector('.lkt-main__content');
-        this.asideDocs = this.el.querySelector('.lkt-docs');
+        
+        this.aside = this.el.querySelector('.lkt__aside'); // aside
+        // Форма подтверждения email в aside профильные данные ("Ваши данные")
+        this.profileEmailForm = this.el.querySelector('.lkt-profile__form');
+        this.profileEmail = this.profileEmailForm.profile_email;
+        this.asideDocs = this.el.querySelector('.lkt-docs'); // блок документы в aside
+        
+        // область внутри которой отображается и меняется контент
+        this.contentWrapper = this.el.querySelector('.lkt-main__content'); 
+
+        this.order = this.el.querySelector('.lkt-order'); // контентная часть: заказ (order)
 
         // активный контент
         this.currentActiveContent = this.contentWrapper.children[0];        
@@ -11,6 +20,8 @@ export default class Redraw {
         
         // активные (открытые аккордионы)
         this.activeOpenners = [];
+
+        this.relocationDocs = this.relocationDocs.bind(this);
     }
 
     // Первая загрузка страницы
@@ -22,21 +33,54 @@ export default class Redraw {
         arrActivatedOpeners.forEach(opener => {
             this.controllOpener(opener); // активируем
         });
+
+        this.stableCenterAccountPage();
     }
 
-    reCalc() {
-        // пересчет опенеров (хранятся здесь this.activeOpenners = [];)
+
+    // пересчет опенеров (хранятся здесь this.activeOpenners = [];) и др
+    reCalcDinamicElements() {
     }
     
     // перемещение документов !!! когда будет готов переместить в блок DOCS
     relocationDocs() {
-
+        // перемещаем в мобилку (в заказ в самый низ)
+        if(innerWidth <= 1024 && this.asideDocs.closest('.lkt__aside')) {
+            this.order.append(this.asideDocs);
+        } 
+        
+        // перемещаем в десктоп (в aside)
+        if(innerWidth > 1024 && this.asideDocs.closest('.lkt-order')) {
+            this.aside.append(this.asideDocs);
+        }
     }
+
+    // START PROFILE
+    // Установка не валидности на поле email в profile
+    setInvalidProfileEmail(message) {
+        const parrent = this.profileEmailForm.closest('li');
+        parrent.classList.add('lkt-profile__not-confirmed_error');
+        this.profileEmail.setCustomValidity(message);
+        this.profileEmail.reportValidity();
+    }
+
+    // Снятие не валидности на поле email в profile
+    removeInvalidProfileEmail() {
+        if(!this.profileEmail.checkValidity()) {
+            const parrent = this.profileEmailForm.closest('li');
+            parrent.classList.remove('lkt-profile__not-confirmed_error');
+            this.profileEmail.setCustomValidity('');
+        }
+    }
+    // END PROFILE
+
 
     // START CHANGE CONTENT
     // Переключение контента
     switchContent(param) {
         this.contentWrapper.dataset.content = param;
+
+        this.stableCenterAccountPage();
     }
     // Подсветка активного элемента переключателя, соответствующего контенту 
     changeSwitcher(el) {
@@ -89,4 +133,21 @@ export default class Redraw {
         content.style.height = `${totalContentHeight}${innerWidth <= 1024 ? 'vw' : 'px'}`;
     }
     // END DOWN OPENER
+
+    // установка отступа справа на случай если нет полосы прокрутки
+    // для того чтобы при переключении на более длинный контент
+    // не происходила движения вправо, при появлении прокрутки
+    stableCenterAccountPage() {
+        const heightAccount = this.el.offsetHeight;
+        document.body.style.overflowY = 'scroll';
+        const widthScroll = innerWidth - document.body.offsetWidth;
+        document.body.style.overflowY = '';
+
+        if(innerWidth > 1024 && heightAccount < innerHeight) {
+            this.el.style.paddingRight = `${widthScroll}px`;
+        }
+        if(innerWidth > 1024 && heightAccount >= innerHeight) {
+            this.el.style.paddingRight = '0';
+        }
+    }
 }

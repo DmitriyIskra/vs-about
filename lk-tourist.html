@@ -51,16 +51,21 @@
                             <li class="lkt-profile__item">Максим</li>
                             <li class="lkt-profile__item">Александрович</li>
                             <li class="lkt-profile__item">+7 (925) 562-56-59</li>
+
+                            <!--  lkt-profile__email_active -->
                             <li class="lkt-profile__item lkt-profile__email lkt-profile__confirmed">melesin@vs-travel.ru</li>                
-                            <li class="lkt-profile__item lkt-profile__email lkt-profile__not-confirmed lkt-profile__email_active lkt-profile__not-confirmed_error">
-                                <form class="lkt-profile__form" name="tourist-profile-email">
-                                    <input class="lkt-profile__input" type="text" placeholder="Ваша почта">
+                            <!--  lkt-profile__not-confirmed_error -->
+                            <li class="lkt-profile__item lkt-profile__email lkt-profile__not-confirmed lkt-profile__email_active">
+                                <form class="lkt-profile__form" name="tourist_profile_email" novalidate>
+                                    <input class="lkt-profile__input" type="text" name="profile_email" placeholder="Ваша почта">
                                     <div class="lkt-profile__wr-buttons">
                                         <button class="lkt-profile__button lkt-profile__confirm" type="button">Подтвердить</button>
                                         <button class="lkt-profile__edit" type="button"></button>
                                     </div>
                                 </form>
                             </li>
+
+
                         </ul>
                     
                         <div class="lkt-profile__footer">
@@ -719,7 +724,7 @@
                     <!-- Запрос на изменение по заказу -->
                     <div class="lkt-main__content-item lkt-change" data-item="change">
                         <div class="lkt-change__wr-title">
-                            <a class="lkt__head-arrow-back" href="#0" data-item="order" title="Заказ № 1825"></a>
+                            <a class="lkt__head-arrow-back lkt__cont-switcher" href="#0" data-item="order" title="Заказ № 1825"></a>
                             <h3 class="lkt-change__title">Запрос на изменения по заказу</h3>
                         </div>
 
@@ -752,7 +757,7 @@
                     <!-- Запрос на аннуляцию -->
                     <div class="lkt-main__content-item lkt-annulation" data-item="annulation">
                         <div class="lkt-annulation__wr-main-title">
-                            <a class="lkt__head-arrow-back" href="#0" data-item="order" title="Заказ № 1825"></a>
+                            <a class="lkt__head-arrow-back lkt__cont-switcher" href="#0" data-item="order" title="Заказ № 1825"></a>
                             <h2 class="lkt-annulation__main-title">Запрос на аннуляцию</h2>
                         </div>
 

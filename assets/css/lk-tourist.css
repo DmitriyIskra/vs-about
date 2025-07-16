@@ -685,6 +685,8 @@ input:focus, textarea:focus {
 /* Экземпляр контента */
 .lkt-main__content {
     position: relative;
+
+    overflow: hidden;
 }
 
 .lkt-main__content-item {
@@ -2645,7 +2647,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt-docs {
-        margin-top: 4.80vw;
+        width: 94.4%;
+        margin: 11.73vw auto 0;
         padding-bottom: 6.40vw;
         border-radius: 2.67vw;
 
@@ -3003,6 +3006,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
         border-radius: 2.67vw;
         box-shadow: none;
     }   
+}
+
+@media(max-width: 1024px) {
+    .lkt-order__data-head {
+        width: auto;
+    }
 }
 
 @media(max-width: 1024px) {
