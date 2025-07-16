@@ -21,6 +21,8 @@ export default class Redraw {
         // активные (открытые аккордионы)
         this.activeOpenners = [];
 
+        this.widthDefaultScroll = null;
+
         this.relocationDocs = this.relocationDocs.bind(this);
     }
 
@@ -138,16 +140,19 @@ export default class Redraw {
     // для того чтобы при переключении на более длинный контент
     // не происходила движения вправо, при появлении прокрутки
     stableCenterAccountPage() {
+        // ширину прокрутки определяем один раз при загрузке страницы
         const heightAccount = this.el.offsetHeight;
-        document.body.style.overflowY = 'scroll';
-        const widthScroll = innerWidth - document.body.offsetWidth;
-        document.body.style.overflowY = '';
+        if(!this.widthDefaultScroll) {
+            document.body.style.overflowY = 'scroll';
+            this.widthDefaultScroll = innerWidth - document.body.offsetWidth;
+            document.body.style.overflowY = '';
+        } 
 
         if(innerWidth > 1024 && heightAccount < innerHeight) {
-            this.el.style.paddingRight = `${widthScroll}px`;
+            this.el.style.paddingRight = `${this.widthDefaultScroll}px`;
         }
         if(innerWidth > 1024 && heightAccount >= innerHeight) {
-            this.el.style.paddingRight = '0';
+            this.el.style.paddingRight = '';
         }
     }
 }
