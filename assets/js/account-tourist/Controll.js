@@ -24,7 +24,8 @@ export default class Controll {
 
         this.redraw.profileEmail.addEventListener('input', this.input);
         this.redraw.questionArea.addEventListener('input', this.input);
-        this.redraw.changeOrderTextArea.addEventListener('input', this.input)
+        this.redraw.changeOrderTextArea.addEventListener('input', this.input);
+        this.redraw.textAreaCollection.forEach(area => area.addEventListener('input', this.input));
     }
 
     click(e) {
@@ -36,14 +37,25 @@ export default class Controll {
             const param = target.dataset.item;
 
             this.redraw.switchContent(param); // переключили контент
-
-            // скрываем документы, но только если переключатель не запрос на изменение или на аннуляцию
-            if(param !== 'change' && param !== 'annulation') this.redraw.hideAsideDocs();
-
-            if(param !== 'order' && param !== 'change' && param !== 'annulation') this.redraw.changeSwitcher(target); // сменили активный переключатель
             
-            // показываем документы при открытии заказа
-            if(param === 'order') this.redraw.showAsideDocs();
+            // Показать активный переключатель (чтоб было понятно какой контент открыт)
+            this.redraw.changeSwitcher(target);
+
+            // показываем документы при открытии заказа и стрелку назад в главном заголовке
+            if(param === 'order') {
+                this.redraw.showAsideDocs()
+                this.redraw.showArrowBackMainTitle();
+            }
+            // Скрываем стрелку назад в главном заголовке при закрытии order
+            if(param !== 'order') this.redraw.hideArrowBackMainTitle();
+
+            // скрываем блок документы, но только если переключатель не запрос на изменение или на аннуляцию
+            if(
+                param === 'journeys'  || 
+                param === 'history'   || 
+                param === 'favorites' || 
+                param === 'question'
+            ) this.redraw.hideAsideDocs();
         }
 
 
@@ -113,6 +125,17 @@ export default class Controll {
             this.redraw.removeInvalidPlace(e.target);
 
             
+        }
+
+        // Подсчет символов на счетчике для textarea
+        if(e.target.closest('textarea')) {
+            const length = e.target.value.length;
+            const counter = e.target.nextElementSibling.children[0];
+            
+            console.log(this.redraw.limitTextArea);
+            console.log(length);
+            if(length <= this.redraw.limitTextArea) this.redraw.textAreaCounter(counter, length);
+            if(length >= this.redraw.limitTextArea) this.redraw.limiterTextArea(e.target, e.target.value);
         }
     }
 }

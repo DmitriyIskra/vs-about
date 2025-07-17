@@ -2,6 +2,9 @@ export default class Redraw {
     constructor(el) {
         this.el = el;
         
+        // Стрелка назад в главном заголовке (появляется только для order)
+        this.arrowBackMainTitle = this.el.querySelector('.lkt__main-title-back');
+
         this.aside = this.el.querySelector('.lkt__aside'); // aside
         
         // Форма подтверждения email в aside профильные данные ("Ваши данные")
@@ -26,20 +29,26 @@ export default class Redraw {
         this.questionForm = this.el.querySelector('.lkt-question__form');
         this.questionArea = this.questionForm.question;
 
+        // Все textarea на странице
+        this.textAreaCollection = [...this.el.querySelectorAll('textarea')];
+
 
         // -----------------------------
 
         // активный контент
         this.currentActiveContent = this.contentWrapper.children[0];        
         // активный элемент переключатель контента
-        this.currentActiveSwitcher = this.el.querySelector('.lkt__header-list').children[0];    
-        
+        // this.currentActiveSwitcher = this.el.querySelector('.lkt__header-list').children[0];    
+        this.currentActiveSwitcher = null;    
+
         // активные (открытые аккордионы)
         this.activeOpenners = [];
 
         // ширина скрола браузера (для добавления padding того же размера)
         this.widthDefaultScroll = null;
 
+        // ограничение по количеству символов для textArea
+        this.limitTextArea = +this.textAreaCollection[0].maxLength;
         // --------------------------------
 
         this.relocationDocs = this.relocationDocs.bind(this);
@@ -47,6 +56,8 @@ export default class Redraw {
 
     // Первая загрузка страницы
     startPage() {
+        this.currentActiveSwitcher = [this.el.querySelector('.lkt__cont-switcher_active')];
+        
         // down openers которые должны быть активны со старта 
         const arrActivatedOpeners = [
             this.el.querySelector('.lkt-order__data-opener'),
@@ -75,9 +86,60 @@ export default class Redraw {
     }
     // Подсветка активного элемента переключателя, соответствующего контенту 
     changeSwitcher(el) {
-        this.currentActiveSwitcher.classList.remove('lkt__cont-switcher_active');
-        el.classList.add('lkt__cont-switcher_active');
-        this.currentActiveSwitcher = el;
+        const param = el.dataset.item;
+        // Единственная стрелка по клику по которой нужно исключить смену переключателя
+        // есть только в заказе, и возвращает она на journeys, а он уже активен, значит по ней не нужно 
+        // активировать переключатель и тем более добавлять ее в массив активных переключателей пере
+        if(!el.classList.contains('lkt__head-arrow-back')) {
+            if(param !== 'order' && param !== 'change' && param !== 'annulation') {
+                console.log('not order');
+                this.currentActiveSwitcher = this.currentActiveSwitcher.filter(s => {
+                    s.classList.remove('lkt__cont-switcher_active');
+                    return s.classList.contains('lkt__cont-switcher_active');
+                });
+
+                this.currentActiveSwitcher.push(el);
+
+                this.currentActiveSwitcher.forEach(s => s.classList.add('lkt__cont-switcher_active'));
+            }
+        }
+
+        // если клик произошел из документов значит мы находимся в заказе и открываем
+        // запрос на изменение или на аннуляцию, значит мои путешествия уже активно
+        // и его трогать не надо, надо добавить в активные переключатели элемент по которому 
+        // произошел клик из документов
+        if(param === 'order' || param === 'change' || param === 'annulation') {
+            console.log('for order');
+            // на случай если клик по элементу из документов уже был, нужно его обнаружить и деактивировать
+            this.currentActiveSwitcher = this.currentActiveSwitcher
+                .filter(s => {
+                    if(s.dataset.item === 'change' || s.dataset.item === 'annulation') {
+                        s.classList.remove('lkt__cont-switcher_active')
+                    };
+
+                    // т.е. должен вернуться только journeys
+                    return s.classList.contains('lkt__cont-switcher_active');
+                });
+
+            // Добавляем в массив переключателей только если клик был не по стрелке
+            // и если клик был по стрелке, а значит открылся order, потому что к данной стрелке 
+            // есть доступ только через order , то очистив все остальное остался только переключатель journey
+            // а у него уже есть класс активатор, добавлять еще раз не надо
+            if(!el.classList.contains('lkt__head-arrow-back')) {
+                this.currentActiveSwitcher.push(el);
+    
+                this.currentActiveSwitcher
+                    .forEach(switcher => switcher.classList.add('lkt__cont-switcher_active'));
+            }
+        }
+    }
+    // Показ стрелки назад в главном заголовке при открытии order
+    showArrowBackMainTitle() {
+        this.arrowBackMainTitle.classList.add('lkt__main-title-back_active');
+    }
+    // Скрытие стрелки назад в главном заголовке при закрытии order
+    hideArrowBackMainTitle() {
+        this.arrowBackMainTitle.classList.remove('lkt__main-title-back_active');
     }
     // END CHANGE CONTENT
 
@@ -134,7 +196,10 @@ export default class Redraw {
     // START DOCS
     // Показать блок документы
     showAsideDocs() {
-        this.asideDocs.classList.add('lkt-docs__active');
+        if(!this.asideDocs.classList.contains('lkt-docs__active')) {
+            this.asideDocs.classList.add('lkt-docs__active');
+        }
+        
     }
     // Скрыть блок документы
     hideAsideDocs() {
@@ -185,6 +250,22 @@ export default class Redraw {
         content.style.height = `${totalContentHeight}${innerWidth <= 1024 ? 'vw' : 'px'}`;
     }
     // END DOWN OPENER
+
+    // START ALL TEXTAREA
+    // Счетчик для textArea
+    textAreaCounter(el, value) {
+        if(!el instanceof HTMLElement && typeof value !== 'number') return;
+        el.textContent = value;
+    }
+    // Ограничение по количеству символов
+    limiterTextArea(target, value) {
+        value = value.split('');
+        value.length = this.limitTextArea;
+        value = value.join('');
+
+        target.value = value;
+    }
+    // END ALL TEXTAREA
 
     // установка отступа справа на случай если нет полосы прокрутки
     // для того чтобы при переключении на более длинный контент
