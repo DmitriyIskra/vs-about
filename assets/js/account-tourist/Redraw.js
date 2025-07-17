@@ -14,7 +14,7 @@ export default class Redraw {
         // блок документы в aside
         this.asideDocs = this.el.querySelector('.lkt-docs'); 
         
-        // область внутри которой отображается и меняется контент
+        // контентная часть, область внутри которой отображается и меняется контент
         this.contentWrapper = this.el.querySelector('.lkt-main__content'); 
 
         // контентная часть: заказ (order)
@@ -34,6 +34,8 @@ export default class Redraw {
 
 
         // -----------------------------
+        // высота открытого aside в мобильной версии
+        this.asideHideOpen = null;
 
         // активный контент
         this.currentActiveContent = this.contentWrapper.children[0];        
@@ -51,7 +53,7 @@ export default class Redraw {
         this.limitTextArea = +this.textAreaCollection[0].maxLength;
         // --------------------------------
 
-        this.relocationDocs = this.relocationDocs.bind(this);
+        this.rebuildPage = this.rebuildPage.bind(this);
     }
 
     // Первая загрузка страницы
@@ -66,6 +68,12 @@ export default class Redraw {
             this.controllOpener(opener); // активируем
         });
 
+        // Стартовая высота для aside в мобилке для работы опенера
+        if(innerWidth <= 1024) {
+            this.asideHideOpen = this.aside.offsetHeight / innerWidth * 100
+            this.aside.style.height = `${this.asideHideOpen}vw`
+        }
+        
         this.stableCenterAccountPage();
     }
 
@@ -75,7 +83,44 @@ export default class Redraw {
     }
     
     
+    // START ASIDE OPEN - CLOSE
+    openAside(target) {
+        console.log('open');
+        this.aside.addEventListener('transitionend', (e) => {
+            target.classList.toggle('lkt__aside-arrow_active');
+        }, {once: true})
 
+        // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
+        const profileContent = this.aside.querySelector('.lkt-profile__content');
+
+        profileContent.style.backgroundColor = '#F2F2F2';
+        this.aside.style.height = `${this.asideHideOpen}vw`;
+    }
+    closeAside(target) {
+        console.log('close');
+        this.aside.addEventListener('transitionend', (e) => {
+            target.classList.toggle('lkt__aside-arrow_active');
+        }, {once: true})
+
+        // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
+        const profileContent = this.aside.querySelector('.lkt-profile__content');
+        // Данные профиля
+        const profileList = this.aside.querySelector('.lkt-profile__list');
+        // Список элементов высоты которых нужно сложить
+        const arrCalcElements = [
+            this.aside.children[0],
+            profileList.children[0],
+            profileList.children[1],
+            profileList.children[2],
+        ];
+        console.log(arrCalcElements);
+
+        const closeHide = arrCalcElements.reduce((acc, el) => acc += el.offsetHeight, 0);
+
+        profileContent.style.backgroundColor = 'transparent';
+        this.aside.style.height = `${closeHide / innerWidth * 100}vw`;
+    }
+    // END ASIDE OPEN - CLOSE
 
     // START CHANGE CONTENT
     // Переключение контента
@@ -92,7 +137,6 @@ export default class Redraw {
         // активировать переключатель и тем более добавлять ее в массив активных переключателей пере
         if(!el.classList.contains('lkt__head-arrow-back')) {
             if(param !== 'order' && param !== 'change' && param !== 'annulation') {
-                console.log('not order');
                 this.currentActiveSwitcher = this.currentActiveSwitcher.filter(s => {
                     s.classList.remove('lkt__cont-switcher_active');
                     return s.classList.contains('lkt__cont-switcher_active');
@@ -109,7 +153,6 @@ export default class Redraw {
         // и его трогать не надо, надо добавить в активные переключатели элемент по которому 
         // произошел клик из документов
         if(param === 'order' || param === 'change' || param === 'annulation') {
-            console.log('for order');
             // на случай если клик по элементу из документов уже был, нужно его обнаружить и деактивировать
             this.currentActiveSwitcher = this.currentActiveSwitcher
                 .filter(s => {
@@ -285,5 +328,12 @@ export default class Redraw {
         if(innerWidth > 1024 && heightAccount >= innerHeight) {
             this.el.style.paddingRight = '';
         }
+    }
+
+    // Перестраивает страницу под окно мобильное или нет
+    // вызывая соответствующие методы отвечающие за те или иные области страницы
+    rebuildPage() {
+        // перемещение блока документы
+        this.relocationDocs();
     }
 }

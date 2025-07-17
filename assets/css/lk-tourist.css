@@ -596,6 +596,9 @@ input:focus, textarea:focus {
     display: none;
 }
 
+.lkt__aside-arrow {
+    display: none;
+}
 /* END ASIDE */
 
 /* START CONTENT */
@@ -2466,7 +2469,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
         justify-content: initial;
         align-items: center;
         margin-top: 0;
-        gap: 18.67vw;
+        gap: 8.27vw;
     }
 }
 
@@ -2474,6 +2477,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt__aside {
         width: 91.468%; /*94.4%*/
         padding-bottom: 0;
+
+        transition: height 0.2s linear;
+
+        overflow: hidden;
     }
 }
 
@@ -2483,6 +2490,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
         width: 29.33vw;
         height: 29.33vw;
         margin: 0 auto;
+        padding-bottom: 3.47vw;
     }
 
     .lkt__avatar > img {
@@ -2500,8 +2508,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt-profile {
-        margin-top: 5.87vw;
-
         box-shadow: none;
         border-radius: 0;
     }
@@ -2515,11 +2521,13 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt-profile__content {
-        padding-top: 2vw;
+        padding-top: 0;
         padding-bottom: 4.80vw;
         padding-left: 0;
-
+        
         border-radius: 2.13vw;
+
+        transition: background-color 0.06s linear;
     }
 }
 
@@ -2650,7 +2658,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt-question-aside {
         height: auto;
         width: 95.37%;
-        margin: 4vw auto 0;
+        margin: 0 auto;
+        padding-top: 4vw;
         padding-left: 0;
 
         background-color: transparent;
@@ -2762,6 +2771,28 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt-docs__link_cancel::before {
         height: 6.13vw;
         width: 4.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt__aside-arrow {
+        display: block;
+        width: 6.40vw;
+        height: 3.73vw;
+
+        background: no-repeat url('../i/arrow-vertical-mark-grey.svg');
+        background-size: contain;
+        background-position: center;
+
+        transition: transform 0.2s linear;
+
+        transform: rotate(180deg);
+
+        cursor: pointer;
+    }
+
+    .lkt__aside-arrow_active {
+        transform: rotate(360deg);
     }
 }
 

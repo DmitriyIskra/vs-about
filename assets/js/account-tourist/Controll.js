@@ -15,7 +15,7 @@ export default class Controll {
         this.redraw.startPage();
 
         // отслеживает изменения экрана, и вносит изменения в элементы, в зависимости от размера
-        const observer = new ResizeObserver(this.redraw.relocationDocs);
+        const observer = new ResizeObserver(this.redraw.rebuildPage);
         observer.observe(document.body);
     }
 
@@ -58,6 +58,19 @@ export default class Controll {
             ) this.redraw.hideAsideDocs();
         }
 
+        // Профайл свернуть развернуть
+        if(e.target.closest('.lkt__aside-arrow') && innerWidth <= 1024) {
+            const target = e.target.closest('.lkt__aside-arrow');
+            
+            // если на стрелке есть класс active значит aside открыт надо закрыть
+            if(target.classList.contains('lkt__aside-arrow_active')) {
+                this.redraw.closeAside(target);
+                return
+            }
+            
+            // иначе aside закрыт надо открыть
+            this.redraw.openAside(target);
+        }
 
         // ORDER
         // Открытие закрытие аккордионов (down opener)
@@ -65,7 +78,6 @@ export default class Controll {
             const target = e.target.closest('.lkt__down-opener');
             this.redraw.controllOpener(target);
         }
-
 
         // Отправка подтверждение почты 
         if(e.target.closest('.lkt-profile__confirm')) {
