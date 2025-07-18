@@ -2478,8 +2478,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
         width: 91.468%; /*94.4%*/
         padding-bottom: 0;
 
-        transition: height 0.2s linear;
-
         overflow: hidden;
     }
 }

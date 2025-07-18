@@ -1,11 +1,10 @@
 export default class Controll {
-    constructor(draws, validator) {
-        this.draws = draws;
+    constructor(redraw, validator) {
+        this.redraw = redraw;
         this.validator = validator;
         
         this.click = this.click.bind(this);
         this.input = this.input.bind(this);
-        this.rebuildPage = this.rebuildPage.bind(this);
     }
 
     init() {
@@ -13,22 +12,20 @@ export default class Controll {
         this.registerEvents();
 
         // подготовка элементов (размеры, открыт, закрыт) и заполнение элементов данными
-        this.draws.main.startPage();
-        this.draws.aside.startAside();
+        this.redraw.startPage();
 
         // отслеживает изменения экрана, и вносит изменения в элементы, в зависимости от размера
-        const observer = new ResizeObserver(this.rebuildPage);
+        const observer = new ResizeObserver(this.redraw.rebuildPage);
         observer.observe(document.body);
     }
 
     registerEvents() {
-        this.draws.main.el.addEventListener('click', this.click);
-        this.draws.aside.aside.addEventListener('click', this.click);
+        this.redraw.el.addEventListener('click', this.click);
 
-        this.draws.aside.profileEmail.addEventListener('input', this.input);
-        this.draws.main.questionArea.addEventListener('input', this.input);
-        this.draws.main.changeOrderTextArea.addEventListener('input', this.input);
-        this.draws.main.textAreaCollection.forEach(area => area.addEventListener('input', this.input));
+        this.redraw.profileEmail.addEventListener('input', this.input);
+        this.redraw.questionArea.addEventListener('input', this.input);
+        this.redraw.changeOrderTextArea.addEventListener('input', this.input);
+        this.redraw.textAreaCollection.forEach(area => area.addEventListener('input', this.input));
     }
 
     click(e) {
@@ -39,18 +36,18 @@ export default class Controll {
             const target = e.target.closest('.lkt__cont-switcher');
             const param = target.dataset.item;
 
-            this.draws.main.switchContent(param); // переключили контент
+            this.redraw.switchContent(param); // переключили контент
             
             // Показать активный переключатель (чтоб было понятно какой контент открыт)
-            this.draws.main.changeSwitcher(target);
+            this.redraw.changeSwitcher(target);
 
             // показываем документы при открытии заказа и стрелку назад в главном заголовке
             if(param === 'order') {
-                this.draws.aside.showAsideDocs()
-                this.draws.main.showArrowBackMainTitle();
+                this.redraw.showAsideDocs()
+                this.redraw.showArrowBackMainTitle();
             }
             // Скрываем стрелку назад в главном заголовке при закрытии order
-            if(param !== 'order') this.draws.main.hideArrowBackMainTitle();
+            if(param !== 'order') this.redraw.hideArrowBackMainTitle();
 
             // скрываем блок документы, но только если переключатель не запрос на изменение или на аннуляцию
             if(
@@ -58,7 +55,7 @@ export default class Controll {
                 param === 'history'   || 
                 param === 'favorites' || 
                 param === 'question'
-            ) this.draws.aside.hideAsideDocs();
+            ) this.redraw.hideAsideDocs();
         }
 
         // Профайл свернуть развернуть
@@ -67,43 +64,43 @@ export default class Controll {
             
             // если на стрелке есть класс active значит aside открыт надо закрыть
             if(target.classList.contains('lkt__aside-arrow_active')) {
-                this.draws.aside.closeAside();
+                this.redraw.closeAside(target);
                 return
             }
             
             // иначе aside закрыт надо открыть
-            this.draws.aside.openAside();
+            this.redraw.openAside(target);
         }
 
         // ORDER
         // Открытие закрытие аккордионов (down opener)
         if(e.target.closest('.lkt__down-opener')) {
             const target = e.target.closest('.lkt__down-opener');
-            this.draws.main.controllOpener(target);
+            this.redraw.controllOpener(target);
         }
 
         // Отправка подтверждение почты 
         if(e.target.closest('.lkt-profile__confirm')) {
-            const formData = new FormData(this.draws.aside.profileEmailForm);
+            const formData = new FormData(this.redraw.profileEmailForm);
             if(!formData.get('profile_email').length) {
-                this.draws.aside.setInvalidProfileEmail('Поле обязательно для заполнения');
+                this.redraw.setInvalidProfileEmail('Поле обязательно для заполнения');
                 return;
             };
 
             if(!this.validator.validationEmail(formData.get('profile_email'))) {
-                this.draws.aside.setInvalidProfileEmail('Некорректо заполенно поле "Ваша почта"');
+                this.redraw.setInvalidProfileEmail('Некорректо заполенно поле "Ваша почта"');
                 return;
             }
 
-            this.resizeAside();
+            
         }
 
         // Отправка задать вопрос 
         if(e.target.closest('.lkt-question__button')) {
-            const formData = new FormData(this.draws.main.questionForm);
+            const formData = new FormData(this.redraw.questionForm);
 
             if(!formData.get('question').length) {
-                this.draws.main.setInvalidPlace(this.draws.main.questionArea, 'Задайте Ваш вопрос');
+                this.redraw.setInvalidPlace(this.redraw.questionArea, 'Задайте Ваш вопрос');
                 return;
             }
 
@@ -111,14 +108,14 @@ export default class Controll {
         }
 
         // При открытии запроса на изменение по заказу, авто заполнение номера
-        if(e.target.closest('.lkt-docs__link_change')) this.draws.main.fillNumberOrderChange();
+        if(e.target.closest('.lkt-docs__link_change')) this.redraw.fillNumberOrderChange();
 
         // Отправка запроса на изменение заказа
         if(e.target.closest('.lkt-change__button')) {
-            const isTextFromArea = this.draws.main.changeOrderTextArea.value.length;
+            const isTextFromArea = this.redraw.changeOrderTextArea.value.length;
             if(!isTextFromArea) {
-                this.draws.main.setInvalidPlace(
-                    this.draws.main.changeOrderTextArea, 'Поле обязательно для заполнения'
+                this.redraw.setInvalidPlace(
+                    this.redraw.changeOrderTextArea, 'Поле обязательно для заполнения'
                 );
             }
         }
@@ -126,18 +123,18 @@ export default class Controll {
 
     input(e) {
         // email в profile
-        if(e.target.matches('.lkt-profile__input')) this.draws.aside.removeInvalidProfileEmail();
+        if(e.target.matches('.lkt-profile__input')) this.redraw.removeInvalidProfileEmail();
 
         // Задать вопрос
         if(e.target.matches('.lkt-question__textarea')) {
-            this.draws.main.removeInvalidPlace(e.target);
+            this.redraw.removeInvalidPlace(e.target);
 
 
         }
         
         // Запрос на изменения по заказу
         if(e.target.matches('.lkt-change__textarea')) {
-            this.draws.main.removeInvalidPlace(e.target);
+            this.redraw.removeInvalidPlace(e.target);
 
             
         }
@@ -147,28 +144,10 @@ export default class Controll {
             const length = e.target.value.length;
             const counter = e.target.nextElementSibling.children[0];
             
-            if(length <= this.draws.main.limitTextArea) this.draws.main.textAreaCounter(counter, length);
-            if(length >= this.draws.main.limitTextArea) this.draws.main.limiterTextArea(e.target, e.target.value);
+            console.log(this.redraw.limitTextArea);
+            console.log(length);
+            if(length <= this.redraw.limitTextArea) this.redraw.textAreaCounter(counter, length);
+            if(length >= this.redraw.limitTextArea) this.redraw.limiterTextArea(e.target, e.target.value);
         }
-    }
-
-    // Перестраивает страницу под окно мобильное или нет
-    // вызывая соответствующие методы отвечающие за те или иные области страницы
-    rebuildPage() {
-        console.log('rebuildPage');
-        // перемещение блока документы
-        // перемещаем в мобилку (в заказ в самый низ)
-        if(innerWidth <= 1024 && this.draws.aside.asideDocs.closest('.lkt__aside')) {
-            const docs = this.draws.aside.cutDocs();
-            this.draws.main.pasteDocs(docs);
-        } 
-        // перемещаем в десктоп (в aside)
-        if(innerWidth > 1024 && this.draws.aside.asideDocs.closest('.lkt-order')) {
-            this.draws.main.cutDocs();
-            this.draws.aside.pasteDocs();
-        }
-
-        // перерисовка aside при смене версии разрешения экрана
-        this.draws.aside.resizeAside();
     }
 }

@@ -5,14 +5,14 @@ export default class Redraw {
         // Стрелка назад в главном заголовке (появляется только для order)
         this.arrowBackMainTitle = this.el.querySelector('.lkt__main-title-back');
 
-        // this.aside = this.el.querySelector('.lkt__aside'); // aside
+        this.aside = this.el.querySelector('.lkt__aside'); // aside
         
-        // // Форма подтверждения email в aside профильные данные ("Ваши данные")
-        // this.profileEmailForm = this.el.querySelector('.lkt-profile__form');
-        // this.profileEmail = this.profileEmailForm.profile_email;
+        // Форма подтверждения email в aside профильные данные ("Ваши данные")
+        this.profileEmailForm = this.el.querySelector('.lkt-profile__form');
+        this.profileEmail = this.profileEmailForm.profile_email;
 
-        // // блок документы в aside
-        // this.asideDocs = this.el.querySelector('.lkt-docs'); 
+        // блок документы в aside
+        this.asideDocs = this.el.querySelector('.lkt-docs'); 
         
         // контентная часть, область внутри которой отображается и меняется контент
         this.contentWrapper = this.el.querySelector('.lkt-main__content'); 
@@ -34,12 +34,13 @@ export default class Redraw {
 
 
         // -----------------------------
-        // // высота открытого aside в мобильной версии
-        // this.asideHideOpen = null;
+        // высота открытого aside в мобильной версии
+        this.asideHideOpen = null;
 
         // активный контент
         this.currentActiveContent = this.contentWrapper.children[0];        
-        // активный элемент переключатель контента  
+        // активный элемент переключатель контента
+        // this.currentActiveSwitcher = this.el.querySelector('.lkt__header-list').children[0];    
         this.currentActiveSwitcher = null;    
 
         // активные (открытые аккордионы)
@@ -50,14 +51,15 @@ export default class Redraw {
 
         // ограничение по количеству символов для textArea
         this.limitTextArea = +this.textAreaCollection[0].maxLength;
-        
+        // --------------------------------
+
+        this.rebuildPage = this.rebuildPage.bind(this);
     }
 
     // Первая загрузка страницы
     startPage() {
         this.currentActiveSwitcher = [this.el.querySelector('.lkt__cont-switcher_active')];
         
-        // ORDER
         // down openers которые должны быть активны со старта 
         const arrActivatedOpeners = [
             this.el.querySelector('.lkt-order__data-opener'),
@@ -66,12 +68,11 @@ export default class Redraw {
             this.controllOpener(opener); // активируем
         });
 
-        // ASIDE
         // Стартовая высота для aside в мобилке для работы опенера
-        // if(innerWidth <= 1024) {
-        //     this.asideHideOpen = this.aside.offsetHeight / innerWidth * 100
-        //     this.aside.style.height = `${this.asideHideOpen}vw`
-        // }
+        if(innerWidth <= 1024) {
+            this.asideHideOpen = this.aside.offsetHeight / innerWidth * 100
+            this.aside.style.height = `${this.asideHideOpen}vw`
+        }
         
         this.stableCenterAccountPage();
     }
@@ -82,44 +83,43 @@ export default class Redraw {
     }
     
     
-    // ASIDE
     // START ASIDE OPEN - CLOSE
-    // openAside(target) {
-    //     console.log('open');
-    //     this.aside.addEventListener('transitionend', (e) => {
-    //         target.classList.toggle('lkt__aside-arrow_active');
-    //     }, {once: true})
+    openAside(target) {
+        console.log('open');
+        this.aside.addEventListener('transitionend', (e) => {
+            target.classList.toggle('lkt__aside-arrow_active');
+        }, {once: true})
 
-    //     // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
-    //     const profileContent = this.aside.querySelector('.lkt-profile__content');
+        // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
+        const profileContent = this.aside.querySelector('.lkt-profile__content');
 
-    //     profileContent.style.backgroundColor = '#F2F2F2';
-    //     this.aside.style.height = `${this.asideHideOpen}vw`;
-    // }
-    // closeAside(target) {
-    //     console.log('close');
-    //     this.aside.addEventListener('transitionend', (e) => {
-    //         target.classList.toggle('lkt__aside-arrow_active');
-    //     }, {once: true})
+        profileContent.style.backgroundColor = '#F2F2F2';
+        this.aside.style.height = `${this.asideHideOpen}vw`;
+    }
+    closeAside(target) {
+        console.log('close');
+        this.aside.addEventListener('transitionend', (e) => {
+            target.classList.toggle('lkt__aside-arrow_active');
+        }, {once: true})
 
-    //     // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
-    //     const profileContent = this.aside.querySelector('.lkt-profile__content');
-    //     // Данные профиля
-    //     const profileList = this.aside.querySelector('.lkt-profile__list');
-    //     // Список элементов высоты которых нужно сложить
-    //     const arrCalcElements = [
-    //         this.aside.children[0],
-    //         profileList.children[0],
-    //         profileList.children[1],
-    //         profileList.children[2],
-    //     ];
-    //     console.log(arrCalcElements);
+        // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
+        const profileContent = this.aside.querySelector('.lkt-profile__content');
+        // Данные профиля
+        const profileList = this.aside.querySelector('.lkt-profile__list');
+        // Список элементов высоты которых нужно сложить
+        const arrCalcElements = [
+            this.aside.children[0],
+            profileList.children[0],
+            profileList.children[1],
+            profileList.children[2],
+        ];
+        console.log(arrCalcElements);
 
-    //     const closeHide = arrCalcElements.reduce((acc, el) => acc += el.offsetHeight, 0);
+        const closeHide = arrCalcElements.reduce((acc, el) => acc += el.offsetHeight, 0);
 
-    //     profileContent.style.backgroundColor = 'transparent';
-    //     this.aside.style.height = `${closeHide / innerWidth * 100}vw`;
-    // }
+        profileContent.style.backgroundColor = 'transparent';
+        this.aside.style.height = `${closeHide / innerWidth * 100}vw`;
+    }
     // END ASIDE OPEN - CLOSE
 
     // START CHANGE CONTENT
@@ -188,27 +188,26 @@ export default class Redraw {
 
 
     // START PROFILE ВАЛИДНОСТЬ - НЕ ВАЛИДНОСТЬ
-    // // Установка не валидности на поле email в profile
-    // setInvalidProfileEmail(message) {
-    //     const parrent = this.profileEmailForm.closest('li');
-    //     parrent.classList.add('lkt-profile__not-confirmed_error');
-    //     this.profileEmail.setCustomValidity(message);
-    //     this.profileEmail.reportValidity();
-    // }
+    // Установка не валидности на поле email в profile
+    setInvalidProfileEmail(message) {
+        const parrent = this.profileEmailForm.closest('li');
+        parrent.classList.add('lkt-profile__not-confirmed_error');
+        this.profileEmail.setCustomValidity(message);
+        this.profileEmail.reportValidity();
+    }
 
-    // // Снятие не валидности на поле email в profile
-    // removeInvalidProfileEmail() {
-    //     if(!this.profileEmail.checkValidity()) {
-    //         const parrent = this.profileEmailForm.closest('li');
-    //         parrent.classList.remove('lkt-profile__not-confirmed_error');
-    //         this.profileEmail.setCustomValidity('');
-    //     }
-    // }
+    // Снятие не валидности на поле email в profile
+    removeInvalidProfileEmail() {
+        if(!this.profileEmail.checkValidity()) {
+            const parrent = this.profileEmailForm.closest('li');
+            parrent.classList.remove('lkt-profile__not-confirmed_error');
+            this.profileEmail.setCustomValidity('');
+        }
+    }
     // END PROFILE ВАЛИДНОСТЬ - НЕ ВАЛИДНОСТЬ
     
 
 
-    // ALL
     // START SET REMOVE INVALID ЭЛЕМЕНТЫ ФОРМ
     // Установка не валидности на поле email в profile
     setInvalidPlace(element, textError) {
@@ -237,36 +236,35 @@ export default class Redraw {
     // END ЗАПРОС НА ИЗМЕНЕНИЯ ПО ЗАКАЗУ
 
 
-    // ASIDE
     // START DOCS
-    // // Показать блок документы
-    // showAsideDocs() {
-    //     if(!this.asideDocs.classList.contains('lkt-docs__active')) {
-    //         this.asideDocs.classList.add('lkt-docs__active');
-    //     }
+    // Показать блок документы
+    showAsideDocs() {
+        if(!this.asideDocs.classList.contains('lkt-docs__active')) {
+            this.asideDocs.classList.add('lkt-docs__active');
+        }
         
-    // }
-    // // Скрыть блок документы
-    // hideAsideDocs() {
-    //     if(this.asideDocs.classList.contains('lkt-docs__active')) {
-    //         this.asideDocs.classList.remove('lkt-docs__active');
-    //     }
-    // }
-    // // перемещение документов !!! когда будет готов переместить в блок DOCS
-    // relocationDocs() {
-    //     // перемещаем в мобилку (в заказ в самый низ)
-    //     if(innerWidth <= 1024 && this.asideDocs.closest('.lkt__aside')) {
-    //         this.order.append(this.asideDocs);
-    //     } 
+    }
+    // Скрыть блок документы
+    hideAsideDocs() {
+        if(this.asideDocs.classList.contains('lkt-docs__active')) {
+            this.asideDocs.classList.remove('lkt-docs__active');
+        }
+    }
+    // перемещение документов !!! когда будет готов переместить в блок DOCS
+    relocationDocs() {
+        // перемещаем в мобилку (в заказ в самый низ)
+        if(innerWidth <= 1024 && this.asideDocs.closest('.lkt__aside')) {
+            this.order.append(this.asideDocs);
+        } 
         
-    //     // перемещаем в десктоп (в aside)
-    //     if(innerWidth > 1024 && this.asideDocs.closest('.lkt-order')) {
-    //         this.aside.append(this.asideDocs);
-    //     }
-    // }
+        // перемещаем в десктоп (в aside)
+        if(innerWidth > 1024 && this.asideDocs.closest('.lkt-order')) {
+            this.aside.append(this.asideDocs);
+        }
+    }
     // END DOCS
 
-    // ORDER
+
     // START DOWN OPENER
     // управление аккордеоном (открывание и скрытае контента c разворачиванием) down opener
     controllOpener(el) {
@@ -293,15 +291,6 @@ export default class Redraw {
         if(innerWidth <= 1024) totalContentHeight = totalContentHeight / innerWidth * 100;
 
         content.style.height = `${totalContentHeight}${innerWidth <= 1024 ? 'vw' : 'px'}`;
-    }
-
-
-    // перемещение блока документы
-    pasteDocs(docs) {
-        this.order.append(docs);
-    }
-    cutDocs() {
-        this.order.querySelector('.lkt-docs').remove();
     }
     // END DOWN OPENER
 
@@ -341,5 +330,10 @@ export default class Redraw {
         }
     }
 
-    
+    // Перестраивает страницу под окно мобильное или нет
+    // вызывая соответствующие методы отвечающие за те или иные области страницы
+    rebuildPage() {
+        // перемещение блока документы
+        this.relocationDocs();
+    }
 }
