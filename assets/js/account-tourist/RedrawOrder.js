@@ -4,8 +4,6 @@ export default class Redraw {
         this.change = change;
         this.annulation = annulation;
         
-        // контентная часть: заказ (order)
-        // this.order = this.el.querySelector('.lkt-order'); 
         // номер открытого заказа
         this.orderNum = this.order.querySelector('.lkt-order__data-number'); 
         // Форма и элементы на зменение заказа
@@ -74,5 +72,13 @@ export default class Redraw {
         if(innerWidth <= 1024) totalContentHeight = totalContentHeight / innerWidth * 100;
 
         content.style.height = `${totalContentHeight}${innerWidth <= 1024 ? 'vw' : 'px'}`;
+    }
+
+    // перемещение блока документы
+    pasteDocs(docs) {
+        this.order.append(docs);
+    }
+    cutDocs() {
+        this.order.querySelector('.lkt-docs').remove();
     }
 }

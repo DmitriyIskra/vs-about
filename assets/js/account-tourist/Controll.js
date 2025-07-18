@@ -2,6 +2,8 @@ export default class Controll {
     constructor(draws, validator) {
         this.draws = draws;
         this.validator = validator;
+
+        this.activatedSize = null;
         
         this.click = this.click.bind(this);
         this.input = this.input.bind(this);
@@ -17,8 +19,10 @@ export default class Controll {
         this.draws.aside.startAside();
         this.draws.order.startOrder();
 
+        this.activatedSize = innerWidth > 1024 ? 1025 : 1024;
+
         // отслеживает изменения экрана, и вносит изменения в элементы, в зависимости от размера
-        const observer = new ResizeObserver(this.rebuildPage);
+        const observer = new ResizeObserver(this.rebuildPage, { box: 'border-box' });
         observer.observe(document.body);
     }
 
@@ -27,7 +31,7 @@ export default class Controll {
 
         this.draws.aside.profileEmail.addEventListener('input', this.input);
         this.draws.main.questionArea.addEventListener('input', this.input);
-        this.draws.main.changeOrderTextArea.addEventListener('input', this.input);
+        // this.draws.order.changeOrderTextArea.addEventListener('input', this.input);
         this.draws.main.textAreaCollection.forEach(area => area.addEventListener('input', this.input));
     }
 
@@ -79,7 +83,7 @@ export default class Controll {
         // Открытие закрытие аккордионов (down opener)
         if(e.target.closest('.lkt__down-opener')) {
             const target = e.target.closest('.lkt__down-opener');
-            this.draws.main.controllOpener(target);
+            this.draws.order.controllOpener(target);
         }
 
         // Отправка подтверждение почты 
@@ -111,14 +115,14 @@ export default class Controll {
         }
 
         // При открытии запроса на изменение по заказу, авто заполнение номера
-        if(e.target.closest('.lkt-docs__link_change')) this.draws.main.fillNumberOrderChange();
+        if(e.target.closest('.lkt-docs__link_change')) this.draws.order.fillNumberOrderChange();
 
         // Отправка запроса на изменение заказа
         if(e.target.closest('.lkt-change__button')) {
-            const isTextFromArea = this.draws.main.changeOrderTextArea.value.length;
+            const isTextFromArea = this.draws.order.changeOrderTextArea.value.length;
             if(!isTextFromArea) {
                 this.draws.main.setInvalidPlace(
-                    this.draws.main.changeOrderTextArea, 'Поле обязательно для заполнения'
+                    this.draws.order.changeOrderTextArea, 'Поле обязательно для заполнения'
                 );
             }
         }
@@ -154,21 +158,32 @@ export default class Controll {
 
     // Перестраивает страницу под окно мобильное или нет
     // вызывая соответствующие методы отвечающие за те или иные области страницы
-    rebuildPage() {
-        console.log('rebuildPage');
+    rebuildPage(e) {
+        const widthBody = e[0].contentBoxSize[0].inlineSize;
+        
+        // тротлинг чтоб каждый раз не срабатывало
+        if((this.activatedSize === 1025 && widthBody >= this.activatedSize) ||
+        (this.activatedSize === 1024 && widthBody <= this.activatedSize)) {
+            return;
+        }
+
         // перемещение блока документы
         // перемещаем в мобилку (в заказ в самый низ)
         if(innerWidth <= 1024 && this.draws.aside.asideDocs.closest('.lkt__aside')) {
             const docs = this.draws.aside.cutDocs();
-            this.draws.main.pasteDocs(docs);
+            this.draws.order.pasteDocs(docs);
         } 
         // перемещаем в десктоп (в aside)
         if(innerWidth > 1024 && this.draws.aside.asideDocs.closest('.lkt-order')) {
-            this.draws.main.cutDocs();
+            this.draws.order.cutDocs();
             this.draws.aside.pasteDocs();
         }
 
+        // !!!! ПОСТАВИТЬ ПЕРЕСЧЕТ ОПЕНЕРОВ
+
         // перерисовка aside при смене версии разрешения экрана
         this.draws.aside.resizeAside();
+
+        this.activatedSize = innerWidth > 1024 ? 1025 : 1024;
     }
 }

@@ -4,20 +4,9 @@ export default class Redraw {
         
         // Стрелка назад в главном заголовке (появляется только для order)
         this.arrowBackMainTitle = this.el.querySelector('.lkt__main-title-back');
-
-        // // блок документы в aside
-        // this.asideDocs = this.el.querySelector('.lkt-docs'); 
         
         // контентная часть, область внутри которой отображается и меняется контент
         this.contentWrapper = this.el.querySelector('.lkt-main__content'); 
-
-        // // контентная часть: заказ (order)
-        // // this.order = this.el.querySelector('.lkt-order'); 
-        // // номер открытого заказа
-        // this.orderNum = this.order.querySelector('.lkt-order__data-number'); 
-        // // Форма и элементы на зменение заказа
-        // this.changeOrderForm = this.el.querySelector('.lkt-change__form');
-        // this.changeOrderTextArea = this.changeOrderForm.change_order_text;
 
         // форма и поле задать вопрос
         this.questionForm = this.el.querySelector('.lkt-question__form');
@@ -26,18 +15,12 @@ export default class Redraw {
         // Все textarea на странице
         this.textAreaCollection = [...this.el.querySelectorAll('textarea')];
 
-
         // -----------------------------
-        // // высота открытого aside в мобильной версии
-        // this.asideHideOpen = null;
 
         // активный контент
         this.currentActiveContent = this.contentWrapper.children[0];        
         // активный элемент переключатель контента  
-        this.currentActiveSwitcher = null;    
-
-        // // активные (открытые аккордионы)
-        // this.activeOpenners = [];
+        this.currentActiveSwitcher = null;
 
         // ширина скрола браузера (для добавления padding того же размера)
         this.widthDefaultScroll = null;
@@ -50,15 +33,6 @@ export default class Redraw {
     // Первая загрузка страницы
     startPage() {
         this.currentActiveSwitcher = [this.el.querySelector('.lkt__cont-switcher_active')];
-        
-        // // ORDER
-        // // down openers которые должны быть активны со старта 
-        // const arrActivatedOpeners = [
-        //     this.el.querySelector('.lkt-order__data-opener'),
-        // ];
-        // arrActivatedOpeners.forEach(opener => {
-        //     this.controllOpener(opener); // активируем
-        // });
         
         this.stableCenterAccountPage();
     }
@@ -154,52 +128,8 @@ export default class Redraw {
     // START SET REMOVE INVALID ЭЛЕМЕНТЫ ФОРМ
 
 
-    // // START ЗАПРОС НА ИЗМЕНЕНИЯ ПО ЗАКАЗУ
-    // // авто заполнение номера заказа
-    // fillNumberOrderChange() {
-    //     this.changeOrderForm.number_order.value = this.orderNum.dataset.order_num;
-    // }
-    // // END ЗАПРОС НА ИЗМЕНЕНИЯ ПО ЗАКАЗУ
+    
 
-
-    // // ORDER
-    // // START DOWN OPENER
-    // // управление аккордеоном (открывание и скрытае контента c разворачиванием) down opener
-    // controllOpener(el) {
-    //     el.classList.toggle('lkt__down-opener_active');
-    //     const openerContent = el.nextElementSibling;
-
-    //     if(el.classList.contains('lkt__down-opener_active')) {
-    //         this.resizeOpener(openerContent);
-    //         this.activeOpenners.push(el); // сохраняем экземпляр, для пересчета размеров в дальнейшем
-    //         return;
-    //     }
-
-    //     this.activeOpenners = this.activeOpenners.filter(item => item !== el);
-
-    //     openerContent.style.height = 0;
-    // }
-    // // пересчет размеров и перестановка единиц измерения (px - vw)
-    // resizeOpener(content) {
-    //     let totalContentHeight = [...content.children].reduce((acc, item) => {
-    //         return acc += item.offsetHeight;
-    //     }, 0);
-
-    //     // перевод во viewport
-    //     if(innerWidth <= 1024) totalContentHeight = totalContentHeight / innerWidth * 100;
-
-    //     content.style.height = `${totalContentHeight}${innerWidth <= 1024 ? 'vw' : 'px'}`;
-    // }
-
-
-    // перемещение блока документы
-    pasteDocs(docs) {
-        this.order.append(docs);
-    }
-    cutDocs() {
-        this.order.querySelector('.lkt-docs').remove();
-    }
-    // END DOWN OPENER
 
     // START ALL TEXTAREA
     // Счетчик для textArea
@@ -236,6 +166,4 @@ export default class Redraw {
             this.el.style.paddingRight = '';
         }
     }
-
-    
 }
