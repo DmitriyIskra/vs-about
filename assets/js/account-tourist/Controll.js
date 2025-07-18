@@ -15,6 +15,7 @@ export default class Controll {
         // подготовка элементов (размеры, открыт, закрыт) и заполнение элементов данными
         this.draws.main.startPage();
         this.draws.aside.startAside();
+        this.draws.order.startOrder();
 
         // отслеживает изменения экрана, и вносит изменения в элементы, в зависимости от размера
         const observer = new ResizeObserver(this.rebuildPage);
@@ -23,7 +24,6 @@ export default class Controll {
 
     registerEvents() {
         this.draws.main.el.addEventListener('click', this.click);
-        this.draws.aside.aside.addEventListener('click', this.click);
 
         this.draws.aside.profileEmail.addEventListener('input', this.input);
         this.draws.main.questionArea.addEventListener('input', this.input);
