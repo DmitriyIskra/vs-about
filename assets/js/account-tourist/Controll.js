@@ -126,6 +126,12 @@ export default class Controll {
                 );
             }
         }
+
+        // НЕТ ОТЧЕСТВА
+        if(e.target.closest('.lkt__checkbox-patronimic')) {
+            const target = e.target.closest('.lkt__checkbox-patronimic');
+            this.draws.main.noPatronimic(target);
+        }
     }
 
     input(e) {
@@ -167,7 +173,7 @@ export default class Controll {
             return;
         }
 
-        // перемещение блока документы
+        // перемещение блока ДОКУМЕНТЫ
         // перемещаем в мобилку (в заказ в самый низ)
         if(innerWidth <= 1024 && this.draws.aside.asideDocs.closest('.lkt__aside')) {
             const docs = this.draws.aside.cutDocs();
@@ -179,9 +185,14 @@ export default class Controll {
             this.draws.aside.pasteDocs();
         }
 
-        // !!!! ПОСТАВИТЬ ПЕРЕСЧЕТ ОПЕНЕРОВ
+        // ПЕРЕСЧЕТ ОПЕНЕРОВ где формы в заказе
+        this.draws.order.activatedOpenners.forEach(item => {
+            // Получаем элемент с контентом(блок следующий за блоком со стрелкой)
+            const content = item.nextElementSibling;
+            this.draws.order.resizeActivatedOpener(content)
+        });
 
-        // перерисовка aside при смене версии разрешения экрана
+        // ПЕРЕРИСОВКА ASIDE при смене версии разрешения экрана
         this.draws.aside.resizeAside();
 
         this.activatedSize = innerWidth > 1024 ? 1025 : 1024;

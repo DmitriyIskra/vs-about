@@ -42,7 +42,7 @@ export default class Redraw {
     reCalcDinamicElements() {
     }
 
-    // START CHANGE CONTENT
+
     // Переключение контента
     switchContent(param) {
         this.contentWrapper.dataset.content = param;
@@ -104,11 +104,9 @@ export default class Redraw {
     hideArrowBackMainTitle() {
         this.arrowBackMainTitle.classList.remove('lkt__main-title-back_active');
     }
-    // END CHANGE CONTENT 
 
 
-    // ALL
-    // START SET REMOVE INVALID ЭЛЕМЕНТЫ ФОРМ
+
     // Установка не валидности на поле email в profile
     setInvalidPlace(element, textError) {
         const label = element.closest('label');
@@ -116,7 +114,6 @@ export default class Redraw {
         element.setCustomValidity(textError);
         element.reportValidity();
     }
-
     // Снятие не валидности на поле email в profile
     removeInvalidPlace(element) {
         if(!element.checkValidity()) {
@@ -125,13 +122,24 @@ export default class Redraw {
             element.setCustomValidity('');
         }
     }
-    // START SET REMOVE INVALID ЭЛЕМЕНТЫ ФОРМ
 
+
+    // Нет отчества
+    noPatronimic(target) {
+        const boxState = target.firstElementChild.checked;
+        const input = target.previousElementSibling.lastElementChild;
+
+        if(boxState) {
+            input.value = 'Нетотчества';
+            input.disabled = true;
+            return;
+        }
+
+        input.value = '';
+        input.disabled = false;
+    }
 
     
-
-
-    // START ALL TEXTAREA
     // Счетчик для textArea
     textAreaCounter(el, value) {
         if(!el instanceof HTMLElement && typeof value !== 'number') return;
@@ -145,7 +153,8 @@ export default class Redraw {
 
         target.value = value;
     }
-    // END ALL TEXTAREA
+
+
 
     // установка отступа справа на случай если нет полосы прокрутки
     // для того чтобы при переключении на более длинный контент

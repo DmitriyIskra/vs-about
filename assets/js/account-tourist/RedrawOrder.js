@@ -20,6 +20,7 @@ export default class Redraw {
         // start down openers которые должны быть активны со старта 
         const arrActivatedOpeners = [
             this.order.querySelector('.lkt-order__data-opener'),
+            this.order.querySelector('.lkt-order__part-opener'), // !!!ВРЕМЕННО
         ];
         arrActivatedOpeners.forEach(opener => {
             this.controllOpener(opener); // активируем

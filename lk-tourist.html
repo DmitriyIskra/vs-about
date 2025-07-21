@@ -351,11 +351,11 @@
                             <div class="lkt-order__data-body">
                                 <!-- lkt__down-opener_active -->
                                 <div class="lkt__down-opener lkt-order__data-opener"> 
-                                    <div class="lkt-order__data-opener-text">Ваш выбор:</div>
+                                    <div class="lkt__down-opener-text lkt-order__data-opener-text">Ваш выбор:</div>
                                     <div class="lkt__down-opener-icon lkt-order__data-opener-icon"></div>
                                 </div>
 
-                                <div class="lkt-order__data-content">
+                                <div class="lkt__down-opener-content lkt-order__data-content">
                                     <!-- Количество людей -->
                                     <div class="lkt-order__data-people">
                                         <ul class="lkt-order__data-people-list">
@@ -478,16 +478,36 @@
                             <h2 class="lkt-order__orderer-title">Заказчик</h2>
                             
                             <div class="lkt-order__orderer-form-wrapper">
-                                <form class="lkt-order__orderer-form" name="lkt-orderer-form">
-                                    <div class="lkt-order__orderer-wr-input">
-                                        <label class="lkt__label">
-                                            <span class="lkt__input-title">Фамилия</span>
-                                            <input class="lkt__input-text" type="text" name="secondname">
-                                        </label>
-
+                                <form class="lkt-order__orderer-form" name="lkt-orderer-form" novalidate>
+                                    <div class="lkt-order__orderer-static">
+                                        <div class="lkt-order__orderer-wr-input">
+                                            <label class="lkt__label">
+                                                <span class="lkt__input-title">Фамилия</span>
+                                                <input class="lkt__input-text" type="text" name="secondname">
+                                            </label>
+                                        </div>
+                                        <div class="lkt-order__orderer-wr-input">
+                                            <label class="lkt__label">
+                                                <span class="lkt__input-title">Имя</span>
+                                                <input class="lkt__input-text" type="text" name="name">
+                                            </label>
+                                        </div>
+                                        <div class="lkt-order__orderer-wr-input lkt-order__patronimic">
+                                            <label class="lkt__label">
+                                                <span class="lkt__input-title">Отчество</span>
+                                                <input class="lkt__input-text" type="text" name="patronimic">
+                                            </label>
+                                            <label class="lkt__checkbox-label lkt__checkbox-patronimic">
+                                                <input class="lkt__checkbox" type="checkbox" name="orderer_patronimic" value="0">
+                                                <span class="lkt__checkbox-title">Отчество отсутствует</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- lkt-order__orderer-dinamic_active -->
+                                    <div class="lkt-order__orderer-dinamic lkt-order__orderer-dinamic_active">
                                         <div class="lkt-order__orderer-wr-input">
                                             <div class="lkt__select">
-                                                <input class="lkt__input-select_hidden" type="text" name="orderer-document" hidden value="Паспорт">
+                                                <input class="lkt__input-select_hidden" type="text" name="document" hidden value="Паспорт">
                                                 <label class="lkt__label-select" for="lkt__checkbox-orderer">
                                                     <span class="lkt__input-title">Документ</span>
                                                     <span class="lkt__input-text lkt__input-select">Паспорт</span>
@@ -500,9 +520,163 @@
                                                 </ul>
                                             </div>
                                         </div>
+                                        <div class="lkt-order__orderer-wr-input">
+                                            <label class="lkt__label">
+                                                <span class="lkt__input-title">Серия и номер документа</span>
+                                                <input class="lkt__input-text" type="text" name="number_doc">
+                                            </label>
+                                        </div>
+                                        <div class="lkt-order__orderer-wr-input">
+                                            <label class="lkt__label">
+                                                <span class="lkt__input-title">Гражданство</span>
+                                                <input class="lkt__input-text" type="text" name="сitizenship">
+                                            </label>
+                                        </div>
+                                        <div class="lkt-order__orderer-wr-input">
+                                            <label class="lkt__label">
+                                                <span class="lkt__input-title">Адрес прописки</span>
+                                                <input class="lkt__input-text" type="text" name="reg_address">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="lkt-order__orderer-wr-submit">
+                                        <button class="lkt-order__orderer-submit" type="button">Сохранить и продолжить</button>
                                     </div>
                                 </form>
                             </div>
+                        </div>
+
+                        
+                        <!-- lkt-order__parts-active -->
+                        <div class="lkt-order__parts lkt-order__parts_active">
+
+                            <h2 class="lkt-order__parts-title">Внесите данные участников тура</h2>
+                            <!-- В зависимости один или много дней такой блок и формируем -->
+                            <!-- один день -->
+                            <ul class="lkt-order__parts-list">
+                                <!-- номера, формируем из js и все остальное ниже тоже -->
+                                <li class="lkt-order__parts-item">
+                                    <!-- lkt__down-opener_active -->
+                                    <div class="lkt__down-opener lkt-order__part-opener"> 
+                                        <!-- lkt-order__part-title-moreday, lkt-order__part-title-oneday - от этого будет зависеть иконка-->
+                                        <!-- текст ставим, если один день Путешественники, если много ставим наименование номера из данных -->
+                                        <div class="lkt__down-opener-text lkt__part-opener-text lkt-order__part-title-moreday">Путешественники</div>
+                                        <div class="lkt__down-opener-icon lkt-order__part-opener-icon"></div>
+                                    </div>
+
+                                    <div class="lkt__down-opener-content lkt-order__data-content">
+                                        <div class="lkt-order__data-match">
+                                            <label class="lkt__checkbox-label lkt__checkbox-data-match">
+                                                <input class="lkt__checkbox lkt__checkbox_order-part" type="checkbox" name="data-match" value="1">
+                                                <span class="lkt__checkbox-title">Совпадает с данными Заказчика</span>
+                                            </label>
+                                        </div>
+    
+                                        <ul class="lkt-order__parts-tourists-list">
+                                            <!-- туристы -->
+                                            <!-- формируем по количеству туристов, и поля для заполнения формируем исходя из один день или много из js -->
+                                            <li class="lkt-order__parts-tourists-item">
+                                                <form class="lkt-order__tourist-form" name="order-tourist-form">
+                                                    <h3 class="lkt-order__tourist-title">Турист 1</h3>
+                                                    <div class="lkt-order__tourist-wr-inputs">
+                                                        <div class="lkt-order__tourist-wr-input">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Фамилия</span>
+                                                                <input class="lkt__input-text" type="text" name="secondname">
+                                                            </label>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Имя</span>
+                                                                <input class="lkt__input-text" type="text" name="name">
+                                                            </label>
+                                                        </div> 
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__patronimic">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Отчество</span>
+                                                                <input class="lkt__input-text" type="text" name="patronimic">
+                                                            </label>
+                                                            <label class="lkt__checkbox-label lkt__checkbox-patronimic">
+                                                                <input class="lkt__checkbox" type="checkbox" name="orderer_patronimic" value="0">
+                                                                <span class="lkt__checkbox-title">Отчество отсутствует</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-phone">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Телефон</span>
+                                                                <input class="lkt__input-text" type="text" name="phone">
+                                                            </label>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-email">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">E-mail</span>
+                                                                <input class="lkt__input-text" type="text" name="email">
+                                                            </label>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-empty"></div>
+
+                                                        <!-- для многодневного тура -->
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-birthday">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Дата рождения</span>
+                                                                <input class="lkt__input-text" type="text" name="birthday">
+                                                            </label>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-сitizenship">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Гражданство</span>
+                                                                <input class="lkt__input-text" type="text" name="сitizenship">
+                                                            </label>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-gender">
+                                                            <span class="lkt__input-title">Пол</span>
+                                                            <div class="lkt-order__tourist-gender">
+                                                                <label class="agent-reg__radio-label">
+                                                                    <input type="radio" name="gender" value="man">
+                                                                    <span>Муж</span>
+                                                                </label>
+                                                                <label class="agent-reg__radio-label">
+                                                                    <input type="radio" name="gender" value="woman">
+                                                                    <span>Жен</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-document">
+                                                            <div class="lkt__select">
+                                                                <input class="lkt__input-select_hidden" type="text" name="document" hidden value="Паспорт">
+                                                                <label class="lkt__label-select" for="lkt__checkbox-orderer">
+                                                                    <span class="lkt__input-title">Документ</span>
+                                                                    <span class="lkt__input-text lkt__input-select">Паспорт</span>
+                                                                </label>
+                                                                <input id="lkt__checkbox-orderer" class="lkt__checkbox_hide" type="checkbox">
+                                                                <ul class="lkt__select-list">
+                                                                    <li class="lkt__input-item"><label for="lkt__checkbox-orderer">Паспорт</label></li>
+                                                                    <li class="lkt__input-item"><label for="lkt__checkbox-orderer">Св-во о рождении</label></li>
+                                                                    <li class="lkt__input-item"><label for="lkt__checkbox-orderer">Загран. паспорт</label></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-number-doc">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Серия и номер документа</span>
+                                                                <input class="lkt__input-text" type="text" name="number-doc">
+                                                            </label>
+                                                        </div>
+                                                        <div class="lkt-order__tourist-wr-input lkt-order__tourist-reg-address">
+                                                            <label class="lkt__label">
+                                                                <span class="lkt__input-title">Адрес прописки</span>
+                                                                <input class="lkt__input-text" type="text" name="reg-address">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                            
                         </div>
                     </div>
 
