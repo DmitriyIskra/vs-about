@@ -147,6 +147,7 @@
 
 .subscr-i__input:focus::placeholder {
     visibility: hidden;
+    opacity: 0;
 }
 
 .subscr-i__form-line {

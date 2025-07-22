@@ -24,6 +24,9 @@ export default class Controll {
         // отслеживает изменения экрана, и вносит изменения в элементы, в зависимости от размера
         const observer = new ResizeObserver(this.rebuildPage, { box: 'border-box' });
         observer.observe(document.body);
+
+        // регистрация маски на поля для ввода телефона
+        this.registerMasks();
     }
 
     registerEvents() {
@@ -36,7 +39,6 @@ export default class Controll {
     }
 
     click(e) {
-        // e.preventDefault();
 
         // Переключение контента
         if(e.target.closest('.lkt__cont-switcher')) {
@@ -144,6 +146,15 @@ export default class Controll {
             this.draws.main.fillInputDoc(option);
         }
 
+        // ПЕРСОНАЛЬНЫЕ ДАННЫЕ принятие и закрытие
+        if(e.target.closest('.lkt-order__agree-confirm')) {
+            // СОБРАТЬ ЧЕКБОКС И ДАТУ
+
+            const parent = e.target.closest('.lkt-order__agree-wr-confirm');
+            const opener = parent.parentElement.previousElementSibling;
+            this.draws.order.controllOpener(opener);
+        }
+
         // RADIO переключение radio кнопок 
         if(e.target.closest('.lkt-order__radio-label')) {
             e.preventDefault();
@@ -216,5 +227,37 @@ export default class Controll {
         this.draws.aside.resizeAside();
 
         this.activatedSize = innerWidth > 1024 ? 1025 : 1024;
+    }
+
+    registerMasks() {
+        const phones = [...this.draws.order.order.querySelectorAll('input[name="phone"]')];
+        const birthdays = [...this.draws.order.order.querySelectorAll('input[name="birthday"]')];
+        
+        if(IMask) {
+            if(phones.length) {
+                phones.forEach(phone => {
+                    const maskOptions = {
+                        mask: '+7 (000) 000-00-00',
+                        // lazy: false,
+                        // placeholderChar: '0',
+                    };
+            
+                    IMask(phone, maskOptions);
+                })
+            }
+
+            if(birthdays.length) {
+                birthdays.forEach(phone => {
+                    const maskOptions = {
+                        mask: '00/00/0000',
+                        // lazy: true,
+                        // placeholderChar: '0',
+                    };
+            
+                    IMask(phone, maskOptions);
+                })
+            }
+        }
+
     }
 }

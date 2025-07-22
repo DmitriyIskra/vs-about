@@ -135,6 +135,7 @@
 
 .consultation__input:focus::placeholder {
     visibility: hidden;
+    opacity: 0;
 }
 
 .consultation__form-line {

@@ -10,6 +10,14 @@ export default class Redraw {
         this.changeOrderForm = this.change.querySelector('.lkt-change__form');
         this.changeOrderTextArea = this.changeOrderForm.change_order_text;
 
+        // Блок с формами для туристов
+        this.tourists = this.order.querySelector('.lkt-order__parts'); 
+        // Блок с согласием на обработку персональных данных
+        this.agree = this.order.querySelector('.lkt-order__agree');
+
+        // Дата в письменном согласии на обработку персональных данных
+        this.agreeDate = this.order.querySelector('.lkt-order__agree-date');
+
         // -----------------------
 
         // активные (открытые аккордионы)
@@ -26,6 +34,12 @@ export default class Redraw {
             this.controllOpener(opener); // активируем
         });
         // end down openers которые должны быть активны со старта 
+
+
+        // Дата в письменном согласии на обработку персональных данных
+        const date = new Date();
+        const todayDate = `${date.getDate()}.${(date.getMonth() + 1).toString().padStart(2, '00')}.${date.getFullYear()}`
+        this.agreeDate.textContent = todayDate;
     }
 
     
@@ -35,6 +49,20 @@ export default class Redraw {
         this.changeOrderForm.number_order.value = this.orderNum.dataset.order_num;
     }
     // END ЗАПРОС НА ИЗМЕНЕНИЯ ПО ЗАКАЗУ
+
+    // открытие форм для туристов
+    showTouristsForms() {
+        this.tourists.classList.add('.lkt-order__parts-active');
+    }
+    // открытие согласия на обработку персональных данных
+    showAgree() {
+        this.agree.classList.add('.lkt-order__agree_active');
+    }
+
+    // Заполнение формы туриста по данным заказчика (Совпадает с данными Заказчика)
+    touristIsOrder() {
+
+    }
 
     // START DOWN OPENER
     // управление аккордеоном (открывание и скрытие контента c 

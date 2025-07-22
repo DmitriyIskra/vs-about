@@ -254,6 +254,7 @@ button:hover:not(:disabled), .button:hover, input[type=submit]:hover {
 
 .agent-reg__input-text:focus::placeholder {
     visibility: hidden;
+    opacity: 0;
 }
 
 .agent-reg__input-text[invalid] {
