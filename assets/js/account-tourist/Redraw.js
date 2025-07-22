@@ -139,6 +139,34 @@ export default class Redraw {
         input.disabled = false;
     }
 
+
+    // выбор документа и открытие селекта для выбора
+    controllChoiceDoc(target) {
+        const options = target.nextElementSibling;
+        options.classList.toggle('lkt__select-list_active');
+    }
+    fillInputDoc(option) {
+        const value = option.textContent;
+        const select = option.parentElement.previousElementSibling;
+        const textSelect = select.lastElementChild;
+        const input = select.previousElementSibling;
+
+        textSelect.textContent = value;
+        input.value = value;
+        select.click();
+    }
+
+    // Переключение радио кнопок
+    reCheckedRadioButton(targetLabel) {
+        // родитель всех Label
+        const parentOfLabels = targetLabel.parentElement;
+        const allRadio = [...parentOfLabels.querySelectorAll('input[type="radio"]')];
+        const targetRadio = targetLabel.querySelector('input[type="radio"]');
+
+        allRadio.forEach(item => item.checked ? item.checked = false : '');
+        targetRadio.checked = true;
+    }
+
     
     // Счетчик для textArea
     textAreaCounter(el, value) {

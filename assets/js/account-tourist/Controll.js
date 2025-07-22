@@ -132,6 +132,26 @@ export default class Controll {
             const target = e.target.closest('.lkt__checkbox-patronimic');
             this.draws.main.noPatronimic(target);
         }
+
+        // SELECT Документ выбор - открыть закрыть options выбор документа
+        if(e.target.closest('.lkt__label-select')) {
+            const target = e.target.closest('.lkt__label-select');
+            this.draws.main.controllChoiceDoc(target);
+        }
+        // Документ выбор - выбор options документа
+        if(e.target.closest('.lkt__select-list')) {
+            const option = e.target.closest('.lkt__option-item');
+            this.draws.main.fillInputDoc(option);
+        }
+
+        // RADIO переключение radio кнопок 
+        if(e.target.closest('.lkt-order__radio-label')) {
+            e.preventDefault();
+
+            const target = e.target.closest('.lkt-order__radio-label');
+            this.draws.main.reCheckedRadioButton(target);
+        }  
+
     }
 
     input(e) {

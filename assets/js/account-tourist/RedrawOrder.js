@@ -45,9 +45,15 @@ export default class Redraw {
         // получаем элемент который нужно открыть
         const openerContent = el.nextElementSibling;
 
-        // если стрелка к этому моменту в состоянии открыто (переключили строкой выше)
+        // если стрелка к этой строке в состоянии открыто (переключили строкой выше)
         // открываем элемент и сохраняем его в список открытых (активных)
         if(el.classList.contains('lkt__down-opener_active')) {
+            // в конце открытия меняем правило CSS, устанавливаем inline чтобы перебить 
+            // то что установленно в файле CSS
+            openerContent.addEventListener('transitionend', () => {
+                openerContent.style.overflow = 'visible';
+            }, {once: true});
+
             // устанавливаем размер по высотам содержимого элемента и соответствующей
             // версии экрана единице измерения
             this.resizeActivatedOpener(openerContent);
@@ -57,7 +63,11 @@ export default class Redraw {
             return;
         }
 
-        // если переданный элемент в состоянии открытого
+        // в начале закрытия меняем правило CSS, убираем установленное ранее inline
+        openerContent.addEventListener('transitionstart', () => {
+            openerContent.style.overflow = '';
+        }, {once: true});
+        // если переданный элемент в состоянии закрытого
         // убираем его из массива открытых (активных)
         this.activatedOpenners = this.activatedOpenners.filter(item => item !== el);
         // закрываем
