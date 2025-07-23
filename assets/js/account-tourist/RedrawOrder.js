@@ -26,8 +26,10 @@ export default class Redraw {
 
         // активные (открытые аккордионы)
         this.activatedOpenners = [];
-        // текущая форма заполненная по Совпадает с данными заказчика
+        // текущая первая форма туриста в номере Совпадает с данными заказчика
         this.currentMatchForm = null;
+        // чекбокс в строке  "Совпадает с данными заказчика"
+        this.currentMatchLabelBox = null;
     }
 
     startOrder() {
@@ -74,9 +76,39 @@ export default class Redraw {
     // traget - HTML элемент label радио кнопки, от него отталкиваемся при поиске формы
     // для заполнения
     touristIsOrder(target, data) {
+        // когда уже был выбран пункт заполнить по данным заказчика, а потом его нажали в другой форме
+        if(this.currentMatchForm && this.currentMatchLabelBox) {
+            this.currentMatchLabelBox.checked = false;
+            this.currentMatchForm.reset();
+        };
+        
+        // Если чекбокс совпадает был нажат а потом отжат
+        if(this.currentMatchLabelBox && this.currentMatchLabelBox === target) {
+            this.currentMatchLabelBox = null;
+            this.currentMatchForm = null;
+            return;
+        };
+
+        // чекбокс в строке  "Совпадает с данными заказчика"
+        this.currentMatchLabelBox = target;
+        this.currentMatchLabelBox.checked = true;
+
+        // форма первого туриста в данном номере
         this.currentMatchForm = target.closest('.lkt-order__data-content').querySelector('form');
 
+        // Заполняем форму данными из заказчика
+        // активируем чекбокс который говорит о том что данные этого туриста совпадают с данными заказчика
+        this.currentMatchForm.touristMatchOrderer.checked = true;
 
+        const dataKeys = Object.keys(data);
+        dataKeys.forEach(key => {
+            // заполнение текстовых полей
+            if(this.currentMatchForm[key].type === 'text') this.currentMatchForm[key].value = data[key];
+            // if(this.currentMatchForm[key]?.type === 'text')
+            console.log(key);
+            console.log(data[key]);
+            console.log(this.currentMatchForm[key]); 
+        });
     }
 
     // START DOWN OPENER

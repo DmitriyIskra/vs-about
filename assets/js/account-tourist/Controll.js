@@ -133,38 +133,50 @@ export default class Controll {
 
         // Открыть формы для туристов
         if(e.target.closest('.lkt-order__orderer-submit')) {
+            const days = this.draws.order.ordererForm.dataset.type;
+            let reqInputs = null;
+            // отбираем обязательные поля для проверки
+            if(days === 'one') {
+                reqInputs = [...this.draws.order.ordererForm.firstElementChild
+                    .querySelectorAll('input[required]')];
+                }
+                if(days === 'more') {
+                reqInputs = [...this.draws.order.ordererForm.querySelectorAll('input[required]')];
+            }
+
+            // Все ли обязательные поля заполненны
+            let isFillAll = null; 
+            if(reqInputs) {
+                isFillAll = this.validator.isFilledInputsText(reqInputs);
+            }
+            // перебираем поля которые не были заполненны и ставим не валидность
+            if(isFillAll.length) {
+                isFillAll.forEach(input => {
+                    this.draws.main.setInvalidPlace(input, 'Все поля отмеченные звездочкой обязательны для заполнения');
+                    input.addEventListener('input', (e) => {
+                        this.draws.main.removeInvalidPlace(e.target);
+                    })
+                });
+
+                return;
+            }
+
+            
             const target = e.target.closest('.lkt-order__orderer-submit');
             this.draws.order.showTouristsForms();
             this.draws.main.disableButton(target); // блокировка кнопки
-            // const days = this.draws.order.ordererForm.dataset.type;
-            // let reqInputs = null;
-            // // отбираем обязательные поля для проверки
-            // if(days === 'one') {
-            //     reqInputs = [...this.draws.order.ordererForm.firstElementChild
-            //         .querySelectorAll('input[required]')];
-            // }
-            // if(days === 'more') {
-            //     reqInputs = [...this.draws.order.ordererForm.querySelectorAll('input[required]')];
-            // }
-
-            // // Все ли обязательные поля заполненны
-            // let isFillAll = null; 
-            // if(reqInputs) {
-            //     reqInputs.forEach(input => isFillAll = this.validator.isFilledInputsText(reqInputs));
-            // }
-            // // перебираем поля которые не были заполненны
-            // if(isFillAll.length) isFillAll.forEach(input => {
-            //         this.draws.main.setInvalidPlace(input, 'это поле обязательно для заполнения');
-            //         input.addEventListener('input', (e) => {
-            //             this.draws.main.removeInvalidPlace(e.target);
-            //         })
-            //     });
             
         }
 
-        // Совпадает с данными Заказчика, авто заполнение
+        // Совпадает с данными Заказчика checkbox, авто заполнение
         if(e.target.closest('.lkt-order__radio-label-match')) {
-            
+            e.preventDefault();
+            const label = e.target.closest('.lkt-order__radio-label-match');
+            const target = label.querySelector('input');
+
+            const data = Object.fromEntries(new FormData(this.draws.order.ordererForm));
+
+            this.draws.order.touristIsOrder(target, data);
         } 
 
         // ПЕРСОНАЛЬНЫЕ ДАННЫЕ Открыть согласие на использование персональных данных
@@ -172,6 +184,8 @@ export default class Controll {
             const target = e.target.closest('.lkt-order__parts-confirm');
             this.draws.main.disableButton(target); // блокировка кнопки
             this.draws.order.showAgree();
+
+            // !!!!!!!!!!!!! заполнять !!!!!!!!!!!!!!
         }
         // принятие и закрытие
         if(e.target.closest('.lkt-order__agree-confirm')) {
