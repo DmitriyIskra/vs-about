@@ -1094,6 +1094,11 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     background: #ed5f00;
 }
 
+.lkt__button_disabled {
+    opacity: 0.6;
+
+    pointer-events: none;
+}
 
 /* Заказ */
 .lkt-order {
@@ -1754,6 +1759,58 @@ label.lkt__checkbox-label > .lkt__checkbox {
     padding-bottom: 24px;
 }
 
+.lkt__radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.lkt-order__radio-label-match {
+    gap: 11px;
+}
+
+.lkt__radio-label > input[type="radio"] {
+    position: static;
+    
+    height: fit-content;
+    width: fit-content;
+    padding: 4px;
+    
+    outline: 1px solid #F60 !important;
+    border: 3px solid rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.lkt-order__radio-label-match > input[type="radio"] {
+    border: 3px solid #F2F2F2;
+}
+
+.lkt__radio-label > input[type="radio"]:checked {
+    outline: 1px solid #F60 !important;
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+}
+
+.lkt__radio-label > span {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 0.9 !important;
+
+    color: #5A5D62;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+
 .lkt-order__parts-tourists-list {
     display: flex;
     flex-direction: column;
@@ -1802,50 +1859,8 @@ label.lkt__checkbox-label > .lkt__checkbox {
     gap: 36px;
 }
 
-.lkt-order__radio-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    cursor: pointer;
-}
-
-label.lkt-order__radio-label > input[type="radio"] {
-    position: static;
-    
-    height: fit-content;
-    width: fit-content;
-    padding: 4px;
-    
-    outline: 1px solid #F60 !important;
-    border: 3px solid rgba(255, 255, 255, 1);
-    border-radius: 50%;
-    
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    pointer-events: none;
-}
 label.lkt-order__radio-label_gender > input[type="radio"] {
     border: 3px solid #F2F2F2;
-}
-
-label.lkt-order__radio-label > input[type="radio"]:checked {
-    outline: 1px solid #F60 !important;
-    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
-}
-
-.lkt-order__radio-label > span {
-    font-family: 'Roboto';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 0.9 !important;
-
-    color: #5A5D62;
-
-    cursor: pointer;
-    user-select: none;
 }
 
 .lkt-order__parts-wr-confirm {
@@ -2009,11 +2024,7 @@ label.lkt-order__radio-label > input[type="radio"]:checked {
     box-shadow: none;
 }
 
-.lkt-order__submit_disabled {
-    opacity: 0.6;
 
-    pointer-events: none;
-}
 
 /* История */
 

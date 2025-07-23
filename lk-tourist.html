@@ -479,27 +479,28 @@
                             <h2 class="lkt-order__orderer-title">Заказчик</h2>
                             
                             <div class="lkt-order__orderer-form-wrapper">
-                                <form class="lkt-order__orderer-form" name="lkt-orderer-form" novalidate>
+                                <!-- если тур однодневный ставим 'one', если многодневный 'more' -->
+                                <form class="lkt-order__orderer-form" name="lkt-orderer-form" data-type="more" novalidate>
                                     <div class="lkt-order__orderer-static">
                                         <div class="lkt-order__orderer-wr-input">
                                             <label class="lkt__label">
                                                 <span class="lkt__input-title lkt__input-title_required">Фамилия</span>
-                                                <input class="lkt__input-text" type="text" name="secondname">
+                                                <input class="lkt__input-text" type="text" name="secondname" required>
                                             </label>
                                         </div>
                                         <div class="lkt-order__orderer-wr-input">
                                             <label class="lkt__label">
                                                 <span  class="lkt__input-title lkt__input-title_required">Имя</span>
-                                                <input class="lkt__input-text" type="text" name="name">
+                                                <input class="lkt__input-text" type="text" name="name" required>
                                             </label>
                                         </div>
                                         <div class="lkt-order__orderer-wr-input lkt-order__patronimic">
                                             <label class="lkt__label">
                                                 <span  class="lkt__input-title lkt__input-title_required">Отчество</span>
-                                                <input class="lkt__input-text" type="text" name="patronimic">
+                                                <input class="lkt__input-text" type="text" name="patronimic" required>
                                             </label>
                                             <label class="lkt__checkbox-label lkt__checkbox-patronimic">
-                                                <input class="lkt__checkbox" type="checkbox" name="orderer_patronimic" value="0">
+                                                <input class="lkt__checkbox" type="checkbox" name="orderer_patronimic" value="0" required>
                                                 <span class="lkt__checkbox-title">Отчество отсутствует</span>
                                             </label>
                                         </div>
@@ -568,9 +569,9 @@
 
                                     <div class="lkt__down-opener-content lkt-order__data-content">
                                         <div class="lkt-order__data-match">
-                                            <label class="lkt__checkbox-label lkt__checkbox-data-match">
-                                                <input class="lkt__checkbox lkt__checkbox_order-part" type="radio" name="data-match" value="1">
-                                                <span class="lkt__checkbox-title">Совпадает с данными Заказчика</span>
+                                            <label class="lkt__radio-label lkt-order__radio-label-match">
+                                                <input class="lkt__radio lkt-order__radio-data-match" type="radio" name="data-match" value="1">
+                                                <span class="lkt__radio-title lkt-order__radio-match-title">Совпадает с данными Заказчика</span>
                                             </label>
                                         </div>
     
@@ -633,11 +634,11 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="man">
                                                                     <span>Муж</span>
                                                                 </label>
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="woman">
                                                                     <span>Жен</span>
                                                                 </label>
@@ -729,11 +730,11 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="man">
                                                                     <span>Муж</span>
                                                                 </label>
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="woman">
                                                                     <span>Жен</span>
                                                                 </label>
@@ -783,9 +784,9 @@
 
                                     <div class="lkt__down-opener-content lkt-order__data-content">
                                         <div class="lkt-order__data-match">
-                                            <label class="lkt__checkbox-label lkt__checkbox-data-match">
-                                                <input class="lkt__checkbox lkt__checkbox_order-part" type="radio" name="data-match" value="1">
-                                                <span class="lkt__checkbox-title">Совпадает с данными Заказчика</span>
+                                            <label class="lkt__radio-label lkt-order__radio-label-match">
+                                                <input class="lkt__radio lkt-order__radio-data-match" type="radio" name="data-match" value="1">
+                                                <span class="lkt__radio-title lkt-order__radio-match-title">Совпадает с данными Заказчика</span>
                                             </label>
                                         </div>
     
@@ -848,11 +849,11 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="man">
                                                                     <span>Муж</span>
                                                                 </label>
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="woman">
                                                                     <span>Жен</span>
                                                                 </label>
@@ -944,11 +945,11 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="man">
                                                                     <span>Муж</span>
                                                                 </label>
-                                                                <label class="lkt-order__radio-label lkt-order__radio-label_gender">
+                                                                <label class="lkt__radio-label lkt-order__radio-label_gender">
                                                                     <input type="radio" name="gender" value="woman">
                                                                     <span>Жен</span>
                                                                 </label>
@@ -1067,7 +1068,7 @@
 
                         <!-- Отправка данных -->
                         <div class="lkt-order__wr-submit">
-                            <button class="lkt-order__submit lkt-order__submit_disabled">Передать данные</button>
+                            <button class="lkt-order__submit lkt__button_disabled">Передать данные</button>
                         </div>
                     </div>
 

@@ -4,11 +4,7 @@ export default class Redraw {
         this.change = change;
         this.annulation = annulation;
         
-        // номер открытого заказа
-        this.orderNum = this.order.querySelector('.lkt-order__data-number'); 
-        // Форма и элементы на зменение заказа
-        this.changeOrderForm = this.change.querySelector('.lkt-change__form');
-        this.changeOrderTextArea = this.changeOrderForm.change_order_text;
+        this.ordererForm = this.order.querySelector('.lkt-order__orderer-form');
 
         // Блок с формами для туристов
         this.tourists = this.order.querySelector('.lkt-order__parts'); 
@@ -18,17 +14,26 @@ export default class Redraw {
         // Дата в письменном согласии на обработку персональных данных
         this.agreeDate = this.order.querySelector('.lkt-order__agree-date');
 
+        // номер открытого заказа
+        this.orderNum = this.order.querySelector('.lkt-order__data-number'); 
+        // Форма и элементы на зменение заказа
+        this.changeOrderForm = this.change.querySelector('.lkt-change__form');
+        this.changeOrderTextArea = this.changeOrderForm.change_order_text;
+
+        
+
         // -----------------------
 
         // активные (открытые аккордионы)
         this.activatedOpenners = [];
+        // текущая форма заполненная по Совпадает с данными заказчика
+        this.currentMatchForm = null;
     }
 
     startOrder() {
         // start down openers которые должны быть активны со старта 
         const arrActivatedOpeners = [
             this.order.querySelector('.lkt-order__data-opener'),
-            this.order.querySelector('.lkt-order__part-opener'), // !!!ВРЕМЕННО
         ];
         arrActivatedOpeners.forEach(opener => {
             this.controllOpener(opener); // активируем
@@ -52,15 +57,25 @@ export default class Redraw {
 
     // открытие форм для туристов
     showTouristsForms() {
-        this.tourists.classList.add('.lkt-order__parts-active');
+        if(!this.tourists.classList.contains('lkt-order__parts_active')) {
+            this.tourists.classList.add('lkt-order__parts_active');
+            this.controllOpener(this.order.querySelector('.lkt-order__part-opener'));
+        }
     }
     // открытие согласия на обработку персональных данных
     showAgree() {
-        this.agree.classList.add('.lkt-order__agree_active');
+        if(!this.agree.classList.contains('lkt-order__agree_active')) {
+            this.agree.classList.add('lkt-order__agree_active');
+            this.controllOpener(this.order.querySelector('.lkt-order__agree-opener'));
+        }
     }
 
     // Заполнение формы туриста по данным заказчика (Совпадает с данными Заказчика)
-    touristIsOrder() {
+    // traget - HTML элемент label радио кнопки, от него отталкиваемся при поиске формы
+    // для заполнения
+    touristIsOrder(target, data) {
+        this.currentMatchForm = target.closest('.lkt-order__data-content').querySelector('form');
+
 
     }
 

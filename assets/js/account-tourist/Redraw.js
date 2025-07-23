@@ -105,16 +105,23 @@ export default class Redraw {
         this.arrowBackMainTitle.classList.remove('lkt__main-title-back_active');
     }
 
+    // Блокировка кнопки
+    disableButton(button) {
+        button.classList.add('lkt__button_disabled');
+    }
+    // Разблокировка кнопки
+    unDisableButton(button) {
+        button.classList.remove('lkt__button_disabled');
+    }
 
-
-    // Установка не валидности на поле email в profile
+    // Установка не валидности 
     setInvalidPlace(element, textError) {
         const label = element.closest('label');
         label.classList.add('lkt__place-invalid');
         element.setCustomValidity(textError);
         element.reportValidity();
     }
-    // Снятие не валидности на поле email в profile
+    // Снятие не валидности 
     removeInvalidPlace(element) {
         if(!element.checkValidity()) {
             const label = element.closest('label');

@@ -39,7 +39,6 @@ export default class Controll {
     }
 
     click(e) {
-
         // Переключение контента
         if(e.target.closest('.lkt__cont-switcher')) {
             const target = e.target.closest('.lkt__cont-switcher');
@@ -67,68 +66,6 @@ export default class Controll {
             ) this.draws.aside.hideAsideDocs();
         }
 
-        // Профайл свернуть развернуть
-        if(e.target.closest('.lkt__aside-arrow') && innerWidth <= 1024) {
-            const target = e.target.closest('.lkt__aside-arrow');
-            
-            // если на стрелке есть класс active значит aside открыт надо закрыть
-            if(target.classList.contains('lkt__aside-arrow_active')) {
-                this.draws.aside.closeAside();
-                return
-            }
-            
-            // иначе aside закрыт надо открыть
-            this.draws.aside.openAside();
-        }
-
-        // ORDER
-        // Открытие закрытие аккордионов (down opener)
-        if(e.target.closest('.lkt__down-opener')) {
-            const target = e.target.closest('.lkt__down-opener');
-            this.draws.order.controllOpener(target);
-        }
-
-        // Отправка подтверждение почты 
-        if(e.target.closest('.lkt-profile__confirm')) {
-            const formData = new FormData(this.draws.aside.profileEmailForm);
-            if(!formData.get('profile_email').length) {
-                this.draws.aside.setInvalidProfileEmail('Поле обязательно для заполнения');
-                return;
-            };
-
-            if(!this.validator.validationEmail(formData.get('profile_email'))) {
-                this.draws.aside.setInvalidProfileEmail('Некорректо заполенно поле "Ваша почта"');
-                return;
-            }
-
-            this.resizeAside();
-        }
-
-        // Отправка задать вопрос 
-        if(e.target.closest('.lkt-question__button')) {
-            const formData = new FormData(this.draws.main.questionForm);
-
-            if(!formData.get('question').length) {
-                this.draws.main.setInvalidPlace(this.draws.main.questionArea, 'Задайте Ваш вопрос');
-                return;
-            }
-
-
-        }
-
-        // При открытии запроса на изменение по заказу, авто заполнение номера
-        if(e.target.closest('.lkt-docs__link_change')) this.draws.order.fillNumberOrderChange();
-
-        // Отправка запроса на изменение заказа
-        if(e.target.closest('.lkt-change__button')) {
-            const isTextFromArea = this.draws.order.changeOrderTextArea.value.length;
-            if(!isTextFromArea) {
-                this.draws.main.setInvalidPlace(
-                    this.draws.order.changeOrderTextArea, 'Поле обязательно для заполнения'
-                );
-            }
-        }
-
         // НЕТ ОТЧЕСТВА
         if(e.target.closest('.lkt__checkbox-patronimic')) {
             const target = e.target.closest('.lkt__checkbox-patronimic');
@@ -146,7 +83,97 @@ export default class Controll {
             this.draws.main.fillInputDoc(option);
         }
 
-        // ПЕРСОНАЛЬНЫЕ ДАННЫЕ принятие и закрытие
+        // RADIO переключение radio кнопок 
+        if(e.target.closest('.lkt-order__radio-label')) {
+            e.preventDefault();
+
+            const target = e.target.closest('.lkt-order__radio-label');
+            this.draws.main.reCheckedRadioButton(target);
+        }  
+
+        // START ASIDE
+        // Профайл свернуть развернуть
+        if(e.target.closest('.lkt__aside-arrow') && innerWidth <= 1024) {
+            const target = e.target.closest('.lkt__aside-arrow');
+            
+            // если на стрелке есть класс active значит aside открыт надо закрыть
+            if(target.classList.contains('lkt__aside-arrow_active')) {
+                this.draws.aside.closeAside();
+                return
+            }
+            
+            // иначе aside закрыт надо открыть
+            this.draws.aside.openAside();
+        }
+
+        // Отправка подтверждение почты 
+        if(e.target.closest('.lkt-profile__confirm')) {
+            const formData = new FormData(this.draws.aside.profileEmailForm);
+            if(!formData.get('profile_email').length) {
+                this.draws.aside.setInvalidProfileEmail('Поле обязательно для заполнения');
+                return;
+            };
+
+            if(!this.validator.validationEmail(formData.get('profile_email'))) {
+                this.draws.aside.setInvalidProfileEmail('Некорректо заполенно поле "Ваша почта"');
+                return;
+            }
+
+            this.resizeAside();
+        }
+        // END ASIDE
+
+    
+        // START ORDER
+        // Открытие закрытие аккордионов (down opener)
+        if(e.target.closest('.lkt__down-opener')) {
+            const target = e.target.closest('.lkt__down-opener');
+            this.draws.order.controllOpener(target);
+        }
+
+        // Открыть формы для туристов
+        if(e.target.closest('.lkt-order__orderer-submit')) {
+            const target = e.target.closest('.lkt-order__orderer-submit');
+            this.draws.order.showTouristsForms();
+            this.draws.main.disableButton(target); // блокировка кнопки
+            // const days = this.draws.order.ordererForm.dataset.type;
+            // let reqInputs = null;
+            // // отбираем обязательные поля для проверки
+            // if(days === 'one') {
+            //     reqInputs = [...this.draws.order.ordererForm.firstElementChild
+            //         .querySelectorAll('input[required]')];
+            // }
+            // if(days === 'more') {
+            //     reqInputs = [...this.draws.order.ordererForm.querySelectorAll('input[required]')];
+            // }
+
+            // // Все ли обязательные поля заполненны
+            // let isFillAll = null; 
+            // if(reqInputs) {
+            //     reqInputs.forEach(input => isFillAll = this.validator.isFilledInputsText(reqInputs));
+            // }
+            // // перебираем поля которые не были заполненны
+            // if(isFillAll.length) isFillAll.forEach(input => {
+            //         this.draws.main.setInvalidPlace(input, 'это поле обязательно для заполнения');
+            //         input.addEventListener('input', (e) => {
+            //             this.draws.main.removeInvalidPlace(e.target);
+            //         })
+            //     });
+            
+        }
+
+        // Совпадает с данными Заказчика, авто заполнение
+        if(e.target.closest('.lkt-order__radio-label-match')) {
+            
+        } 
+
+        // ПЕРСОНАЛЬНЫЕ ДАННЫЕ Открыть согласие на использование персональных данных
+        if(e.target.closest('.lkt-order__parts-confirm')) {
+            const target = e.target.closest('.lkt-order__parts-confirm');
+            this.draws.main.disableButton(target); // блокировка кнопки
+            this.draws.order.showAgree();
+        }
+        // принятие и закрытие
         if(e.target.closest('.lkt-order__agree-confirm')) {
             // СОБРАТЬ ЧЕКБОКС И ДАТУ
 
@@ -155,13 +182,33 @@ export default class Controll {
             this.draws.order.controllOpener(opener);
         }
 
-        // RADIO переключение radio кнопок 
-        if(e.target.closest('.lkt-order__radio-label')) {
-            e.preventDefault();
+        // При открытии запроса на изменение по заказу, авто заполнение номера
+        if(e.target.closest('.lkt-docs__link_change')) this.draws.order.fillNumberOrderChange();
+        // Отправка запроса на изменение заказа
+        if(e.target.closest('.lkt-change__button')) {
+            const isTextFromArea = this.draws.order.changeOrderTextArea.value.length;
+            if(!isTextFromArea) {
+                this.draws.main.setInvalidPlace(
+                    this.draws.order.changeOrderTextArea, 'Поле обязательно для заполнения'
+                );
+            }
+        }
+        // END ORDER
 
-            const target = e.target.closest('.lkt-order__radio-label');
-            this.draws.main.reCheckedRadioButton(target);
-        }  
+
+        // START ЗАДАТЬ ВОПРОС
+        // Отправка задать вопрос 
+        if(e.target.closest('.lkt-question__button')) {
+            const formData = new FormData(this.draws.main.questionForm);
+
+            if(!formData.get('question').length) {
+                this.draws.main.setInvalidPlace(this.draws.main.questionArea, 'Задайте Ваш вопрос');
+                return;
+            }
+        }
+        // END ЗАДАТЬ ВОПРОС
+
+        
 
     }
 
