@@ -48,17 +48,17 @@
                 
                     <div class="lkt-profile__content">
                         <ul class="lkt-profile__list">
-                            <li class="lkt-profile__item">Елесин</li>
-                            <li class="lkt-profile__item">Максим</li>
-                            <li class="lkt-profile__item">Александрович</li>
-                            <li class="lkt-profile__item">+7 (925) 562-56-59</li>
+                            <li class="lkt-profile__item lkt-profile__item_secondname">Елесин</li>
+                            <li class="lkt-profile__item lkt-profile__item_name">Максим</li>
+                            <li class="lkt-profile__item lkt-profile__item_patronimic">Александрович</li>
+                            <li class="lkt-profile__item lkt-profile__item_phone">+7 (925) 562-56-59</li>
 
-                            <!--  lkt-profile__email_active -->
+                            <!--  lkt-profile__email_active - активирует блок confirmed или not-confirmed -->
                             <li class="lkt-profile__item lkt-profile__email lkt-profile__confirmed">melesin@vs-travel.ru</li>                
-                            <!--  lkt-profile__not-confirmed_error -->
+                            <!--  lkt-profile__not-confirmed_error - ошибка при валидации -->
                             <li class="lkt-profile__item lkt-profile__email lkt-profile__not-confirmed lkt-profile__email_active">
                                 <form class="lkt-profile__form" name="tourist_profile_email" novalidate>
-                                    <input class="lkt-profile__input" type="text" name="profile_email" placeholder="Ваша почта">
+                                    <input class="lkt-profile__input lkt-profile__input_no-confirmed" type="text" name="profile_email" placeholder="Ваша почта">
                                     <div class="lkt-profile__wr-buttons">
                                         <button class="lkt-profile__button lkt-profile__confirm" type="button">Подтвердить</button>
                                         <button class="lkt-profile__edit" type="button"></button>
@@ -638,11 +638,11 @@
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man" checked>
+                                                                    <input type="radio" name="gender" value="муж" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="woman">
+                                                                    <input type="radio" name="gender" value="жен">
                                                                     <span>Жен</span>
                                                                 </label>
                                                             </div>
@@ -734,11 +734,11 @@
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man" checked>
+                                                                    <input type="radio" name="gender" value="муж" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="woman">
+                                                                    <input type="radio" name="gender" value="жен">
                                                                     <span>Жен</span>
                                                                 </label>
                                                             </div>
@@ -854,11 +854,11 @@
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man" checked>
+                                                                    <input type="radio" name="gender" value="муж" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="woman">
+                                                                    <input type="radio" name="gender" value="жен">
                                                                     <span>Жен</span>
                                                                 </label>
                                                             </div>
@@ -950,11 +950,11 @@
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man" checked>
+                                                                    <input type="radio" name="gender" value="муж" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="woman">
+                                                                    <input type="radio" name="gender" value="жен">
                                                                     <span>Жен</span>
                                                                 </label>
                                                             </div>
@@ -1002,7 +1002,7 @@
                         <!-- Согласие на обработку персональных данных -->
                         <!-- lkt-order__agree_active -->
                         <div class="lkt-order__agree">
-                            <input class="lkt-order__agree-box" type="checkbox" id="lkt-order__agree-box" hidden>
+                            <input class="lkt-order__agree-box" type="checkbox" id="lkt-order__agree-box">
 
                             <!-- lkt__down-opener_active -->
                             <div class="lkt__down-opener lkt-order__agree-opener"> 
@@ -1014,7 +1014,7 @@
                                 <ul class="lkt-order__agree-list">
                                     <li class="lkt-order__agree-item">
                                         <p class="lkt-order__agree-text">
-                                            Я, <span class="lkt-order__agree-orderer lkt-order__agree-text_bold"></span> <br>
+                                            Я, <span class="lkt-order__agree-text lkt-order__agree-orderer lkt-order__agree-text_bold"></span> <br>
                                             даю согласие на обработку персональных данных в соответствии с Федеральным законом "О персональных данных" от 27.07.2006 № 152-ФЗ, подтверждаю свою полномочность на передачу оператору персональных данных третьих лиц в следующем объеме:
                                             <div class="lkt-order__agree-tourists"></div>
                                         </p>
@@ -1024,7 +1024,7 @@
                                     </li>
                                     <li class="lkt-order__agree-item">
                                         <p class="lkt-order__agree-text">
-                                            <span class="lkt-order__agree-text_bold">Наименование оператора, получающего настоящее согласие, его адрес:</span><br>
+                                            <span class="lkt-order__agree-text lkt-order__agree-text_bold">Наименование оператора, получающего настоящее согласие, его адрес:</span><br>
                                             Общество с ограниченной ответственностью Туристическая фирма «Вокруг света» <br>
                                             Юр. адрес: 111024 г. Москва ул. Авиамоторная, д.12, помещение XIX, комн. 17 <br>
                                             Факт. адрес: 111024 г. Москва ул. Авиамоторная, д.12, оф. 515
@@ -1032,30 +1032,30 @@
                                     </li>
                                     <li class="lkt-order__agree-item">
                                         <p class="lkt-order__agree-text">
-                                            <span class="lkt-order__agree-text_bold">Цель обработки персональных данных:</span> <br>
+                                            <span class="lkt-order__agree-text lkt-order__agree-text_bold">Цель обработки персональных данных:</span> <br>
                                             Осуществление необходимых мероприятий, связанных с деятельностью ООО ТФ «Вокруг света» по договору реализации туристического продукта, предоставление туристских услуг, организация проживания, организация авиа и ж/д. переездов, визовое оформление, осуществление программы поощрения постоянных клиентов.
                                         </p>
                                     </li>
                                     <li class="lkt-order__agree-item">
                                         <p class="lkt-order__agree-text">
-                                            <span class="lkt-order__agree-text_bold">Перечень действий с персональными данными, на совершение которых дается согласие:</span> <br>
+                                            <span class="lkt-order__agree-text lkt-order__agree-text_bold">Перечень действий с персональными данными, на совершение которых дается согласие:</span> <br>
                                             Сбор; запись; систематизация; уточнение (обновление, изменение); извлечение; использование; передача (распространение, предоставление, доступ); удаление; уничтожение; трансграничная передача данных (при выезде за границу РФ).
                                         </p>
                                     </li>
                                     <li class="lkt-order__agree-item">
                                         <p class="lkt-order__agree-text">
-                                            <span class="lkt-order__agree-text_bold">Общее описание способов обработки персональных данных:</span> <br>
+                                            <span class="lkt-order__agree-text lkt-order__agree-text_bold">Общее описание способов обработки персональных данных:</span> <br>
                                             Автоматизированная обработка персональных данных - обработка персональных данных с помощью средств вычислительной техники.
                                         </p>
                                     </li>
                                     <li class="lkt-order__agree-item">
                                         <p class="lkt-order__agree-text">
-                                            <span class="lkt-order__agree-text_bold">Срок, в течение которого действует настоящее согласие:</span> бессрочно.
+                                            <span class="lkt-order__agree-text lkt-order__agree-text_bold">Срок, в течение которого действует настоящее согласие:</span> бессрочно.
                                         </p>
                                     </li>
                                     <li class="lkt-order__agree-item">
                                         <p class="lkt-order__agree-text">
-                                            <span class="lkt-order__agree-text_bold">Способ отзыва настоящего согласия:</span> <br>
+                                            <span class="lkt-order__agree-text lkt-order__agree-text_bold">Способ отзыва настоящего согласия:</span> <br>
                                             Настоящее согласие может быть отозвано на основании письменного заявления субъекта персональных данных. При этом предоставленные данные будут уничтожены, участие в бонусной программе прекращено.
                                         </p>
                                     </li>

@@ -10,6 +10,14 @@ export default class Redraw {
         this.tourists = this.order.querySelector('.lkt-order__parts'); 
         // Блок с согласием на обработку персональных данных
         this.agree = this.order.querySelector('.lkt-order__agree');
+        // Checkbox дано или нет соласие о персональных данных
+        this.isAgree = this.agree.querySelector('.lkt-order__agree-box');
+        // Блок с датой в соглашении о персональных данных
+        this.agreeData = this.agree.querySelector('.lkt-order__agree-date');
+        // Блок для данных заказчика
+        this.placeAgreeOrderer = this.agree.querySelector('.lkt-order__agree-orderer');
+        // Блок для данных туристов
+        this.placeAgreeTourists = this.agree.querySelector('.lkt-order__agree-tourists');
 
         // Дата в письменном согласии на обработку персональных данных
         this.agreeDate = this.order.querySelector('.lkt-order__agree-date');
@@ -20,6 +28,8 @@ export default class Redraw {
         this.changeOrderForm = this.change.querySelector('.lkt-change__form');
         this.changeOrderTextArea = this.changeOrderForm.change_order_text;
 
+        // Кнопка передать данные
+        this.submit = this.order.querySelector('.lkt-order__submit');
         
 
         // -----------------------
@@ -70,6 +80,15 @@ export default class Redraw {
             this.agree.classList.add('lkt-order__agree_active');
             this.controllOpener(this.order.querySelector('.lkt-order__agree-opener'));
         }
+    }
+    /**
+     * @description заполнение данных в согласие о персональных данных
+     * @param {String} orderer
+     * @param {Array} tourists - массив HTML элементов  
+     * */ 
+    fillAgree(orderer, tourists) {
+        this.placeAgreeOrderer.textContent = orderer;
+        tourists.forEach(tourist => this.placeAgreeTourists.append(tourist));
     }
 
     // АВТОзаполнение формы туриста по данным заказчика (Совпадает с данными Заказчика)
@@ -179,4 +198,6 @@ export default class Redraw {
     cutDocs() {
         this.order.querySelector('.lkt-docs').remove();
     }
+
+
 }

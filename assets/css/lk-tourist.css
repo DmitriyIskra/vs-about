@@ -1936,8 +1936,7 @@ label.lkt__checkbox-label > .lkt__checkbox {
     gap: 11px;
 }
 
-.lkt-order__agree-text,
-.lkt-order__agree-text > span {
+.lkt-order__agree-text {
     font-family: 'Roboto';
     font-size: 11px;
     font-style: normal;
@@ -1946,7 +1945,7 @@ label.lkt__checkbox-label > .lkt__checkbox {
     color: #5A5D62;
 }
 
-.lkt-order__agree-text > .lkt-order__agree-text_bold {
+.lkt-order__agree-text_bold {
     font-weight: 500;
 }
 

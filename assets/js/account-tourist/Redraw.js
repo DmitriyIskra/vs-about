@@ -210,4 +210,20 @@ export default class Redraw {
             this.el.style.paddingRight = '';
         }
     }
+
+    /**
+     * @description Создает HTML элемент
+     * @param {HTMLElement} el
+     * @param {null | Array} classNames
+     * @param {null | String} content
+     * @returns {HTMLElement}   
+     * */ 
+    createEl(el, classNames = null, content = null) {
+        const element = document.createElement(el);
+
+        if(classNames) classNames.forEach(c => element.classList.add(c));
+        if(content) element.textContent = content;
+        
+        return element;
+    }
 }

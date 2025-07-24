@@ -1,18 +1,21 @@
 export default class Redraw {
     constructor(aside) {
         this.aside = aside;
-        
-        this.phoneNumber = null;
-        this.email
 
         // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
         this.profileContent = this.aside.querySelector('.lkt-profile__content');
         // Данные профиля, список
         this.profileList = this.aside.querySelector('.lkt-profile__list');
 
+        // Поле подтвержденного email
+        this.confProfileEmail = this.aside.querySelector('.lkt-profile__confirmed')
         // Форма подтверждения email в aside профильные данные ("Ваши данные")
         this.profileEmailForm = this.aside.querySelector('.lkt-profile__form');
         this.profileEmail = this.profileEmailForm.profile_email;
+
+        // данные телефона и почты из соответсвующих полей profile
+        this.profilePhoneData = null;
+        this.profileEmailData = null;
 
         // блок документы в aside
         this.asideDocs = this.aside.querySelector('.lkt-docs');
@@ -30,6 +33,13 @@ export default class Redraw {
             this.asideHideOpen = this.aside.offsetHeight / innerWidth * 100;
             this.aside.style.height = `${this.asideHideOpen}vw`;
         }
+
+        // телефон профиля
+        this.profilePhoneData = this.aside.querySelector('.lkt-profile__item_phone').textContent;
+        // Ищем email профиля
+        const noConfirmedEmail = this.profileEmail.value;
+        const confirmedEmail = this.confProfileEmail.textContent;
+        this.profileEmailData = confirmedEmail || noConfirmedEmail || null;
     }
 
     resizeAside() {
