@@ -2,6 +2,9 @@ export default class Redraw {
     constructor(aside) {
         this.aside = aside;
         
+        this.phoneNumber = null;
+        this.email
+
         // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
         this.profileContent = this.aside.querySelector('.lkt-profile__content');
         // Данные профиля, список

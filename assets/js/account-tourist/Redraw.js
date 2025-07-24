@@ -138,12 +138,12 @@ export default class Redraw {
 
         if(boxState) {
             input.value = 'Нетотчества';
-            input.disabled = true;
+            input.readOnly = true;
             return;
         }
 
         input.value = '';
-        input.disabled = false;
+        input.readOnly = false;
     }
 
 

@@ -23,6 +23,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div class="lkt">
 
         <div class="lkt__wr-main-title">
@@ -500,7 +501,7 @@
                                                 <input class="lkt__input-text" type="text" name="patronimic" required>
                                             </label>
                                             <label class="lkt__checkbox-label lkt__checkbox-patronimic">
-                                                <input class="lkt__checkbox" type="checkbox" value="нетотчества">
+                                                <input class="lkt__checkbox" type="checkbox" name="patronimic-box">
                                                 <span class="lkt__checkbox-title">Отчество отсутствует</span>
                                             </label>
                                         </div>
@@ -509,7 +510,7 @@
                                     <div class="lkt-order__orderer-dinamic lkt-order__orderer-dinamic_active">
                                         <div class="lkt-order__orderer-wr-input">
                                             <div class="lkt__select">
-                                                <input class="lkt__input-select_hidden" type="text" name="document" hidden value="Паспорт" required>
+                                                <input class="lkt__input-select_hidden" type="text" name="document" hidden value="Паспорт">
                                                 <label class="lkt__label-select">
                                                     <span  class="lkt__input-title lkt__input-title_required">Документ</span>
                                                     <span class="lkt__input-text lkt__input-select">Паспорт</span>
@@ -549,7 +550,7 @@
                             </div>
                         </div>
 
-                        <!-- Номера и данные ткристов -->
+                        <!-- Номера в отеле и данные туристов -->
                         <!-- lkt-order__parts_active -->
                         <div class="lkt-order__parts">
 
@@ -563,7 +564,7 @@
                                     <div class="lkt__down-opener lkt-order__part-opener"> 
                                         <!-- lkt-order__part-title-moreday, lkt-order__part-title-oneday - от этого будет зависеть иконка-->
                                         <!-- текст ставим, если один день Путешественники, если много ставим наименование номера из данных -->
-                                        <div class="lkt__down-opener-text lkt__part-opener-text lkt-order__part-title-moreday">Путешественники</div>
+                                        <div class="lkt__down-opener-text lkt__part-opener-text lkt-order__part-title-moreday">2-х стандарт</div>
                                         <div class="lkt__down-opener-icon lkt-order__part-opener-icon"></div>
                                     </div>
 
@@ -586,57 +587,58 @@
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Фамилия</span>
-                                                                <input class="lkt__input-text" type="text" name="secondname">
+                                                                <input class="lkt__input-text" type="text" name="secondname" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Имя</span>
-                                                                <input class="lkt__input-text" type="text" name="name">
+                                                                <input class="lkt__input-text" type="text" name="name" required>
                                                             </label>
                                                         </div> 
                                                         <div class="lkt-order__tourist-wr-input lkt-order__patronimic">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Отчество</span>
-                                                                <input class="lkt__input-text" type="text" name="patronimic">
+                                                                <input class="lkt__input-text" type="text" name="patronimic" required>
                                                             </label>
                                                             <label class="lkt__checkbox-label lkt__checkbox-patronimic">
-                                                                <input class="lkt__checkbox" type="checkbox" value="нетотчества">
+                                                                <input class="lkt__checkbox" type="checkbox" name="patronimic-box">
                                                                 <span class="lkt__checkbox-title">Отчество отсутствует</span>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-phone">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">Телефон</span>
-                                                                <input class="lkt__input-text" type="text" name="phone">
+                                                                <input class="lkt__input-text" type="text" name="phone" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-email">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">E-mail</span>
-                                                                <input class="lkt__input-text" type="text" name="email">
+                                                                <input class="lkt__input-text" type="text" name="email" required>
                                                             </label>
                                                         </div>
+                                                        <!-- пустой элемент для выравнивания сетки -->
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-empty"></div>
 
                                                         <!-- для многодневного тура -->
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-birthday">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Дата рождения</span>
-                                                                <input class="lkt__input-text" type="text" name="birthday" placeholder="дд/мм/гггг">
+                                                                <input class="lkt__input-text" type="text" name="birthday" placeholder="дд/мм/гггг" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-сitizenship">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Гражданство</span>
-                                                                <input class="lkt__input-text" type="text" name="сitizenship">
+                                                                <input class="lkt__input-text" type="text" name="сitizenship" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man">
+                                                                    <input type="radio" name="gender" value="man" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
@@ -663,13 +665,13 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-number-doc">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Серия и номер документа</span>
-                                                                <input class="lkt__input-text" type="text" name="number_doc">
+                                                                <input class="lkt__input-text" type="text" name="number_doc" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-reg-address">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Адрес прописки</span>
-                                                                <input class="lkt__input-text" type="text" name="reg_address">
+                                                                <input class="lkt__input-text" type="text" name="reg_address" required>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -682,35 +684,35 @@
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Фамилия</span>
-                                                                <input class="lkt__input-text" type="text" name="secondname">
+                                                                <input class="lkt__input-text" type="text" name="secondname" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Имя</span>
-                                                                <input class="lkt__input-text" type="text" name="name">
+                                                                <input class="lkt__input-text" type="text" name="name" required>
                                                             </label>
                                                         </div> 
                                                         <div class="lkt-order__tourist-wr-input lkt-order__patronimic">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Отчество</span>
-                                                                <input class="lkt__input-text" type="text" name="patronimic">
+                                                                <input class="lkt__input-text" type="text" name="patronimic" required>
                                                             </label>
                                                             <label class="lkt__checkbox-label lkt__checkbox-patronimic">
-                                                                <input class="lkt__checkbox" type="checkbox" value="нетотчества">
+                                                                <input class="lkt__checkbox" type="checkbox" name="patronimic-box">
                                                                 <span class="lkt__checkbox-title">Отчество отсутствует</span>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-phone">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">Телефон</span>
-                                                                <input class="lkt__input-text" type="text" name="phone">
+                                                                <input class="lkt__input-text" type="text" name="phone" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-email">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">E-mail</span>
-                                                                <input class="lkt__input-text" type="text" name="email">
+                                                                <input class="lkt__input-text" type="text" name="email" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-empty"></div>
@@ -719,20 +721,20 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-birthday">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Дата рождения</span>
-                                                                <input class="lkt__input-text" type="text" name="birthday">
+                                                                <input class="lkt__input-text" type="text" name="birthday" placeholder="дд/мм/гггг" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-сitizenship">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Гражданство</span>
-                                                                <input class="lkt__input-text" type="text" name="сitizenship">
+                                                                <input class="lkt__input-text" type="text" name="сitizenship" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man">
+                                                                    <input type="radio" name="gender" value="man" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
@@ -759,13 +761,13 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-number-doc">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Серия и номер документа</span>
-                                                                <input class="lkt__input-text" type="text" name="number_doc">
+                                                                <input class="lkt__input-text" type="text" name="number_doc" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-reg-address">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Адрес прописки</span>
-                                                                <input class="lkt__input-text" type="text" name="reg_address">
+                                                                <input class="lkt__input-text" type="text" name="reg_address" required>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -779,7 +781,7 @@
                                     <div class="lkt__down-opener lkt-order__part-opener"> 
                                         <!-- lkt-order__part-title-moreday, lkt-order__part-title-oneday - от этого будет зависеть иконка-->
                                         <!-- текст ставим, если один день Путешественники, если много ставим наименование номера из данных -->
-                                        <div class="lkt__down-opener-text lkt__part-opener-text lkt-order__part-title-moreday">Путешественники</div>
+                                        <div class="lkt__down-opener-text lkt__part-opener-text lkt-order__part-title-moreday">1-но стандарт + доп.место</div>
                                         <div class="lkt__down-opener-icon lkt-order__part-opener-icon"></div>
                                     </div>
 
@@ -802,35 +804,35 @@
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Фамилия</span>
-                                                                <input class="lkt__input-text" type="text" name="secondname">
+                                                                <input class="lkt__input-text" type="text" name="secondname" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Имя</span>
-                                                                <input class="lkt__input-text" type="text" name="name">
+                                                                <input class="lkt__input-text" type="text" name="name" required>
                                                             </label>
                                                         </div> 
                                                         <div class="lkt-order__tourist-wr-input lkt-order__patronimic">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Отчество</span>
-                                                                <input class="lkt__input-text" type="text" name="patronimic">
+                                                                <input class="lkt__input-text" type="text" name="patronimic" required>
                                                             </label>
                                                             <label class="lkt__checkbox-label lkt__checkbox-patronimic">
-                                                                <input class="lkt__checkbox" type="checkbox" value="нетотчества">
+                                                                <input class="lkt__checkbox" type="checkbox" name="patronimic-box">
                                                                 <span class="lkt__checkbox-title">Отчество отсутствует</span>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-phone">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">Телефон</span>
-                                                                <input class="lkt__input-text" type="text" name="phone">
+                                                                <input class="lkt__input-text" type="text" name="phone" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-email">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">E-mail</span>
-                                                                <input class="lkt__input-text" type="text" name="email">
+                                                                <input class="lkt__input-text" type="text" name="email" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-empty"></div>
@@ -839,20 +841,20 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-birthday">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Дата рождения</span>
-                                                                <input class="lkt__input-text" type="text" name="birthday">
+                                                                <input class="lkt__input-text" type="text" name="birthday" placeholder="дд/мм/гггг" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-сitizenship">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Гражданство</span>
-                                                                <input class="lkt__input-text" type="text" name="сitizenship">
+                                                                <input class="lkt__input-text" type="text" name="сitizenship" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man">
+                                                                    <input type="radio" name="gender" value="man" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
@@ -879,13 +881,13 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-number-doc">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Серия и номер документа</span>
-                                                                <input class="lkt__input-text" type="text" name="number_doc">
+                                                                <input class="lkt__input-text" type="text" name="number_doc" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-reg-address">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Адрес прописки</span>
-                                                                <input class="lkt__input-text" type="text" name="reg_address">
+                                                                <input class="lkt__input-text" type="text" name="reg_address" required>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -898,35 +900,35 @@
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Фамилия</span>
-                                                                <input class="lkt__input-text" type="text" name="secondname">
+                                                                <input class="lkt__input-text" type="text" name="secondname" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Имя</span>
-                                                                <input class="lkt__input-text" type="text" name="name">
+                                                                <input class="lkt__input-text" type="text" name="name" required>
                                                             </label>
                                                         </div> 
                                                         <div class="lkt-order__tourist-wr-input lkt-order__patronimic">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Отчество</span>
-                                                                <input class="lkt__input-text" type="text" name="patronimic">
+                                                                <input class="lkt__input-text" type="text" name="patronimic" required>
                                                             </label>
                                                             <label class="lkt__checkbox-label lkt__checkbox-patronimic">
-                                                                <input class="lkt__checkbox" type="checkbox" value="нетотчества">
+                                                                <input class="lkt__checkbox" type="checkbox" name="patronimic-box">
                                                                 <span class="lkt__checkbox-title">Отчество отсутствует</span>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-phone">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">Телефон</span>
-                                                                <input class="lkt__input-text" type="text" name="phone">
+                                                                <input class="lkt__input-text" type="text" name="phone" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-email">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title">E-mail</span>
-                                                                <input class="lkt__input-text" type="text" name="email">
+                                                                <input class="lkt__input-text" type="text" name="email" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-empty"></div>
@@ -935,20 +937,20 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-birthday">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Дата рождения</span>
-                                                                <input class="lkt__input-text" type="text" name="birthday">
+                                                                <input class="lkt__input-text" type="text" name="birthday" placeholder="дд/мм/гггг" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-сitizenship">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Гражданство</span>
-                                                                <input class="lkt__input-text" type="text" name="сitizenship">
+                                                                <input class="lkt__input-text" type="text" name="сitizenship" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-wr-gender">
                                                             <span  class="lkt__input-title lkt__input-title_required">Пол</span>
                                                             <div class="lkt-order__tourist-gender">
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
-                                                                    <input type="radio" name="gender" value="man">
+                                                                    <input type="radio" name="gender" value="man" checked>
                                                                     <span>Муж</span>
                                                                 </label>
                                                                 <label class="lkt__radio-label lkt-order__radio-label_gender">
@@ -975,13 +977,13 @@
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-number-doc">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Серия и номер документа</span>
-                                                                <input class="lkt__input-text" type="text" name="number_doc">
+                                                                <input class="lkt__input-text" type="text" name="number_doc" required>
                                                             </label>
                                                         </div>
                                                         <div class="lkt-order__tourist-wr-input lkt-order__tourist-reg-address">
                                                             <label class="lkt__label">
                                                                 <span  class="lkt__input-title lkt__input-title_required">Адрес прописки</span>
-                                                                <input class="lkt__input-text" type="text" name="reg_address">
+                                                                <input class="lkt__input-text" type="text" name="reg_address" required>
                                                             </label>
                                                         </div>
                                                     </div>

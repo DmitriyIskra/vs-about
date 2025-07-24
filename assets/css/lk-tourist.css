@@ -1719,7 +1719,7 @@ label.lkt__checkbox-label > .lkt__checkbox {
 
 .lkt__part-opener-text {
     display: grid;
-    grid-template-columns: min-content min-content;
+    grid-template-columns: min-content max-content;
     grid-template-rows: min-content 4px;
     align-items: end;
     font-size: 20px;

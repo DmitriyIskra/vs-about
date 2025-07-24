@@ -133,35 +133,9 @@ export default class Controll {
 
         // Открыть формы для туристов
         if(e.target.closest('.lkt-order__orderer-submit')) {
-            const days = this.draws.order.ordererForm.dataset.type;
-            let reqInputs = null;
-            // отбираем обязательные поля для проверки
-            if(days === 'one') {
-                reqInputs = [...this.draws.order.ordererForm.firstElementChild
-                    .querySelectorAll('input[required]')];
-                }
-                if(days === 'more') {
-                reqInputs = [...this.draws.order.ordererForm.querySelectorAll('input[required]')];
-            }
+            const resultValidation = this.validationOrderer();
+            if(!resultValidation) return;
 
-            // Все ли обязательные поля заполненны
-            let isFillAll = null; 
-            if(reqInputs) {
-                isFillAll = this.validator.isFilledInputsText(reqInputs);
-            }
-            // перебираем поля которые не были заполненны и ставим не валидность
-            if(isFillAll.length) {
-                isFillAll.forEach(input => {
-                    this.draws.main.setInvalidPlace(input, 'Все поля отмеченные звездочкой обязательны для заполнения');
-                    input.addEventListener('input', (e) => {
-                        this.draws.main.removeInvalidPlace(e.target);
-                    })
-                });
-
-                return;
-            }
-
-            
             const target = e.target.closest('.lkt-order__orderer-submit');
             this.draws.order.showTouristsForms();
             this.draws.main.disableButton(target); // блокировка кнопки
@@ -179,13 +153,26 @@ export default class Controll {
             this.draws.order.touristIsOrder(target, data);
         } 
 
-        // ПЕРСОНАЛЬНЫЕ ДАННЫЕ Открыть согласие на использование персональных данных
+        // Открыть согласие на использование персональных данных
         if(e.target.closest('.lkt-order__parts-confirm')) {
+            // валидация формы заказчика и туристов
+            const validatedOrderer = this.validationOrderer();
+            const validationResult = this.validationTourists();
+            if(!validatedOrderer || !validationResult) return;
+   
             const target = e.target.closest('.lkt-order__parts-confirm');
             this.draws.main.disableButton(target); // блокировка кнопки
+            
+            // парсим данные туристов и заказчика в массив объектов
+            const touristsData = this.parseTourists();
+            const ordererData = Object.fromEntries(new FormData (this.draws.order.ordererForm));
+            
+            // Заполняем пользовательское соглашение
+            
+            // Формируем строку про заказчика 
+            
             this.draws.order.showAgree();
 
-            // !!!!!!!!!!!!! заполнять !!!!!!!!!!!!!!
         }
         // принятие и закрытие
         if(e.target.closest('.lkt-order__agree-confirm')) {
@@ -254,6 +241,156 @@ export default class Controll {
         }
     }
 
+    // валидация заказчика
+    validationOrderer() {
+        const days = this.draws.order.ordererForm.dataset.type;
+        let reqInputs = null;
+        // отбираем обязательные поля для проверки
+        if(days === 'one') {
+            reqInputs = [...this.draws.order.ordererForm.firstElementChild
+                .querySelectorAll('input[required]')];
+            }
+            if(days === 'more') {
+            reqInputs = [...this.draws.order.ordererForm.querySelectorAll('input[required]')];
+        }
+
+        // Все ли обязательные поля заполненны
+        let noFillInputs = null; 
+        if(reqInputs) {
+            noFillInputs = this.validator.isFilledInputsText(reqInputs);
+        }
+        // перебираем поля которые не были заполненны и ставим не валидность
+        if(noFillInputs.length) {
+            noFillInputs.forEach(input => {
+                this.draws.main.setInvalidPlace(
+                    input, 'Все поля отмеченные звездочкой обязательны для заполнения'
+                );
+
+                input.addEventListener('input', (e) => {
+                    this.draws.main.removeInvalidPlace(e.target);
+                })
+            });
+
+            return false;
+        }
+
+        return true;
+    }
+
+    // валидация туристов
+    validationTourists() {
+        const reqInputs = [...this.draws.order.tourists.querySelectorAll('input[type=text][required]')];
+
+        // проверяем заполенны ли поля
+        let noFillInputs;
+        if(reqInputs.length) noFillInputs = this.validator.isFilledInputsText(reqInputs);
+        // перебираем поля которые не были заполненны и ставим не валидность
+        if(noFillInputs.length) {
+            noFillInputs.forEach(input => {
+                this.draws.main.setInvalidPlace(
+                    input, 'Все поля отмеченные звездочкой обязательны для заполнения'
+                );
+
+                input.addEventListener('input', (e) => {
+                    this.draws.main.removeInvalidPlace(e.target);
+                })
+            });
+
+            return;
+        }
+
+        // валидация email
+        const emailInputs = [...this.draws.order.tourists.querySelectorAll('input[type=text][name=email]')];
+        const noValidEmails = emailInputs.filter(email => !this.validator.validationEmail(email.value));
+        if(noValidEmails.length) {
+            noValidEmails.forEach(input => {
+                this.draws.main.setInvalidPlace(
+                    input, 'Поле заполненно некорректно'
+                );
+
+                input.addEventListener('input', (e) => {
+                    this.draws.main.removeInvalidPlace(e.target);
+                })
+            });
+        }
+
+        // валидация телефона
+        const phoneInputs = [...this.draws.order.tourists.querySelectorAll('input[type=text][name=email]')];
+        const noValidPhones = phoneInputs.filter(phone => !this.validator.validationEmail(phone.value));
+        if(noValidPhones.length) {
+            noValidPhones.forEach(input => {
+                this.draws.main.setInvalidPlace(
+                    input, 'Поле заполненно некорректно'
+                );
+
+                input.addEventListener('input', (e) => {
+                    this.draws.main.removeInvalidPlace(e.target);
+                })
+            });
+        }
+
+        // валидация даты рождения
+        const birthdayInputs = [...this.draws.order.tourists.querySelectorAll('input[name=birthday]')];
+        const noValidBirthday = birthdayInputs.filter(birthday => {
+            return !/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/.test(birthday.value)
+        });
+
+        if(noValidBirthday.length) {
+            noValidBirthday.forEach(input => {
+                this.draws.main.setInvalidPlace(
+                    input, 'Поле заполненно некорректно'
+                );
+
+                input.addEventListener('input', (e) => {
+                    this.draws.main.removeInvalidPlace(e.target);
+                })
+            });
+        }
+
+        if(noFillInputs.length || noValidEmails.length || noValidPhones.length || noValidBirthday.length) {
+            return false;
+        }
+
+        return true;
+    }
+
+    // сбор данных из форм туристов
+    parseTourists() {
+        const rooms = [...this.draws.order.tourists.querySelectorAll('.lkt-order__parts-item')];
+
+        let data = [];
+
+        rooms.forEach(room => {
+            const roomName = room.querySelector('.lkt__part-opener-text').textContent;
+            const roomTouristsForms = [...room.querySelectorAll('form')];
+
+            let touristsData = [];
+
+            // start
+            roomTouristsForms.forEach(touristForm => {
+                const touristTitle = touristForm.firstElementChild.textContent;
+
+                const touristData = Object.fromEntries(new FormData(touristForm));
+
+                touristsData.push(
+                    {
+                        title : touristTitle,
+                        data : touristData,
+                    }
+                );
+            }) // end
+
+            data.push(
+                {
+                    roomTitle : roomName,
+                    tourists : touristsData,
+                }
+            );
+        })
+
+        return data;
+    }
+
     // Перестраивает страницу под окно мобильное или нет
     // вызывая соответствующие методы отвечающие за те или иные области страницы
     rebuildPage(e) {
@@ -308,14 +445,14 @@ export default class Controll {
             }
 
             if(birthdays.length) {
-                birthdays.forEach(phone => {
+                birthdays.forEach(birthday => {
                     const maskOptions = {
                         mask: '00/00/0000',
                         // lazy: true,
                         // placeholderChar: '0',
                     };
             
-                    IMask(phone, maskOptions);
+                    IMask(birthday, maskOptions);
                 })
             }
         }

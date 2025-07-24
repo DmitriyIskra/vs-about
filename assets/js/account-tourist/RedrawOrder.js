@@ -72,29 +72,39 @@ export default class Redraw {
         }
     }
 
-    // Заполнение формы туриста по данным заказчика (Совпадает с данными Заказчика)
+    // АВТОзаполнение формы туриста по данным заказчика (Совпадает с данными Заказчика)
     // traget - HTML элемент label радио кнопки, от него отталкиваемся при поиске формы
     // для заполнения
     touristIsOrder(target, data) {
+        // принцип действия если уже заполнялось - очищаем, актуальную заполняем
+
         // когда уже был выбран пункт заполнить по данным заказчика, а потом его нажали в другой форме
+        // или нажали на тот же пункт
+        // очищает данные в текущей форме
         if(this.currentMatchForm && this.currentMatchLabelBox) {
+            // выключаем чекбокс "Совпадает с данными заказчика"
             this.currentMatchLabelBox.checked = false;
+            // очищаем данные формы
             this.currentMatchForm.reset();
+            this.currentMatchForm.document.nextElementSibling.children[1]
+                .textContent = 'Паспорт';
         };
         
-        // Если чекбокс совпадает был нажат а потом отжат
+        // Если чекбокс совпадает, был нажат а потом отжат
         if(this.currentMatchLabelBox && this.currentMatchLabelBox === target) {
             this.currentMatchLabelBox = null;
             this.currentMatchForm = null;
             return;
         };
 
-        // чекбокс в строке  "Совпадает с данными заказчика"
+        // заполнение данных и включение чекбокса
+        // чекбокс в строке  "Совпадает с данными заказчика", включить
         this.currentMatchLabelBox = target;
         this.currentMatchLabelBox.checked = true;
 
         // форма первого туриста в данном номере
         this.currentMatchForm = target.closest('.lkt-order__data-content').querySelector('form');
+
 
         // Заполняем форму данными из заказчика
         // активируем чекбокс который говорит о том что данные этого туриста совпадают с данными заказчика
@@ -104,10 +114,12 @@ export default class Redraw {
         dataKeys.forEach(key => {
             // заполнение текстовых полей
             if(this.currentMatchForm[key].type === 'text') this.currentMatchForm[key].value = data[key];
-            // if(this.currentMatchForm[key]?.type === 'text')
-            console.log(key);
-            console.log(data[key]);
-            console.log(this.currentMatchForm[key]); 
+            // кнопка нет отчества
+            if(key === 'patronimic-box' && data[key] === 'on') this.currentMatchForm[key].checked = true;
+            // Отображение выбранного документа в select, в input селекта значение ставится в строке
+            // а здесь нужно поставить в span, чтобы визуально отобразить документ
+            if(key === 'document') this.currentMatchForm[key].nextElementSibling.children[1]
+                .textContent = data[key];
         });
     }
 
