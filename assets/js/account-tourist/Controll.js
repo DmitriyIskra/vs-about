@@ -1,12 +1,15 @@
 export default class Controll {
-    constructor(draws, validator) {
+    constructor(draws, reqApi, validator, loader) {
         this.draws = draws;
+        this.reqApi = reqApi;
         this.validator = validator;
+        this.loader = loader;
 
         this.activatedSize = null;
         
         this.click = this.click.bind(this);
         this.input = this.input.bind(this);
+        this.change = this.change.bind(this);
         this.rebuildPage = this.rebuildPage.bind(this);
     }
 
@@ -27,6 +30,9 @@ export default class Controll {
 
         // регистрация маски на поля для ввода телефона
         this.registerMasks();
+
+        // Инициализируем Loader
+        this.loader.init();
     }
 
     registerEvents() {
@@ -34,7 +40,7 @@ export default class Controll {
 
         this.draws.aside.profileEmail.addEventListener('input', this.input);
         this.draws.main.questionArea.addEventListener('input', this.input);
-        // this.draws.order.changeOrderTextArea.addEventListener('input', this.input);
+        this.draws.order.isAgree.addEventListener('change', this.change);
         this.draws.main.textAreaCollection.forEach(area => area.addEventListener('input', this.input));
     }
 
@@ -167,10 +173,10 @@ export default class Controll {
             this.draws.main.disableButton(target); // блокировка кнопки
             
             // парсим данные туристов и заказчика в массив объектов
-            const touristsData = this.parseTourists();
             const ordererData = Object.fromEntries(new FormData (this.draws.order.ordererForm));
             if(this.draws.aside.profilePhoneData) ordererData.phone = this.draws.aside.profilePhoneData;
             if(this.draws.aside.profileEmailData) ordererData.email = this.draws.aside.profileEmailData;
+            const touristsData = this.parseTourists();
             
             // Заполняем пользовательское соглашение
             // Формируем строку про заказчика 
@@ -200,24 +206,8 @@ export default class Controll {
             this.draws.order.showAgree();
 
         }
-        // принятие и закрытие согласие на использование персональных данных
-        if(e.target.closest('.lkt-order__agree-confirm')) {
-            console.log(this.draws.order.isAgree.checked);
-            if(!this.draws.order.isAgree.checked) {
-                this.draws.main.disableButton(this.draws.order.submit);
-                return;
-            };
-
-            // если согласие снято блокируем обратно и не закрываем
-
-            // закрываем
-            const parent = e.target.closest('.lkt-order__agree-wr-confirm');
-            const opener = parent.parentElement.previousElementSibling;
-            this.draws.order.controllOpener(opener);
-
-            // Разблокируем кнопку "Передать данные"
-            this.draws.main.unDisableButton(this.draws.order.submit);
-        }
+        // принятие и закрытие блока согласия на использование персональных данных
+        // происходит по событию change который описан ниже
 
         // Отправка данных
         if(e.target.closest('.lkt-order__submit')) {
@@ -227,12 +217,24 @@ export default class Controll {
             if(!validatedOrderer || !validationResult) return;
 
             // парсим данные туристов и заказчика в массив объектов
-            const touristsData = this.parseTourists();
             const ordererData = Object.fromEntries(new FormData (this.draws.order.ordererForm));
             if(this.draws.aside.profilePhoneData) ordererData.phone = this.draws.aside.profilePhoneData;
             if(this.draws.aside.profileEmailData) ordererData.email = this.draws.aside.profileEmailData;
+            const touristsData = this.parseTourists();
             const agree = this.draws.order.isAgree.checked;
             const agreeDate = this.draws.order.agreeData.textContent;
+
+            const data = {
+                orderer: ordererData,
+                tourists: touristsData,
+                agreeData: {agree, agreeDate},
+            }
+
+            this.loader.show();
+            (async () => {
+                const resSend = await this.reqApi.createOrderData(data);
+                this.loader.hide();
+            })();
         }
 
 
@@ -291,6 +293,24 @@ export default class Controll {
             
             if(length <= this.draws.main.limitTextArea) this.draws.main.textAreaCounter(counter, length);
             if(length >= this.draws.main.limitTextArea) this.draws.main.limiterTextArea(e.target, e.target.value);
+        }
+    }
+
+    change(e) {
+        // принятие и закрытие согласие на использование персональных данных
+        if(e.target.matches('.lkt-order__agree-box')) {
+            // если согласие снято блокируем кнопку обратно и не закрываем
+            if(!e.target.checked) {
+                this.draws.main.disableButton(this.draws.order.submit);
+                return;
+            };
+
+            // закрываем
+            const opener = e.target.nextElementSibling;
+            this.draws.order.controllOpener(opener);
+
+            // Разблокируем кнопку "Передать данные"
+            this.draws.main.unDisableButton(this.draws.order.submit);
         }
     }
 

@@ -8,12 +8,19 @@ export default class Loader {
     }
 
     show() {
+        if(innerWidth > 1024) {
+            document.body.style.paddingRight = `${innerWidth - document.body.offsetWidth}px`;
+        }
+
         document.body.style.overflow = 'hidden';
         this.loader.setAttribute('active', '');
+
     }
     
     hide() {
         document.body.style.overflow = '';
         this.loader.removeAttribute('active', '');
+
+        document.body.style.paddingRight = '';
     }
 }

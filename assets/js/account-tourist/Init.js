@@ -5,7 +5,9 @@ export default class Init {
         const Redraw = (await import('./Redraw.js')).default;
         const RedrawAside = (await import('./RedrawAside.js')).default;
         const RedrawOrder = (await import('./RedrawOrder.js')).default;
+        const RequestApi = (await import('./RequestApi.js')).default;
         const Validation = (await import('../validation-places-form/ValidationPlacesForm.js')).default;
+        const Loader = (await import('../loader/Controll.js')).default;
 
         const drows = {
             main: new Redraw(el),
@@ -19,7 +21,9 @@ export default class Init {
 
         const controll = new Controll(
             drows,
-            new Validation()
+            new RequestApi(),
+            new Validation(),
+            new Loader,
         )
 
         controll.init();

@@ -15,7 +15,7 @@ export default class RequestApi {
         }
     }
 
-    // Конкретный заказ
+    // Конкретный заказ получить данные
     async readOrder(id) {
         try {
             const response = await fetch(`${this.paths.read}`);
@@ -23,6 +23,29 @@ export default class RequestApi {
             return data;
         } catch (error) {
             throw new Error('');
+        }
+    }
+
+    // Дооформление заказа, отправка данных заказчика, туристов, и соглашения
+    async createOrderData(data) {
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                return res(true);
+            }, 2000)
+        })
+        try {
+            const response = await fetch('', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+
+            const result = response.json();
+            return result;
+        } catch (error) {
+            throw new Error('Ошибка отправки данных для оформления заказа. Текст ошибки: \n', error);
         }
     }
 
