@@ -28,6 +28,13 @@ export default class Controll {
         const observer = new ResizeObserver(this.rebuildPage, { box: 'border-box' });
         observer.observe(document.body);
 
+        // перемещение блока ДОКУМЕНТЫ
+        // перемещаем в мобилку (в заказ в самый низ)
+        if(innerWidth <= 1024 && this.draws.aside.asideDocs.closest('.lkt__aside')) {
+            const docs = this.draws.aside.cutDocs();
+            this.draws.order.pasteDocs(docs);
+        } 
+
         // регистрация маски на поля для ввода телефона
         this.registerMasks();
 
@@ -209,7 +216,7 @@ export default class Controll {
         // принятие и закрытие блока согласия на использование персональных данных
         // происходит по событию change который описан ниже
 
-        // Отправка данных
+        // Отправка данных по заказу
         if(e.target.closest('.lkt-order__submit')) {
             // валидация формы заказчика и туристов
             const validatedOrderer = this.validationOrderer();
@@ -242,12 +249,20 @@ export default class Controll {
         if(e.target.closest('.lkt-docs__link_change')) this.draws.order.fillNumberOrderChange();
         // Отправка запроса на изменение заказа
         if(e.target.closest('.lkt-change__button')) {
-            const isTextFromArea = this.draws.order.changeOrderTextArea.value.length;
-            if(!isTextFromArea) {
+            const formData = new FormData(this.draws.order.changeOrderForm);
+            if(!formData.get('number_order') || !formData.get('change_order_text')) {
                 this.draws.main.setInvalidPlace(
                     this.draws.order.changeOrderTextArea, 'Поле обязательно для заполнения'
                 );
+
+                return;
             }
+
+            this.loader.show();
+            (async () => {
+                const resSend = await this.reqApi.createQuestion(formData);
+                this.loader.hide();
+            })()
         }
         // END ORDER
 
@@ -261,6 +276,12 @@ export default class Controll {
                 this.draws.main.setInvalidPlace(this.draws.main.questionArea, 'Задайте Ваш вопрос');
                 return;
             }
+
+            this.loader.show();
+            (async () => {
+                const resSend = await this.reqApi.createQuestion(formData);
+                this.loader.hide();
+            })()
         }
         // END ЗАДАТЬ ВОПРОС
 

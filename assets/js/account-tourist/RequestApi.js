@@ -28,18 +28,14 @@ export default class RequestApi {
 
     // Дооформление заказа, отправка данных заказчика, туристов, и соглашения
     async createOrderData(data) {
-        return new Promise((res, rej) => {
-            setTimeout(() => {
-                return res(true);
-            }, 2000)
-        })
+        return new Promise((res, rej) => setTimeout(() => res(true), 2000));
         try {
             const response = await fetch('', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'multipart/form-data',
                 },
-                body: JSON.stringify(data)
+                body: data,
             })
 
             const result = response.json();
@@ -51,6 +47,7 @@ export default class RequestApi {
 
     // Запрос на изменение заказа
     async createOrderChange(data) {
+        return new Promise((res, rej) => setTimeout(() => res(true), 2000));
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
@@ -85,13 +82,14 @@ export default class RequestApi {
 
     // Задать вопрос
     async createQuestion(data) {
+        return new Promise((res, rej) => setTimeout(() => res(true), 2000));
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : '',
+                    'Content-Type' : 'multipart/form-data',
                 },
-                body: JSON.stringify(data),
+                body: data,
             });
             const result = await response.json();
             return result;
