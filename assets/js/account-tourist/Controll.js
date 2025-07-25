@@ -244,7 +244,7 @@ export default class Controll {
             })();
         }
 
-
+        // Запрос на изменение
         // При открытии запроса на изменение по заказу, авто заполнение номера
         if(e.target.closest('.lkt-docs__link_change')) this.draws.order.fillNumberOrderChange();
         // Отправка запроса на изменение заказа
@@ -264,6 +264,10 @@ export default class Controll {
                 this.loader.hide();
             })()
         }
+
+        // Запрос на аннуляцию
+        // !!!!!!!!! АНУЛЯЦИЯ ЗАПОЛНЕНИЕ НОМЕРА ЗАКАЗА И ОТПРАВКА !!!!!!!
+
         // END ORDER
 
 
