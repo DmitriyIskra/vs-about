@@ -32,6 +32,7 @@ input:focus, textarea:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 63px;
 }
 
 .lkt__wr-main-title {
@@ -82,7 +83,6 @@ input:focus, textarea:focus {
 
 .lkt__aside {
     width: 331px;
-    padding-bottom: 55px;
 }
 
 .lkt__avatar {
@@ -672,8 +672,6 @@ input:focus, textarea:focus {
 /* Экземпляр контента */
 .lkt-main__content {
     position: relative;
-
-    overflow: hidden;
 }
 
 .lkt-main__content-item {
@@ -705,7 +703,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Список мои путешествия */
 .lkt__journeys {
     margin-top: 18px;
-    padding-bottom: 68px;
 }
 
 .lkt__journeys-list {
@@ -893,6 +890,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 .lkt__journeys-date {
     display: flex;
+    align-items: center;
     gap: 10px;
 
     font-family: 'Roboto';
@@ -916,6 +914,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 .lkt__journeys-doc {
+    display: block;
     height: 20px;
     width: 17px;
 
@@ -1102,6 +1101,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     cursor: pointer;
 }
 
+.lkt__journeys-wr-button {
+    align-self: end;
+}
+
 .lkt__journeys-button {
     display: grid;
     place-items: center;
@@ -1122,6 +1125,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     cursor: pointer;
 }
 
+.lkt__journeys-button_disabled {
+    opacity: 50%;
+
+    pointer-events: none;
+}
+
 .lkt__journeys-button:hover {
     background: #ed5f00;
 }
@@ -1135,7 +1144,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Заказ */
 .lkt-order {
     margin-top: 18px;
-    padding-bottom: 68px;
 }
 
 .lkt-order__data {
@@ -2036,26 +2044,37 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 .lkt-history {
     margin-top: 18px;
-    padding-bottom: 68px;
 }
 
 .lkt-history__content {
     padding: 15px 16px 0 14px;
 }
 
+.lkt__history-price {
+    justify-self: end;
+
+    font-size: 16px;
+    color: #000;
+}
+
+.lkt__history-price > span {
+    font-size: 16px;
+    color: #000;
+}
+
 .lkt-history__wr-state {
     width: 100%;
 }
 
-.lkt-history__wr-state[data-state="paid"] > div[data-state="paid"],
-.lkt-history__wr-state[data-state="annulated"] > div[data-state="annulated"],
-.lkt-history__wr-state[data-state="cancelled"] > div[data-state="cancelled"],
-.lkt-history__wr-state[data-state="completed"] > div[data-state="completed"],
-.lkt-history__wr-state[data-state="in-progress"] > div[data-state="in-progress"] {
+.lkt-history__wr-state[data-state="paid"] > li[data-state="paid"],
+.lkt-history__wr-state[data-state="annulated"] > li[data-state="annulated"],
+.lkt-history__wr-state[data-state="cancelled"] > li[data-state="cancelled"],
+.lkt-history__wr-state[data-state="completed"] > li[data-state="completed"],
+.lkt-history__wr-state[data-state="in-progress"] > li[data-state="in-progress"] {
     display: flex;
 }
 
-.lkt-history__wr-state > div {
+.lkt-history__wr-state > li {
     margin-bottom: 24px;
 }
 
@@ -2090,7 +2109,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Избранное */
 .lkt-favorites {
     margin-top: 18px;
-    padding-bottom: 68px;
 }
 
 .lkt-favorites__list {
@@ -2251,7 +2269,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Задать вопрос */
 .lkt-question {
     margin-top: 38px;
-    padding-bottom: 164px;
 }
 
 .lkt-question__title {
@@ -2452,7 +2469,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 /* Запрос на аннуляцию */
 .lkt-annulation {
     margin-top: 38px;
-    padding-bottom: 145px;
 }
 
 .lkt-annulation__wr-title {
@@ -2628,6 +2644,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 /* START 1024 */
 @media(max-width: 1024px) {
+    .lkt {
+        padding-bottom: 20.80vw;
+    }  
+}
+
+@media(max-width: 1024px) {
     .lkt__wr-main-title {
         width: 84.9vw;
         margin-top: 9.33vw;
@@ -2661,7 +2683,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt__aside {
         width: 91.468%; /*94.4%*/
-        padding-bottom: 0;
 
         overflow: hidden;
     }
@@ -3015,7 +3036,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt__journeys {
         margin-top: 9.33vw;
-        padding-bottom: 19.73vw;
     }
 }
 
@@ -3028,8 +3048,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt__journeys-item {
-        display: block;
+        flex-direction: column;
         height: auto;
+        min-height: 163.47vw;
         width: 94.4%;
 
         box-shadow: none;
@@ -3050,7 +3071,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt__journeys-content {
-        padding: 3.73vw 3.20vw 5.07vw;
+        flex-grow: 1;
+        margin-top: -0.7vw;
+        padding: 4.23vw 3.20vw 5.07vw;
 
         border-radius: 0 0 2.13vw 2.13vw;
         box-shadow: 0px -0.80vw 4.73vw 1.60vw rgba(0, 0, 0, 0.2);
@@ -3120,9 +3143,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt__journeys-data {
-        display: block;
+        flex-direction: column;
         margin-top: 4.80vw;
-        gap: 23px;
+        gap: 4vw;
     }
 }
 
@@ -3141,12 +3164,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt__journeys-wr-doc {
-        margin-top: 4vw;
-    }
-}
-
-@media(max-width: 1024px) {
     .lkt__journeys-doc {
         height: 6.13vw;
         width: 5.07vw;
@@ -3154,8 +3171,15 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt__journeys-content-bottom {
-        margin-top: -3.9vw;
+    .lkt__journeys-state-item {
+        grid-template-rows: repeat(3, min-content);
+    }   
+}
+
+@media(max-width: 1024px) {
+    .lkt__journeys-state-info {
+        grid-column: 1 / 3;
+        grid-row: 1;
     }
 }
 
@@ -3178,6 +3202,15 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
+    .lkt__journeys-pay {
+        margin-top: 5.5vw;
+        width: fit-content;
+        align-items: start;
+        align-self: center;
+    }
+}
+
+@media(max-width: 1024px) {
     .lkt__journeys-before {
         font-size: 2.13vw;
     }
@@ -3185,6 +3218,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt__journeys-pay-summ {
+        align-self: center;
+
         font-size: 4.27vw;
     }
     
@@ -3194,8 +3229,41 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
+    .lkt__journeys-confirm {
+        margin-top: 3.73vw;
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }   
+}
+
+@media(max-width: 1024px) {
     .lkt__checkbox-label {
         gap: 4vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt__checkbox {
+        padding: 1.07vw;
+        border: 0.80vw solid #f2f2f2;
+    }   
+}
+
+@media(max-width: 1024px) {
+    .lkt__journeys-box-title {
+        font-size: 3.73vw;
+    }   
+
+    .lkt__journeys-agreement-link {
+        font-size: 3.73vw;
+        text-underline-offset: 0px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt__journeys-wr-button {
+        margin-top: 5.33vw;
+        align-self: initial;
     }
 }
 
@@ -3216,7 +3284,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt-order {
         margin-top: 9.33vw;
-        padding-bottom: 20vw;
     }
 }
 
@@ -3508,11 +3575,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt__checkbox {
-        padding: 1.07vw;
-        border: 0.80vw solid rgba(255, 255, 255, 1);
-    }
-
     .lkt__checkbox-patronimic > .lkt__checkbox {
         padding: 1.07vw;
         border: 0.80vw solid #F2F2F2;
@@ -3871,7 +3933,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt-history {
         margin-top: 9.33vw;
-        padding-bottom: 13.87vw;
     }
 }
 
@@ -3909,7 +3970,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt-favorites {
         margin-top: 9.33vw;
-        padding-bottom: 13.87vw;
     }
 }
 
@@ -3999,7 +4059,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt-question {
         margin-top: 0;
         padding-top: 4.53vw;
-        padding-bottom: 16.80vw;
     }
 }
 
@@ -4160,7 +4219,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt-annulation {
         margin-top: 0;
         padding-top: 9.07vw;
-        padding-bottom: 16.80vw;
     }
 }
 

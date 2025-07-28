@@ -79,6 +79,22 @@ export default class Controll {
             ) this.draws.aside.hideAsideDocs();
         }
 
+        // Подтверждаю ознакомление и согласие "checkbox" возле кнопки оплатить
+        if(e.target.closest('.lkt__journeys-label-confirm')) {
+                e.preventDefault();
+                const target = e.target.closest('.lkt__journeys-label-confirm');
+                const stateItem = target.closest('.lkt__journeys-state-item'); 
+                const buttonPay = stateItem.querySelector('.lkt__journeys-button');
+                
+                const box = target.firstElementChild;
+
+                !box.checked ? box.checked = true : box.checked = false;
+                buttonPay.classList.toggle('lkt__journeys-button_disabled');
+
+
+                console.log('label-confirm', box.checked);
+        }
+
         // НЕТ ОТЧЕСТВА
         if(e.target.closest('.lkt__checkbox-patronimic')) {
             const target = e.target.closest('.lkt__checkbox-patronimic');
@@ -346,9 +362,6 @@ export default class Controll {
             })()
         }
         // END ЗАДАТЬ ВОПРОС
-
-        
-
     }
 
     input(e) {
