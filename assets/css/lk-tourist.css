@@ -230,29 +230,6 @@ input:focus, textarea:focus {
     box-shadow: none;
 }
 
-.lkt-profile__edit {
-    width: 20px;
-    height: 20px;
-
-    border-radius: 2px;
-    background-color: #FFF;
-    background-image: url('../i/icon-pencil.svg');
-    background-repeat: no-repeat;
-    background-size: 12px;
-    background-position: center;
-    box-shadow: 2px 2px 4.3px -1px rgba(0, 0, 0, 0.25);
-    
-    cursor: pointer;
-}
-
-.lkt-profile__edit:hover {
-    box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.25);
-}
-
-.lkt-profile__edit:active {
-    box-shadow: none;
-}
-
 .lkt-profile__email {
     display: none;
 }
@@ -367,10 +344,12 @@ input:focus, textarea:focus {
     background-position: center;
 }
 
+.lkt__cont-switcher_active {
+    pointer-events: none;
+}
+
 .lkt-question-aside__button.lkt__cont-switcher_active {
     color: #FF732D;
-
-    pointer-events: none;
 }
 
 .lkt-question-aside__button.lkt__cont-switcher_active::before {
@@ -645,8 +624,6 @@ input:focus, textarea:focus {
 
 .lkt__header-item.lkt__cont-switcher_active {
     background: linear-gradient(90deg, #FF732D 0%, #F32F2F 100%);
-
-    pointer-events: none;
 }
 
 .lkt__header-item:hover {
@@ -767,7 +744,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    padding: 15px 16px 17px 14px;
+    padding: 15px 16px 12px 14px;
 }
 
 .lkt__journeys-content-top {
@@ -954,29 +931,27 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     justify-content: space-between;
 }
 
-.lkt__journeys-wr-state {
-    align-self: end;
-}
-
-.lkt__journeys-wr-state > div {
+.lkt__journeys-state-item {
     display: none;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: min-content min-content;
 }
 
-.lkt__journeys-wr-state[data-state="booking"] > div[data-state="booking"] {
-    display: block;
+.lkt__journeys-state-list[data-state="booking"] > li[data-state="booking"] {
+    display: grid;
 }
-.lkt__journeys-wr-state[data-state="paid"] > div[data-state="paid"] {
-    display: block;
+.lkt__journeys-state-list[data-state="paid"] > li[data-state="paid"] {
+    display: grid;
 }
-.lkt__journeys-wr-state[data-state="cancelled"] > div[data-state="cancelled"] {
-    display: block;
+.lkt__journeys-state-list[data-state="cancelled"] > li[data-state="cancelled"] {
+    display: grid;
 }
-.lkt__journeys-wr-state[data-state="annulation"] > div[data-state="annulation"] {
-    display: block;
+.lkt__journeys-state-list[data-state="annulation"] > li[data-state="annulation"] {
+    display: grid;
 }
-.lkt__journeys-wr-state[data-state="annulated-refund"] > div[data-state="annulated"], 
-.lkt__journeys-wr-state[data-state="annulated"] > div[data-state="annulated"] {
-    display: block;
+.lkt__journeys-state-list[data-state="annulated-refund"] > li[data-state="annulated"], 
+.lkt__journeys-state-list[data-state="annulated"] > li[data-state="annulated"] {
+    display: grid;
 }
 
 .lkt__journeys-state {
@@ -1027,8 +1002,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     font-weight: 500;
 }
 
-.lkt__journeys-wr-state[data-state="annulated-refund"] .lkt__journeys-comment_annulated[data-state="refund"], 
-.lkt__journeys-wr-state[data-state="annulated"] .lkt__journeys-comment_annulated[data-state="end"] {
+.lkt__journeys-state-list[data-state="annulated-refund"] .lkt__journeys-comment_annulated[data-state="refund"], 
+.lkt__journeys-state-list[data-state="annulated"] .lkt__journeys-comment_annulated[data-state="end"] {
     display: block;
 }
 
@@ -1036,7 +1011,15 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: -7px;
+}
+
+.lkt__journeys-before {
+    font-family: 'Roboto';
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+
+    color: #464646;
 }
 
 .lkt__journeys-pay-summ {
@@ -1057,17 +1040,66 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     color: #000;
 }
 
-.lkt__journeys-before {
-    font-family: 'Roboto';
-    font-size: 8px;
-    font-style: normal;
-    font-weight: 400;
-
-    color: #464646;
+.lkt__journeys-confirm {
+    margin-top: 2px;
+    grid-column: 1;
+    grid-row: 2;
 }
 
-.lkt__journeys-wr-button {
-    margin-top: 11px;
+.lkt__checkbox-label {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 14px;
+}
+
+.lkt__checkbox {
+    position: static;
+    
+    height: fit-content;
+    width: fit-content;
+    padding: 4px;
+    
+    outline: 1px solid #F60 !important;
+    border: 3px solid #F2F2F2;
+    border-radius: 50%;
+    
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.lkt__checkbox:checked {
+    outline: 1px solid #F60 !important;
+    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
+} 
+
+.lkt__checkbox-title {    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    line-height: 0.9 !important;
+    
+    color: #5A5D62;
+    
+    cursor: pointer;
+}
+
+.lkt__journeys-box-title {
+    font-size: 11px;
+}
+
+.lkt__journeys-agreement-link {
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 300;
+    text-decoration-line: underline;
+    text-underline-position: under;
+    text-underline-offset: -1px;
+    color: #0F6CBD;
+
+    cursor: pointer;
 }
 
 .lkt__journeys-button {
@@ -1519,48 +1551,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     opacity: 0;
 }
 
-.lkt__checkbox-label {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    gap: 14px;
-}
-
-.lkt__checkbox {
-    position: static;
-    
-    height: fit-content;
-    width: fit-content;
-    padding: 4px;
-    
-    outline: 1px solid #F60 !important;
-    border: 3px solid #F2F2F2;
-    border-radius: 50%;
-    
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-}
-
 .lkt__checkbox-patronimic > .lkt__checkbox {
     border: 3px solid #F2F2F2;
 }
 
-.lkt__checkbox:checked {
-    outline: 1px solid #F60 !important;
-    background: linear-gradient(90deg, #F60 0%, #FF1572 100%);
-} 
-
-.lkt__checkbox-title {    
-    font-family: 'Roboto';
+.lkt__checkbox-patronimic > .lkt__checkbox-title {
     font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 0.9 !important;
-
-    color: #5A5D62;
-
-    cursor: pointer;
 }
 
 .lkt__checkbox-patronimic {
@@ -1773,6 +1769,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 .lkt-order__radio-match-title {
+    font-size: 14px;
     line-height: 0.5 !important;
 }
 
@@ -2796,23 +2793,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt-profile__edit {
-        height: 10.67vw;
-        width: 10.67vw;
-
-        border-radius: 1.60vw;
-        box-shadow: 0px 0px 1.87vw -0.27vw rgba(0, 0, 0, 0.25);
-        background-size: 6.40vw;
-    }
-    .lkt-profile__edit:hover {
-        box-shadow: 0px 0px 1.87vw -0.27vw rgba(0, 0, 0, 0.25);
-    }
-    .lkt-profile__edit:active {
-        box-shadow: 0px 0px 1.87vw -0.27vw rgba(0, 0, 0, 0.25);
-    }
-}
-
-@media(max-width: 1024px) {
     .lkt-profile__footer {
         width: 95.37%;
         margin-top: 8.53vw;
@@ -3198,12 +3178,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt__journeys-pay {
-        margin-bottom: 0;
-    }
-}
-
-@media(max-width: 1024px) {
     .lkt__journeys-before {
         font-size: 2.13vw;
     }
@@ -3220,8 +3194,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt__journeys-wr-button {
-        margin-top: 1.60vw;
+    .lkt__checkbox-label {
+        gap: 4vw;
     }
 }
 
@@ -3527,13 +3501,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt__checkbox-label {
-        gap: 4vw;
-    }
-}
-
-
-@media(max-width: 1024px) {
     .lkt__checkbox-patronimic {
         margin-top: 6.73vw;
         margin-left: 3.73vw;
@@ -3553,9 +3520,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 @media(max-width: 1024px) {
-    .lkt__checkbox-title {
-        font-size: 3.73vw;
-    }
+    .lkt__checkbox-patronimic > .lkt__checkbox-title {
+        font-size: 14px;
+    }   
 }
 
 @media(max-width: 1024px) {
@@ -3670,6 +3637,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
         width: 88.4%;
         margin: 0 auto;
     }
+}
+
+@media(max-width: 1024px) {
+    .lkt-order__radio-match-title {
+        font-size: 3.73vw;
+    }   
 }
 
 @media(max-width: 1024px) {
@@ -4180,6 +4153,71 @@ div[data-content="annulation"] > div[data-item="annulation"] {
         box-shadow: 0px 0px 1.87vw 0.53vw rgba(0, 0, 0, 0.25);
     }
 }
+
+/* ЗАПРОС НА АННУЛЯЦИЮ */
+/* ВНЕСТИ ИЗМЕНЕНИЯ ПО ЗАКАЗУ */
+@media(max-width: 1024px) {
+    .lkt-annulation {
+        margin-top: 0;
+        padding-top: 9.07vw;
+        padding-bottom: 16.80vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-annulation__wr-title {
+        display: grid;
+        grid-template-columns: 4.27vw 1fr 4.27vw;
+        width: 89%;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-annulation__title {
+        font-size: 4.27vw;
+        text-align: center;
+    }   
+}
+
+@media(max-width: 1024px) {
+    .lkt-annulation__form {
+        width: 89%;
+        margin: 9.07vw auto 0;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-annulation__wr-input {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-annulation__wr-textarea {
+        margin-top: 5.87vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-annulation__wr-button {
+        margin-top: 6.67vw;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt-annulation__button {
+        width: 56.80vw;
+        height: 10.67vw;
+
+        font-size: 3.73vw;
+
+        border-radius: 6.67vw;
+        box-shadow: 0px 0px 1.87vw 0.53vw rgba(0, 0, 0, 0.25);
+    }
+}
+
 
 @media(max-width: 1024px) {
     

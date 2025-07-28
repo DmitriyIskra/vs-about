@@ -60,7 +60,6 @@
                                     <input class="lkt-profile__input lkt-profile__input_no-confirmed" type="text" name="profile_email" placeholder="Ваша почта">
                                     <div class="lkt-profile__wr-buttons">
                                         <button class="lkt-profile__button lkt-profile__confirm" type="button">Подтвердить</button>
-                                        <button class="lkt-profile__edit" type="button"></button>
                                     </div>
                                 </form>
                             </li>
@@ -196,41 +195,89 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="lkt__journeys-content-bottom">
-                                        <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
-                                        <div class="lkt__journeys-wr-state" data-state="booking"> 
-                                            <div data-state="booking">
+                                    <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
+                                    <ul class="lkt__journeys-state-list" data-state="booking"> 
+                                        <li class="lkt__journeys-state-item lkt__journeys-state-button" data-state="booking">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state">Бронь</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">Оплачено: <span>0 из 30 000 ₽</span> </div>
                                             </div>
-                                            <div data-state="paid">
-                                                <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
+                                            <div class="lkt__journeys-pay">
+                                                <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
+                                                <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
                                             </div>
-                                            <div data-state="cancelled">
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1">
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="lkt__journeys-wr-button">
+                                                <a class="lkt__journeys-button" href="#0" title="Оплата тура">Оплатить</a>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="paid">
+                                            <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="cancelled">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: 30 000 ₽ </div>
                                             </div>
-                                            <div data-state="annulation">
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="annulation">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state">Аннуляция</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">Запрос в работе</div>
                                             </div>
-                                            <div data-state="annulated">
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="annulated">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="refund">К возврату 25 000 ₽</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
                                             </div>
-                                        </div>
-
-                                        <div class="lkt__journeys-pay">
-                                            <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
-                                            <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
-                                            <div class="lkt__journeys-wr-button">
-                                                <a class="lkt__journeys-button" href="#0" title="Оплата тура">Оплатить</a>
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
                                             </div>
-                                        </div>
-                                    </div>
-                                    
-
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="lkt__journeys-item">
@@ -240,7 +287,8 @@
                                 <div class="lkt__journeys-content">
                                     <div class="lkt__journeys-content-top">
                                         <div class="lkt__journeys-number"><a class="lkt__journeys-number-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">Заказ № 1825</a></div>
-                                        <div class="lkt__journeys-warning">Внесите данные туристов</div>
+                                        <!-- lkt__journeys-warning_active -->
+                                        <div class="lkt__journeys-warning lkt__journeys-warning_active">Внесите данные туристов</div>
                                         <div class="lkt__journeys-price"><span>30 000</span> ₽</div>
                                         <div class="lkt__journeys-name" data-order="1825"><a class="lkt__journeys-name-link lkt__cont-switcher" href="#0/1825" data-order_num="1825" data-item="order" title="Заказ № 1825">В Тверсую область по велению души</a></div>
                                         <div class="lkt__journeys-route">Нилова пустынь – озеро Селигер</div>
@@ -252,43 +300,92 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="lkt__journeys-content-bottom">
-                                        <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
-                                        <div class="lkt__journeys-wr-state" data-state="annulated"> 
-                                            <div data-state="booking">
+                                    <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
+                                    <ul class="lkt__journeys-state-list" data-state="paid"> 
+                                        <li class="lkt__journeys-state-item lkt__journeys-state-button" data-state="booking">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state">Бронь</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">Оплачено: <span>0 из 30 000 ₽</span> </div>
                                             </div>
-                                            <div data-state="paid">
-                                                <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
+                                            <div class="lkt__journeys-pay">
+                                                <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
+                                                <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
                                             </div>
-                                            <div data-state="cancelled">
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1">
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="lkt__journeys-wr-button">
+                                                <a class="lkt__journeys-button" href="#0" title="Оплата тура">Оплатить</a>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="paid">
+                                            <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="cancelled">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: 30 000 ₽</div>
+                                                <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: 30 000 ₽ </div>
                                             </div>
-                                            <div data-state="annulation">
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="annulation">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state">Аннуляция</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">Запрос в работе</div>
                                             </div>
-                                            <div data-state="annulated">
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="lkt__journeys-state-item" data-state="annulated">
+                                            <div class="lkt__journeys-state-info">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="refund">К возврату 25 000 ₽</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
                                             </div>
-                                        </div>
-
-                                        <div class="lkt__journeys-pay">
-                                            <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
-                                            <div class="lkt__journeys-pay-summ"><span>15000</span> ₽</div>
-                                            <div class="lkt__journeys-wr-button">
-                                                <a class="lkt__journeys-button" href="#0" title="Оплата тура">Оплатить</a>
+                                            <div class="lkt__journeys-confirm">
+                                                <label class="lkt__checkbox-label lkt__journeys-label-confirm">
+                                                    <input class="lkt__checkbox lkt__journeys-checkbox" type="checkbox" name="confirm-agreement" value="1" checked disabled>
+                                                    <span class="lkt__checkbox-title lkt__journeys-box-title">
+                                                        Подтверждаю ознакомление и согласие <br>
+                                                        с условиями <a class="lkt__journeys-agreement-link" href="#0" title="Договор публичной оферты">Договора публичной оферты.</a>
+                                                    </span>
+                                                </label>
                                             </div>
-                                        </div>
-                                    </div>
-                                    
-
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                     
@@ -312,28 +409,28 @@
                                     
                                     <div class="lkt__journeys-content-bottom lkt-order__content-bottom">
                                         <!--booking, paid, cancelled, annulation, annulated-refund, annulated -->
-                                        <div class="lkt__journeys-wr-state" data-state="annulated-refund"> 
-                                            <div data-state="booking">
+                                        <ul class="lkt__journeys-state-list" data-state="annulated-refund"> 
+                                            <li class="lkt__journeys-state-item" data-state="booking">
                                                 <div class="lkt__journeys-state">Бронь до <span>18.06.25</span></div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">Оплачено: <span>0 из 30 000 ₽</span> </div>
-                                            </div>
-                                            <div data-state="paid">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="paid">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Оплачено</div>
-                                            </div>
-                                            <div data-state="cancelled">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">К возврату: 30 000 ₽ </div>
-                                            </div>
-                                            <div data-state="annulation">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="annulation">
                                                 <div class="lkt__journeys-state">Аннуляция</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_bold">Запрос в работе</div>
-                                            </div>
-                                            <div data-state="annulated">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="annulated">
                                                 <div class="lkt__journeys-state">Аннулирован</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="refund">К возврату 25 000 ₽</div>
                                                 <div class="lkt__journeys-comment lkt__journeys-comment_annulated lkt__journeys-comment_bold" data-state="end">Расчет завершен</div>
-                                            </div>
-                                        </div>
+                                            </li>
+                                        </ul>
     
                                         <div class="lkt__journeys-pay lkt-order__data-head-pay">
                                             <div class="lkt__journeys-before">Оплатить до: 12.01.25</div>
@@ -1095,24 +1192,24 @@
                                     
                                     <div class="lkt__journeys-content-bottom lkt-history__content-bottom">
                                         <!-- paid, annulated, cancelled,  completed, in-progress -->
-                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="completed"> 
-                                            <div data-state="paid">
+                                        <ul class="lkt__journeys-state-list lkt-history__wr-state" data-state="completed"> 
+                                            <li class="lkt__journeys-state-item" data-state="paid">
                                                 <div class="lkt__journeys-state">Оплачено</div>
-                                            </div>
-                                            <div data-state="annulated">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="annulated">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Аннулирован</div>
-                                            </div>
-                                            <div data-state="cancelled">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                            </div>
-                                            <div class="lkt-history__wr-completed" data-state="completed">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" class="lkt-history__wr-completed" data-state="completed">
                                                 <div class="lkt__journeys-state">Выполнен</div>
                                                 <button class="lkt-history__reviews-button" type="button">Оставить отзыв</button>
-                                            </div>
-                                            <div data-state="in-progress">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="in-progress">
                                                 <div class="lkt__journeys-state">Запрос в работе </div>
-                                            </div>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </li>
@@ -1132,24 +1229,24 @@
                                     </div>
                                     
                                     <div class="lkt__journeys-content-bottom lkt-history__content-bottom">
-                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="cancelled"> <!-- paid, annulated, cancelled,  completed, in-progress -->
-                                            <div data-state="paid">
+                                        <ul class="lkt__journeys-state-list lkt-history__wr-state" data-state="cancelled"> <!-- paid, annulated, cancelled,  completed, in-progress -->
+                                            <li class="lkt__journeys-state-item" data-state="paid">
                                                 <div class="lkt__journeys-state">Оплачено</div>
-                                            </div>
-                                            <div data-state="annulated">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="annulated">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Аннулирован</div>
-                                            </div>
-                                            <div data-state="cancelled">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                            </div>
-                                            <div class="lkt-history__wr-completed" data-state="completed">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" class="lkt-history__wr-completed" data-state="completed">
                                                 <div class="lkt__journeys-state">Выполнен</div>
                                                 <button class="lkt-history__reviews-button" type="button">Оставить отзыв</button>
-                                            </div>
-                                            <div data-state="in-progress">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="in-progress">
                                                 <div class="lkt__journeys-state">Запрос в работе </div>
-                                            </div>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </li>
@@ -1170,24 +1267,24 @@
                                     
                                     <div class="lkt__journeys-content-bottom lkt-history__content-bottom">
                                         <!-- paid, annulated, cancelled,  completed, in-progress -->
-                                        <div class="lkt__journeys-wr-state lkt-history__wr-state" data-state="annulated"> 
-                                            <div data-state="paid">
+                                        <ul class="lkt__journeys-state-list lkt-history__wr-state" data-state="annulated"> 
+                                            <li class="lkt__journeys-state-item" data-state="paid">
                                                 <div class="lkt__journeys-state">Оплачено</div>
-                                            </div>
-                                            <div data-state="annulated">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="annulated">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Аннулирован</div>
-                                            </div>
-                                            <div data-state="cancelled">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="cancelled">
                                                 <div class="lkt__journeys-state lkt__journeys-state_orange">Отменен</div>
-                                            </div>
-                                            <div class="lkt-history__wr-completed" data-state="completed">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" class="lkt-history__wr-completed" data-state="completed">
                                                 <div class="lkt__journeys-state">Выполнен</div>
                                                 <button class="lkt-history__reviews-button" type="button">Оставить отзыв</button>
-                                            </div>
-                                            <div data-state="in-progress">
+                                            </li>
+                                            <li class="lkt__journeys-state-item" data-state="in-progress">
                                                 <div class="lkt__journeys-state">Запрос в работе </div>
-                                            </div>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                     
     

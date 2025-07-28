@@ -52,9 +52,9 @@ export default class RequestApi {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : '',
+                    'Content-Type' : 'multipart/form-data',
                 },
-                body: JSON.stringify(data),
+                body: data,
             });
             const result = await response.json();
             return result;
@@ -65,13 +65,14 @@ export default class RequestApi {
 
     // Запрос на аннуляцию заказа
     async createOrderAnnulation(data) {
+        return new Promise((res, rej) => setTimeout(() => res(true), 2000));
         try {
             const response = await fetch(`${this.paths.create}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : '',
+                    'Content-Type' : 'multipart/form-data',
                 },
-                body: JSON.stringify(data),
+                body: data,
             });
             const result = await response.json();
             return result;
@@ -98,15 +99,16 @@ export default class RequestApi {
         }
     }
 
-
+    // Подтверждение почты 
     async createEmail(data) {
+        return new Promise((res, rej) => setTimeout(() => res(true), 2000));
         try {
             const response = await fetch(`${this.paths.update}`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : '',
+                    'Content-Type' : 'multipart/form-data',
                 },
-                body: JSON.stringify(data),
+                body: data,
             });
             const result = await response.json();
             return result;

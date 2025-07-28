@@ -6,6 +6,7 @@ export default class Redraw {
         
         this.ordererForm = this.order.querySelector('.lkt-order__orderer-form');
 
+        // ЗАКАЗ
         // Блок с формами для туристов
         this.tourists = this.order.querySelector('.lkt-order__parts'); 
         // Блок с согласием на обработку персональных данных
@@ -18,15 +19,21 @@ export default class Redraw {
         this.placeAgreeOrderer = this.agree.querySelector('.lkt-order__agree-orderer');
         // Блок для данных туристов
         this.placeAgreeTourists = this.agree.querySelector('.lkt-order__agree-tourists');
-
+        // СОГЛАШЕНИЕ
         // Дата в письменном согласии на обработку персональных данных
         this.agreeDate = this.order.querySelector('.lkt-order__agree-date');
-
+        
+        // ИЗМЕНЕНИЕ ЗАКАЗА
         // номер открытого заказа
         this.orderNum = this.order.querySelector('.lkt-order__data-number'); 
         // Форма и элементы на зменение заказа
         this.changeOrderForm = this.change.querySelector('.lkt-change__form');
         this.changeOrderTextArea = this.changeOrderForm.change_order_text;
+
+        // АННУЛЯЦИЯ
+        // форма для аннуляции
+        this.annulationForm = this.annulation.querySelector('.lkt-annulation__form');
+        this.annulationTextArea = this.annulationForm.annulation_text;
 
         // Кнопка передать данные
         this.submit = this.order.querySelector('.lkt-order__submit');
@@ -66,6 +73,13 @@ export default class Redraw {
         this.changeOrderForm.number_order.value = this.orderNum.dataset.order_num;
     }
     // END ЗАПРОС НА ИЗМЕНЕНИЯ ПО ЗАКАЗУ
+
+    // START ЗАПРОС НА АННУЛЯЦИЮ
+    // авто заполнение номера заказа
+    fillNumberOrderAnnulation() {
+        this.annulationForm.number_order.value = this.orderNum.dataset.order_num;
+    }
+    // END ЗАПРОС НА АННУЛЯЦИЮ
 
     // открытие форм для туристов
     showTouristsForms() {
@@ -122,7 +136,7 @@ export default class Redraw {
         this.currentMatchLabelBox.checked = true;
 
         // форма первого туриста в данном номере
-        this.currentMatchForm = target.closest('.lkt-order__data-content').querySelector('form');
+        this.currentMatchForm = target.closest('.lkt-order__tourists-content').querySelector('form');
 
 
         // Заполняем форму данными из заказчика

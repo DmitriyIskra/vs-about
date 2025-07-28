@@ -132,7 +132,19 @@ export default class Controll {
                 return;
             }
 
-            this.resizeAside();
+            this.loader.show();
+            (async () => {
+                const resSend = await this.reqApi.createEmail(formData);
+                
+                if(resSend) {
+                    this.loader.hide();
+
+                    // TO DO
+                } else {
+                    // TO DO
+                }
+            })()
+            // КАКАЯ РЕАКЦИЯ??????
         }
         // END ASIDE
 
@@ -240,7 +252,14 @@ export default class Controll {
             this.loader.show();
             (async () => {
                 const resSend = await this.reqApi.createOrderData(data);
-                this.loader.hide();
+                
+                if(resSend) {
+                    this.loader.hide();
+
+                    // TO DO
+                } else {
+                    // TO DO
+                }
             })();
         }
 
@@ -261,12 +280,44 @@ export default class Controll {
             this.loader.show();
             (async () => {
                 const resSend = await this.reqApi.createQuestion(formData);
-                this.loader.hide();
+                
+                if(resSend) {
+                    this.loader.hide();
+
+                    // TO DO
+                } else {
+                    // TO DO
+                }
             })()
         }
 
         // Запрос на аннуляцию
-        // !!!!!!!!! АНУЛЯЦИЯ ЗАПОЛНЕНИЕ НОМЕРА ЗАКАЗА И ОТПРАВКА !!!!!!!
+        // При открытии запроса на изменение по заказу, авто заполнение номера
+        if(e.target.closest('.lkt-docs__link_cancel')) this.draws.order.fillNumberOrderAnnulation();
+        // Отправка запроса на аннуляцию
+        if(e.target.closest('.lkt-annulation__button')) {
+            const formData = new FormData(this.draws.order.annulationForm);
+            if(!formData.get('number_order') || !formData.get('annulation_text')) {
+                this.draws.main.setInvalidPlace(
+                    this.draws.order.annulationTextArea, 'Поле обязательно для заполнения'
+                );
+
+                return;
+            }
+
+            this.loader.show();
+            (async () => {
+                const resSend = await this.reqApi.createQuestion(formData);
+                
+                if(resSend) {
+                    this.loader.hide();
+
+                    // TO DO
+                } else {
+                    // TO DO
+                }
+            })()
+        };
 
         // END ORDER
 
@@ -284,7 +335,14 @@ export default class Controll {
             this.loader.show();
             (async () => {
                 const resSend = await this.reqApi.createQuestion(formData);
-                this.loader.hide();
+                
+                if(resSend) {
+                    this.loader.hide();
+
+                    // TO DO
+                } else {
+                    // TO DO
+                }
             })()
         }
         // END ЗАДАТЬ ВОПРОС
@@ -300,15 +358,16 @@ export default class Controll {
         // Задать вопрос
         if(e.target.matches('.lkt-question__textarea')) {
             this.draws.main.removeInvalidPlace(e.target);
-
-
         }
         
         // Запрос на изменения по заказу
         if(e.target.matches('.lkt-change__textarea')) {
-            this.draws.main.removeInvalidPlace(e.target);
+            this.draws.main.removeInvalidPlace(e.target);  
+        }
 
-            
+        // Запрос на аннуляцию
+        if(e.target.matches('.lkt-annulation__textarea')) {
+            this.draws.main.removeInvalidPlace(e.target);  
         }
 
         // Подсчет символов на счетчике для textarea
