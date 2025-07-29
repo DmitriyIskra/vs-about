@@ -49,7 +49,7 @@ export default class Redraw {
         this.currentMatchLabelBox = null;
     }
 
-    startOrder() {
+    startOrder(data) {
         // start down openers которые должны быть активны со старта 
         const arrActivatedOpeners = [
             this.order.querySelector('.lkt-order__data-opener'),
@@ -66,7 +66,8 @@ export default class Redraw {
         this.agreeDate.textContent = todayDate;
     }
 
-    
+
+
     // START ЗАПРОС НА ИЗМЕНЕНИЯ ПО ЗАКАЗУ
     // авто заполнение номера заказа
     fillNumberOrderChange() {

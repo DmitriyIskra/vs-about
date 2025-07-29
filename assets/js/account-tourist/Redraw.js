@@ -2,8 +2,12 @@ export default class Redraw {
     constructor(el) {
         this.el = el;
         
+        this.mainTitle = this.el.querySelector('.lkt__wr-main-title');
         // Стрелка назад в главном заголовке (появляется только для order)
-        this.arrowBackMainTitle = this.el.querySelector('.lkt__main-title-back');
+        this.arrowBackMainTitle = this.mainTitle.querySelector('.lkt__main-title-back');
+
+        // табы "путешествия, история, избранное"
+        this.tabsList = this.el.querySelector('.lkt__header-list');
         
         // контентная часть, область внутри которой отображается и меняется контент
         this.contentWrapper = this.el.querySelector('.lkt-main__content'); 
@@ -38,9 +42,7 @@ export default class Redraw {
     }
 
 
-    // пересчет опенеров (хранятся здесь this.activeOpenners = [];) и др
-    reCalcDinamicElements() {
-    }
+    
 
 
     // Переключение контента
@@ -104,6 +106,43 @@ export default class Redraw {
     hideArrowBackMainTitle() {
         this.arrowBackMainTitle.classList.remove('lkt__main-title-back_active');
     }
+
+    // Показ и скрытие главного заголовка (для изменения и аннуляции заказа)
+    hideMainTitle() {
+        this.mainTitle.classList.add('lkt__wr-main-title_hide-m');
+    }
+    showMainTitle() {
+        if(this.mainTitle.classList.contains('lkt__wr-main-title_hide-m')) {
+            this.mainTitle.classList.remove('lkt__wr-main-title_hide-m');
+        }
+    }
+    // Показ и скрытие табов "путешествия, история, избранное" (для изменения и аннуляции заказа)
+    hideTabsList() {
+        this.tabsList.classList.add('lkt__header-list_hide-m');
+    }
+    showTabsList() {
+        if(this.tabsList.classList.contains('lkt__header-list_hide-m')) {
+            this.tabsList.classList.remove('lkt__header-list_hide-m');
+        }
+    }
+
+
+    // AGREEMENT FOR PAY
+    switchAgreementForPay(target) {
+        const stateItem = target.closest('.lkt__journeys-state-item'); 
+        const buttonPay = stateItem.querySelector('.lkt__button-pay');
+        
+        const box = target.firstElementChild;
+
+        if(!box.checked) {
+            box.checked = true;
+            this.unDisableButton(buttonPay);
+        } else {
+            box.checked = false;
+            this.disableButton(buttonPay);
+        }
+    }
+
 
     // Блокировка кнопки
     disableButton(button) {

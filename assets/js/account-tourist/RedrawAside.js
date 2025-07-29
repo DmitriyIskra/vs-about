@@ -2,6 +2,9 @@ export default class Redraw {
     constructor(aside) {
         this.aside = aside;
 
+        // Первая буква имени в аватар
+        this.firstLetter = this.aside.querySelector('.lkt__first-letter')
+
         // обертка над кнопкой выход и данными профиля, у нее будем менять цвет фона
         this.profileContent = this.aside.querySelector('.lkt-profile__content');
         // Данные профиля, список
@@ -19,8 +22,8 @@ export default class Redraw {
 
         // блок документы в aside
         this.asideDocs = this.aside.querySelector('.lkt-docs');
+        // стрелка для сворачивания и разворачивания aside в мобилке
         this.openerArrow = this.aside.nextElementSibling;
-
         // ------------------
 
         // высота открытого aside в мобильной версии
@@ -40,6 +43,17 @@ export default class Redraw {
         const noConfirmedEmail = this.profileEmail.value;
         const confirmedEmail = this.confProfileEmail.textContent;
         this.profileEmailData = confirmedEmail || noConfirmedEmail || null;
+
+        // Установка первой буквы имени в аватар
+        this.drawLetter();
+    }
+
+    // Установка первой буквы имени в аватар
+    drawLetter() {
+        const secondname = this.aside.querySelector('.lkt-profile__item_name').textContent;
+        const arr = secondname.split('');
+
+        this.firstLetter.textContent = arr[0]
     }
 
     resizeAside() {
@@ -72,6 +86,28 @@ export default class Redraw {
         }
 
     }
+
+    // скрываем aside (для изменения и аннуляции заказа)
+    hideAside() {
+        this.aside.classList.add('lkt__aside_hide-m');
+    }
+    // показываем aside
+    showAside() {
+        if(this.aside.classList.contains('lkt__aside_hide-m')) {
+            this.aside.classList.remove('lkt__aside_hide-m');
+        }
+    }
+
+    // Показ и скрытие стрелки сворачивающей и разворачивающей aside (для изменения и аннуляции заказа)
+    hideOpenerAsideArrow() {
+        this.openerArrow.classList.add('lkt__aside-arrow_aside-m');
+    }
+    showOpenerAsideArrow() {
+        if(this.openerArrow.classList.contains('lkt__aside-arrow_aside-m')) {
+            this.openerArrow.classList.remove('lkt__aside-arrow_aside-m');
+        }
+    }
+
 
     // Развернуть aside, для мобилки
     openAside(animated = true) {;

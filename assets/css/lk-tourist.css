@@ -1086,6 +1086,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 .lkt__journeys-box-title {
     font-size: 11px;
+
+    user-select: none;
 }
 
 .lkt__journeys-agreement-link {
@@ -1123,12 +1125,6 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     box-shadow: 0px 0px 7.3px 2px rgba(0, 0, 0, 0.25);
 
     cursor: pointer;
-}
-
-.lkt__journeys-button_disabled {
-    opacity: 50%;
-
-    pointer-events: none;
 }
 
 .lkt__journeys-button:hover {
@@ -2574,6 +2570,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt__wr-main-title {
         width: 1085px;
     }
+
+    .lkt__wr-main-title_hide-m {
+        display: none;
+    }
 }
 
 @media(max-width: 1280px) {
@@ -2686,26 +2686,39 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
         overflow: hidden;
     }
+
+    .lkt__aside_hide-m {
+        /* display: none; */
+        position: absolute;
+        top: -1000px;
+        left: 0;
+
+        visibility: hidden;
+        opacity: 0;
+    }
 }
 
 @media(max-width: 1024px) {
     .lkt__avatar {
         display: block;
         width: 29.33vw;
-        height: 29.33vw;
         margin: 0 auto;
         padding-bottom: 3.47vw;
     }
 
-    .lkt__avatar > img {
-        height: 100%;
-        width: 100%;
+    .lkt__first-letter {
+        display: grid;
+        place-items: center;
+        height: 29.33vw;
 
-        height: 100%;
-        width: 100%;
-        
-        object-fit: contain;
-        object-position: center;
+        font-family: 'Roboto';
+        font-size: 64px;
+        text-transform: uppercase;
+        color: #7B7B7B;
+
+        background: no-repeat url('../i/icon-letter.svg');
+        background-size: 100% auto;
+        background-position: center;
     }
 }
 
@@ -2982,6 +2995,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt__aside-arrow_active {
         transform: rotate(360deg);
     }
+
+    .lkt__aside-arrow_aside-m {
+        display: none;
+    }
 }
 
 @media(max-width: 1024px) {
@@ -2993,6 +3010,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt__header-list {
         perspective: 0;
+    }
+
+    .lkt__header-list_hide-m {
+        display: none;
     }
 }
 
@@ -4154,7 +4175,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt-change {
         margin-top: 0;
-        padding-top: 9.07vw;
+        padding-top: 9.33vw;
         padding-bottom: 16.80vw;
     }
 }
@@ -4170,6 +4191,9 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt-change__title {
+        width: 83%;
+        justify-self: center;
+
         font-size: 4.27vw;
         text-align: center;
     }   
@@ -4218,7 +4242,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 @media(max-width: 1024px) {
     .lkt-annulation {
         margin-top: 0;
-        padding-top: 9.07vw;
+        padding-top: 9.33vw;
     }
 }
 

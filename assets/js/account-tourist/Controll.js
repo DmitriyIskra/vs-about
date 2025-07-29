@@ -70,6 +70,23 @@ export default class Controll {
             // Скрываем стрелку назад в главном заголовке при закрытии order
             if(param !== 'order') this.draws.main.hideArrowBackMainTitle();
 
+            // Скрываем главный заголовок, шапку с профайлом (aside), стрелку сворачивающую и разворачивающую
+            // aside в мобилке и табы "путешествия, история, избранное" при 
+            // нажатии на запрос на аннуляцию или изменение заказа
+            // работает только в мобилке через классы lkt__wr-main-title_hide-m lkt__aside_hide-m
+            // lkt__aside-arrow_aside-m и lkt__header-list_hide-m
+            if(param === 'change' || param === 'annulation') {
+                this.draws.aside.hideAside();
+                this.draws.aside.hideOpenerAsideArrow();
+                this.draws.main.hideMainTitle();
+                this.draws.main.hideTabsList();
+            } else {
+                this.draws.aside.showAside();
+                this.draws.aside.showOpenerAsideArrow();
+                this.draws.main.showMainTitle();
+                this.draws.main.showTabsList();
+            }
+
             // скрываем блок документы, но только если переключатель не запрос на изменение или на аннуляцию
             if(
                 param === 'journeys'  || 
@@ -79,20 +96,24 @@ export default class Controll {
             ) this.draws.aside.hideAsideDocs();
         }
 
+        // ОПЛАТИТЬ
         // Подтверждаю ознакомление и согласие "checkbox" возле кнопки оплатить
         if(e.target.closest('.lkt__journeys-label-confirm')) {
                 e.preventDefault();
                 const target = e.target.closest('.lkt__journeys-label-confirm');
-                const stateItem = target.closest('.lkt__journeys-state-item'); 
-                const buttonPay = stateItem.querySelector('.lkt__journeys-button');
-                
-                const box = target.firstElementChild;
+                this.draws.main.switchAgreementForPay(target);
+        }
+        // Оплатить, нажатие на кнопку
+        if(e.target.closest('.lkt__button-pay')) {
+            const target = e.target.closest('.lkt__button-pay');
 
-                !box.checked ? box.checked = true : box.checked = false;
-                buttonPay.classList.toggle('lkt__journeys-button_disabled');
+            const stateItem = target.closest('.lkt__journeys-state-item'); 
+            const box = stateItem.querySelector('input[name="confirm-agreement"]');
 
+            if(!box.checked) return;
 
-                console.log('label-confirm', box.checked);
+            // ДОБАВИТЬ ОБРАБОТКУ ОПЛАТИТЬ ПЕРЕАДРЕСАЦИЯ ИЛИ ЧТО ЭТО БУДЕТ
+            console.log('pay');
         }
 
         // НЕТ ОТЧЕСТВА
