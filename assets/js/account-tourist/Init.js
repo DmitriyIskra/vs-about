@@ -8,6 +8,8 @@ export default class Init {
         const RequestApi = (await import('./RequestApi.js')).default;
         const Validation = (await import('../validation-places-form/ValidationPlacesForm.js')).default;
         const Loader = (await import('../loader/Controll.js')).default;
+        const InitDialog = (await import('../modal/InitDialog.js')).default;
+        const dialog = await InitDialog.init();
 
         const drows = {
             main: new Redraw(el),
@@ -24,6 +26,7 @@ export default class Init {
             new RequestApi(),
             new Validation(),
             new Loader,
+            dialog,
         )
 
         controll.init();

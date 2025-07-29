@@ -54,7 +54,7 @@
                             <li class="lkt-profile__item lkt-profile__item_phone">+7 (925) 562-56-59</li>
 
                             <!--  lkt-profile__email_active - активирует блок confirmed или not-confirmed -->
-                            <li class="lkt-profile__item lkt-profile__email lkt-profile__confirmed">melesin@vs-travel.ru</li>                
+                            <li class="lkt-profile__item lkt-profile__email lkt-profile__confirmed"></li>                
                             <!--  lkt-profile__not-confirmed_error - ошибка при валидации -->
                             <li class="lkt-profile__item lkt-profile__email lkt-profile__not-confirmed lkt-profile__email_active">
                                 <form class="lkt-profile__form" name="tourist_profile_email" novalidate>
@@ -1565,7 +1565,7 @@
                             </div>
                         </form>
 
-                        <!-- success fail -->
+                        <!-- success - fail -->
                         <div class="lkt-annulation__send-result" data-result="">
                             <div class="lkt-annulation__send-content lkt-annulation__success">
                                 <p class="lkt-annulation__send-text">Ваша заявка успешно оформленна!</p>
@@ -1589,6 +1589,68 @@
     <div class="loader">
         <span class="loader-body"></span>
     </div>
+    <!-- attribute success или fail от этого показываем нужное окно -->
+    <!-- 
+        fail
+        success
+        conf-email 
+    -->
+    <dialog class="dialog" data-type="">
+        <div class="dialog__window">
+            <div class="dialog__wr-close">
+                <div class="dialog__close"></div>
+            </div>
+    
+            <div class="dialog__content-wrapper">
+    
+                <!-- success -->
+                <div class="dialog__content dialog__content-req-res dialog__content-success">
+                    <div class="dialog__content-icon dialog__icon-req-res dialog__icon-success"></div>
+                    <div class="dialog__text dialog__text-req-res">
+                        <p>Ваша зявка успешно отправленна</p>
+                    </div>
+                </div>
+        
+                <!-- fail -->
+                <div class="dialog__content dialog__content-req-res dialog__content-fail">
+                    <div class="dialog__content-icon dialog__icon-req-res dialog__icon-fail"></div>
+                    <div class="dialog__text dialog__text-req-res">
+                        <p>Что-то пошло не так.</p>
+                        <p>Пожалуйста, попробуйте еще раз.</p>
+                    </div>
+                </div>
+
+                <!-- sended confirm to email -->
+                <!-- conf-email  -->
+                <div class="dialog__content dialog__content-conf-email">
+                    <div class="dialog__content-icon dialog__icon-bear"></div>
+                    <div class="dialog__text dialog__text-conf-email">
+                        <p>На указанный вами E-mail <br> отправлено письмо.</p>
+                        <p>Пожалуйста, подтвердите электронную почту.</p>
+                    </div>
+                </div>
+
+                <!-- sended-data-order -->
+                <div class="dialog__content dialog__content-sended-data-order">
+                    <div class="dialog__content-icon dialog__icon-bear"></div>
+                    <div class="dialog__text dialog__text-sended-data-order">
+                        <p>Ваши данные успешно переданы.</p>
+                        <p>Хорошего Вам путешествия!</p>
+                    </div>
+                </div>
+
+                <!-- no-email -->
+                <div class="dialog__content dialog__content-no-email">
+                    <div class="dialog__content-icon dialog__icon-req-res dialog__icon-fail"></div>
+                    <div class="dialog__text dialog__text-no-email">
+                        <p>Пожалуйста, заполните <br> адрес электронный почты. </p>
+                        <p>Это необходимо для получения чека <br> и инфориации по заказу.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </dialog>
     <script src="https://unpkg.com/imask"></script>
 </body>
 </html>

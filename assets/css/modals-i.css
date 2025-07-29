@@ -60,16 +60,12 @@ input:focus, textarea:focus {
 }
 
 .dialog__window {
+    width: 350px;
+    min-height: 351px;
+    
     border: none;
     border-radius: 10px;
     background: #FFF;
-}
-
-dialog[success] > .dialog__window,
-dialog[fail] > .dialog__window {
-    width: 350px;
-    min-height: 351px;
-    padding-top: 30px;
 }
 
 .dialog__wr-close {
@@ -77,8 +73,8 @@ dialog[fail] > .dialog__window {
     justify-content: flex-end;
 }
 
-dialog[success] .dialog__wr-close,
-dialog[fail] .dialog__wr-close {
+.dialog__wr-close {
+    padding-top: 30px;
     padding-right: 30px;
 }
 
@@ -109,14 +105,57 @@ dialog[fail] .dialog__wr-close {
 
 .dialog__content {
     display: none;
+    flex-direction: column;
+    align-items: center;
 }
 
-dialog[success] .dialog__content-success {
-    display: block;
+dialog[data-type="success"] .dialog__content-success {
+    display: flex;
 }
 
-dialog[fail] .dialog__content-fail {
-    display: block;
+dialog[data-type="fail"] .dialog__content-fail {
+    display: flex;
+}
+
+dialog[data-type="conf-email"] .dialog__content-conf-email {
+    display: flex;
+}
+
+dialog[data-type="sended-data-order"] .dialog__content-sended-data-order {
+    display: flex;
+}
+
+dialog[data-type="no-email"] .dialog__content-no-email {
+    display: flex;
+}
+
+.dialog__icon-bear {
+    width: 150px;
+    height: 150px;
+
+    background: no-repeat url('../i/icon-bear.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.dialog__text {
+    width: 100%;
+
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #5A5D62;
+}
+
+.dialog__text > p {
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #5A5D62;
 }
 
 .dialog__text_bold {
@@ -151,15 +190,23 @@ dialog[fail] .dialog__content-fail {
 .dialog__text-req-res {
     margin-top: 36px;
 }
-
-.dialog__text-req-res > p {
-    font-family: 'Roboto';
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    text-align: center;
-
-    color: #5A5D62;
-}
 /* END REQUEST RESULT (req-res) */
 
+/* START На почту отправлено подтверждение почты */
+.dialog__text-conf-email {
+    margin-top: 36px;
+    padding-bottom: 56px;
+}
+/* END На почту отправлено подтверждение почты */
+
+/* START данные по заказу переданы */
+.dialog__text-sended-data-order {
+    margin-top: 29px;
+}
+/* END данные по заказу переданы */
+
+/* START Пожалуйста, заполните <br> адрес электронный почты. */
+.dialog__text-no-email {
+    margin-top: 36px;
+}
+/* END Пожалуйста, заполните <br> адрес электронный почты. */

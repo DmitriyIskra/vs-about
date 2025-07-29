@@ -34,6 +34,8 @@ export default class Redraw {
         // форма для аннуляции
         this.annulationForm = this.annulation.querySelector('.lkt-annulation__form');
         this.annulationTextArea = this.annulationForm.annulation_text;
+        // Результат ответа
+        this.annulationSendResult = this.annulation.querySelector('.lkt-annulation__send-result');
 
         // Кнопка передать данные
         this.submit = this.order.querySelector('.lkt-order__submit');
@@ -79,6 +81,25 @@ export default class Redraw {
     // авто заполнение номера заказа
     fillNumberOrderAnnulation() {
         this.annulationForm.number_order.value = this.orderNum.dataset.order_num;
+    }
+    // Показ результата отправки запроса на аннуляцию
+    responseAnnulation(result) {
+        this.annulationForm.classList.remove('lkt-annulation__form_active');
+        
+        if(!result) {
+            this.annulationSendResult.dataset.result = 'fail';
+            return;
+        }
+
+        this.annulationSendResult.dataset.result = 'success';
+        this.annulationForm.reset();
+    }
+    // Сброс при входе в запрос на аннуляцию, на случай если попытка оотправки уже была
+    resetResponseAnnulation() {
+        if(!this.annulationForm.classList.contains('lkt-annulation__form_active')) {
+            this.annulationForm.classList.add('lkt-annulation__form_active');
+            this.annulationSendResult.dataset.result = '';
+        }
     }
     // END ЗАПРОС НА АННУЛЯЦИЮ
 

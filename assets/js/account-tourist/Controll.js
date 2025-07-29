@@ -1,9 +1,10 @@
 export default class Controll {
-    constructor(draws, reqApi, validator, loader) {
+    constructor(draws, reqApi, validator, loader, dialog) {
         this.draws = draws;
         this.reqApi = reqApi;
         this.validator = validator;
         this.loader = loader;
+        this.dialog = dialog;
 
         this.activatedSize = null;
         
@@ -40,6 +41,8 @@ export default class Controll {
 
         // Инициализируем Loader
         this.loader.init();
+        // Инициализация Dialog
+        this.dialog.init();
     }
 
     registerEvents() {
@@ -87,6 +90,9 @@ export default class Controll {
                 this.draws.main.showTabsList();
             }
 
+            // Сброс при входе в запрос на аннуляцию, на случай если попытка оотправки уже была
+            if(param === 'annulation') this.draws.order.resetResponseAnnulation();
+
             // скрываем блок документы, но только если переключатель не запрос на изменение или на аннуляцию
             if(
                 param === 'journeys'  || 
@@ -95,6 +101,9 @@ export default class Controll {
                 param === 'question'
             ) this.draws.aside.hideAsideDocs();
         }
+
+
+
 
         // ОПЛАТИТЬ
         // Подтверждаю ознакомление и согласие "checkbox" возле кнопки оплатить
@@ -110,9 +119,16 @@ export default class Controll {
             const stateItem = target.closest('.lkt__journeys-state-item'); 
             const box = stateItem.querySelector('input[name="confirm-agreement"]');
 
+            // не подтвержденно соглашение
             if(!box.checked) return;
+            
+            const confirmedEmail = this.draws.aside.confProfileEmail.textContent;
+            
+            if(!confirmedEmail) {
+                this.dialog.openDialog('no-email');
+                return;
+            }
 
-            // ДОБАВИТЬ ОБРАБОТКУ ОПЛАТИТЬ ПЕРЕАДРЕСАЦИЯ ИЛИ ЧТО ЭТО БУДЕТ
             console.log('pay');
         }
 
@@ -173,15 +189,14 @@ export default class Controll {
             (async () => {
                 const resSend = await this.reqApi.createEmail(formData);
                 
-                if(resSend) {
-                    this.loader.hide();
+                this.loader.hide();
 
-                    // TO DO
+                if(resSend) {
+                    this.dialog.openDialog('conf-email');
                 } else {
-                    // TO DO
+                    this.dialog.openDialog('fail');
                 }
             })()
-            // КАКАЯ РЕАКЦИЯ??????
         }
         // END ASIDE
 
@@ -290,12 +305,11 @@ export default class Controll {
             (async () => {
                 const resSend = await this.reqApi.createOrderData(data);
                 
+                this.loader.hide();
                 if(resSend) {
-                    this.loader.hide();
-
-                    // TO DO
+                    this.dialog.openDialog('sended-data-order');
                 } else {
-                    // TO DO
+                    this.dialog.openDialog('fail');
                 }
             })();
         }
@@ -318,12 +332,12 @@ export default class Controll {
             (async () => {
                 const resSend = await this.reqApi.createQuestion(formData);
                 
-                if(resSend) {
-                    this.loader.hide();
+                this.loader.hide();
 
-                    // TO DO
+                if(resSend) {
+                    this.dialog.openDialog('success');
                 } else {
-                    // TO DO
+                    this.dialog.openDialog('fail');
                 }
             })()
         }
@@ -344,18 +358,16 @@ export default class Controll {
 
             this.loader.show();
             (async () => {
-                const resSend = await this.reqApi.createQuestion(formData);
+                const resSend = await this.reqApi.createOrderAnnulation(formData);
                 
+                this.loader.hide();
                 if(resSend) {
-                    this.loader.hide();
-
-                    // TO DO
+                    this.draws.order.responseAnnulation(true)
                 } else {
-                    // TO DO
+                    this.draws.order.responseAnnulation(false)
                 }
             })()
         };
-
         // END ORDER
 
 
@@ -373,12 +385,12 @@ export default class Controll {
             (async () => {
                 const resSend = await this.reqApi.createQuestion(formData);
                 
-                if(resSend) {
-                    this.loader.hide();
+                this.loader.hide();
 
-                    // TO DO
+                if(resSend) {
+                    this.dialog.openDialog('success');
                 } else {
-                    // TO DO
+                    this.dialog.openDialog('fail');
                 }
             })()
         }

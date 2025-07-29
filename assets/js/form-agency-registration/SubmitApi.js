@@ -5,11 +5,7 @@ export default class SubmitApi {
     }
 
     async create(data) {
-        return new Promise( resolve => {
-                setTimeout(() => {
-                    return resolve(false)
-                }, 3500);
-        } );
+        return new Promise( res => setTimeout(() => res(true), 3500) );
         try {
             this.loader.show();
             const response = await fetch(`${this.paths.create}`, {

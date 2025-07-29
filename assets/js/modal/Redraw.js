@@ -17,7 +17,7 @@ export default class Redraw {
         const scrollData = scrollY;
 
         this.currentParam = param;
-        this.dialog.setAttribute(this.currentParam, '')
+        this.dialog.dataset.type = this.currentParam;
         this.dialog.showModal();
 
         // установка страницы на месте, без скроллинга вверх при установке overflow = 'hidden'
@@ -28,9 +28,11 @@ export default class Redraw {
 
     closeDialog() {
         this.dialog.close();
-        this.dialog.removeAttribute(this.currentParam)
+        this.dialog.dataset.type = '';
 
         document.body.style.overflow = '';
         this.dialog.style.top = '';
+
+        this.currentParam = null;
     }
 }
