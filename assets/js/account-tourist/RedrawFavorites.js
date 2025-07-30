@@ -10,6 +10,13 @@ export default class Redraw {
         card.remove();
     }
 
+    drawCards(callback, data) {
+        data.forEach(item => {
+            const card = this.createCard(callback, data);
+            this.list.append(card);
+        });
+    }
+
     createCard(callback, data) {
         // lkt-favorites__item_disabled
         const li = callback('li', ['lkt-favorites__item']);
@@ -43,5 +50,7 @@ export default class Redraw {
 
         li.append(img);
         li.append(divContent);
+
+        return li;
     }
 }
