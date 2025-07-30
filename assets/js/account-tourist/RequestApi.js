@@ -45,6 +45,25 @@ export default class RequestApi {
         }
     }
 
+    // Избранное, удаление из избранного
+    async deleteFavorites(data) {
+        return new Promise( res => setTimeout(() => res(true), 2000) );
+        try {
+            const response = await fetch('', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+    
+            const parsedJson = await response.json();
+            return parsedJson;
+        } catch (error) {
+            throw new Error('Ошибка запроса на уделние данныз из "избранного". Ошибка: ', error);
+        }
+    }
+
     // Запрос на изменение заказа
     async createOrderChange(data) {
         return new Promise((res, rej) => setTimeout(() => res(true), 2000));

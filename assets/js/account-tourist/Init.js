@@ -5,6 +5,7 @@ export default class Init {
         const Redraw = (await import('./Redraw.js')).default;
         const RedrawAside = (await import('./RedrawAside.js')).default;
         const RedrawOrder = (await import('./RedrawOrder.js')).default;
+        const RedrawFavorites = (await import('./RedrawFavorites.js')).default;
         const RequestApi = (await import('./RequestApi.js')).default;
         const Validation = (await import('../validation-places-form/ValidationPlacesForm.js')).default;
         const Loader = (await import('../loader/Controll.js')).default;
@@ -19,6 +20,7 @@ export default class Init {
                 el.querySelector('.lkt-change'),
                 el.querySelector('.lkt-annulation')
             ),
+            fav: new RedrawFavorites(el.querySelector('.lkt-favorites')),
         }
 
         const controll = new Controll(

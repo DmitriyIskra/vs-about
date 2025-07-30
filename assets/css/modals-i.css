@@ -210,3 +210,81 @@ dialog[data-type="no-email"] .dialog__content-no-email {
     margin-top: 36px;
 }
 /* END Пожалуйста, заполните <br> адрес электронный почты. */
+
+@media(max-width: 1024px) {
+    .dialog__window {
+        width: 67.20vw;
+        min-height: 78.93vw;
+        
+        border-radius: 2.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__wr-close {
+        padding-top: 5.33vw;
+        padding-right: 5.33vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__close {
+        height: 6.13vw;
+        width: 6.13vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__icon-bear {
+        width: 30.67vw;
+        height: 30.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__text {
+        font-size: 3.73vw;
+    }
+    
+    .dialog__text > p {
+        font-size: 3.73vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__content-req-res {
+        margin-top: 4.53vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__icon-req-res {
+        width: 22.67vw;
+        height: 22.67vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__text-req-res {
+        margin-top: 7.20vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__text-conf-email {
+        margin-top: 7.20vw;
+        padding-bottom: 11.47vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__text-sended-data-order {
+        margin-top: 5.87vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dialog__text-no-email {
+        margin-top: 7.20vw;
+    }
+}

@@ -173,7 +173,7 @@ input:focus, textarea:focus {
 }
 
 .lkt-profile__input {
-    width: 59%;
+    width: 77%;
 
     font-family: 'Roboto';
     font-size: 14px;
@@ -1066,6 +1066,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
+}
+
+.lkt__journeys-checkbox {
+    pointer-events: none;
 }
 
 .lkt__checkbox:checked {
@@ -2132,10 +2136,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     transform: scale(1.012);
 }
 
-.lkt-favorites__item_disabled {
-    opacity: 0.5;
+.lkt-favorites__item_disabled:hover {
+    box-shadow: none;
 
-    pointer-events: none;
+    transform: none;
 }
 
 .lkt-favorites__item > img {
@@ -2146,19 +2150,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     object-position: center top;
 }
 
-.lkt-favorites__item-content {
+.lkt-favorites__item-heart {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
-    left: 0;
+    z-index: 3;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.lkt-favorites__item-heart {
     width: 26px;
     height: 24px;
     margin-top: 15px;
@@ -2173,10 +2170,38 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     transition: transform 0.2s linear;
 
     cursor: pointer;
+
+    opacity: 1;
+
+    pointer-events: initial;
 }
 
 .lkt-favorites__item-heart:hover {
     transform: scale(1.1);
+}
+
+.lkt-favorites__item-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    align-items: end;
+}
+
+.lkt-favorites__item_disabled > .lkt-favorites__item-content:before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .lkt-favorites__item-description {
@@ -2201,6 +2226,10 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 .lkt-favorites__item-description:hover {
     height: 124px;
     padding-bottom: 18px;
+}
+
+.lkt-favorites__item_disabled .lkt-favorites__item-description {
+    pointer-events: none;
 }
 
 .lkt-favorites__item-title {
@@ -2791,7 +2820,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 
 @media(max-width: 1024px) {
     .lkt-profile__input {
-        width: 68%;
+        width: 71%;
 
         font-size: 4.27vw;
     }
@@ -4300,187 +4329,3 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     }
 }
 
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}
-
-@media(max-width: 1024px) {
-    
-}

@@ -1,4 +1,4 @@
-export default class Controll {
+export default class Redraw {
     constructor(draws, reqApi, validator, loader, dialog) {
         this.draws = draws;
         this.reqApi = reqApi;
@@ -109,6 +109,7 @@ export default class Controll {
         // Подтверждаю ознакомление и согласие "checkbox" возле кнопки оплатить
         if(e.target.closest('.lkt__journeys-label-confirm')) {
                 e.preventDefault();
+
                 const target = e.target.closest('.lkt__journeys-label-confirm');
                 this.draws.main.switchAgreementForPay(target);
         }
@@ -369,7 +370,26 @@ export default class Controll {
             })()
         };
         // END ORDER
+        // Удаление из избранного
+        if(e.target.closest('.lkt-favorites__item-heart')) {
+            const target = e.target.closest('.lkt-favorites__item-heart');
+            const id = target.dataset.id;
+            this.loader.show();
+            (async () => {
+                const resSend = await this.reqApi.deleteFavorites({id});
+                this.loader.hide();
+                
+                if(resSend) {
+                    this.draws.fav.removeCard(id);
+                } else {
+                    this.dialog.openDialog('fail');
+                }
 
+            })()
+        }
+        // START ИЗБРАННОЕ
+
+        // END ИЗБРАННОЕ
 
         // START ЗАДАТЬ ВОПРОС
         // Отправка задать вопрос 

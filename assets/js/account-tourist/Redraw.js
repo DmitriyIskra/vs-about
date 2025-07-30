@@ -131,13 +131,16 @@ export default class Redraw {
     switchAgreementForPay(target) {
         const stateItem = target.closest('.lkt__journeys-state-item'); 
         const buttonPay = stateItem.querySelector('.lkt__button-pay');
-        
+        console.log(stateItem);
+        console.log(buttonPay);
         const box = target.firstElementChild;
-
+        console.log(box.checked);
         if(!box.checked) {
+            console.log('not checked');
             box.checked = true;
             this.unDisableButton(buttonPay);
         } else {
+            console.log('checked');
             box.checked = false;
             this.disableButton(buttonPay);
         }
