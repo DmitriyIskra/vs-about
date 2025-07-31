@@ -2085,6 +2085,8 @@ div[data-content="annulation"] > div[data-item="annulation"] {
 }
 
 .lkt-history__reviews-button {
+    display: grid;
+    place-items: center;
     width: 142px;
     height: 30px;
 
@@ -2093,6 +2095,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     font-style: normal;
     font-weight: 400;
     text-align: center;
+    text-decoration: none;
     
     color: #FFF;
     border-radius: 25px;
@@ -3100,7 +3103,7 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt__journeys-item {
         flex-direction: column;
         height: auto;
-        min-height: 163.47vw;
+        min-height: 137.47vw;
         width: 94.4%;
 
         box-shadow: none;
@@ -3217,6 +3220,12 @@ div[data-content="annulation"] > div[data-item="annulation"] {
     .lkt__journeys-doc {
         height: 6.13vw;
         width: 5.07vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    .lkt__journeys-state-list {
+        margin-top: 5vw;
     }
 }
 
