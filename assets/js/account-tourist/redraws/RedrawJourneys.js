@@ -1,6 +1,6 @@
 export default class Redraw {
-    constructor(el) {
-        this.j = el;
+    constructor(j) {
+        this.j = j;
         
         this.list = this.j.querySelector('.lkt__journeys-list');
     }
@@ -39,7 +39,6 @@ export default class Redraw {
             `${'' === '' ? 'lkt__journeys-warning_active' : ''}`
         ], 'Внесите данные туристов');
         const divPrice = callback('div', ['lkt__journeys-price'], ' ₽');
-        
         const spanPrice = callback('span', null, '');
         divPrice.prepend(spanPrice);
 
@@ -80,7 +79,7 @@ export default class Redraw {
 
         const liStateItem = callback('li', [
             'lkt__journeys-state-item',
-            `${'' === '' ? 'lkt__journeys-state-button' : 0}`
+            `${'' === '' ? 'lkt__journeys-state-button' : ''}`
         ]);
         liStateItem.dataset.state = '';
 
@@ -176,6 +175,10 @@ export default class Redraw {
 
             liStateItem.append(divJWrButton);
         } 
+
+        ulStateList.append(liStateItem);
+
+        divCont.append(ulStateList);
 
         return li;
     }
